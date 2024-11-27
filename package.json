@@ -66,11 +66,7 @@
 		"stylelint-order": "6.0.4",
 		"stylelint-prettier": "5.0.2",
 		"stylelint-scss": "6.4.1",
-		"tippy.js": "^6.3.7",
 		"webpack": "latest",
 		"webpack-stream": "latest"
-	},
-	"dependencies": {
-		"uninstall": "^0.0.0"
 	}
 }
