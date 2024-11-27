@@ -1,0 +1,38 @@
+.breadcrumbs {
+	padding-top: 40px;
+	padding-bottom: 17px;
+
+	&__items {
+		display: flex;
+		align-items: center;
+		overflow-x: auto;
+		padding-bottom: 8px;
+	}
+
+	&__item {
+		white-space: nowrap;
+
+		&:not(:last-child) {
+			position: relative;
+			margin-right: 4px;
+			padding-right: 28px;
+
+			&::before {
+				@include bg-properties(contain);
+
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 50%;
+				width: 10px;
+				height: 20px;
+				background-image: url('../img/icons/arrow.svg');
+				transform: translateY(-50%);
+			}
+		}
+
+		&:last-child {
+			pointer-events: none;
+		}
+	}
+}

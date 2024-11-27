@@ -1,0 +1,21 @@
+// используется для инпута с type="checkbox" и "radio", чтобы скрыть нативный элемент
+@mixin hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	clip: rect(0 0 0 0);
+}
+
+// используется для инпута с type="number"
+@mixin number {
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	&[type='number'] {
+		-moz-appearance: textfield;
+	}
+}

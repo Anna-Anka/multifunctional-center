@@ -1,0 +1,63 @@
+.choices {
+	&[data-type*='select-one']::after {
+		@include bg-properties(contain);
+
+		right: 20px;
+		margin-top: 0;
+		border: 0;
+		width: 7px;
+		height: 12px;
+		// background-image: url('../img/icons/arrow.svg');
+		filter: invert(92%) sepia(67%) saturate(503%) hue-rotate(22deg)
+			brightness(100%) contrast(104%);
+		transform: rotate(-90deg) translateX(50%);
+		transition: transform 0.3s;
+	}
+
+	&[data-type*='select-one'].is-open::after {
+		margin-top: 0;
+		transform: rotate(90deg) translateX(-50%);
+	}
+
+	&.is-open &__inner {
+	}
+
+	&__inner {
+	}
+
+	&__list {
+		background-color: var(--color-orange-100);
+
+		&--dropdown,
+		&[aria-expanded] {
+			margin-top: 0;
+
+			.choices {
+				&__item {
+					padding: 10px 0;
+
+					&:last-child {
+						padding-bottom: 0;
+					}
+
+					&--selectable {
+						&.is-highlighted {
+							color: var(--color-orange-400);
+							background-color: transparent;
+						}
+
+						&[data-select-text] {
+							@media (width >= 640px) {
+								padding-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&--single {
+			padding: 0;
+		}
+	}
+}

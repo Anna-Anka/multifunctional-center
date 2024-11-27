@@ -1,0 +1,49 @@
+@mixin bg-properties($size: cover) {
+	background-position: center;
+	background-size: $size;
+	background-repeat: no-repeat;
+}
+
+@mixin flex-alignment(
+	$gap: 20px,
+	$justify: center,
+	$align: center,
+	$direction: row
+) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+	gap: $gap;
+}
+
+@mixin flex-simple($gap: 20px, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	gap: $gap;
+}
+
+@mixin resize-img {
+	position: absolute;
+	inset: 0;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin line-clamp($lines) {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+}
+
+@mixin image-set($pathToImage) {
+	background-image: url('#{$pathToImage}.jpg');
+	background-image: image-set(
+		'#{$pathToImage}.avif' type('image/avif'),
+		'#{$pathToImage}.webp' type('image/webp'),
+		'#{$pathToImage}.jpg' type('image/jpg')
+	);
+}

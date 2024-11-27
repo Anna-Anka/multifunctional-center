@@ -1,0 +1,95 @@
+.graph-modal {
+	--transition-time: 0.3s;
+
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	overflow: hidden auto;
+	text-align: center;
+	background-color: rgba(var(--color-black), 0.7);
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		opacity var(--transition-time),
+		visibility var(--transition-time);
+	cursor: pointer;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+
+	&__container {
+		position: relative;
+		display: inline-block;
+		display: none;
+		vertical-align: middle;
+		margin: 50px auto;
+		border-radius: 10px;
+		padding: 20px;
+		width: 100%;
+		max-width: 1000px;
+		text-align: left;
+		background-color: var(--color-white);
+		cursor: default;
+
+		@media (width <= 1024px) {
+			width: 90%;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		padding: 0;
+		width: 20px;
+		height: 20px;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512.001 512.001'%3E%3Cpath d='M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0014.143 5.857 19.94 19.94 0 0014.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z'/%3E%3C/svg%3E");
+		background-color: transparent;
+	}
+}
+
+.graph-modal.is-open {
+	opacity: 1;
+	visibility: visible;
+	transition:
+		opacity var(--transition-time),
+		visibility var(--transition-time);
+}
+
+.graph-modal__container.graph-modal-open {
+	display: inline-block;
+}
+
+.fade {
+	opacity: 0;
+}
+
+.fade,
+.fade.animate-open {
+	transition: opacity var(--transition-time);
+}
+
+.fade.animate-open {
+	opacity: 1;
+}
+
+.fadeInUp {
+	opacity: 0;
+	transform: translateY(-100px);
+}
+
+.fadeInUp,
+.fadeInUp.animate-open {
+	transition:
+		transform var(--transition-time),
+		opacity var(--transition-time);
+}
+
+.fadeInUp.animate-open {
+	opacity: 1;
+	transform: translateY(0);
+}

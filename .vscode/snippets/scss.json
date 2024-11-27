@@ -1,0 +1,14 @@
+{
+	"adaptive-value-base": {
+		"prefix": "g-avb",
+		"body": ["@include adaptive-value-base('$1', $2, $3, 1);"]
+	},
+	"adaptive-value-master": {
+		"prefix": "g-avm",
+		"body": ["@include adaptive-value-master('$1', $2, $3, $4, $5, 1);"]
+	},
+	"adaptive-breakpoint": {
+		"prefix": "ab",
+		"body": ["@include mq($1) {", "   $2", "}"]
+	}
+}

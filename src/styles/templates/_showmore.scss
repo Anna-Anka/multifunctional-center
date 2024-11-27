@@ -1,0 +1,13 @@
+.showmore {
+	&__item {
+		&--hide {
+			display: none;
+		}
+	}
+
+	&__button {
+		&--hide {
+			display: none;
+		}
+	}
+}

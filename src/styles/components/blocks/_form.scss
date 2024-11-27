@@ -1,0 +1,51 @@
+.form {
+	&__item {
+		width: 100%;
+		max-width: 400px;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__password {
+		position: relative;
+		width: 100%;
+	}
+
+	&__field {
+		border: 1px solid var(--color-black);
+		width: 100%;
+	}
+
+	&__show {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		width: 24px;
+		height: 24px;
+		background-image: url('../img/icons/eye.svg');
+		transform: translateY(-50%);
+
+		@include bg-properties(contain);
+
+		&::before {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			background-color: var(--color-black);
+			opacity: 0;
+			transform: rotate(45deg);
+			transition: opacity 0.3s;
+		}
+
+		&--active {
+			&::before {
+				opacity: 0.4;
+			}
+		}
+	}
+}

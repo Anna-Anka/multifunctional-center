@@ -1,0 +1,90 @@
+@use 'sass:math';
+
+$maxWidth: 1920;
+$maxWidthContainer: 1390;
+$minWidth: 360;
+$containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+//@include adaptiv-value-base("padding", 30, 5, 0);
+@mixin adaptive-value-base($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+
+	@if $type==1 {
+		//Только если меньшe контейнера
+		#{$property}: $startSize + px;
+
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} *
+					((100vw - 360px) / #{$maxWidthContainer - 360})
+			);
+		}
+	} @else if $type==2 {
+		//Только если больше контейнера
+		#{$property}: $startSize + px;
+
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360})
+			);
+		}
+	} @else {
+		//Всегда
+		#{$property}: calc(
+			#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360})
+		);
+	}
+}
+
+@mixin adaptive-value-master($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+	@if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+		$widthFrom: $maxWidth;
+	}
+	@if ($minSize <= 0) {
+		$minSize: 0.0001;
+	}
+	@if ($startSize <= 0) {
+		$startSize: 0.0001;
+	}
+
+	// Брейк-поинты в PX
+	$widthFromMedia: $widthFrom + 'px';
+	$widthToMedia: $widthTo + 'px';
+
+    // Брейк-поинты в EM
+    // $widthFromMedia: em($widthFrom);
+	// $widthToMedia: em($widthTo);
+
+	// Формула плавающего значения
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+
+	// Получение значения свойства
+	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+	// Если отрицательные значения
+	@if ($minSize > $startSize) {
+		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+	}
+
+	@if $widthFrom == $containerWidth or $widthFrom == $maxWidth or $keepSize == 1 or $keepSize == 2 {
+		@media (min-width: $widthFromMedia) {
+			#{$property}: rem($startSize);
+		}
+	}
+	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+		#{$property}: $propertyValue;
+	}
+	@if $widthTo == $minWidth or $keepSize == 1 or $keepSize == 3 {
+		@media (max-width: $widthToMedia) {
+			#{$property}: rem($minSize);
+		}
+	}
+}
+
+
+//@include adaptiveValueMaster('padding-left', 158, 20, 1620, 1400, 1);
+// 1620 - с какого разрешения начать уменьшать
+// 1400 - до какого разрешения уменьшать

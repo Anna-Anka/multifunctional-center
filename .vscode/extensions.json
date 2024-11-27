@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "Syler.sass-indented",
+        "stylelint.vscode-stylelint",
+        "jerryhong.autofilename",
+        "EditorConfig.EditorConfig",
+        "ritwickdey.LiveServer",
+        "rebornix.project-snippets"
+    ]
+}

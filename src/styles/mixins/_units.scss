@@ -1,0 +1,13 @@
+@use 'sass:math';
+
+@function percent($px, $from) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+
+// font-size: em(18px, 20); - Если нужно высчитывать не относительно шрифта по умолчанию, то передать его вторым параметром

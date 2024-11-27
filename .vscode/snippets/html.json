@@ -1,0 +1,324 @@
+{
+	"burger-button": {
+		"scope": "html",
+		"prefix": "g-burger-button",
+		"body": [
+			"<button class=\"burger-button\" aria-controls=\"header-burger-menu\" aria-label=\"Открыть меню\" aria-expanded=\"false\" data-burger-button>",
+			"   <span class=\"burger-button__line\" aria-hidden></span>",
+			"</button>"
+		]
+	},
+
+	"burger-menu": {
+		"scope": "html",
+		"prefix": "g-menu",
+		"body": [
+			"<ul class=\"burger-menu\" id=\"header-burger-menu\" data-menu>",
+			"    <li class=\"burger-menu__item\">",
+			"       <a class=\"burger-menu__link\" href=\"#\" data-goto=\"#\" data-goto-header data-menu-link></a>",
+			"   </li>",
+			"</ul>"
+		]
+	},
+
+	"nav": {
+		"scope": "html",
+		"prefix": "g-nav",
+		"body": [
+			"<nav class=\"header__navigation\">",
+			"   <a class=\"header__logo logo\" href=\"#\">",
+			"       <img class=\"logo__img\" src=\"img/logo.svg\" alt=\"Логотип\" width=\"$2\" height=\"$3\">",
+			"   </a>",
+			"   <ul class=\"burger-menu\" data-menu>",
+			"       <li class=\"burger-menu__item\">",
+			"           <a class=\"burger-menu__link\" href=\"#\" data-goto=\"#\" data-menu-link data-goto-header></a>",
+			"       </li>",
+			"   </ul>",
+			"   <button class=\"burger-button\" aria-label=\"Открыть меню\" aria-expanded=\"false\" data-burger>",
+			"       <span class=\"burger-button__line\"></span>",
+			"   </button>",
+			"</nav>"
+		]
+	},
+
+	"gallery": {
+		"scope": "html",
+		"prefix": "g-gallery",
+		"body": [
+			"<ul class=\"$1__items\">",
+			"   <li class=\"$1__item\" mix category-$3>",
+			"       <a class=\"$1__link\" href=\"img/gallery/2.jpg\" data-fancybox=\"gallery\">",
+			"           <picture>",
+			"               <source srcset=\"$2.avif\" type=\"image/avif\">",
+			"               <source srcset=\"$2.webp\" type=\"image/webp\">",
+			"               <img class=\"$1__img\" src=\"$2.jpg\" width=\"$3\" height=\"$4\" alt=\"$5\" loading=\"lazy\">",
+			"           </picture>",
+			"       </a>",
+			"   </li>",
+			"</ul>"
+		]
+	},
+
+	"picture": {
+		"prefix": "g-picture",
+		"body": [
+			"<picture>",
+			"   <source srcset=\"img/$1.avif\" type=\"image/avif\">",
+			"   <source srcset=\"img/$1.webp\" type=\"image/webp\">",
+			"   <img class=\"$3__img\" src=\"img/$1.$2\" alt=\"$4\" width=\"$5\" height=\"$6\" loading=\"lazy\">",
+			"</picture>"
+		]
+	},
+
+	"tabs html sctructure": {
+		"prefix": "g-tabs",
+		"body": [
+			"<div class=\"tabs\" data-tabs=\"$1\">",
+			"   <ul class=\"tabs__nav\">",
+			"       <li class=\"tabs__nav-item\">",
+			"           <button class=\"tabs__nav-btn\" type=\"button\">$2</button>",
+			"       </li>",
+			"   </ul>",
+			"   <div class=\"tabs__content\">",
+			"       <div class=\"tabs__panel\">$5</div>",
+			"       <div class=\"tabs__panel\">$6</div>",
+			"       <div class=\"tabs__panel\">$7</div>",
+			"   </div>",
+			"</div>"
+		]
+	},
+
+	"stepper": {
+		"prefix": "g-stepper",
+		"body": [
+			"<div class=\"stepper\">",
+			"    <label class=\"stepper__field\">",
+			"        <input class=\"stepper__input\" type=\"number\" value=\"1\" name=\"count\" min=\"1\">",
+			"        <span class=\"stepper__text\">шт</span>",
+			"    </label>",
+			"    <div class=\"stepper__btns\">",
+			"        <button class=\"stepper__btn stepper__btn--up\" type=\"button\">",
+			"            <span class=\"sr-only\">Увеличить количество</span>",
+			"            +",
+			"        </button>",
+			"        <button class=\"stepper__btn stepper__btn--down stepper__btn--disabled\" type=\"button\">",
+			"            <span class=\"sr-only\">Уменьшить количество</span>",
+			"            -",
+			"        </button>",
+			"    </div>",
+			"</div>"
+		]
+	},
+
+	"counter": {
+		"prefix": "g-counter",
+		"body": [
+			"<div>",
+			"   <span data-start-value=\"0\" data-step=\"3\" data-end-value=\"520\" data-time=\"1000\" data-numbers></span>",
+			"   <span></span>",
+			"</div>"
+		]
+	},
+
+	"spoller": {
+		"prefix": "g-spoller",
+		"body": [
+			"<ul class=\"spollers\" data-spollers=\"$1-spoller\" data-spollers-media=\"992,max\" data-one-spoller>",
+			"   <li class=\"spollers__item\">",
+			"       <$2 class=\"spollers__title\" data-spoller-title>",
+			"           $3",
+			"       </$2>",
+			"       <button class=\"spollers__button\" type=\"button\" data-spoller-button>",
+			"           $3",
+			"       </button>",
+			"       <div class=\"spollers__body\">",
+			"           $4",
+			"       </div>",
+			"   </li>",
+			"</ul>"
+		]
+	},
+
+	"show more": {
+		"scope": "html",
+		"prefix": "g-showmore",
+		"body": [
+			"<div class=\"showmore\" data-showmore-media=\"768,max\" data-showmore>",
+			"   <ul class=\"showmore__items\" data-showmore-start-show=\"$1\" data-showmore-next-show=\"$2\" data-showmore-content>",
+			"       <li class=\"showmore__item\">$3</li>",
+			"   </ul>",
+			"   <button class=\"showmore__button button\" type=\"button\" data-showmore-button-show>",
+			"       Показать еще",
+			"   </button>",
+			"   <button class=\"showmore__button showmore__button--hide button\" type=\"button\" data-showmore-button-hide>",
+			"       Скрыть",
+			"   </button>",
+			"</div>"
+		]
+	},
+
+	"graph modal btn": {
+		"prefix": "g-modal-btn",
+		"body": [
+			"<button class=\"$1__button button\" data-graph-path=\"$2\" aria-controls=\"$3\" type=\"button\">$4</button>"
+		]
+	},
+
+	"graph modal structure": {
+		"prefix": "g-graph-modal",
+		"body": [
+			"<div class=\"graph-modal\">",
+			"   <div class=\"graph-modal__container\" role=\"dialog\" aria-modal=\"true\" id=\"$1\" data-graph-target=\"$2\">",
+			"       <div class=\"graph-modal__box\">",
+			"           <button class=\"graph-modal__close js-modal-close\" aria-label=\"Закрыть модальное окно\"></button>",
+			"       </div>",
+			"   </div>",
+			"</div>"
+		]
+	},
+
+	"btn for thank-modal": {
+		"prefix": "g-thank-btn",
+		"body": [
+			"<button class=\"modal-thank\" type=\"button\" data-graph-path=\"modal-thank\" style=\"display: none;\">Открыть</button>"
+		]
+	},
+
+	"fsLightbox": {
+		"prefix": "g-lightbox",
+		"body": [
+			"<a class=\"$1\" href=\"img/$2.$3\" data-fslightbox=\"gallery\">",
+			"   <picture>",
+			"       <source srcset=\"img/$2.avif\" type=\"image/avif\">",
+			"       <source srcset=\"img/$2.webp\" type=\"image/webp\">",
+			"       <img class=\"$4__img\" src=\"img/$2.$3\" alt=\"$5\" width=\"$6\" height=\"$7\" loading=\"lazy\">",
+			"   </picture>",
+			"</a>"
+		]
+	},
+
+	"fancybox": {
+		"prefix": "g-fancybox",
+		"body": [
+			"<a class=\"$1\"  href=\"img/$2.$3\" data-fancybox=\"gallery\" data-caption=\"Caption 1\">",
+			"   <picture>",
+			"       <source srcset=\"img/$2.avif\" type=\"image/avif\">",
+			"       <source srcset=\"img/$2.webp\" type=\"image/webp\">",
+			"       <img class=\"$4__img\" src=\"img/$2.$3\" alt=\"$5\" width=\"$6\" height=\"$7\" loading=\"lazy\">",
+			"   </picture>",
+			"</a>"
+		]
+	},
+
+	"marquee": {
+		"prefix": "g-marquee",
+		"body": [
+			"<div class=\"marquee\">",
+			"    <div class=\"marquee__wrapper\">",
+			"        <ul class=\"marquee__items\">",
+			"            <li class=\"marquee__item\">$1</li>",
+			"        </ul>",
+			"    </div>",
+			"</div>"
+		]
+	},
+
+	"parallax": {
+		"prefix": "g-parallax",
+		"body": [
+			"<div class=\"parallax\">",
+			"    <div class=\"parallax__images\" data-prlx-mouse>",
+			"        <div class=\"parallax__item\">",
+			"            <div class=\"parallax__mountains\" style=\"background-image: url('img/$1')\"></div>",
+			"        </div>",
+			"    </div>",
+			"</div>"
+		]
+	},
+
+	"input password": {
+		"prefix": "g-password",
+		"body": [
+			"<label class=\"form__label\" for=\"password\">Введите пароль:</label>",
+			"<div class=\"form__password\">",
+			"    <input class=\"form__field\" id=\"password\" name=\"password\" type=\"password\" placeholder=\"Пароль\" required>",
+			"    <button class=\"form__show\" type=\"button\" data-show-password>",
+			"        <span class=\"sr-only\">Показать пароль</span>",
+			"    </button>",
+			"</div>"
+		]
+	},
+
+	"rating": {
+		"prefix": "g-rating",
+		"body": [
+			"<fieldset class=\"rating\">",
+			"   <legend class=\"rating__title\">",
+			"       Укажите оценку:",
+			"   </legend>",
+			"   <div class=\"rating__stars\">",
+			"       <input class=\"rating__hidden\" id=\"rating-1\" name=\"rating\" value=\"1\" type=\"radio\">",
+			"       <label class=\"rating__star\" for=\"rating-1\" aria-label=\"1 из 5\"></label>",
+			"       <input class=\"rating__hidden\" id=\"rating-2\" name=\"rating\" value=\"2\" type=\"radio\">",
+			"       <label class=\"rating__star\" for=\"rating-2\" aria-label=\"2 из 5\"></label>",
+			"       <input class=\"rating__hidden\" id=\"rating-3\" name=\"rating\" value=\"3\" type=\"radio\">",
+			"       <label class=\"rating__star\" for=\"rating-3\" aria-label=\"3 из 5\"></label>",
+			"       <input class=\"rating__hidden\" id=\"rating-4\" name=\"rating\" value=\"4\" type=\"radio\" checked>",
+			"       <label class=\"rating__star\" for=\"rating-4\" aria-label=\"4 из 5\"></label>",
+			"       <input class=\"rating__hidden\" id=\"rating-5\" name=\"rating\" value=\"5\" type=\"radio\">",
+			"       <label class=\"rating__star\" for=\"rating-5\" aria-label=\"5 из 5\"></label>",
+			"   </div>",
+			"   <span class=\"rating__value\">4</span>",
+			"</fieldset>"
+		]
+	},
+
+	"time-count": {
+		"prefix": "g-time-count",
+		"body": [
+			"<div class=\"time-count\" data-timer=\"Jan 1 2024 00:00:00\">",
+			"   <div class=\"time-count__item time-count--days\">",
+			"       <span class=\"time-count__value\">00</span>",
+			"       <span class=\"time-count__text\">дней</span>",
+			"   </div>",
+			"   <div class=\"time-count__item time-count--hours\">",
+			"       <span class=\"time-count__value\">00</span>",
+			"       <span class=\"time-count__text\">часов</span>",
+			"   </div>",
+			"   <div class=\"time-count__item time-count--minutes\">",
+			"       <span class=\"time-count__value\">00</span>",
+			"       <span class=\"time-count__text\">минут</span>",
+			"   </div>",
+			"   <div class=\"time-count__item time-count--seconds\">",
+			"       <span class=\"time-count__value\">00</span>",
+			"       <span class=\"time-count__text\">секунд</span>",
+			"   </div>",
+			"</div>"
+		]
+	},
+
+	"select-choices": {
+		"prefix": "g-select-choices",
+		"body": [
+			"<div class=\"$1\">",
+			"   <label class=\"sr-only\" for=\"$2\">выберите язык</label>",
+			"   <select class=\"$3\" id=\"$2\" name=\"$4\" data-choice>",
+			"       <option value=\"$5\"></option>",
+			"   </select>",
+			"</div>"
+		],
+		"description": "Snippet for select with plugin choices"
+	},
+
+	"array in gulp-file-include": {
+		"scope": "html",
+		"prefix": "g-@for",
+		"body": ["@for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }"]
+	},
+
+	"if gulp-file-include": {
+		"scope": "html",
+		"prefix": "g-@if",
+		"body": ["@if(typeof $1 !== 'undefined' && $1) {", "    $2", "}"]
+	}
+}
