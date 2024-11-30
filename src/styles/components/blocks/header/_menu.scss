@@ -2,7 +2,7 @@
 	.menu {
 		display: flex;
 		align-items: center;
-		color: var(--color-brown-600);
+		color: var(--color-brown-300);
 		gap: 45px;
 
 		@include mq(lg) {

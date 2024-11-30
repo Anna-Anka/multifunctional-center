@@ -1,8 +1,10 @@
 // ui
 @import '../components/ui/button';
 @import '../components/ui/hotline';
+@import '../components/ui/choices';
 
 // blocks
+@import '../components/blocks/form';
 @import '../components/blocks/header/header';
 @import '../components/blocks/header/burger-button';
 @import '../components/blocks/header/menu';

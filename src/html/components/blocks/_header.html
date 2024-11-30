@@ -14,7 +14,7 @@
                 </button>
             </div>
             <div class="header__inner">
-                <div class="header__menu menu" data-menu>
+                <div class="header__menu menu" id="header-burger-menu" data-menu>
                     <a class="menu__private button button--fill" href="#">
                         Личный кабинет
                         <svg class="button__icon" aria-hidden>
@@ -107,6 +107,48 @@
                 </div>
             </div>
         </div>
-        <div class="header__search"></div>
+        <form class="form">
+            <div class="header__search">
+                <div class="select-mobile">
+                    <button class="select-mobile__button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="header-select-mobile-list" aria-label="выбрать, где искать">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#sound">
+                        </svg>
+                    </button>
+                    <div class="select-mobile__list">
+                        <label class="select-mobile__item">
+                            По всему сайту
+                            <input class="select-mobile__hidden" type="radio" name="header-select" value="website" checked>
+                        </label>
+                        <label class="select-mobile__item">
+                            По документам
+                            <input class="select-mobile__hidden" type="radio" name="header-select" value="documents">
+                        </label>
+                    </div>
+                </div>
+                <div class="form__item header__select" id="header-select-mobile-list">
+                    <label class="sr-only" for="header-search-category">
+                        Где искать
+                    </label>
+                    <select name="header-select" id="header-search-category" data-choice>
+                        <option value="website">
+                            По всему сайту
+                        </option>
+                        <option value="documents">
+                            По документам
+                        </option>
+                    </select>
+                </div>
+                <div class="form__item form__item--search">
+                    <label class="sr-only" for="header-search">Введите ваше имя</label>
+                    <input class="form__field" id="header-search" name="search" type="search" placeholder="Введите ваш запрос" required>
+                    <button class="form__button" type="submit" aria-label="Найти">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#search">
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </header>
