@@ -1,10 +1,10 @@
 import { disableScroll, enableScroll } from '../utils/index.js';
 
 (function() {
+    console.log('a')
     const burgerButton = document.querySelector('[data-burger-button]');
     const menu = document.querySelector('[data-menu]');
     const menuLinks = document.querySelectorAll('[data-menu-link]');
-    const overlay = document.querySelector('[data-menu-overlay]');
 
     const checkClass = () => {
         if (burgerButton.classList.contains('burger-button--active')) {
@@ -23,19 +23,12 @@ import { disableScroll, enableScroll } from '../utils/index.js';
 
     const hideBurger = () => {
         burgerButton.classList.remove('burger-button--active');
-        menu.classList.remove('burger-menu--active');
-        overlay.classList.remove('overlay--active');
+        menu.classList.remove('menu--active');
     }
 
     burgerButton.addEventListener('click', () => {
         burgerButton.classList.toggle('burger-button--active');
-        menu.classList.toggle('burger-menu--active');
-        overlay.classList.toggle('overlay--active');
-        checkClass();
-    });
-
-    overlay.addEventListener('click', () => {
-        hideBurger();
+        menu.classList.toggle('menu--active');
         checkClass();
     });
 
@@ -61,7 +54,7 @@ import { disableScroll, enableScroll } from '../utils/index.js';
     }
 
     const keyHandler = (event) => {
-        if (menu.classList.contains('burger-menu--active')) {
+        if (menu.classList.contains('menu--active')) {
             if (event.key === 'Escape') {
                 hideBurger();
                 checkClass();
@@ -72,4 +65,4 @@ import { disableScroll, enableScroll } from '../utils/index.js';
             }
         }
     }
-})
+})();

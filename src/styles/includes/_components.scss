@@ -1,10 +1,12 @@
 // ui
 @import '../components/ui/button';
+@import '../components/ui/hotline';
 
 // blocks
 @import '../components/blocks/header/header';
 @import '../components/blocks/header/burger-button';
-@import '../components/blocks/header/burger-menu';
+@import '../components/blocks/header/menu';
+@import '../components/blocks/socials';
 
 // cards
 @import '../components/cards/product-card';

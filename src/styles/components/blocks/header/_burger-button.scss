@@ -1,9 +1,9 @@
 .burger-button {
-	--burger-width: 30px;
-	--burger-height: 30px;
+	--burger-width: 18px;
+	--burger-height: 18px;
 	--burger-line-height: 2px;
 	--burger-border-radius: 0;
-	--burger-color: var(--color-black);
+	--burger-color: var(--color-red-500);
 
 	position: relative;
 	width: var(--burger-width);
@@ -37,9 +37,9 @@
 
 	&__line {
 		position: absolute;
-		left: 0;
+		right: 0;
 		top: 50%;
-		width: 100%;
+		width: 70%;
 		height: var(--burger-line-height);
 		background-color: currentcolor;
 		transform: translateY(-50%);

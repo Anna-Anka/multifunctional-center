@@ -15,7 +15,6 @@ body {
 
 	@include mq(md) {
 		padding: 0 16px;
-		max-width: 1152px;
 	}
 }
 
@@ -61,7 +60,7 @@ body {
 	transition: box-shadow 0.3s;
 
 	&:focus-visible {
-		// box-shadow: 0 0 0 2px var();
+		box-shadow: 0 0 0 2px var(--color-red-800);
 	}
 
 	@include mq(lg) {

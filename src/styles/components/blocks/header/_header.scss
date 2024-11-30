@@ -1,21 +1,68 @@
 .header {
-	position: relative;
-	left: 0;
-	right: 0;
-	top: 0;
-	z-index: 2;
-
-	&__container {
-		top: -50px;
-		transition: top 0.3s;
+	@include mq(lg, min) {
+		padding-top: 12px;
 	}
 
-	&--fixed {
-		.header__container {
-			position: fixed;
-			left: 0;
-			width: 100%;
-			transform: translateY(0);
+	&__container {
+		@include mq(lg, min) {
+			margin: 0 auto;
+			padding: 0 24px;
+			max-width: 1168px;
 		}
+	}
+
+	&__wrapper {
+		@include mq(lg, min) {
+			display: flex;
+			width: 100%;
+			gap: 50px;
+		}
+	}
+
+	&__top {
+		position: relative;
+		z-index: 20;
+		background-color: var(--color-white);
+
+		@include mq(lg) {
+			@include flex-alignment(20px, space-between);
+
+			padding: 16px 24px;
+		}
+	}
+
+	&__head {
+		@include flex-alignment(40px, space-between);
+	}
+
+	&__inner {
+		@include mq(lg, min) {
+			width: 100%;
+		}
+	}
+
+	&__menu {
+		width: 100%;
+
+		@include mq(lg, min) {
+			border-bottom: 1px solid var(--color-orange-300);
+			padding-bottom: 12px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		padding-top: 12px;
+		gap: 32px;
+
+		@include mq(lg) {
+			display: none;
+		}
+	}
+
+	&__name {
+		margin-right: auto;
+		width: 100%;
+		max-width: 240px;
 	}
 }

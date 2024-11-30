@@ -36,6 +36,7 @@
 	}
 
 	&--fill {
+		color: var(--color-white);
 		background-color: var(--color-red-500);
 		transition:
 			background-color 0.3s,
