@@ -1,3 +1,183 @@
 .footer {
-    
+	&__container {
+		@include mq(lg) {
+			padding: 0;
+		}
+
+		@include mq(md) {
+			padding: 0;
+		}
+	}
+
+	&__wrapper {
+		@include flex-simple(24px);
+
+		position: relative;
+		justify-content: space-between;
+		border-top: 3px solid var(--color-red-500);
+		border-radius: 4px 4px 0 0;
+		padding: 24px 24px 16px;
+		width: 100%;
+		background-color: var(--color-dark-600);
+
+		@include mq(lg) {
+			border-radius: 0;
+			padding-bottom: 12px;
+		}
+
+		@include mq(md) {
+			flex-wrap: wrap;
+			padding: 24px 16px 16px;
+		}
+	}
+
+	&__decor {
+		position: absolute;
+		left: -2%;
+		bottom: -75%;
+		transform: rotate(-50deg);
+
+		@include mq(lg) {
+			left: -12%;
+			bottom: -84%;
+		}
+
+		@include mq(md) {
+			left: 16%;
+			bottom: -80%;
+		}
+
+		@include mq(sm) {
+			left: 30%;
+			bottom: -72%;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			border: 1px solid var(--color-red-500);
+			border-radius: 70%;
+		}
+
+		&::before {
+			left: 60px;
+			top: -40px;
+			width: 212px;
+			height: 60px;
+		}
+
+		&::after {
+			width: 358px;
+			height: 100px;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-wrap: wrap;
+		width: 44%;
+		font-size: 12px;
+		color: var(--color-grey-420);
+		gap: 20px;
+
+		@include mq(md) {
+			width: 60%;
+			gap: 12px;
+		}
+
+		@include mq(sm) {
+			width: 100%;
+		}
+	}
+
+	&__item {
+		flex-basis: 45%;
+
+		@include mq(sm) {
+			flex-grow: 1;
+			flex-basis: 48%;
+		}
+	}
+
+	&__column {
+		width: 22%;
+
+		@include mq(md) {
+			width: 30%;
+		}
+
+		&--copy {
+			font-size: 10px;
+			color: var(--color-grey-600);
+
+			@include mq(md) {
+				order: 1;
+			}
+		}
+
+		&--info {
+			@include flex-simple(30px, column);
+
+			@include mq(sm) {
+				@include flex-simple(20px, row);
+
+				width: 100%;
+			}
+		}
+	}
+
+	.hotline {
+		&__link {
+			color: var(--color-grey-100);
+		}
+	}
+
+	.hotline,
+	.download-info {
+		@include mq(sm) {
+			flex-basis: 50%;
+		}
+	}
+}
+
+.download-info {
+	display: flex;
+	font-size: 12px;
+	color: var(--color-grey-100);
+	gap: 20px;
+
+	&__content {
+		@include flex-simple(12px, column);
+	}
+
+	&__link {
+		position: relative;
+		padding-right: 24px;
+		width: max-content;
+		color: var(--color-red-500);
+
+		&::before {
+			@include bg-properties(contain);
+
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 16px;
+			height: 16px;
+			background-image: url('../img/icons/arrow-long.svg');
+		}
+	}
+
+	&__qr {
+		@include bg-properties;
+
+		flex: 0 0 60px;
+		height: 60px;
+
+		@include mq(md) {
+			display: none;
+		}
+	}
 }
