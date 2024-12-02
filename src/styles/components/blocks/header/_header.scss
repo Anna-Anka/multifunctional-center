@@ -23,11 +23,13 @@
 	&__top {
 		position: relative;
 		z-index: 20;
+		flex-shrink: 0;
 		background-color: var(--color-white);
 
 		@include mq(lg) {
 			@include flex-alignment(20px, space-between);
 
+			flex-shrink: unset;
 			padding: 16px 24px;
 		}
 	}

@@ -18,7 +18,7 @@
 		border-radius: 4px 4px 0 0;
 		padding: 24px 24px 16px;
 		width: 100%;
-		background-color: var(--color-dark-600);
+		background-color: var(--color-brown-600);
 
 		@include mq(lg) {
 			border-radius: 0;
@@ -109,7 +109,7 @@
 
 		&--copy {
 			font-size: 10px;
-			color: var(--color-grey-600);
+			color: var(--color-grey-550);
 
 			@include mq(md) {
 				order: 1;
@@ -129,7 +129,7 @@
 
 	.hotline {
 		&__link {
-			color: var(--color-grey-100);
+			color: var(--color-grey-200);
 		}
 	}
 
@@ -137,47 +137,6 @@
 	.download-info {
 		@include mq(sm) {
 			flex-basis: 50%;
-		}
-	}
-}
-
-.download-info {
-	display: flex;
-	font-size: 12px;
-	color: var(--color-grey-100);
-	gap: 20px;
-
-	&__content {
-		@include flex-simple(12px, column);
-	}
-
-	&__link {
-		position: relative;
-		padding-right: 24px;
-		width: max-content;
-		color: var(--color-red-500);
-
-		&::before {
-			@include bg-properties(contain);
-
-			content: '';
-			position: absolute;
-			right: 0;
-			top: 0;
-			width: 16px;
-			height: 16px;
-			background-image: url('../img/icons/arrow-long.svg');
-		}
-	}
-
-	&__qr {
-		@include bg-properties;
-
-		flex: 0 0 60px;
-		height: 60px;
-
-		@include mq(md) {
-			display: none;
 		}
 	}
 }
