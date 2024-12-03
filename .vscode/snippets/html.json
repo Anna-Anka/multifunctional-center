@@ -70,6 +70,17 @@
 		]
 	},
 
+	"picture-retina": {
+		"prefix": "g-picture-retina",
+		"body": [
+			"<picture>",
+			"   <source srcset=\"img/$1.avif 1x, img/$1@2x.avif 2x\" type=\"image/avif\">",
+			"   <source srcset=\"img/$1.webp 1x, img/$1@2x.webp 2x\" type=\"image/webp\">",
+			"   <img class=\"$3__img\" src=\"img/$1.$2\" srcset=\"img/$1@2x.$2 2x\" alt=\"$4\" width=\"$5\" height=\"$6\" loading=\"lazy\">",
+			"</picture>"
+		]
+	},
+
 	"tabs html sctructure": {
 		"prefix": "g-tabs",
 		"body": [

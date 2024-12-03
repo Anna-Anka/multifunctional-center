@@ -30,13 +30,13 @@
 		border-bottom-left-radius: 4px;
 		padding: 10px 20px 0;
 		color: var(--color-white);
-		background-color: var(--color-dark-600);
+		background-color: var(--color-brown-600);
 	}
 
 	&__item {
 		font-weight: 600;
 		font-size: 13px;
-		color: var(--color-grey-550);
+		color: var(--color-grey-420);
 		transition: color 0.3s;
 	}
 
@@ -56,7 +56,7 @@
 
 	&__list {
 		color: var(--color-white);
-		background-color: var(--color-dark-600);
+		background-color: var(--color-brown-600);
 
 		&--dropdown,
 		&[aria-expanded] {
@@ -65,7 +65,7 @@
 			border-bottom-right-radius: 4px;
 			border-bottom-left-radius: 4px;
 			padding: 12px 16px 0;
-			background-color: var(--color-dark-600);
+			background-color: var(--color-brown-600);
 
 			.choices {
 				&__item {
@@ -74,14 +74,14 @@
 					font-size: 13px;
 
 					&:not(:first-child) {
-						border-top: 1px solid var(--color-grey-600);
+						border-top: 1px solid var(--color-brown-300);
 						padding-top: 10px;
 					}
 
 					&--selectable {
 						&.is-highlighted {
 							color: var(--color-white);
-							background-color: var(--color-dark-600);
+							background-color: var(--color-brown-600);
 						}
 
 						&[data-select-text] {
