@@ -1,0 +1,35 @@
+.popular-services {
+	padding-top: 54px;
+
+	@include mq(lg) {
+		padding-top: 40px;
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 30px;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+
+		@include mq(lg) {
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		@include mq(lg, min) {
+			flex-basis: calc(50% - 15px);
+		}
+	}
+
+	&__link {
+		color: var(--color-red-500);
+
+		@include mq(lg, min) {
+			display: none;
+		}
+	}
+}

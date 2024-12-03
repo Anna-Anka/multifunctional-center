@@ -1,0 +1,29 @@
+.block-header {
+	@include flex-alignment(20px, space-between);
+
+	margin-bottom: 32px;
+	border-bottom: 2px solid var(--color-red-500);
+	padding-bottom: 16px;
+
+	@include mq(lg) {
+		margin-bottom: 24px;
+	}
+
+	&__title {
+		@include title(24px, 0);
+
+		sup {
+			font-size: 14px;
+			color: var(--color-red-500);
+		}
+	}
+
+	&__link {
+		font-size: 13px;
+		color: var(--color-red-500);
+
+		@include mq(lg) {
+			display: none;
+		}
+	}
+}

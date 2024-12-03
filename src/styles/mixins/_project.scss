@@ -1,0 +1,6 @@
+@mixin title($fz: 32px, $mb: 24px) {
+	margin-bottom: $mb;
+	font-family: var(--font-secondary);
+	font-weight: 700;
+	font-size: $fz;
+}
