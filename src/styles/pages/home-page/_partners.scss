@@ -1,0 +1,79 @@
+.partners {
+	padding: 54px 0 80px;
+
+	@include mq(lg) {
+		padding: 44px 0 64px;
+	}
+
+	&__container {
+		@include mq(md) {
+			padding-right: 0;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1220px;
+	}
+
+	&__swiper {
+		position: static;
+	}
+
+	&__items {
+		padding: 2px 0;
+		width: 100%;
+	}
+
+	&__item {
+		width: 256px;
+		height: 86px;
+	}
+
+	&__button {
+		@include bg-properties(contain);
+
+		position: absolute;
+		top: 50%;
+		width: 24px;
+		height: 24px;
+		background-image: url('../img/icons/arrow.svg');
+		filter: invert(64%) sepia(67%) saturate(1472%) hue-rotate(338deg)
+			brightness(98%) contrast(91%);
+
+		&--next {
+			right: -50px;
+			transform: rotate(90deg) translateX(-50%);
+		}
+
+		&--prev {
+			left: -50px;
+			transform: rotate(-90deg) translateX(50%);
+		}
+
+		@include mq(lg) {
+			display: none;
+		}
+	}
+}
+
+.partner-card {
+	width: 100%;
+	height: 100%;
+
+	&__link {
+		@include flex-alignment(0);
+
+		border: 1px solid var(--color-grey-270);
+		border-radius: 4px;
+		padding: 16px;
+	}
+
+	&__img {
+		width: 180px;
+		height: 54px;
+		object-fit: contain;
+	}
+}

@@ -25,7 +25,6 @@
             const items = block.querySelectorAll('.select-mobile__item');
 
             items.forEach((item, key, array) => {
-                console.log(key, parent)
                 const input = item.querySelector('.select-mobile__hidden');
                 if (input.hasAttribute('checked')) {
                     const parent = input.closest('.select-mobile__item')

@@ -1,4 +1,7 @@
 .header {
+	position: relative;
+	z-index: 2;
+
 	@include mq(lg, min) {
 		padding-top: 12px;
 	}
