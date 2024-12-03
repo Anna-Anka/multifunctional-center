@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- base meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница | МФЦ Камчатского края</title>
+    <meta name="description" content="Узнайте о наших услугах, получите информацию о документах и запишитесь на прием. Мы помогаем сделать взаимодействие с государственными органами простым и удобным для вас">
+    
+    <meta name="keywords" content="МФЦ Камчатского края, многофункциональный центр, услуги МФЦ, документы, запись на прием, государственные услуги, Камчатка, получение справок, консультации, электронные услуги, информация о МФЦ">
+    
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <!-- <meta property="og:title" content="Главная страница | МФЦ Камчатского края"> -->
+    <!-- <meta property="og:description" content="Узнайте о наших услугах, получите информацию о документах и запишитесь на прием. Мы помогаем сделать взаимодействие с государственными органами простым и удобным для вас"> -->
+    <!-- <meta property="og:image" content="">  -->
+    <!-- min: 600 * 315, perfect: 1200 * 630 -->
+    <!-- <meta property="og:url" content="@url">  -->
+    <!-- URL вашей страницы -->
+
+    <!-- Twitter Card -->
+    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Главная страница | МФЦ Камчатского края">
+    <meta name="twitter:description" content="Узнайте о наших услугах, получите информацию о документах и запишитесь на прием. Мы помогаем сделать взаимодействие с государственными органами простым и удобным для вас">
+    <meta name="twitter:image" content=""> -->
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="favicon.ico" sizes="32x32"> -->
+    <!-- svg иконка 180 * 180 -->
+    <!-- <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">  -->
+    <!--180 * 180-->
+    <!-- если favicon только в png, то подключить favicon-16x16.png favicon-32x32.png (можно в webmanifest) -->
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest"> -->
+
+    <!-- stlyes, js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="body">
+    <div class="wrapper">
+
+<header class="header">
+    <div class="header__container">
+        <div class="header__wrapper">
+            <div class="header__top">
+                <a class="logo" href="#">
+                    <picture>
+                        <source srcset="img/logos/logo.avif 1x, img/logos/logo@2x.avif 2x" type="image/avif">
+                        <source srcset="img/logos/logo.webp 1x, img/logos/logo@2x.webp 2x" type="image/webp">
+                        <img class="logo__img" src="img/logos/logo.png" srcset="img/logos/logo@2x.png 2x" alt="Логотип" width="238" height="78">
+                    </picture>
+                </a>
+                <button class="burger-button" aria-controls="header-burger-menu" aria-label="Открыть меню" aria-expanded="false" data-burger-button>
+                    <span class="burger-button__line" aria-hidden></span>
+                </button>
+            </div>
+            <div class="header__inner">
+                <div class="header__menu menu" id="header-burger-menu" data-menu>
+                    <a class="menu__private button button--fill" href="#">
+                        Личный кабинет
+                        <svg class="button__icon" aria-hidden>
+                            <use xlink:href="img/sprite.svg#user">
+                        </svg>
+                    </a>
+                    <ul class="menu__items">
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Услуги</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Центра и офисы</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Новости</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Вопросы и ответы</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Полезные сервисы</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Состояние очередей</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">О противодействии коррупции</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Телефонный справочник ведомств</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Документы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">О центре</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">Вакансии</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="hotline">
+                        <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
+                        <span class="hotline__descr">Горячая линия</span>
+                    </div>
+                    <a class="menu__version" href="#">
+                        Версия для слабовидящих
+                    </a>
+                    <ul class="header__socials socials">
+                        <li class="socials__item">
+                            <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
+                                <svg class="socials__icon" aria-hidden>
+                                    <use xlink:href="img/sprite.svg#vk">
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a class="socials__link" href="#" target="_blank" aria-label="Телеграм">
+                                <svg class="socials__icon" aria-hidden>
+                                    <use xlink:href="img/sprite.svg#telegram">
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a class="socials__link" href="#" target="_blank" aria-label="Одноклассники">
+                                <svg class="socials__icon" aria-hidden>
+                                    <use xlink:href="img/sprite.svg#classmates">
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__info">
+                    <span class="header__name">
+                        Многофункциональный центр Камчатского края
+                    </span>
+                    <div class="hotline">
+                        <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
+                        <span class="hotline__descr">Горячая линия</span>
+                    </div>
+                    <a class="menu__private button button--fill" href="#">
+                        Личный кабинет
+                        <svg class="button__icon" aria-hidden>
+                            <use xlink:href="img/sprite.svg#user">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <form class="form">
+            <div class="header__search">
+                <div class="select-mobile">
+                    <button class="select-mobile__button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="header-select-mobile-list" aria-label="выбрать, где искать">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#sound">
+                        </svg>
+                    </button>
+                    <div class="select-mobile__list">
+                        <label class="select-mobile__item">
+                            По всему сайту
+                            <input class="select-mobile__hidden" type="radio" name="header-select" value="website" checked>
+                        </label>
+                        <label class="select-mobile__item">
+                            По документам
+                            <input class="select-mobile__hidden" type="radio" name="header-select" value="documents">
+                        </label>
+                    </div>
+                </div>
+                <div class="form__item header__select" id="header-select-mobile-list">
+                    <label class="sr-only" for="header-search-category">
+                        Где искать
+                    </label>
+                    <select name="header-select" id="header-search-category" data-choice>
+                        <option value="website">
+                            По всему сайту
+                        </option>
+                        <option value="documents">
+                            По документам
+                        </option>
+                    </select>
+                </div>
+                <div class="form__item form__item--search">
+                    <label class="sr-only" for="header-search">Введите ваше имя</label>
+                    <input class="form__field" id="header-search" name="search" type="search" placeholder="Введите ваш запрос" required>
+                    <button class="form__button" type="submit" aria-label="Найти">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#search">
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</header>
+
+<!-- <div class="graph-modal">
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+    </div>
+</div>
+    <div class="graph-modal__container graph-modal__container--thank" role="dialog" aria-modal="true" data-graph-target="modal-thank">
+    <div class="graph-modal__box">
+        <div class="graph-modal__header">
+            <span class="graph-modal__title title">
+                Спасибо за обратную связь!
+            </span>
+            <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        </div>
+        <div class="graph-modal__text">
+            <p>
+                    В ближайшее время обработаем данные и опубликуем пост
+                </p>
+        </div>
+        <button class="graph-modal__button button js-modal-close" type="button">Отлично!</button>
+    </div>
+</div>
+</div> -->
+
+<main class="main">
+    <section class="services-block">
+    <div class="container">
+        <h2 class="sr-only">
+            Популярные услуги
+        </h2>
+        <ul class="services-block__items">
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Предварительная запись</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/avatars.avif 1x, img/services/avatars@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/avatars.webp 1x, img/services/avatars@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/avatars.png" srcset="img/services/avatars@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Проверить статус заявления</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/survey.avif 1x, img/services/survey@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/survey.webp 1x, img/services/survey@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/survey.png" srcset="img/services/survey@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Услуги</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/manager.avif 1x, img/services/manager@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/manager.webp 1x, img/services/manager@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/manager.png" srcset="img/services/manager@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Центры и офисы</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/real-estate.avif 1x, img/services/real-estate@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/real-estate.webp 1x, img/services/real-estate@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/real-estate.png" srcset="img/services/real-estate@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Полезные сервисы</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/developer-coding.avif 1x, img/services/developer-coding@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/developer-coding.webp 1x, img/services/developer-coding@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/developer-coding.png" srcset="img/services/developer-coding@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Состояние очередей</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/colleagues.avif 1x, img/services/colleagues@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/colleagues.webp 1x, img/services/colleagues@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/colleagues.png" srcset="img/services/colleagues@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Документы</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/books.avif 1x, img/services/books@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/books.webp 1x, img/services/books@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/books.png" srcset="img/services/books@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+            <li class="services-block__item">
+                <article class="service-card">
+    <h3 class="service-card__title service-card__title--large">
+        <a href="#">Оставить отзыв</a>
+    </h3>
+    
+    <picture>
+        <source srcset="img/services/charts.avif 1x, img/services/charts@2x.avif 2x" type="image/avif">
+        <source srcset="img/services/charts.webp 1x, img/services/charts@2x.webp 2x" type="image/webp">
+        <img class="service-card__img" src="img/services/charts.png" srcset="img/services/charts@2x.png 2x" alt="@alt" width="90" height="90" loading="lazy">
+    </picture>
+    
+</article>
+            </li>
+        </ul>
+    </div>
+</section>
+    <section class="popular-services">
+    <div class="container">
+        <div class="block-header">
+            <h2 class="block-header__title title">
+                Популярные услуги
+                <sup>20</sup>
+            </h2>
+            <a class="block-header__link" href="#">смотреть всё</a>
+        </div>
+        <ul class="popular-services__items">
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Государственная регистрация права (ограничений, обременений права) на объекты недвижимости и сделок с ним
+    </a>
+    
+</article>
+            </li>
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Государственная регистрация права (ограничений, обременений права) на объекты недвижимости и сделок с ним
+    </a>
+    
+</article>
+            </li>
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Выдача, замена паспортов гражданина Российской Федерации, удостоверяющих личность гражданина Российской Федерации на территории Российской Федерации (Паспорт гражданина РФ)
+    </a>
+    
+    <a class="text-card__link button button--fill" href="#">Получить онлайн</a>
+    
+</article>
+            </li>
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Выдача, замена паспортов гражданина Российской Федерации, удостоверяющих личность гражданина Российской Федерации на территории Российской Федерации (Паспорт гражданина РФ)
+    </a>
+    
+</article>
+            </li>
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Прием заявлений на проставлении отметки о гражданстве РФ в свидетельстве о рождения, несовершеннолетних детей до 14 лет
+    </a>
+    
+</article>
+            </li>
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Прием заявлений на проставлении отметки о гражданстве РФ в свидетельстве о рождения, несовершеннолетних детей до 14 лет
+    </a>
+    
+</article>
+            </li>
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Компенсация расходов на оплату стоимости проезда к месту отдыха и обратно пенсионерам, получающим пенсию по старости и по инвалидности и проживающим в районах Крайнего Севера (Проезд пенсионерам)
+    </a>
+    
+</article>
+            </li>
+            <li class="popular-services__item">
+                <article class="text-card">
+    <a class="text-card__text" href="#">
+        Компенсация расходов на оплату стоимости проезда к месту отдыха и обратно пенсионерам, получающим пенсию по старости и по инвалидности и проживающим в районах Крайнего Севера (Проезд пенсионерам)
+    </a>
+    
+</article>
+            </li>
+        </ul>
+        <a class="popular-services__link" href="#">Смотреть все</a>
+    </div>
+</section>
+    <section class="partners">
+    <h2 class="sr-only">
+        Наши партнеры
+    </h2>
+
+    <div class="partners__container container">
+        <div class="partners__wrapper">
+
+            <div class="partners__swiper swiper">
+                <ul class="partners__items swiper-wrapper">
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/gosuslugi.avif 1x, img/partners/gosuslugi@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/gosuslugi.webp 1x, img/partners/gosuslugi@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/gosuslugi." srcset="img/partners/gosuslugi@2x. 2x" alt="Госуслуги" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/ministry.avif 1x, img/partners/ministry@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/ministry.webp 1x, img/partners/ministry@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/ministry." srcset="img/partners/ministry@2x. 2x" alt="Минюст России" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/job.avif 1x, img/partners/job@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/job.webp 1x, img/partners/job@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/job." srcset="img/partners/job@2x. 2x" alt="Работа в России" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/your-control.avif 1x, img/partners/your-control@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/your-control.webp 1x, img/partners/your-control@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/your-control." srcset="img/partners/your-control@2x. 2x" alt="Ваш контроль" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/financial-commissioner.avif 1x, img/partners/financial-commissioner@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/financial-commissioner.webp 1x, img/partners/financial-commissioner@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/financial-commissioner." srcset="img/partners/financial-commissioner@2x. 2x" alt="Финансовый уполномоченный" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/msp.avif 1x, img/partners/msp@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/msp.webp 1x, img/partners/msp@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/msp." srcset="img/partners/msp@2x. 2x" alt="Корпорация МСП" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/kamball.avif 1x, img/partners/kamball@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/kamball.webp 1x, img/partners/kamball@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/kamball." srcset="img/partners/kamball@2x. 2x" alt="КАМбалл | Цифровая платформа социальных сервисов" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/public-vote.avif 1x, img/partners/public-vote@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/public-vote.webp 1x, img/partners/public-vote@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/public-vote." srcset="img/partners/public-vote@2x. 2x" alt="Общественное голосование" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/gosuslugi.avif 1x, img/partners/gosuslugi@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/gosuslugi.webp 1x, img/partners/gosuslugi@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/gosuslugi." srcset="img/partners/gosuslugi@2x. 2x" alt="Госуслуги" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/ministry.avif 1x, img/partners/ministry@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/ministry.webp 1x, img/partners/ministry@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/ministry." srcset="img/partners/ministry@2x. 2x" alt="Минюст России" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/job.avif 1x, img/partners/job@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/job.webp 1x, img/partners/job@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/job." srcset="img/partners/job@2x. 2x" alt="Работа в России" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                    <li class="partners__item swiper-slide">
+                        <article class="partner-card">
+    <a class="partner-card__link" href="#">
+        <picture>
+            <source srcset="img/partners/your-control.avif 1x, img/partners/your-control@2x.avif 2x" type="image/avif">
+            <source srcset="img/partners/your-control.webp 1x, img/partners/your-control@2x.webp 2x" type="image/webp">
+            <img class="partner-card__img" src="img/partners/your-control." srcset="img/partners/your-control@2x. 2x" alt="Ваш контроль" width="180" height="44" loading="lazy">
+        </picture>
+    </a>
+</article>
+                    </li>
+                </ul>
+            </div>
+            <button class="partners__button partners__button--prev" type="button">
+            </button>
+            <button class="partners__button partners__button--next" type="button">
+            </button>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__wrapper">
+            <div class="footer__decor" aria-hidden></div>
+            <span class="footer__column--copy footer__column">
+                © КГКУ МФЦ Камчатского края, <br> 2016-2025
+            </span>
+            <ul class="footer__menu">
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Услуги</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Центры и офисы</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Новости</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Вопросы и ответы</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Полезные сервисы</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Состояние очередей</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">О противодействии коррупции</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Телефонный справочник ведомств</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Документы</a>
+                </li>
+            </ul>
+            <div class="footer__column footer__column--info">
+                <div class="hotline">
+                    <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
+                    <span class="hotline__descr">Горячая линия</span>
+                </div>
+                <div class="download-info">
+                    <div class="download-info__content">
+                        <span>Скачайте бесплатное приложение МФЦ</span>
+                        <a class="download-info__link" href="#">Скачать</a>
+                    </div>
+                    <div class="download-info__qr">
+                        <img class="download-info__img" src="img/qr.svg" alt="QR код" width="48" height="48" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+  
+</html>
