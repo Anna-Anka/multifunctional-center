@@ -1,0 +1,13 @@
+<article class="news-card news-card--@class">
+    <h3 class="news-card__title">
+        <a class="news-card__link" href="#">@title</a>
+    </h3>
+
+    @if(typeof text !== 'undefined' && text) {
+    <div class="news-card__text">
+        @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
+    </div>
+    }
+
+    <time class="news-card__date" datetime="@datetime">@date</time>
+</article>

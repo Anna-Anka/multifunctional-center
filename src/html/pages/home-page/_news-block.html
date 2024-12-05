@@ -1,0 +1,70 @@
+<section class="news-block section">
+    <div class="container">
+        <div class="block-header">
+            <h2 class="block-header__title title">
+                Новости
+                <sup>20</sup>
+            </h2>
+            <a class="block-header__link" href="#">смотреть всё</a>
+        </div>
+        <div class="news-block__wrapper">
+            <a class="news-block__banner" href="#">
+                <picture>
+                    <source srcset="img/banners/news-banner.avif 1x, img/banners/news-banner@2x.avif 2x" type="image/avif" media="(min-width: 993px)">
+                    <source srcset="img/banners/news-banner-mobile.avif 1x, img/banners/news-banner-mobile@2x.avif 2x" type="image/avif" media="(max-width: 992px)">
+
+                    <source srcset="img/banners/news-banner.webp 1x, img/banners/news-banner@2x.webp 2x" type="image/webp" media="(min-width: 993px)">
+                    <source srcset="img/banners/news-banner-mobile.webp 1x, img/banners/news-banner-mobile@2x.webp 2x" type="image/webp" media="(max-width: 992px)">
+
+                    <img class="news-block__img" src="img/banners/news-banner.jpg" srcset="img/banners/news-banner@2x.jpg 2x" alt="Скачайте бесплатное приложение МФЦ" loading="lazy">
+                </picture>
+            </a>
+            <ul class="news-block__items">
+                <li class="news-block__item">
+                    @include('../../components/cards/_news-card.html', {
+                    'title': 'Приостановка приема обращений граждан в МФЦ г.Елизово с 21 по 26 октября',
+                    'datetime': '2024-10-17',
+                    'date': '17 октября'
+                    })
+                </li>
+                <li class="news-block__item">
+                    @include('../../components/cards/_news-card.html', {
+                    'title': 'Приостановка приема обращений граждан в МФЦ г.Елизово с 21 по 26 октября',
+                    'datetime': '2024-09-15',
+                    'date': '15 сентября'
+                    })
+                </li>
+                <li class="news-block__item">
+                    @include('../../components/cards/_news-card.html', {
+                    'class': 'important',
+                    'title': 'Выездное обслуживание заявителей в с. Паратунка в октябре 2024 года.',
+                    'datetime': '2024-10-03',
+                    'date': '3 октября'
+                    })
+                </li>
+                <li class="news-block__item">
+                    @include('../../components/cards/_news-card.html', {
+                    'title': 'Выездное обслуживание заявителей в с. Паратунка в октябре 2024 года.',
+                    'datetime': '2024-09-12',
+                    'date': '12 сентября'
+                    })
+                </li>
+                <li class="news-block__item">
+                    @include('../../components/cards/_news-card.html', {
+                    'title': 'Решаем проблемы через Платформу обратной связи (ПОС)',
+                    'datetime': '2024-09-23',
+                    'date': '23 сентября'
+                    })
+                </li>
+                <li class="news-block__item">
+                    @include('../../components/cards/_news-card.html', {
+                    'title': 'Решаем проблемы через Платформу обратной связи (ПОС)',
+                    'datetime': '2024-09-03',
+                    'date': '3 сентября'
+                    })
+                </li>
+            </ul>
+        </div>
+        <a class="news-block__link" href="#">Смотреть все</a>
+    </div>
+</section>
