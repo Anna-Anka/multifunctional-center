@@ -14,10 +14,6 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 34px;
 
-		&:not(:last-child) {
-			margin-bottom: 42px;
-		}
-
 		@include mq(lg) {
 			grid-template-columns: 1fr;
 		}
