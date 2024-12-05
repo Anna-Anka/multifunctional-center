@@ -13,6 +13,7 @@
 		@include flex-simple(24px);
 
 		position: relative;
+		z-index: 2;
 		justify-content: space-between;
 		border-top: 3px solid var(--color-red-500);
 		border-radius: 4px 4px 0 0;
@@ -28,6 +29,26 @@
 		@include mq(md) {
 			flex-wrap: wrap;
 			padding: 24px 16px 16px;
+		}
+	}
+
+	.decor-lines {
+		left: -2%;
+		bottom: -75%;
+
+		@include mq(lg) {
+			left: -12%;
+			bottom: -84%;
+		}
+
+		@include mq(md) {
+			left: 16%;
+			bottom: -80%;
+		}
+
+		@include mq(sm) {
+			left: 30%;
+			bottom: -72%;
 		}
 	}
 

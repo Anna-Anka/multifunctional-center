@@ -1,0 +1,25 @@
+.decor-lines {
+	position: absolute;
+	z-index: -1;
+	transform: rotate(-50deg);
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		border: 1px solid var(--color-red-500);
+		border-radius: 70%;
+	}
+
+	&::before {
+		left: 60px;
+		top: -40px;
+		width: 212px;
+		height: 60px;
+	}
+
+	&::after {
+		width: 358px;
+		height: 100px;
+	}
+}
