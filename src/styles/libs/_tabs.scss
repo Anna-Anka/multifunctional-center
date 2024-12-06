@@ -1,0 +1,21 @@
+.tabs {
+	&__nav {
+		overflow-x: auto;
+		padding: 2px 2px 8px;
+	}
+
+	&__nav-btn {
+		white-space: nowrap;
+
+		&--active {
+			border-color: transparent;
+			box-shadow: 0 0 0 2px var(--color-red-500);
+			background-color: transparent;
+		}
+
+		&:focus {
+			color: var(--color-dark-600);
+			background-color: transparent;
+		}
+	}
+}

@@ -1,0 +1,84 @@
+.pagination {
+	@include flex-simple(8px);
+
+	&__item {
+		&--prev,
+		&--next {
+			.pagination__link {
+				border-color: var(--color-red-500);
+
+				@include mq(md) {
+					position: relative;
+					width: 40px;
+					height: 100%;
+					font-size: 0;
+
+					&::before {
+						@include bg-properties(contain);
+
+						content: '';
+						position: absolute;
+						right: 50%;
+						top: 50%;
+						width: 24px;
+						height: 24px;
+						background-image: url('../img/icons/arrow-long.svg');
+						filter: invert(60%) sepia(61%) saturate(2714%) hue-rotate(341deg)
+							brightness(98%) contrast(92%);
+						transform: translate(50%, -50%);
+					}
+				}
+			}
+		}
+
+		&--prev {
+			margin-right: 8px;
+
+			@include mq(md) {
+				margin-right: 0;
+				transform: rotate(-180deg);
+			}
+		}
+
+		&--next {
+			margin-left: 8px;
+
+			@include mq(md) {
+				margin-left: 0;
+			}
+		}
+
+		&--desktop {
+			@include mq(md) {
+				display: none;
+			}
+		}
+	}
+
+	&__link {
+		display: block;
+		border: 1px solid var(--color-dark-600);
+		border-radius: 4px;
+		padding: 8px 16px;
+		font-family: var(--font-secondary);
+		font-weight: 700;
+		line-height: 1.4;
+		color: var(--color-red-500);
+		background-color: transparent;
+		transition:
+			color 0.3s,
+			background-color 0.3s,
+			border-color 0.3s;
+
+		&--current {
+			border-color: transparent;
+			color: var(--color-white);
+			background-color: var(--color-red-500);
+		}
+
+		&--dots {
+			border-color: transparent;
+			color: var(--color-dark-600);
+		}
+	}
+}

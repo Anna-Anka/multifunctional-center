@@ -3,4 +3,9 @@
 	font-family: var(--font-secondary);
 	font-weight: 700;
 	font-size: $fz;
+
+	sup {
+		font-size: 14px;
+		color: var(--color-red-500);
+	}
 }

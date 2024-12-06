@@ -51,6 +51,15 @@ body {
 	height: 100vh;
 }
 
+.page {
+	padding-top: 24px;
+	padding-bottom: 80px;
+
+	@include mq(md) {
+		padding-bottom: 64px;
+	}
+}
+
 .logo {
 	display: inline-block;
 	border-radius: 4px;

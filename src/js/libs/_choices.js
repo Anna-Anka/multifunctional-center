@@ -9,6 +9,8 @@ import Choices from 'choices.js'
                 searchEnabled: false,
                 searchChoices: false,
                 shouldSort: false,
+                placeholder: true,
+                // placeholderValue: 'text'
             });
         });
     }

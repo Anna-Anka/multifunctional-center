@@ -1,0 +1,255 @@
+<section class="services-page page">
+    <div class="container">
+        <h1 class="services-page__title">
+            Услуги
+            <sup>89</sup>
+        </h1>
+        <div class="tabs" data-tabs="services-page">
+            <ul class="tabs__nav">
+                <li class="tabs__nav-item">
+                    <button class="tabs__nav-btn button button--secondary" type="button">
+                        Популярные услуги
+                    </button>
+                </li>
+                <li class="tabs__nav-item">
+                    <button class="tabs__nav-btn button button--secondary" type="button">
+                        По жизненным ситуациям
+                    </button>
+                </li>
+                <li class="tabs__nav-item">
+                    <button class="tabs__nav-btn button button--secondary" type="button">
+                        С учетом льготной категории
+                    </button>
+                </li>
+                <li class="tabs__nav-item">
+                    <button class="tabs__nav-btn button button--secondary" type="button">
+                        По ведомствам
+                    </button>
+                </li>
+            </ul>
+            <div class="tabs__content">
+                <div class="tabs__panel">
+                    <form class="services-page__form services-filters" action="#">
+                        <fieldset class="services-filters__list">
+                            <legend class="sr-only">Выберите ситуацию</legend>
+                            <ul class="services-filters__radio">
+                                <li>
+                                    <label class="services-filters__box">
+                                        Беременность
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="pregnancy" checked>
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Трудная жизненная ситуация
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="difficult-life-situation">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Рождение ребёнка
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="birth-child">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Открытие своего дела
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="starting-business">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Выход на пенсию
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="retirement">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Утрата близкого человека
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="loss-loved-person">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Оформление удостоверения о праве на льготы
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="certificate-benefits">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Оформление документов
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="registration-documents">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Индивидуальное жилищное строительство
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="individual-housing-construction">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Приобретение (отчуждение) недвижимости
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="acquisition-real-estate">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Перемена имени
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="name-change">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="services-filters__box">
+                                        Потеря и поиск работы
+                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="job-loss-search">
+                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset class="services-filters__list">
+                            <legend class="sr-only">Выберите варианты</legend>
+                            <ul class="services-filters__selects">
+                                <li class="services-filters__select">
+                                    <label class="sr-only" for="services-childrens">
+                                        Наличие детей
+                                    </label>
+                                    <select name="services-select" id="services-childrens" data-placeholder="Наличие детей" data-choice>
+                                        <option value="yes">
+                                            Есть
+                                        </option>
+                                        <option value="no">
+                                            Нет
+                                        </option>
+                                    </select>
+                                </li>
+                                <li class="services-filters__select">
+                                    <label class="sr-only" for="services-family-status">
+                                        Семейное положение
+                                    </label>
+                                    <select name="services-select" id="services-family-status" data-placeholder="Семейное положение" data-choice>
+                                        <option value="married">
+                                            В браке
+                                        </option>
+                                        <option value="single">
+                                            Холост
+                                        </option>
+                                    </select>
+                                </li>
+                                <li class="services-filters__select">
+                                    <label class="sr-only" for="services-nationality">
+                                        Гражданство
+                                    </label>
+                                    <select name="services-select" id="services-nationality" data-placeholder="Гражданство" data-choice>
+                                        <option value="yes">
+                                            Есть
+                                        </option>
+                                        <option value="no">
+                                            Нет
+                                        </option>
+                                    </select>
+                                </li>
+                                <li class="services-filters__select">
+                                    <label class="sr-only" for="services-age">
+                                        Возраст заявителя
+                                    </label>
+                                    <select name="services-select" id="services-age" data-placeholder="Возраст заявителя" data-choice>
+                                        <option value="14">
+                                            14
+                                        </option>
+                                        <option value="16">
+                                            16
+                                        </option>
+                                        <option value="18">
+                                            18+
+                                        </option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                    <ul class="services-page__items">
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Государственная регистрация права (ограничений, обременений права) на объекты недвижимости и сделок с ним',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Выдача, замена паспортов гражданина Российской Федерации, удостоверяющих личность гражданина Российской Федерации на территории Российской Федерации (Паспорт гражданина РФ)',
+                            'button': 'Получить онлайн'
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Прием заявлений на проставлении отметки о гражданстве РФ в свидетельстве о рождения, несовершеннолетних детей до 14 лет',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Компенсация расходов на оплату стоимости проезда к месту отдыха и обратно пенсионерам, получающим пенсию по старости и по инвалидности и проживающим в районах Крайнего Севера (Проезд пенсионерам)',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Восстановление доступа к подтвержденной учетной записи в ЕСИА с выдачей пароля для входа (СМЭВ 3)',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Выдача справок о наличии (отсутствии) судимости и (или) факта уголовного преследования либо о прекращении уголовного преследования',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Выдача, замена паспортов гражданина Российской Федерации, удостоверяющих личность гражданина Российской Федерации на территории Российской Федерации (Паспорт гражданина РФ)',
+                            'button': 'Получить онлайн'
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Прием заявлений на проставлении отметки о гражданстве РФ в свидетельстве о рождения, несовершеннолетних детей до 14 лет',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Компенсация расходов на оплату стоимости проезда к месту отдыха и обратно пенсионерам, получающим пенсию по старости и по инвалидности и проживающим в районах Крайнего Севера (Проезд пенсионерам)',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Восстановление доступа к подтвержденной учетной записи в ЕСИА с выдачей пароля для входа (СМЭВ 3)',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Выдача справок о наличии (отсутствии) судимости и (или) факта уголовного преследования либо о прекращении уголовного преследования',
+                            })
+                        </li>
+                        <li class="services-page__item">
+                            @include('../../components/cards/_text-card.html', {
+                            'text': 'Выдача справок о наличии (отсутствии) судимости и (или) факта уголовного преследования либо о прекращении уголовного преследования',
+                            })
+                        </li>
+                    </ul>
+                    @include('../../components/blocks/_pagination.html')
+                </div>
+                <div class="tabs__panel">Контент 2</div>
+                <div class="tabs__panel">Контент 3</div>
+                <div class="tabs__panel">Контент 4</div>
+            </div>
+        </div>
+    </div>
+</section>

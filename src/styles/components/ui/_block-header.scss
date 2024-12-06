@@ -11,11 +11,6 @@
 
 	&__title {
 		@include title(24px, 0);
-
-		sup {
-			font-size: 14px;
-			color: var(--color-red-500);
-		}
 	}
 
 	&__link {
