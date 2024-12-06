@@ -1,0 +1,5 @@
+.service-page {
+	&__title {
+		@include title(32px, 32px);
+	}
+}

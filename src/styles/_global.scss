@@ -23,6 +23,10 @@ body {
 	flex-direction: column;
 	overflow: hidden;
 	min-height: 100vh;
+
+	&--no-overflow {
+		overflow: unset;
+	}
 }
 
 .main {

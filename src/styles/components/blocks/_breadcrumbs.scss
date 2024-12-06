@@ -6,13 +6,13 @@
 	}
 
 	&__items {
-		display: flex;
+		@include line-clamp(1);
+		@include flex-simple(16px);
+
 		align-items: center;
-		overflow-x: auto;
 		padding-bottom: 8px;
 		font-size: 11px;
 		color: var(--color-grey-600);
-		gap: 16px;
 	}
 
 	&__item {

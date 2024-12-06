@@ -1,0 +1,66 @@
+.side-menu {
+	position: sticky;
+	top: 40px;
+
+	&__boxes {
+		@include flex-simple(32px, column);
+
+		@include mq(sm, min) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__box {
+		@include flex-simple(16px, column);
+
+		&:not(:first-child) {
+			border-top: 1px solid var(--color-grey-370);
+			padding-top: 12px;
+		}
+	}
+
+	&__text {
+		font-weight: 600;
+		font-size: 13px;
+		color: var(--color-brown-600);
+
+		&--online {
+			position: relative;
+			padding-right: 28px;
+
+			&::before {
+				@include bg-properties(contain);
+
+				content: '';
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 24px;
+				height: 24px;
+				background-image: url('../img/icons/online.svg');
+			}
+		}
+
+		&--accent {
+			color: var(--color-red-500);
+		}
+	}
+
+	&__button {
+		padding: 10px 16px;
+	}
+
+	&__items {
+		@include mq(lg) {
+			display: none;
+		}
+	}
+
+	&__link {
+		display: block;
+		padding: 4px 0;
+		font-size: 13px;
+		text-decoration: underline;
+		color: var(--color-red-500);
+	}
+}

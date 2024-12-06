@@ -1,0 +1,25 @@
+.page-wrapper {
+	@include flex-alignment(40px, space-between, flex-start, row-reverse);
+
+	position: relative;
+
+	@include mq(sm) {
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	&__menu {
+		width: 100%;
+
+		@include mq(sm, min) {
+			flex-shrink: 0;
+			flex-basis: 160px;
+		}
+	}
+
+	&__content {
+		@include mq(sm, min) {
+			flex-basis: 832px;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+@include('./settings/_head.html', {
+'title' : 'Оформление и выдача паспортов гражданина РФ | МФЦ Камчатского края',
+'description' : 'МФЦ Камчатского края: ваш надежный помощник в получении государственных услуг. Узнайте о наших услугах, запишитесь на прием и получите квалифицированную поддержку!',
+'keywords' : 'МФЦ Камчатского края, многофункциональный центр, услуги МФЦ, документы, запись на прием, государственные услуги, Камчатка, получение справок, консультации, электронные услуги, информация о МФЦ',
+'robots' : 'index, follow',
+'wrapperClass': 'no-overflow'
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Услуги', 'Оформление и выдача паспортов гражданина Российской Федерации, удостоверяющих личность гражданина Российской Федерации за пределами территории Российской Федерации (загранпаспорт на 5 лет)']
+})
+
+<main class="main">
+    @include('./pages/service-page/_service-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')

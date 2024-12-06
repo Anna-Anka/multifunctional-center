@@ -1,4 +1,6 @@
 .footer {
+	overflow: hidden;
+
 	&__container {
 		@include mq(lg) {
 			padding: 0;
