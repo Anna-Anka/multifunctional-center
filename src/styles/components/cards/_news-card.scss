@@ -43,6 +43,12 @@
 	&__text {
 		@include line-clamp(5);
 
+		p {
+			&:not(:last-child) {
+				margin-bottom: 6px;
+			}
+		}
+
 		&:not(:last-child) {
 			margin-bottom: 12px;
 		}
