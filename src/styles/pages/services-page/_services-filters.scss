@@ -24,8 +24,19 @@
 	&__selects {
 		@include flex-simple(32px);
 
-		border-bottom: 2px solid var(--color-red-500);
+		position: relative;
 		padding-bottom: 8px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: 5;
+			width: 100%;
+			height: 2px;
+			background-color: var(--color-red-500);
+		}
 	}
 
 	&__box {

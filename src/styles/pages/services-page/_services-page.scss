@@ -15,9 +15,12 @@
 	}
 
 	.tabs {
-		&__nav {
-			margin-bottom: 24px;
-			gap: 8px;
+		&__nav-btn {
+			&--active {
+				border-color: transparent;
+				box-shadow: 0 0 0 2px var(--color-red-500);
+				background-color: transparent;
+			}
 		}
 	}
 }
