@@ -26,7 +26,7 @@
 
 		&--online {
 			position: relative;
-			padding-right: 28px;
+			padding-right: 30px;
 
 			&::before {
 				@include bg-properties(contain);
@@ -38,6 +38,8 @@
 				width: 24px;
 				height: 24px;
 				background-image: url('../img/icons/online.svg');
+				filter: invert(66%) sepia(89%) saturate(5504%) hue-rotate(339deg)
+					brightness(96%) contrast(95%);
 			}
 		}
 

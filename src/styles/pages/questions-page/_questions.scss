@@ -1,0 +1,22 @@
+.questions-page {
+	&__title {
+		@include title;
+	}
+
+	&__items {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+
+	.page-wrapper {
+		@include mq(sm) {
+			gap: 8px;
+		}
+	}
+
+	.text-card {
+		border-radius: 0;
+		line-height: 1.6;
+	}
+}
