@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Полезные сервисы | МФЦ Камчатского края',
+'description' : 'На странице "Полезные сервисы" МФЦ Камчатского края вы найдете информацию о актуальных услугах и ресурсах, которые помогут упростить взаимодействие с государственными органами. Узнайте о онлайн-сервисах, консультациях и других полезных инструментах для граждан.',
+'keywords' : 'МФЦ Камчатского края, полезные сервисы, онлайн услуги, государственные услуги, консультации, электронные сервисы, помощь гражданам, информация для населения, Камчатский край, взаимодействие с госорганами',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Полезные сервисы']
+})
+
+<main class="main">
+    @include('./pages/useful-services-page/_useful-services.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
