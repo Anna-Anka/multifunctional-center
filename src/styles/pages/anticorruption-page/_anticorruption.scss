@@ -1,0 +1,16 @@
+.anticorruption-page {
+	.side-menu {
+		&__text {
+			&--icon {
+				&::before {
+					background-image: url('../img/icons/fire.svg');
+				}
+			}
+		}
+
+		&__button {
+			padding: 10px;
+			font-size: 13px;
+		}
+	}
+}

@@ -1,11 +1,7 @@
 .service-page {
-	&__title {
-		@include title(32px, 32px);
-	}
-
 	.side-menu {
 		&__text {
-			&--online {
+			&--icon {
 				&::before {
 					filter: invert(66%) sepia(14%) saturate(1142%) hue-rotate(346deg)
 						brightness(94%) contrast(84%);

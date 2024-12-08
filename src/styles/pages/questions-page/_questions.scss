@@ -1,8 +1,4 @@
 .questions-page {
-	&__title {
-		@include title;
-	}
-
 	&__items {
 		&:not(:last-child) {
 			margin-bottom: 32px;

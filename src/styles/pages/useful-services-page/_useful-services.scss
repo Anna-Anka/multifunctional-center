@@ -1,8 +1,4 @@
 .useful-services {
-	&__title {
-		@include title;
-	}
-
 	&__items {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);

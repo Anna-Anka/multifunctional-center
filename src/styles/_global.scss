@@ -62,6 +62,10 @@ body {
 	@include mq(md) {
 		padding-bottom: 64px;
 	}
+
+	&__title {
+		@include title;
+	}
 }
 
 .logo {

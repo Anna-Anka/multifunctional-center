@@ -1,13 +1,4 @@
 .services-page {
-	&__title {
-		@include title;
-
-		@include mq(lg) {
-			margin-bottom: 24px;
-			font-size: 24px;
-		}
-	}
-
 	&__items {
 		&:not(:last-child) {
 			margin-bottom: 32px;

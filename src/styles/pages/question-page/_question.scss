@@ -1,7 +1,8 @@
 .question-page {
-	&__title {
-		@include title;
-		@include line-clamp(1);
+	.page {
+		&__title {
+			@include line-clamp(1);
+		}
 	}
 
 	&__question {
