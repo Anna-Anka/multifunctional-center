@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Телефонный справочник | МФЦ Камчатского края',
+'description' : 'Актуальный телефонный справочник всех ведомств Камчатского края для быстрого доступа к контактам государственных учреждений',
+'keywords' : 'телефонный справочник, контактные данные ведомств, МФЦ Камчатского края, государственные учреждения, связь с ведомствами, справочная информация, услуги государственных органов, телефонные номера Камчатка',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Телефонный справочник всех ведомств']
+})
+
+<main class="main">
+    @include('./pages/telephone-directory-page/_telephone-directory.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')

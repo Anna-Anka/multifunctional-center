@@ -1,0 +1,11 @@
+.telephone-directory {
+	&__items {
+		display: grid;
+		column-gap: 32px;
+		grid-template-columns: 1fr 1fr;
+
+		@include mq(md) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
