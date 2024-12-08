@@ -1,6 +1,8 @@
 .side-menu {
-	position: sticky;
-	top: 40px;
+	@include mq(sm, min) {
+		position: sticky;
+		top: 40px;
+	}
 
 	&__boxes {
 		@include flex-simple(32px, column);
