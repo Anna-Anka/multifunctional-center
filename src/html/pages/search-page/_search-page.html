@@ -1,0 +1,40 @@
+<section class="search-page__wrapper container page">
+    <h1 class="page__title">
+        Результаты поиска по сайту
+    </h1>
+    <!-- <ul class="documents-block">
+        <li class="documents-block__item">
+            Распоряжение Правительства Камчатского края от 29 января 2010 г. N 43-РП
+        </li>
+        <li class="documents-block__item">
+            Информация о среднемесячной заработной плате руководителей, их заместителей, главных бухгалтеров фонда, учреждений, предприятий за 2023 год
+            Информация о среднемесячной заработной плате руководителей, их заместителей, главных бухгалтеров фонда, учреждений, предприятий за 2023 год
+        </li>
+        <li class="documents-block__item">
+            Распоряжение Правительства Камчатского края от 29 января 2010 г. N 43-РП
+        </li>
+    </ul> -->
+    <ul>
+        <li>
+            @include('../../components/cards/_search-item-card.html', {
+            'title': 'Водительские права',
+            'items': ['Главная', 'Услуги', 'Транспорт']
+            })
+        </li>
+        <li>
+            @include('../../components/cards/_search-item-card.html', {
+            'title': 'Как получить или заменить водительские права',
+            'items': ['Главная', 'Популярные вопросы', 'Транспорт']
+            })
+        </li>
+    </ul>
+    <!-- <div class="search-page__not">
+        <picture>
+            <source srcset="img/search-page/not-found.avif 1x, img/search-page/not-found@2x.avif 2x" type="image/avif">
+            <source srcset="img/search-page/not-found.webp 1x, img/search-page/not-found@2x.webp 2x" type="image/webp">
+            <img class="search-page__img" src="img/search-page/not-found.png" srcset="img/search-page/not-found@2x.png 2x" alt="Пустота" width="178" height="178" loading="lazy">
+        </picture>
+        <span class="search-page__subtitle">Ничего не найдено</span>
+        <span class="search-page__text">Проверьте, нет ли ошибок в запросе</span>
+    </div> -->
+</section>

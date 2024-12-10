@@ -1,24 +1,6 @@
-.documents-page {
-	.tabs {
-		&__nav {
-			@include mq(lg, min) {
-				flex-wrap: wrap;
-			}
-		}
-
-		&__nav-btn {
-			border: 1px solid var(--color-red-500);
-
-			&--active {
-				color: var(--color-red-500);
-			}
-		}
-	}
-
-	&__items {
-		&:not(:last-child) {
-			margin-bottom: 32px;
-		}
+.documents-block {
+	&:not(:last-child) {
+		margin-bottom: 32px;
 	}
 
 	&__item {

@@ -1,0 +1,17 @@
+.documents-page {
+	.tabs {
+		&__nav {
+			@include mq(lg, min) {
+				flex-wrap: wrap;
+			}
+		}
+
+		&__nav-btn {
+			border: 1px solid var(--color-red-500);
+
+			&--active {
+				color: var(--color-red-500);
+			}
+		}
+	}
+}

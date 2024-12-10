@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Поиск | МФЦ Камчатского края',
+'description' : 'Быстрый поиск услуг, новостей и информации на сайте МФЦ Камчатского края. Найдите то, что вам нужно!',
+'keywords' : 'поиск на сайте МФЦ, услуги Камчатского края, новости МФЦ, информация для граждан, поиск услуг, поиск новостей, МФЦ Камчатка, услуги государственных органов',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Поиск']
+})
+
+<main class="main search-page">
+    @include('./pages/search-page/_search-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
