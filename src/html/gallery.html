@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Фотогалерея | МФЦ Камчатского края',
+'description' : 'Фотогалерея МФЦ Камчатского края: яркие моменты работы центра и события региона. Откройте для себя нашу деятельность!',
+'keywords' : 'фотогалерея МФЦ, Камчатский край, мероприятия МФЦ, фотографии центра, события Камчатки, работа МФЦ, визуальные материалы, фотоснимки Камчатка',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Фотогалерея']
+})
+
+<main class="main">
+    @include('./pages/gallery-page/_gallery-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')

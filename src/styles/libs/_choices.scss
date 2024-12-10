@@ -171,6 +171,7 @@
 
 		&--dropdown,
 		&[aria-expanded] {
+			z-index: 4;
 			margin-top: 0;
 			border: 0;
 			border-color: transparent;
