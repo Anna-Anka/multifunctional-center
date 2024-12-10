@@ -1,6 +1,6 @@
 .search-card {
 	border-bottom: 1px solid var(--color-grey-350);
-	padding: 16px 0;
+	padding: 16px 0 8px;
 
 	&__link {
 		display: inline-block;
@@ -15,12 +15,15 @@
 	&__breadcrumbs {
 		@include flex-simple(20px);
 
-		overflow-y: auto;
+		overflow-x: auto;
+		padding-bottom: 8px;
 		width: 100%;
 		font-size: 12px;
 	}
 
 	&__item {
+		white-space: nowrap;
+
 		&:not(:last-child) {
 			position: relative;
 
