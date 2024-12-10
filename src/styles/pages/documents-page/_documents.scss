@@ -1,0 +1,44 @@
+.documents-page {
+	.tabs {
+		&__nav {
+			@include mq(lg, min) {
+				flex-wrap: wrap;
+			}
+		}
+
+		&__nav-btn {
+			border: 1px solid var(--color-red-500);
+
+			&--active {
+				color: var(--color-red-500);
+			}
+		}
+	}
+
+	&__items {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__item {
+		position: relative;
+		border-bottom: 1px solid var(--color-grey-350);
+		padding: 16px 34px 16px 0;
+		min-height: 56px;
+
+		&::before {
+			@include bg-properties(contain);
+
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 16px;
+			width: 24px;
+			height: 24px;
+			background-image: url('../img/icons/document.svg');
+			filter: invert(37%) sepia(48%) saturate(2034%) hue-rotate(339deg)
+				brightness(99%) contrast(90%);
+		}
+	}
+}

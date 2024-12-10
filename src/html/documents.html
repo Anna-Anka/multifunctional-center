@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Документы | МФЦ Камчатского края',
+'description' : 'Доступ к необходимым документам и формам для получения услуг МФЦ Камчатского края. Удобно и быстро!',
+'keywords' : 'документы МФЦ, формы для услуг, услуги Камчатского края, получение документов, МФЦ Камчатка, необходимые документы, электронные формы, информация для граждан',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Телефонный справочник всех ведомств']
+})
+
+<main class="main">
+    @include('./pages/documents-page/_documents.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
