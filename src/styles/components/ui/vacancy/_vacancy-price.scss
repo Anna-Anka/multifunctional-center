@@ -1,0 +1,27 @@
+.vacancy-price {
+	@include flex-simple(54px);
+
+	@include mq(lg) {
+		gap: 24px;
+	}
+
+	@include mq(sm) {
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		@include flex-simple(2px, column);
+	}
+
+	&__key {
+		font-size: 12px;
+	}
+
+	&__value {
+		font-size: 13px;
+	}
+
+	b {
+		font-weight: 700;
+	}
+}

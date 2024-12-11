@@ -1,0 +1,39 @@
+.vacancy-page {
+	&__info {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+
+			@include mq(lg) {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&__place {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	.page-wrapper {
+		&__menu {
+			@include mq(lg, min) {
+				flex-basis: 258px;
+			}
+		}
+	}
+
+	.article-content {
+		line-height: 1.4;
+
+		span ~ ul {
+			margin-top: 12px;
+		}
+
+		ul ~ span {
+			margin-top: 24px;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.vacancy-info {
+	&__text {
+		font-weight: 600;
+		font-size: 13px;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__button {
+		@include mq(lg) {
+			padding: 8px 12px;
+		}
+	}
+}

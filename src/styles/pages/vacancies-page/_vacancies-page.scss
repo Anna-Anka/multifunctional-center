@@ -17,7 +17,7 @@
 		max-width: 485px;
 		text-align: center;
 
-		.vacancies-page__button {
+		.vacancy-info__button {
 			margin: 0 auto;
 		}
 	}
@@ -28,23 +28,8 @@
 		}
 	}
 
-	&__info {
+	.vacancy-info {
 		margin: auto 0;
-	}
-
-	&__text {
-		font-weight: 600;
-		font-size: 13px;
-
-		&:not(:last-child) {
-			margin-bottom: 16px;
-		}
-	}
-
-	&__button {
-		@include mq(lg) {
-			padding: 8px 12px;
-		}
 	}
 
 	.page-wrapper {
