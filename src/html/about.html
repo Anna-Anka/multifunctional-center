@@ -1,0 +1,25 @@
+@include('./settings/_head.html', {
+'title' : 'О Многофункциональном центре | МФЦ Камчатского края',
+'description' : 'Узнайте о Многофункциональном центре Камчатского края: услуги, миссия и цели для поддержки граждан и бизнеса.',
+'keywords' : 'Многофункциональный центр, МФЦ Камчатского края, услуги МФЦ, информация о МФЦ, поддержка граждан, цели МФЦ, миссия МФЦ, сервисы для бизнеса',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Полезные сервисы']
+})
+
+<main class="main">
+    <h1 class="sr-only">О нас</h1>
+    @include('./pages/about-page/_about-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
