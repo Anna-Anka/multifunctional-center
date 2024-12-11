@@ -1,0 +1,64 @@
+<section class="vacancies-page__wrapper page">
+    <div class="vacancies-page__container container">
+        <h1 class="page__title">
+            Вакансии
+        </h1>
+        <!-- <div class="vacancies-page__not">
+            <div class="vacancies-page__info">
+                <p class="vacancies-page__text">
+                    Уважаемые кандидаты! В целях формирования кадрового резерва предлагаем вам направлять резюме на адрес электронной почты <a href="mailto:mfcpk@mfc.kamgov.ru">mfcpk@mfc.kamgov.ru</a>
+                </p>
+                <button class="vacancies-page__button button button--fill" type="button">
+                    Образец резюме
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#contacts-book">
+                    </svg>
+                </button>
+            </div>
+        </div> -->
+        <div class="page-wrapper">
+            <div class="page-wrapper__menu side-menu">
+                <div class="vacancies-page__info">
+                    <p class="vacancies-page__text">
+                        Уважаемые кандидаты! В целях формирования кадрового резерва предлагаем вам направлять резюме на адрес электронной почты <a href="mailto:mfcpk@mfc.kamgov.ru">mfcpk@mfc.kamgov.ru</a>
+                    </p>
+                    <button class="vacancies-page__button button button--fill" type="button">
+                        Образец резюме
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#contacts-book">
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="page-wrapper__content">
+                <h2 class="sr-only">Список актуальных вакансий</h2>
+                <ul class="vacancies-page__items">
+                    <li class="vacancies-page__item">
+                        @include('../../components/cards/_vacancy-card.html', {
+                        'title': 'Специалистов по приёму документов',
+                        'subtitle': 'В ПЕТРОПАВЛОВСКОМ отделении КГКУ «МФЦ Камчатского края»',
+                        'income': 'от 58 000 ₽ после вычета НДФЛ',
+                        'employment': 'полная'
+                        })
+                    </li>
+                    <li class="vacancies-page__item">
+                        @include('../../components/cards/_vacancy-card.html', {
+                        'title': 'Специалистов по приёму документов Специалистов по приёму документов Специалистов по приёму документов Специалистов по приёму документов',
+                        'subtitle': 'В ПЕТРОПАВЛОВСКОМ отделении КГКУ «МФЦ Камчатского края»',
+                        'income': 'от 58 000 ₽',
+                        'employment': 'полная'
+                        })
+                    </li>
+                    <li class="vacancies-page__item">
+                        @include('../../components/cards/_vacancy-card.html', {
+                        'title': 'Специалистов по приёму документов',
+                        'subtitle': 'В ПЕТРОПАВЛОВСКОМ отделении КГКУ «МФЦ Камчатского края»',
+                        'income': 'от 58 000 ₽ после вычета НДФЛ',
+                        'employment': 'полная'
+                        })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

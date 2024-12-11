@@ -1,0 +1,84 @@
+.vacancy-card {
+	@include flex-alignment(54px, space-between, flex-start);
+
+	border: 1px solid var(--color-grey-370);
+	border-radius: 4px;
+	padding: 20px;
+
+	@include mq(lg) {
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 16px;
+		gap: 24px;
+	}
+
+	&__title {
+		margin-bottom: 4px;
+		font-weight: 600;
+		font-size: 16px;
+	}
+
+	&__subtitle {
+		display: inline-block;
+		margin-bottom: 24px;
+		font-size: 13px;
+
+		@include mq(lg) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__items {
+		@include flex-simple(54px);
+
+		@include mq(lg) {
+			gap: 16px;
+		}
+
+		@include mq(sm) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		@include flex-simple(2px, column);
+	}
+
+	&__key {
+		font-size: 12px;
+	}
+
+	&__value {
+		font-size: 13px;
+	}
+
+	b {
+		font-weight: 700;
+	}
+
+	&__actions {
+		@include flex-simple(14px, column);
+
+		@include mq(lg) {
+			flex-direction: row;
+			width: 100%;
+		}
+
+		@include mq(sm) {
+			flex-wrap: wrap;
+			gap: 8px;
+		}
+	}
+
+	&__button {
+		border-radius: 4px;
+
+		@include mq(lg) {
+			flex-basis: 50%;
+		}
+
+		@include mq(sm) {
+			flex-grow: 1;
+		}
+	}
+}
