@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- base meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск | МФЦ Камчатского края</title>
+    <meta name="description" content="Быстрый поиск услуг, новостей и информации на сайте МФЦ Камчатского края. Найдите то, что вам нужно!">
+    
+    <meta name="keywords" content="поиск на сайте МФЦ, услуги Камчатского края, новости МФЦ, информация для граждан, поиск услуг, поиск новостей, МФЦ Камчатка, услуги государственных органов">
+    
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Поиск | МФЦ Камчатского края">
+    <meta property="og:description" content="Быстрый поиск услуг, новостей и информации на сайте МФЦ Камчатского края. Найдите то, что вам нужно!">
+
+    <meta name="twitter:title" content="Поиск | МФЦ Камчатского края">
+    <meta name="twitter:description" content="Быстрый поиск услуг, новостей и информации на сайте МФЦ Камчатского края. Найдите то, что вам нужно!">
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="favicon.ico" sizes="32x32"> -->
+    <!-- svg иконка 180 * 180 -->
+    <!-- <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">  -->
+    <!--180 * 180-->
+    <!-- если favicon только в png, то подключить favicon-16x16.png favicon-32x32.png (можно в webmanifest) -->
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest"> -->
+
+    <!-- stlyes, js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="body">
+    <div class="wrapper wrapper--@wrapperClass">
+
+<header class="header">
+    <div class="header__container">
+        <div class="header__wrapper">
+            <div class="header__top">
+                <a class="logo" href="#">
+                    <picture>
+                        <source srcset="img/logos/logo.avif 1x, img/logos/logo@2x.avif 2x" type="image/avif">
+                        <source srcset="img/logos/logo.webp 1x, img/logos/logo@2x.webp 2x" type="image/webp">
+                        <img class="logo__img" src="img/logos/logo.png" srcset="img/logos/logo@2x.png 2x" alt="Логотип" width="238" height="78">
+                    </picture>
+                </a>
+                <button class="burger-button" aria-controls="header-burger-menu" aria-label="Открыть меню" aria-expanded="false" data-burger-button>
+                    <span class="burger-button__line" aria-hidden></span>
+                </button>
+            </div>
+            <div class="header__inner">
+                <div class="header__menu menu" id="header-burger-menu" data-menu>
+                    <a class="menu__private button button--fill" href="#">
+                        Личный кабинет
+                        <svg class="button__icon" aria-hidden>
+                            <use xlink:href="img/sprite.svg#user">
+                        </svg>
+                    </a>
+                    <ul class="menu__items">
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Услуги</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Центра и офисы</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Новости</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Вопросы и ответы</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Полезные сервисы</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Состояние очередей</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">О противодействии коррупции</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Телефонный справочник ведомств</a>
+                        </li>
+                        <li class="menu__item menu__item--mobile">
+                            <a class="menu__link" href="#">Документы</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">О центре</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">Вакансии</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="hotline">
+                        <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
+                        <span class="hotline__descr">Горячая линия</span>
+                    </div>
+                    <a class="menu__version" href="#">
+                        Версия для слабовидящих
+                    </a>
+                    <ul class="header__socials socials">
+                        <li class="socials__item">
+                            <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
+                                <svg class="socials__icon" aria-hidden>
+                                    <use xlink:href="img/sprite.svg#vk">
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a class="socials__link" href="#" target="_blank" aria-label="Телеграм">
+                                <svg class="socials__icon" aria-hidden>
+                                    <use xlink:href="img/sprite.svg#telegram">
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a class="socials__link" href="#" target="_blank" aria-label="Одноклассники">
+                                <svg class="socials__icon" aria-hidden>
+                                    <use xlink:href="img/sprite.svg#classmates">
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__info">
+                    <span class="header__name">
+                        Многофункциональный центр Камчатского края
+                    </span>
+                    <div class="hotline">
+                        <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
+                        <span class="hotline__descr">Горячая линия</span>
+                    </div>
+                    <a class="menu__private button button--fill" href="#">
+                        Личный кабинет
+                        <svg class="button__icon" aria-hidden>
+                            <use xlink:href="img/sprite.svg#user">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <form class="form">
+            <div class="header__search">
+                <div class="select-mobile">
+                    <button class="select-mobile__button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="header-select-mobile-list" aria-label="выбрать, где искать">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#sound">
+                        </svg>
+                    </button>
+                    <div class="select-mobile__list">
+                        <label class="select-mobile__item">
+                            По всему сайту
+                            <input class="select-mobile__hidden" type="radio" name="header-select" value="website" checked>
+                        </label>
+                        <label class="select-mobile__item">
+                            По документам
+                            <input class="select-mobile__hidden" type="radio" name="header-select" value="documents">
+                        </label>
+                    </div>
+                </div>
+                <div class="form__item header__select" id="header-select-mobile-list">
+                    <label class="sr-only" for="header-search-category">
+                        Где искать
+                    </label>
+                    <select name="header-select" id="header-search-category" data-choice>
+                        <option value="website">
+                            По всему сайту
+                        </option>
+                        <option value="documents">
+                            По документам
+                        </option>
+                    </select>
+                </div>
+                <div class="form__item form__item--search">
+                    <label class="sr-only" for="header-search">Введите ваше имя</label>
+                    <input class="form__field" id="header-search" name="search" type="search" placeholder="Введите ваш запрос" required>
+                    <button class="form__button" type="submit" aria-label="Найти">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#search">
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</header>
+
+<!-- <div class="graph-modal">
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+    </div>
+</div>
+    <div class="graph-modal__container graph-modal__container--thank" role="dialog" aria-modal="true" data-graph-target="modal-thank">
+    <div class="graph-modal__box">
+        <div class="graph-modal__header">
+            <span class="graph-modal__title title">
+                Спасибо за обратную связь!
+            </span>
+            <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        </div>
+        <div class="graph-modal__text">
+            <p>
+                    В ближайшее время обработаем данные и опубликуем пост
+                </p>
+        </div>
+        <button class="graph-modal__button button js-modal-close" type="button">Отлично!</button>
+    </div>
+</div>
+</div> -->
+
+<div class="breadcrumbs">
+    <div class="container">
+        <ul class="breadcrumbs__items">
+            <li class="breadcrumbs__prev">
+                <button type="button" aria-label="Вернуться назад"></button>
+            </li>
+             <li class="breadcrumbs__item">
+                <a class="breadcrumbs__text" href="#">Главная</a>
+                </li>
+                
+                 <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page" aria-disabled>Поиск</span></li>
+                    
+        </ul>
+    </div>
+</div>
+
+<main class="main search-page">
+    <section class="search-page__wrapper container page">
+    <h1 class="page__title">
+        Результаты поиска по сайту
+    </h1>
+    <!-- <ul class="documents-block">
+        <li class="documents-block__item">
+            <a href="#">
+                Распоряжение Правительства Камчатского края от 29 января 2010 г. N 43-РП
+            </a>
+        </li>
+        <li class="documents-block__item">
+            <a href="#">
+                Информация о среднемесячной заработной плате руководителей, их заместителей, главных бухгалтеров фонда, учреждений, предприятий за 2023 год
+                Информация о среднемесячной заработной плате руководителей, их заместителей, главных бухгалтеров фонда, учреждений, предприятий за 2023 год
+            </a>
+        </li>
+        <li class="documents-block__item">
+            <a href="#">
+                Распоряжение Правительства Камчатского края от 29 января 2010 г. N 43-РП
+            </a>
+        </li>
+    </ul> -->
+    <ul>
+        <li>
+            <article class="search-card">
+    <a class="search-card__link" href="#">Водительские права</a>
+    <ul class="search-card__breadcrumbs">
+         <li class="search-card__item"> <a href="#">Главная</a> </li>  <li class="search-card__item"> <a href="#">Услуги</a> </li>  <li class="search-card__item"> <a href="#">Транспорт</a> </li> 
+    </ul>
+</article>
+        </li>
+        <li>
+            <article class="search-card">
+    <a class="search-card__link" href="#">Как получить или заменить водительские права</a>
+    <ul class="search-card__breadcrumbs">
+         <li class="search-card__item"> <a href="#">Главная</a> </li>  <li class="search-card__item"> <a href="#">Популярные вопросы</a> </li>  <li class="search-card__item"> <a href="#">Транспорт</a> </li> 
+    </ul>
+</article>
+        </li>
+    </ul>
+    <!-- <div class="search-page__not">
+        <picture>
+            <source srcset="img/search-page/not-found.avif 1x, img/search-page/not-found@2x.avif 2x" type="image/avif">
+            <source srcset="img/search-page/not-found.webp 1x, img/search-page/not-found@2x.webp 2x" type="image/webp">
+            <img class="search-page__img" src="img/search-page/not-found.png" srcset="img/search-page/not-found@2x.png 2x" alt="Пустота" width="178" height="178" loading="lazy">
+        </picture>
+        <span class="search-page__subtitle">Ничего не найдено</span>
+        <span class="search-page__text">Проверьте, нет ли ошибок в запросе</span>
+    </div> -->
+</section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__wrapper">
+            <div class="decor-lines" aria-hidden></div>
+            <span class="footer__column--copy footer__column">
+                © КГКУ МФЦ Камчатского края, <br> 2016-2025
+            </span>
+            <ul class="footer__menu">
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Услуги</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Центры и офисы</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Новости</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Вопросы и ответы</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Полезные сервисы</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Состояние очередей</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">О противодействии коррупции</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Телефонный справочник ведомств</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="#">Документы</a>
+                </li>
+            </ul>
+            <div class="footer__column footer__column--info">
+                <div class="hotline">
+                    <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
+                    <span class="hotline__descr">Горячая линия</span>
+                </div>
+                <div class="download-info">
+                    <div class="download-info__content">
+                        <span>Скачайте бесплатное приложение МФЦ</span>
+                        <a class="download-info__link" href="#">Скачать</a>
+                    </div>
+                    <div class="download-info__qr">
+                        <img class="download-info__img" src="img/qr.svg" alt="QR код" width="48" height="48" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+  
+</html>
