@@ -20,6 +20,7 @@
 @import '../components/blocks/side-menu';
 @import '../components/blocks/article-content';
 @import '../components/blocks/documents-block';
+@import '../components/blocks/schedule';
 @import '../components/blocks/footer';
 
 // cards
@@ -31,3 +32,5 @@
 @import '../components/cards/team-card';
 @import '../components/cards/vacancy-card';
 @import '../components/cards/contact-card';
+@import '../components/cards/queue-card';
+@import '../components/cards/queue-static';

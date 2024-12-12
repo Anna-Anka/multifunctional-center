@@ -1,0 +1,25 @@
+@include('./settings/_head.html', {
+'title' : 'Вакансия "Специалист по приёму документов" | МФЦ Камчатского края',
+'description' : 'Проверьте состояние очередей в МФЦ Камчатского края онлайн. Планируйте свой визит и экономьте время.',
+'keywords' : 'состояние очередей МФЦ, онлайн-очередь МФЦ, планирование визита, время ожидания, МФЦ Камчатского края, очередь в МФЦ, онлайн-сервисы МФЦ',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Состояние очередей']
+})
+
+<main class="main">
+    <h1 class="sr-only">Проверьте состояние очередей и запишитесь на прием</h1>
+    @include('./pages/queue-page/_queue-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
