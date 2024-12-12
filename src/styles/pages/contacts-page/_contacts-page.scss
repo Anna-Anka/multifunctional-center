@@ -1,0 +1,61 @@
+.contacts-page {
+	&__container {
+		@include mq(lg, min) {
+			width: 66%;
+		}
+	}
+
+	&__container,
+	&__items {
+		&:not(:last-child) {
+			margin-bottom: 34px;
+
+			@include mq(lg) {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&__descr {
+		p {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+
+		b {
+			font-weight: 600;
+			font-size: 16px;
+		}
+
+		span {
+			display: inline-block;
+
+			&:not(:last-child) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	&__items {
+		@include flex-simple(30px);
+
+		flex-wrap: wrap;
+
+		@include mq(lg) {
+			gap: 24px 20px;
+		}
+	}
+
+	&__item {
+		flex-basis: calc(33.333% - 20px);
+
+		@include mq(lg) {
+			flex-basis: calc(50% - 10px);
+		}
+
+		@include mq(sm) {
+			flex-basis: 100%;
+		}
+	}
+}

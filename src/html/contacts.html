@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Контакты | МФЦ Камчатского края',
+'description' : 'Свяжитесь с нами! Адреса, телефоны, электронные почты и часы работы МФЦ Камчатского края.',
+'keywords' : 'контакты МФЦ, адреса МФЦ, телефоны МФЦ, электронная почта МФЦ, часы работы МФЦ, Камчатский край, обратная связь, поддержка граждан',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Контакты']
+})
+
+<main class="main">
+    @include('./pages/contacts-page/_contacts-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
