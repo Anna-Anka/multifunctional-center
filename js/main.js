@@ -290,6 +290,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _breadcrumbs_prev_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_breadcrumbs-prev.js */ "./src/js/project/_breadcrumbs-prev.js");
 /* harmony import */ var _sliders_partners_slider_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sliders/_partners-slider.js */ "./src/js/project/sliders/_partners-slider.js");
 /* harmony import */ var _sliders_gallery_slider_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sliders/_gallery-slider.js */ "./src/js/project/sliders/_gallery-slider.js");
+/* harmony import */ var _sliders_office_slider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sliders/_office-slider.js */ "./src/js/project/sliders/_office-slider.js");
+
 
 
 
@@ -317,6 +319,10 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
   var swiperSmall = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderNav, {
     loopedSlides: 4,
     freeMode: true,
+    navigation: {
+      nextEl: wrapperSliderNav.querySelector('.swiper-container__button--prev'),
+      prevEl: wrapperSliderNav.querySelector('.swiper-container__button--next')
+    },
     breakpoints: {
       769: {
         direction: 'vertical',
@@ -338,10 +344,40 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
       swiper: swiperSmall
     },
     navigation: {
-      nextEl: sliderMain.querySelector('.gallery-page__button--prev'),
-      prevEl: sliderMain.querySelector('.gallery-page__button--next')
+      nextEl: sliderMain.querySelector('.swiper-container__button--prev'),
+      prevEl: sliderMain.querySelector('.swiper-container__button--next')
     }
   });
+}
+
+/***/ }),
+
+/***/ "./src/js/project/sliders/_office-slider.js":
+/*!**************************************************!*\
+  !*** ./src/js/project/sliders/_office-slider.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation]);
+if (document.querySelector('.office-department__swiper')) {
+  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.office-department__swiper', _defineProperty({
+    spaceBetween: 16,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    navigation: true
+  }, "navigation", {
+    nextEl: '.swiper-container__button--next',
+    prevEl: '.swiper-container__button--prev'
+  }));
 }
 
 /***/ }),
