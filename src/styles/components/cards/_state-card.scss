@@ -1,14 +1,8 @@
-.queue-static {
+.state-card {
 	@include flex-alignment(24px, space-between, center);
 
-	border-left: 1px solid var(--color-red-500);
-	padding: 12px 80px 15px 16px;
 	font-weight: 700;
 	line-height: 1.2;
-
-	@include mq(lg) {
-		padding-right: 0;
-	}
 
 	@include mq(sm) {
 		flex-wrap: wrap;

@@ -75,4 +75,13 @@
 			max-width: max-content;
 		}
 	}
+
+	.state-card {
+		border-left: 1px solid var(--color-red-500);
+		padding: 12px 80px 15px 16px;
+
+		@include mq(lg) {
+			padding-right: 0;
+		}
+	}
 }

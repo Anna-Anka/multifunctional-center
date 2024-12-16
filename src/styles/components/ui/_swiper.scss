@@ -1,0 +1,41 @@
+.swiper-slide {
+	box-sizing: border-box;
+}
+
+.swiper-container {
+	&__buttons {
+		@include flex-simple(8px);
+
+		position: absolute;
+		right: 16px;
+		bottom: 16px;
+		z-index: 2;
+	}
+
+	&__button {
+		position: relative;
+		border-radius: 50%;
+		width: 33px;
+		height: 33px;
+		background-color: var(--color-white);
+
+		&::before {
+			@include bg-properties(contain);
+
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 24px;
+			height: 24px;
+			background-image: url('../img/icons/arrow.svg');
+			filter: invert(68%) sepia(71%) saturate(1198%) hue-rotate(336deg)
+				brightness(111%) contrast(91%);
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+
+		&--prev {
+			transform: rotate(180deg);
+		}
+	}
+}

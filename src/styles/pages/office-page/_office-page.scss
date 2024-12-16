@@ -1,0 +1,87 @@
+.office-page {
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 32px;
+
+		@include mq(lg) {
+			gap: 24px;
+		}
+
+		@include mq(md) {
+			grid-template-columns: 100%;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 32px;
+
+			@include mq(lg) {
+				margin-bottom: 24px;
+			}
+		}
+	}
+
+	&__info {
+		display: flex;
+		gap: 32px;
+
+		@include mq(lg) {
+			gap: 24px;
+		}
+
+		@include mq(md) {
+			flex-direction: column;
+		}
+	}
+
+	&__schedule {
+		flex: 0 0 448px;
+
+		@include mq(lg) {
+			flex-basis: 330px;
+		}
+
+		@include mq(md) {
+			flex-basis: auto;
+		}
+	}
+
+	&__state {
+		flex: 1 1 640px;
+
+		@include mq(md) {
+			flex-basis: auto;
+		}
+	}
+
+	&__subtitle {
+		@include card(0 8px, var(--color-white));
+
+		border: 1px solid var(--color-grey-300);
+		font-family: var(--font-secondary);
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1.4;
+		color: var(--color-red-500);
+	}
+
+	.schedule {
+		&__title {
+			@include card(0 8px, var(--color-white));
+
+			margin-right: auto;
+			margin-bottom: 30px;
+			border: 1px solid var(--color-grey-300);
+			width: max-content;
+			font-family: var(--font-secondary);
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 1.4;
+			color: var(--color-red-500);
+		}
+	}
+
+	b {
+		font-weight: 600;
+	}
+}

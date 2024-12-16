@@ -65,6 +65,10 @@ body {
 
 	&__title {
 		@include title;
+
+		@include mq(md) {
+			font-size: 24px;
+		}
 	}
 }
 
@@ -109,10 +113,6 @@ body {
 	&__choice {
 		max-width: max-content;
 	}
-}
-
-.swiper-slide {
-	box-sizing: border-box;
 }
 
 .overlay {

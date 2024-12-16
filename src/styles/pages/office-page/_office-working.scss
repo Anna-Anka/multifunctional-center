@@ -1,0 +1,83 @@
+.office-working {
+	@include card(16px 10px 0 16px);
+
+	font-size: 13px;
+	line-height: 1.4;
+
+	@include mq(lg) {
+		padding-bottom: 16px;
+	}
+
+	&__wrapper {
+		@include flex-alignment(40px, space-between, flex-start);
+
+		@include mq(md) {
+			gap: 28px;
+		}
+
+		&:not(:last-child) {
+			@include mq(lg) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__content {
+		@include flex-simple(12px, column);
+
+		@include mq(lg, min) {
+			padding-bottom: 16px;
+			height: 100%;
+		}
+	}
+
+	&__subtitle {
+		display: inline-block;
+		margin-bottom: 12px;
+	}
+
+	&__schedule {
+		@include flex-simple(4px, column);
+	}
+
+	&__button {
+		margin-top: auto;
+		border-radius: 4px;
+		max-width: max-content;
+		font-family: var(--font-main);
+		font-weight: 400;
+		font-size: 12px;
+
+		&--desktop {
+			@include mq(lg) {
+				display: none;
+			}
+		}
+
+		&--mobile {
+			display: none;
+
+			@include mq(lg) {
+				display: flex;
+				max-width: 100%;
+			}
+		}
+	}
+
+	&__picture {
+		flex-basis: 145px;
+		align-self: flex-end;
+		aspect-ratio: 1 / 1;
+
+		@include mq(lg) {
+			flex-basis: 86px;
+			align-self: flex-start;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}

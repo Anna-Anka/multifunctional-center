@@ -1,0 +1,25 @@
+.office-state {
+	@include card;
+	@include flex-simple(16px, column);
+
+	.office-page {
+		&__subtitle {
+			margin-right: auto;
+		}
+	}
+
+	&__items {
+		@include flex-alignment(14px 32px, space-between, flex-start);
+
+		flex-wrap: wrap;
+		margin-top: auto;
+
+		@include mq(md) {
+			gap: 16px;
+		}
+	}
+
+	.state-card {
+		align-items: flex-end;
+	}
+}

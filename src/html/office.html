@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Елизовское отделение | МФЦ Камчатского края',
+'description' : 'Офис МФЦ Камчатского края: услуги, консультации и поддержка граждан. Узнайте, как получить необходимые документы быстро и удобно.',
+'keywords' : 'МФЦ Камчатский край, офис МФЦ, услуги МФЦ, получение документов, консультации, поддержка граждан, услуги населения, Камчатка.',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Центры и офисы', 'Отделение']
+})
+
+<main class="main">
+    @include('./pages/office-page/_office-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')

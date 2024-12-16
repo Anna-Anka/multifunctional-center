@@ -9,6 +9,15 @@
 		}
 	}
 
+	.swiper-container {
+		&__buttons,
+		&__button {
+			@include mq(md) {
+				display: none;
+			}
+		}
+	}
+
 	&__wrapper {
 		position: relative;
 		padding-bottom: 38.5%;
@@ -35,44 +44,6 @@
 		position: relative;
 		flex-basis: 82.5%;
 		overflow: hidden;
-
-		.gallery-page {
-			&__buttons {
-				@include flex-simple(8px);
-
-				position: absolute;
-				right: 16px;
-				bottom: 16px;
-				z-index: 2;
-			}
-
-			&__button {
-				position: relative;
-				border-radius: 50%;
-				width: 33px;
-				height: 33px;
-				background-color: var(--color-white);
-
-				&::before {
-					@include bg-properties(contain);
-
-					content: '';
-					position: absolute;
-					left: 50%;
-					top: 50%;
-					width: 24px;
-					height: 24px;
-					background-image: url('../img/icons/arrow.svg');
-					filter: invert(68%) sepia(71%) saturate(1198%) hue-rotate(336deg)
-						brightness(111%) contrast(91%);
-					transform: translate(-50%, -50%) rotate(90deg);
-				}
-
-				&--prev {
-					transform: rotate(180deg);
-				}
-			}
-		}
 	}
 
 	&__img {
@@ -87,7 +58,7 @@
 		flex-grow: 1;
 		flex-basis: 14.5%;
 
-		.gallery-page {
+		.swiper-container {
 			&__button {
 				@include bg-properties(contain);
 
@@ -96,19 +67,22 @@
 				z-index: 2;
 				width: 24px;
 				height: 24px;
-				background-image: url('../img/icons/arrow.svg');
-				filter: invert(68%) sepia(71%) saturate(1198%) hue-rotate(336deg)
-					brightness(111%) contrast(91%);
+				background-color: transparent;
 				transform: translateX(-50%);
+
+				&::before {
+					filter: invert(68%) sepia(71%) saturate(1198%) hue-rotate(336deg)
+						brightness(111%) contrast(91%);
+				}
 
 				&--prev {
 					top: -16px;
-					transform: translate(50%, -100%);
+					transform: translate(50%, -65%) rotate(-90deg);
 				}
 
 				&--next {
 					bottom: -16px;
-					transform: translate(50%, 50%) rotate(180deg);
+					transform: translate(50%, 50%) rotate(90deg);
 				}
 			}
 		}

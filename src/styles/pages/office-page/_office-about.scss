@@ -1,0 +1,79 @@
+.office-about {
+	@include card;
+
+	@include mq(lg) {
+		grid-column: 1 / 3;
+	}
+
+	@include mq(md) {
+		grid-column: auto;
+	}
+
+	&__links,
+	&__info {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		@include mq(lg) {
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+	}
+
+	&__links {
+		gap: 40px;
+
+		&:not(:last-child) {
+			margin-bottom: 36px;
+
+			@include mq(lg) {
+				margin-bottom: 32px;
+			}
+		}
+	}
+
+	&__link {
+		position: relative;
+		padding-left: 32px;
+		font-family: var(--font-secondary);
+		font-weight: 700;
+		font-size: 14px;
+		text-decoration: underline;
+		color: var(--color-red-500);
+
+		&::before {
+			@include bg-properties(contain);
+
+			content: '';
+			position: absolute;
+			left: 0;
+			top: -6px;
+			width: 24px;
+			height: 24px;
+			filter: invert(39%) sepia(97%) saturate(2430%) hue-rotate(342deg)
+				brightness(98%) contrast(90%);
+		}
+
+		&--car {
+			&::before {
+				background-image: url('../img/icons/car.svg');
+			}
+		}
+
+		&--map {
+			&::before {
+				background-image: url('../img/icons/map.svg');
+			}
+		}
+	}
+
+	&__info {
+		font-size: 13px;
+		line-height: 1.4;
+		gap: 24px 40px;
+	}
+
+	&__item {
+		@include flex-simple(4px, column);
+	}
+}

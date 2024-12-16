@@ -13,6 +13,11 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
         loopedSlides: 4,
         freeMode: true,
 
+        navigation: {
+            nextEl: wrapperSliderNav.querySelector('.swiper-container__button--prev'),
+            prevEl: wrapperSliderNav.querySelector('.swiper-container__button--next'),
+        },
+        
         breakpoints: {
             769: {
                 direction: 'vertical',
@@ -38,8 +43,8 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
         },
 
         navigation: {
-            nextEl: sliderMain.querySelector('.gallery-page__button--prev'),
-            prevEl: sliderMain.querySelector('.gallery-page__button--next'),
+            nextEl: sliderMain.querySelector('.swiper-container__button--prev'),
+            prevEl: sliderMain.querySelector('.swiper-container__button--next'),
         },
     });
 }
