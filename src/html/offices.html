@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Центры и офисы | МФЦ Камчатского края',
+'description' : 'Центры и офисы МФЦ Камчатского края: удобные места для получения государственных услуг и консультаций. Узнайте адреса и режим работы.',
+'keywords' : 'Центры МФЦ, офисы МФЦ, Камчатский край, государственные услуги, адреса МФЦ, режим работы, консультации, услуги населения',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Центры и офисы']
+})
+
+<main class="main">
+    @include('./pages/offices-page/_offices-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
