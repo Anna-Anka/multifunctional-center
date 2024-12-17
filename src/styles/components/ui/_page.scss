@@ -1,0 +1,79 @@
+.page {
+	padding: 24px 0 80px;
+
+	@include mq(md) {
+		padding-bottom: 64px;
+	}
+
+	&__title {
+		@include title;
+
+		@include mq(md) {
+			font-size: 24px;
+		}
+	}
+}
+
+.page-private {
+	padding: 40px 0 80px;
+
+	@include mq(md) {
+		padding-bottom: 64px;
+	}
+
+	&__title {
+		@include title(24px, 32px);
+
+		border-bottom: 1px solid var(--color-grey-500);
+		padding-bottom: 28px;
+
+		@include mq(md) {
+			padding-bottom: 24px;
+		}
+	}
+
+	.page-wrapper {
+		flex-direction: row;
+
+		&__content {
+			@include mq(md) {
+				width: 100%;
+			}
+		}
+	}
+
+	.side-menu {
+		@include mq(md) {
+			display: none;
+		}
+
+		&__items {
+			@include flex-simple(12px, column);
+
+			&--links-block {
+				.side-menu {
+					&__items {
+						gap: 8px;
+					}
+
+					&__link {
+						@include card(8px 16px, var(--color-grey-10));
+
+						font-family: var(--font-main);
+						font-weight: 700;
+						line-height: 1.2;
+						text-align: left;
+						text-decoration: none;
+						color: var(--color-brown-600);
+					}
+				}
+			}
+		}
+
+		&__link {
+			padding: 0;
+			line-height: 1.4;
+			text-align: right;
+		}
+	}
+}

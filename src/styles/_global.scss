@@ -55,23 +55,6 @@ body {
 	height: 100vh;
 }
 
-.page {
-	padding-top: 24px;
-	padding-bottom: 80px;
-
-	@include mq(md) {
-		padding-bottom: 64px;
-	}
-
-	&__title {
-		@include title;
-
-		@include mq(md) {
-			font-size: 24px;
-		}
-	}
-}
-
 .logo {
 	display: inline-block;
 	border-radius: 4px;

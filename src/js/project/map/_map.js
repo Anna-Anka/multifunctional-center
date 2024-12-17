@@ -40,7 +40,9 @@ import styles from './_styles.json';
 
         // Базовая настрйка
         const map = document.querySelector('[data-map]')
-        const myMap = new ymaps.Map(map, {
+
+        if (map) {
+                    const myMap = new ymaps.Map(map, {
             center: [54.83, 37.11],
             zoom: 5
         });
@@ -89,5 +91,6 @@ import styles from './_styles.json';
         //         myMap.geoObjects.add(item);
         //     }
         // })
+        }
     }
 })()

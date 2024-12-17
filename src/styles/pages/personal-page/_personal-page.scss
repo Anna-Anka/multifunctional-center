@@ -1,0 +1,39 @@
+.personal-page {
+	&__name {
+		display: block;
+		margin-bottom: 32px;
+		font-weight: 700;
+		font-size: 16px;
+
+		@include mq(md) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__box {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+
+		@include mq(md) {
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
+	}
+
+	&__items {
+		@include flex-simple(24px, column);
+
+		&--user {
+			.personal-page {
+				&__value {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
+	&__item {
+		@include flex-simple(5px, column);
+	}
+}

@@ -55,6 +55,10 @@
 	}
 
 	&__items {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+
 		@include mq(lg) {
 			display: none;
 		}

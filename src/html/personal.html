@@ -1,0 +1,25 @@
+@include('./settings/_head.html', {
+'title' : 'Вакансия "Специалист по приёму документов" | МФЦ Камчатского края',
+'description' : 'Присоединяйтесь к команде МФЦ Камчатского края! Узнайте о текущих вакансиях и возможностях карьерного роста.',
+'keywords' : 'вакансии МФЦ, работа в МФЦ, Камчатский край, карьерные возможности, трудоустройство, вакансии Камчатка, работа в государственном секторе, присоединиться к команде',
+'robots' : 'index, follow',
+'wrapperClass': 'no-overflow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'ЛК', 'Личная информация']
+})
+
+<main class="main">
+    @include('./pages/personal-page/_personal-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
