@@ -1,0 +1,25 @@
+@include('./settings/_head.html', {
+'title' : 'История обращений | МФЦ Камчатского края',
+'description' : 'История обращений в МФЦ Камчатского края: отслеживайте свои запросы, получайте информацию о статусе и решениях по вашим обращениям',
+'keywords' : 'История обращений, МФЦ Камчатский край, отслеживание запросов, статус обращений, услуги МФЦ, информация о решениях, личный кабинет',
+'robots' : 'index, follow',
+'wrapperClass': 'no-overflow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'ЛК', 'История обращений']
+})
+
+<main class="main">
+    @include('./pages/applications-page/_applications-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
