@@ -4898,6 +4898,19 @@ body {
   border-radius: 4px;
 }
 
+.offices-page__map .marker {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/icons/pin.svg");
+}
+
+.offices-page__map .marker--hidden {
+  display: none;
+}
+
 .personal-page__name {
   display: block;
   margin-bottom: 32px;
@@ -4964,6 +4977,10 @@ body {
 
 .applications-page__text {
   width: 100%;
+}
+
+.one-news .article-content {
+  line-height: 1.6;
 }
 
 @media only screen and (min-width: 561px) {
@@ -5193,6 +5210,11 @@ body {
   .office-working__content {
     padding-bottom: 16px;
     height: 100%;
+  }
+
+  .one-news__wrapper {
+    width: 100%;
+    max-width: 832px;
   }
 }
 

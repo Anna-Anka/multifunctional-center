@@ -128,6 +128,29 @@ class GraphTabs {
 
 /***/ }),
 
+/***/ "ymaps3":
+/*!*******************************************************************************************************************!*\
+  !*** external ["https://api-maps.yandex.ru/v3/?apikey=5e824dbc-8855-473a-8c31-de0cc93c4481&lang=ru_RU","ymaps3"] ***!
+  \*******************************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var __webpack_error__ = new Error();
+module.exports = new Promise((resolve, reject) => {
+	if(typeof ymaps3 !== "undefined") return resolve();
+	__webpack_require__.l("https://api-maps.yandex.ru/v3/?apikey=5e824dbc-8855-473a-8c31-de0cc93c4481&lang=ru_RU", (event) => {
+		if(typeof ymaps3 !== "undefined") return resolve();
+		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+		var realSrc = event && event.target && event.target.src;
+		__webpack_error__.message = 'Loading script failed.\n(' + errorType + ': ' + realSrc + ')';
+		__webpack_error__.name = 'ScriptExternalLoadError';
+		__webpack_error__.type = errorType;
+		__webpack_error__.request = realSrc;
+		reject(__webpack_error__);
+	}, "ymaps3");
+}).then(() => (ymaps3));
+
+/***/ }),
+
 /***/ "./src/js/libs/_choices.js":
 /*!*********************************!*\
   !*** ./src/js/libs/_choices.js ***!
@@ -186,6 +209,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_tabs.js */ "./src/js/libs/_tabs.js");
 
 
+
+/***/ }),
+
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+/***/ ((__webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _libs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libs/index.js */ "./src/js/libs/index.js");
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/index.js */ "./src/js/utils/index.js");
+/* harmony import */ var _templates_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./templates/index.js */ "./src/js/templates/index.js");
+/* harmony import */ var _project_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./project/index.js */ "./src/js/project/index.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_project_index_js__WEBPACK_IMPORTED_MODULE_3__]);
+_project_index_js__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+
+
+console.log('gulp');
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -282,8 +329,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************!*\
   !*** ./src/js/project/index.js ***!
   \*********************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ ((__webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_item_highlight_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_menu-item-highlight.js */ "./src/js/project/_menu-item-highlight.js");
 /* harmony import */ var _header_search_mobile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_header-search-mobile.js */ "./src/js/project/_header-search-mobile.js");
@@ -292,6 +340,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sliders_partners_slider_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sliders/_partners-slider.js */ "./src/js/project/sliders/_partners-slider.js");
 /* harmony import */ var _sliders_gallery_slider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sliders/_gallery-slider.js */ "./src/js/project/sliders/_gallery-slider.js");
 /* harmony import */ var _sliders_office_slider_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sliders/_office-slider.js */ "./src/js/project/sliders/_office-slider.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_map_map_js__WEBPACK_IMPORTED_MODULE_3__]);
+_map_map_js__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -299,6 +349,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -306,92 +358,139 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************!*\
   !*** ./src/js/project/map/_map.js ***!
   \************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ ((__webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_styles.json */ "./src/js/project/map/_styles.json");
+/* harmony import */ var ymaps3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ymaps3 */ "ymaps3");
+/* harmony import */ var _styles_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_styles.json */ "./src/js/project/map/_styles.json");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([ymaps3__WEBPACK_IMPORTED_MODULE_0__]);
+ymaps3__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+
 
 (function () {
-  var baloonInfo = {
-    balloonContentHeader: "Балун метки",
-    balloonContentBody: "Содержимое <em>балуна</em> метки",
-    balloonContentFooter: "Подвал",
-    hintContent: "Хинт метки"
+  var COMMON_LOCATION_PARAMS = {
+    easing: 'ease-in-out',
+    duration: 2000,
+    zoom: 15
   };
-  var buttonNear = document.querySelector('.offices-page__button--near');
-  var buttonWork = document.querySelector('.offices-page__button--work');
-  var placemarks = [{
-    coordinates: [54.83, 37.11],
-    type: 'near'
+
+  // work, near, office, road
+
+  var pins = [{
+    coordinates: [37.65, 55.75],
+    types: ['work']
   }, {
-    coordinates: [53.83, 36.11],
-    type: 'near'
+    coordinates: [36.65, 56.75],
+    types: ['work']
   }, {
-    coordinates: [56.83, 38.11],
-    type: 'near'
+    coordinates: [38.65, 54.75],
+    types: ['near']
   }, {
-    coordinates: [57.83, 39.11],
-    type: 'work'
-  }, {
-    coordinates: [52.83, 35.11],
-    type: 'work'
+    coordinates: [40.65, 52.75],
+    types: ['near']
   }];
-  ymaps.ready(init);
-  function init() {
-    // Базовая настрйка
-    var map = document.querySelector('[data-map]');
-    if (map) {
-      var myMap = new ymaps.Map(map, {
-        center: [54.83, 37.11],
-        zoom: 5
-      });
-      var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-        hintContent: 'Собственный значок метки',
-        balloonContent: 'Это красивая метка'
-      }, {
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#image',
-        iconImageHref: '../img/icons/pin.svg',
-        // Размеры метки.
-        iconImageSize: [40, 40],
-        // Смещение левого верхнего угла иконки относительно её "ножки" (точки привязки).
-        iconImageOffset: [-5, -38]
-      });
+  var mapElement = document.querySelector('[data-map]');
+  var workButton = document.querySelector('.offices-page__button--work');
+  var nearButton = document.querySelector('.offices-page__button--near');
+  if (mapElement) {
+    // let center = [53.095884, 158.349753];
+    var initMap = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker, Placemark, _yield$ymaps3$import, YMapZoomControl, YMapGeolocationControl, map, controls;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return ymaps3__WEBPACK_IMPORTED_MODULE_0__.ready;
+            case 2:
+              _context.next = 4;
+              return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"].registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@0.0.2', '@yandex/ymaps3-controls@0.0.1');
+            case 4:
+              // + YMapControls, YMapScaleControl
+              YMap = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMap, YMapDefaultSchemeLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultFeaturesLayer, YMapControls = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapControls, YMapMarker = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapMarker, Placemark = ymaps3__WEBPACK_IMPORTED_MODULE_0__.Placemark;
+              _context.next = 7;
+              return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"]('@yandex/ymaps3-default-ui-theme');
+            case 7:
+              _yield$ymaps3$import = _context.sent;
+              YMapZoomControl = _yield$ymaps3$import.YMapZoomControl;
+              YMapGeolocationControl = _yield$ymaps3$import.YMapGeolocationControl;
+              // создание карты
+              map = new YMap(document.querySelector('[data-map]'), {
+                location: {
+                  center: center,
+                  zoom: 5
+                  // zoom: 14
+                }
+              });
+              map.addChild(new YMapDefaultFeaturesLayer({}));
+              controls = new YMapControls({
+                position: 'right'
+              }); //Добавление кнопок + и 
+              controls.addChild(new YMapZoomControl({}));
+              // Добавление кнопки геолокации
+              controls.addChild(new YMapGeolocationControl({}));
+              map.addChild(controls);
+              workButton.addEventListener('click', function () {
+                var pinElements = document.querySelectorAll('.marker');
+                pinElements.forEach(function (pin) {
+                  if (pin.hasAttribute('data-work')) {
+                    pin.classList.remove('marker--hidden');
+                  } else {
+                    pin.classList.add('marker--hidden');
+                  }
+                });
+              });
+              nearButton.addEventListener('click', function () {
+                var pinElements = document.querySelectorAll('.marker');
+                pinElements.forEach(function (pin) {
+                  if (pin.hasAttribute('data-near')) {
+                    pin.classList.remove('marker--hidden');
+                  } else {
+                    pin.classList.add('marker--hidden');
+                  }
+                });
+              });
+              pins.forEach(function (pin) {
+                var markerElement = document.createElement('div');
+                markerElement.className = 'marker';
+                pin.types.forEach(function (type) {
+                  markerElement.setAttribute("data-".concat(type), 'true');
+                });
 
-      // myMap.geoObjects
-      //     .add(myPlacemark)
+                // Настройка маркера
+                var marker = new YMapMarker({
+                  coordinates: pin.coordinates,
+                  mapFollowsOnDrag: true
+                }, markerElement);
+                map.addChild(marker);
+              });
 
-      // Добавление баллунов
-      placemarks.forEach(function (placemark) {
-        var item = new ymaps.Placemark(placemark.coordinates, baloonInfo);
-        myMap.geoObjects.add(item);
-      });
-
-      // Добавление баллунов по документации
-
-      // const myPlacemark = new ymaps.Placemark([54.83, 37.11], baloonInfo);
-      // myMap.geoObjects.add(myPlacemark);
-
-      // Попытка фильтровать баллуны по клику на соответсвующую кнопку 
-
-      // buttonNear.addEventListener('click', () => {
-      //     placemarks.forEach((placemark) => {
-      //         if (placemark.type === 'near') {
-      //             const item = new ymaps.Placemark(placemark.coordinates, baloonInfo);
-      //             myMap.geoObjects.add(item);
-      //         }
-      //     })
-      // })
-
-      // buttonWork.addEventListener('click', () => {
-      //     if (placemark.type === 'work') {
-      //         const item = new ymaps.Placemark(placemark.coordinates, baloonInfo);
-      //         myMap.geoObjects.add(item);
-      //     }
-      // })
-    }
+              // Карта с кастомными стилями
+              map.addChild(new YMapDefaultSchemeLayer({
+                customization: _styles_json__WEBPACK_IMPORTED_MODULE_1__
+              }));
+            case 20:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee);
+      }));
+      return function initMap() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+    var center = [37.65080999999997, 55.758412068983525];
+    ;
+    initMap();
   }
 })();
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -16400,6 +16499,75 @@ module.exports = /*#__PURE__*/JSON.parse('[{"tags":"country","elements":"geometr
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/async module */
+/******/ 	(() => {
+/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
+/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
+/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
+/******/ 		var resolveQueue = (queue) => {
+/******/ 			if(queue && queue.d < 1) {
+/******/ 				queue.d = 1;
+/******/ 				queue.forEach((fn) => (fn.r--));
+/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+/******/ 			}
+/******/ 		}
+/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
+/******/ 			if(dep !== null && typeof dep === "object") {
+/******/ 				if(dep[webpackQueues]) return dep;
+/******/ 				if(dep.then) {
+/******/ 					var queue = [];
+/******/ 					queue.d = 0;
+/******/ 					dep.then((r) => {
+/******/ 						obj[webpackExports] = r;
+/******/ 						resolveQueue(queue);
+/******/ 					}, (e) => {
+/******/ 						obj[webpackError] = e;
+/******/ 						resolveQueue(queue);
+/******/ 					});
+/******/ 					var obj = {};
+/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
+/******/ 					return obj;
+/******/ 				}
+/******/ 			}
+/******/ 			var ret = {};
+/******/ 			ret[webpackQueues] = x => {};
+/******/ 			ret[webpackExports] = dep;
+/******/ 			return ret;
+/******/ 		}));
+/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
+/******/ 			var queue;
+/******/ 			hasAwait && ((queue = []).d = -1);
+/******/ 			var depQueues = new Set();
+/******/ 			var exports = module.exports;
+/******/ 			var currentDeps;
+/******/ 			var outerResolve;
+/******/ 			var reject;
+/******/ 			var promise = new Promise((resolve, rej) => {
+/******/ 				reject = rej;
+/******/ 				outerResolve = resolve;
+/******/ 			});
+/******/ 			promise[webpackExports] = exports;
+/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
+/******/ 			module.exports = promise;
+/******/ 			body((deps) => {
+/******/ 				currentDeps = wrapDeps(deps);
+/******/ 				var fn;
+/******/ 				var getResult = () => (currentDeps.map((d) => {
+/******/ 					if(d[webpackError]) throw d[webpackError];
+/******/ 					return d[webpackExports];
+/******/ 				}))
+/******/ 				var promise = new Promise((resolve) => {
+/******/ 					fn = () => (resolve(getResult));
+/******/ 					fn.r = 0;
+/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
+/******/ 				});
+/******/ 				return fn.r ? promise : getResult();
+/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
+/******/ 			queue && queue.d < 0 && (queue.d = 0);
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -16417,6 +16585,52 @@ module.exports = /*#__PURE__*/JSON.parse('[{"tags":"country","elements":"geometr
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "gulp-builder:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -16429,24 +16643,12 @@ module.exports = /*#__PURE__*/JSON.parse('[{"tags":"country","elements":"geometr
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
-(() => {
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _libs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libs/index.js */ "./src/js/libs/index.js");
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/index.js */ "./src/js/utils/index.js");
-/* harmony import */ var _templates_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./templates/index.js */ "./src/js/templates/index.js");
-/* harmony import */ var _project_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./project/index.js */ "./src/js/project/index.js");
-
-
-
-
-console.log('gulp');
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module used 'module' so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
