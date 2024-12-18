@@ -48,5 +48,17 @@
 			border: 0;
 			border-radius: 4px;
 		}
+
+		.marker {
+			@include bg-properties(contain);
+
+			width: 40px;
+			height: 40px;
+			background-image: url('../img/icons/pin.svg');
+
+			&--hidden {
+				display: none;
+			}
+		}
 	}
 }

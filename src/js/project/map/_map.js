@@ -1,96 +1,124 @@
+import * as ymaps3 from 'ymaps3';
 import styles from './_styles.json';
 
 (function () {
+    const COMMON_LOCATION_PARAMS = { easing: 'ease-in-out', duration: 2000, zoom: 15 };
 
-    const baloonInfo = {
-        balloonContentHeader: "Балун метки",
-        balloonContentBody: "Содержимое <em>балуна</em> метки",
-        balloonContentFooter: "Подвал",
-        hintContent: "Хинт метки"
-    }
+    // work, near, office, road
 
-    const buttonNear = document.querySelector('.offices-page__button--near')
-    const buttonWork = document.querySelector('.offices-page__button--work')
-
-    const placemarks = [
+    const pins = [
         {
-            coordinates: [54.83, 37.11],
-            type: 'near'
+            coordinates: [37.65, 55.75],
+            types: ['work']
         },
         {
-            coordinates: [53.83, 36.11],
-            type: 'near'
+            coordinates: [36.65, 56.75],
+            types: ['work']
         },
         {
-            coordinates: [56.83, 38.11],
-            type: 'near'
+            coordinates: [38.65, 54.75],
+            types: ['near']
         },
         {
-            coordinates: [57.83, 39.11],
-            type: 'work'
-        },
-        {
-            coordinates: [52.83, 35.11],
-            type: 'work'
+            coordinates: [40.65, 52.75],
+            types: ['near']
         }
     ]
 
-    ymaps.ready(init);
-    function init() {
+    const mapElement = document.querySelector('[data-map]')
 
-        // Базовая настрйка
-        const map = document.querySelector('[data-map]')
+    const workButton = document.querySelector('.offices-page__button--work')
+    const nearButton = document.querySelector('.offices-page__button--near')
 
-        if (map) {
-                    const myMap = new ymaps.Map(map, {
-            center: [54.83, 37.11],
-            zoom: 5
-        });
+    if (mapElement) {
+        let center = [37.65080999999997, 55.758412068983525];
+        // let center = [53.095884, 158.349753];
 
-        const myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Собственный значок метки',
-            balloonContent: 'Это красивая метка'
-        }, {
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
-            iconImageHref: '../img/icons/pin.svg',
-            // Размеры метки.
-            iconImageSize: [40, 40],
-            // Смещение левого верхнего угла иконки относительно её "ножки" (точки привязки).
-            iconImageOffset: [-5, -38]
-        })
+        async function initMap() {
+            await ymaps3.ready;
+            await ymaps3.import.registerCdn(
+                'https://cdn.jsdelivr.net/npm/{package}',
+                '@yandex/ymaps3-default-ui-theme@0.0.2',
+                '@yandex/ymaps3-controls@0.0.1',
+            );
 
-        // myMap.geoObjects
-        //     .add(myPlacemark)
+            // + YMapControls, YMapScaleControl
+            const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker, Placemark } = ymaps3;
+            const { YMapZoomControl, YMapGeolocationControl } = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
 
-        // Добавление баллунов
-        placemarks.forEach((placemark) => {
-            const item = new ymaps.Placemark(placemark.coordinates, baloonInfo);
-            myMap.geoObjects.add(item);
-        })
+            // создание карты
+            const map = new YMap(
+                document.querySelector('[data-map]'),
+                {
+                    location: {
+                        center,
+                        zoom: 5
+                        // zoom: 14
+                    },
+                }
+            );
 
-        // Добавление баллунов по документации
+            map.addChild(new YMapDefaultFeaturesLayer({}))
 
-        // const myPlacemark = new ymaps.Placemark([54.83, 37.11], baloonInfo);
-        // myMap.geoObjects.add(myPlacemark);
+            const controls = new YMapControls({ position: 'right' });
+            //Добавление кнопок + и 
+            controls.addChild(new YMapZoomControl({}));
+            // Добавление кнопки геолокации
+            controls.addChild(new YMapGeolocationControl({}));
+            map.addChild(controls);
 
-        // Попытка фильтровать баллуны по клику на соответсвующую кнопку 
 
-        // buttonNear.addEventListener('click', () => {
-        //     placemarks.forEach((placemark) => {
-        //         if (placemark.type === 'near') {
-        //             const item = new ymaps.Placemark(placemark.coordinates, baloonInfo);
-        //             myMap.geoObjects.add(item);
-        //         }
-        //     })
-        // })
+            workButton.addEventListener('click', () => {
+                const pinElements = document.querySelectorAll('.marker')
 
-        // buttonWork.addEventListener('click', () => {
-        //     if (placemark.type === 'work') {
-        //         const item = new ymaps.Placemark(placemark.coordinates, baloonInfo);
-        //         myMap.geoObjects.add(item);
-        //     }
-        // })
-        }
+                pinElements.forEach((pin) => {
+                    if (pin.hasAttribute('data-work')) {
+                        pin.classList.remove('marker--hidden')
+                    } else {
+                        pin.classList.add('marker--hidden')
+                    }
+                })
+            })
+
+            nearButton.addEventListener('click', () => {
+                const pinElements = document.querySelectorAll('.marker')
+
+                pinElements.forEach((pin) => {
+                    if (pin.hasAttribute('data-near')) {
+                        pin.classList.remove('marker--hidden')
+                    } else {
+                        pin.classList.add('marker--hidden')
+                    }
+                })
+            })
+
+            pins.forEach((pin) => {
+                const markerElement = document.createElement('div');
+                markerElement.className = 'marker';
+
+                pin.types.forEach((type) => {
+                    markerElement.setAttribute(`data-${type}`, 'true')
+                })
+
+                // Настройка маркера
+                const marker = new YMapMarker(
+                    {
+                        coordinates: pin.coordinates,
+                        mapFollowsOnDrag: true
+                    },
+                    markerElement
+                );
+
+                map.addChild(marker);
+            })
+
+
+            // Карта с кастомными стилями
+            map.addChild(new YMapDefaultSchemeLayer({
+                customization: styles
+            }));
+        };
+
+        initMap();
     }
 })()
