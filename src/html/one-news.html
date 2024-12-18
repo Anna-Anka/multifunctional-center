@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Новость | МФЦ Камчатского края',
+'description' : 'Узнайте последние новости и обновления МФЦ Камчатского края. Мы публикуем важную информацию о новых услугах, изменениях в работе, а также событиях и мероприятиях',
+'keywords' : 'МФЦ Камчатского края, новости МФЦ, услуги МФЦ, обновления МФЦ, информация о МФЦ, события МФЦ, мероприятия МФЦ, Камчатский край, взаимодействие с МФЦ',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Новости', 'Выездное обслуживание заявителей']
+})
+
+<main class="main">
+    @include('./pages/one-news-page/_one-news-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')

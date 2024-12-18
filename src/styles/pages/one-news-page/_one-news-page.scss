@@ -1,0 +1,12 @@
+.one-news {
+	&__wrapper {
+		@include mq(lg, min) {
+			width: 100%;
+			max-width: 832px;
+		}
+	}
+
+	.article-content {
+		line-height: 1.6;
+	}
+}
