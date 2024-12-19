@@ -31,13 +31,20 @@
 		}
 	}
 
+	&__label {
+		display: inline-block;
+		margin-bottom: 6px;
+		font-weight: 600;
+		font-size: 12px;
+	}
+
 	&__field {
+		outline: 0;
 		border: 1px solid var(--color-grey-450);
-		border-radius: 0 4px 4px 0;
+		border-radius: 4px;
 		padding: 8px;
 		width: 100%;
 		background-color: transparent;
-		outline: 0;
 		transition:
 			border-color 0.3s,
 			background-color 0.3s;
@@ -62,6 +69,35 @@
 
 		&--error {
 			border-color: var(--color-red-900);
+		}
+	}
+
+	&__agree {
+		@include flex-simple(12px);
+
+		position: relative;
+		margin-bottom: 8px;
+		font-size: 13px;
+
+		@include mq(lg) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__hidden {
+		@include hidden;
+	}
+
+	&__links {
+		@include flex-simple(4px, column);
+
+		@include mq(lg, min) {
+			padding-left: 26px;
+		}
+
+		a {
+			font-size: 11px;
+			text-decoration: underline;
 		}
 	}
 }

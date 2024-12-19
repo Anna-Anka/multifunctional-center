@@ -1,0 +1,183 @@
+<section class="appointments-page page-private">
+    <div class="container">
+        <div class="page-wrapper">
+            @include('../../components/blocks/_private-side-menu.html')
+            <div class="page-wrapper__content">
+                <h1 class="page-private__title">
+                    Записи
+                </h1>
+                <div class="tabs" data-tabs="appointments-page">
+                    <ul class="tabs__nav">
+                        <li class="tabs__nav-item">
+                            <button class="tabs__nav-btn button button--border" type="button">
+                                Предварительная запись
+                            </button>
+                        </li>
+                        <li class="tabs__nav-item">
+                            <button class="tabs__nav-btn button button--border" type="button">
+                                Активные записи
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tabs__content">
+                        <div class="tabs__panel">
+                            <form class="appointments-pre form">
+                                <div class="appointments-pre__items">
+                                    <div>
+                                        <label class="form__label" for="mfc">
+                                            МФЦ*
+                                        </label>
+                                        <select name="mfc" id="mfc" data-placeholder="Выберите МФЦ" data-choice>
+                                            <option value="mfc-1">
+                                                МФЦ 1
+                                            </option>
+                                            <option value="mfc-2">
+                                                МФЦ 2
+                                            </option>
+                                            <option value="mfc-3">
+                                                МФЦ 3
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="service">
+                                            Услуга*
+                                        </label>
+                                        <select name="service" id="service" data-placeholder="Выберите услугу" data-choice>
+                                            <option value="service-1">
+                                                Услуга 1
+                                            </option>
+                                            <option value="service-2">
+                                                Услуга 2
+                                            </option>
+                                            <option value="service-3">
+                                                Услуга 3
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <div class="stepper">
+                                            <label class="form__label" for="number-of-cases">
+                                                Количество дел*
+                                            </label>
+                                            <div class="stepper__wrapper">
+                                                <input class="stepper__input form__field" id="number-of-cases" name="number-of-cases" type="number" value="1" name="count" min="1" required>
+                                                <div class="stepper__btns">
+                                                    <button class="stepper__btn stepper__btn--up" type="button" aria-label="Увеличить количество">
+                                                    </button>
+                                                    <button class="stepper__btn stepper__btn--down" type="button" aria-label="Уменьшить количество">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="surname">Фамилия*</label>
+                                        <input class="form__field" id="surname" name="surname" type="text" placeholder="Иванов" required>
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="name">Имя*</label>
+                                        <input class="form__field" id="name" name="name" type="text" placeholder="Василий" required>
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="patronymic">Отчество</label>
+                                        <input class="form__field" id="patronymic" name="patronymic" type="text" placeholder="Петрович">
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="date-of-birth">Дата рождения</label>
+                                        <input class="form__field" id="date-of-birth" name="date-of-birth" type="date" placeholder="14.11.1968">
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="phone">Телефон</label>
+                                        <input class="form__field" id="phone" name="phone" type="tel" placeholder="+7 (324) 500–00–00">
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="email">Email</label>
+                                        <input class="form__field" id="email" name="email" type="email" placeholder="ivanov@yandex.ru">
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="date">Дата</label>
+                                        <input class="form__field" id="date" name="date" type="date" placeholder="Дата">
+                                    </div>
+                                    <div>
+                                        <label class="form__label" for="time">
+                                            МФЦ*
+                                        </label>
+                                        <select name="time" id="time" data-choice>
+                                            <option value="11:30">
+                                                11:30
+                                            </option>
+                                            <option value="11:40">
+                                                11:40
+                                            </option>
+                                            <option value="11:50">
+                                                11:50
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="appointments-pre__footer">
+                                    <div class="appointments-pre__info">
+                                        <label class="form__agree">
+                                            <input class="form__hidden" type="checkbox" name="agree" value="isAgree">
+                                            <span class="form__visible" aria-hidden="true"></span>
+                                            Даю согласие на обработку своих персональных данных
+                                        </label>
+                                        <div class="form__links">
+                                            <a href="#">
+                                                Политкиа обработки персональных данных
+                                            </a>
+                                            <a href="#">
+                                                Согласие на обработку персональных данных
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <button class="appointments-pre__submit button button--fill" type="submit">
+                                        Получить талон
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tabs__panel">
+                            <ul class="appointments-active">
+                                <li class="appointments-active__item">
+                                    <span class="appointments-active__subtitle">
+                                        МФЦ №23
+                                    </span>
+                                    <time class="appointments-active-date" datetime="2019-04-17">
+                                        17.04.2019
+                                    </time>
+                                    <button class="appointments-active__button button button--fill" type="button">
+                                        Отменить запись
+                                    </button>
+                                </li>
+                                <li class="appointments-active__item">
+                                    <span class="appointments-active__subtitle">
+                                        МФЦ №23
+                                    </span>
+                                    <time class="appointments-active-date" datetime="2019-04-17">
+                                        17.04.2019
+                                    </time>
+                                    <button class="appointments-active__button button button--fill" type="button">
+                                        Отменить запись
+                                    </button>
+                                </li>
+                                <li class="appointments-active__item">
+                                    <span class="appointments-active__subtitle">
+                                        МФЦ №23
+                                    </span>
+                                    <time class="appointments-active-date" datetime="2019-04-17">
+                                        17.04.2019
+                                    </time>
+                                    <button class="appointments-active__button button button--fill" type="button">
+                                        Отменить запись
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

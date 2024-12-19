@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Записи в офис | МФЦ Камчатского края',
+'description' : 'Запись на услуги МФЦ Камчатского края: быстро и удобно записывайтесь на прием, выбирайте время и место для получения услуг.',
+'keywords' : 'Запись МФЦ, услуги Камчатского края, запись на прием, онлайн запись, услуги населения, удобная запись, МФЦ Камчатка',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Записи']
+})
+
+<main class="main">
+    @include('./pages/appointments-page/_appointments-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')

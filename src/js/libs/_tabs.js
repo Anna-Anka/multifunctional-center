@@ -11,3 +11,7 @@ if (document.querySelector('[data-tabs="all-news"]')) {
 if (document.querySelector('[data-tabs="documents-page"]')) {
     new GraphTabs('documents-page');
 }
+
+if (document.querySelector('[data-tabs="appointments-page"]')) {
+    new GraphTabs('appointments-page');
+}
