@@ -1,0 +1,24 @@
+@include('./settings/_head.html', {
+'title' : 'Оценка качества | МФЦ Камчатского края',
+'description' : 'Оцените качество услуг МФЦ Камчатского края. Ваше мнение важно для улучшения сервиса и повышения уровня обслуживания.',
+'keywords' : 'Оценка качества, услуги МФЦ, отзывы, Камчатский край, улучшение сервиса, обратная связь, качество обслуживания',
+'robots' : 'index, follow',
+})
+
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
+
+@include('./components/blocks/_breadcrumbs.html', {
+'links': ['Главная', 'Оценка качества']
+})
+
+<main class="main">
+    @include('./pages/feedback-page/_feedback-page.html')
+</main>
+
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')

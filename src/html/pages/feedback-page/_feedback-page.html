@@ -1,0 +1,84 @@
+<section class="feedback-page page-private">
+    <div class="container">
+        <div class="page-wrapper">
+            @include('../../components/blocks/_private-side-menu.html')
+            <div class="page-wrapper__content">
+                <h1 class="page-private__title">
+                    Оценка качества
+                </h1>
+                <form class="feedback-grade form">
+                    <span class="feedback-grade__subtitle">
+                        Оцените ваш последний визит 11 декабря в Офис № 23
+                    </span>
+                    <fieldset class="form__rating rating">
+                        <legend class="sr-only">
+                            Укажите оценку:
+                        </legend>
+                        <div class="rating__stars">
+                            <input class="rating__hidden" id="rating-1" name="rating" value="1" type="radio">
+                            <label class="rating__star" for="rating-1" aria-label="1 из 5"></label>
+                            <input class="rating__hidden" id="rating-2" name="rating" value="2" type="radio">
+                            <label class="rating__star" for="rating-2" aria-label="2 из 5"></label>
+                            <input class="rating__hidden" id="rating-3" name="rating" value="3" type="radio">
+                            <label class="rating__star" for="rating-3" aria-label="3 из 5"></label>
+                            <input class="rating__hidden" id="rating-4" name="rating" value="4" type="radio" checked>
+                            <label class="rating__star" for="rating-4" aria-label="4 из 5"></label>
+                            <input class="rating__hidden" id="rating-5" name="rating" value="5" type="radio">
+                            <label class="rating__star" for="rating-5" aria-label="5 из 5"></label>
+                        </div>
+                    </fieldset>
+                    <button class="feedback-grade__button button button--fill" type="button">
+                        Отправить
+                    </button>
+                    <div class="feedback-grade__message">
+                        <label class="sr-only" for="feedback-message">Комментарий</label>
+                        <textarea class="form__field form__field--textarea" name="message" id="feedback-message" placeholder="Оставьте ваш комментарий"></textarea>
+                    </div>
+                </form>
+                <ul class="feedback-page__list">
+                    <li class="feedback-page__item">
+                        @include('../../components/cards/_feedback-card.html', {
+                        'office': 'Офис № 23',
+                        'stars': '5',
+                        'datetime': '2022-12-08',
+                        'date': '08.12.2022'
+                        })
+                    </li>
+                    <li class="feedback-page__item">
+                        @include('../../components/cards/_feedback-card.html', {
+                        'office': 'Офис № 23',
+                        'stars': '4',
+                        'datetime': '2023-12-11',
+                        'date': '11.12.2023'
+                        })
+                    </li>
+                    <li class="feedback-page__item">
+                        @include('../../components/cards/_feedback-card.html', {
+                        'text': ['Посетили МФЦ на Ленсном проспекте. Очень понравилось обслуживание. Вежлоивые сотрудники.'],
+                        'office': 'Офис № 08',
+                        'stars': '3',
+                        'datetime': '2022-04-03',
+                        'date': '03.04.2022'
+                        })
+                    </li>
+                    <li class="feedback-page__item">
+                        @include('../../components/cards/_feedback-card.html', {
+                        'office': 'Офис № 23',
+                        'stars': '4',
+                        'datetime': '2022-02-15',
+                        'date': '15.02.2022'
+                        })
+                    </li>
+                    <li class="feedback-page__item">
+                        @include('../../components/cards/_feedback-card.html', {
+                        'office': 'Офис № 07',
+                        'stars': '1',
+                        'datetime': '2022-11-02',
+                        'date': '11.02.2022'
+                        })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

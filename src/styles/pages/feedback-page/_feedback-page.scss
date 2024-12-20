@@ -1,0 +1,45 @@
+.feedback-page {
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+}
+
+.feedback-grade {
+	@include flex-simple(16px 40px);
+
+	flex-wrap: wrap;
+
+	@include mq(lg) {
+		flex-direction: column;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 32px;
+	}
+
+	&__subtitle {
+		@include mq(lg, min) {
+			flex-basis: 50%;
+			margin-right: auto;
+		}
+	}
+
+	&__header {
+		@include flex-alignment(40px, space-between);
+
+		margin-bottom: 16px;
+	}
+
+	&__button {
+		@include mq(lg) {
+			order: 1;
+		}
+	}
+
+	&__message {
+		flex-grow: 1;
+		flex-basis: 100%;
+	}
+}

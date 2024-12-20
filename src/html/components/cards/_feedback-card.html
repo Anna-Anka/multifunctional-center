@@ -1,0 +1,17 @@
+<article class="feedback-card">
+    @if(typeof text !== 'undefined' && text) {
+    <div class="feedback-card__text">
+        @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
+    </div>
+    }
+    <div class="feedback-card__inner">
+        <span class="feedback-card__subtitle">@office</span>
+        <ul class="feedback-card__rating">
+            @for (var i = 0; i < stars; i++) { <li class="feedback-card__star feedback-card__star--active" aria-label="${i} из 5 звезд">
+                </li> }
+                @for (var i = 5; i > stars; i--) { <li class="feedback-card__star">
+                </li> }
+        </ul>
+        <time class="feedback-card__date" datetime="@datetime">@date</time>
+    </div>
+</article>
