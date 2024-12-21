@@ -1,38 +1,50 @@
 import * as ymaps3 from 'ymaps3';
 import styles from './_styles.json';
+import { pins, advanceMapSettings, baseMapSettings } from './_data.js'
+import { getGeolocation } from './utils/_geolocation.js'
+import { markerButtonNowCloseA11y, filterButtonClickHandler, balloonCloseButtonClickHandler, markerButtonClickHandler } from './utils/_handlers.js';
+
+function createPin(pin) {
+    const wrapper = document.createElement('div')
+    wrapper.className = 'marker';
+    wrapper.setAttribute('data-custom-marker', 'true')
+
+    const markerButton = document.createElement('button')
+    markerButton.className = 'marker__button';
+    markerButton.setAttribute('aria-haspopup', 'true')
+    markerButtonNowCloseA11y(markerButton)
+    markerButton.setAttribute('aria-controls', pin.id)
+
+    const balloonWrapper = document.createElement('div')
+    balloonWrapper.innerHTML = `<div class="map-balloon map-balloon--hidden" role="tooltip" id="${pin.id}">
+    <div class="map-balloon__header">
+        <span class="map-balloon__title">
+            ${pin.htmlContent.title}
+        </span>
+        <button class="map-balloon__close" type="button" aria-label="Закрыть"></button>
+    </div>
+    <div class="map-balloon__body">
+        ${pin.htmlContent.body}
+    </div>
+    <a class="map-balloon__button button button--fill" href="${pin.htmlContent.hrefValue}">
+        Записаться
+    </a>
+</div>`;
+    wrapper.append(markerButton)
+    wrapper.append(balloonWrapper)
+
+    pin.types.forEach((type) => {
+        wrapper.setAttribute(`data-${type}`, 'true')
+    })
+
+    return wrapper
+}
 
 (function () {
-    const COMMON_LOCATION_PARAMS = { easing: 'ease-in-out', duration: 2000, zoom: 15 };
-
-    // work, near, office, road
-
-    const pins = [
-        {
-            coordinates: [37.65, 55.75],
-            types: ['work']
-        },
-        {
-            coordinates: [36.65, 56.75],
-            types: ['work']
-        },
-        {
-            coordinates: [38.65, 54.75],
-            types: ['near']
-        },
-        {
-            coordinates: [40.65, 52.75],
-            types: ['near']
-        }
-    ]
-
     const mapElement = document.querySelector('[data-map]')
 
-    const workButton = document.querySelector('.offices-page__button--work')
-    const nearButton = document.querySelector('.offices-page__button--near')
-
     if (mapElement) {
-        let center = [37.65080999999997, 55.758412068983525];
-        // let center = [53.095884, 158.349753];
+        const isBaseMap = mapElement.getAttribute('data-map') === 'base'
 
         async function initMap() {
             await ymaps3.ready;
@@ -42,78 +54,61 @@ import styles from './_styles.json';
                 '@yandex/ymaps3-controls@0.0.1',
             );
 
-            // + YMapControls, YMapScaleControl
-            const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker, Placemark } = ymaps3;
+            const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker } = ymaps3;
             const { YMapZoomControl, YMapGeolocationControl } = await ymaps3.import('@yandex/ymaps3-default-ui-theme');
 
             // создание карты
             const map = new YMap(
-                document.querySelector('[data-map]'),
-                {
-                    location: {
-                        center,
-                        zoom: 5
-                        // zoom: 14
-                    },
-                }
+                mapElement, isBaseMap ? baseMapSettings : advanceMapSettings
             );
 
             map.addChild(new YMapDefaultFeaturesLayer({}))
 
-            const controls = new YMapControls({ position: 'right' });
-            //Добавление кнопок + и 
-            controls.addChild(new YMapZoomControl({}));
-            // Добавление кнопки геолокации
-            controls.addChild(new YMapGeolocationControl({}));
-            map.addChild(controls);
+            if (!isBaseMap) {
+                const controls = new YMapControls({ position: 'right' });
+                //Добавление кнопок + и 
+                controls.addChild(new YMapZoomControl({}));
+                // Добавление кнопки геолокации
+                controls.addChild(new YMapGeolocationControl({}));
+                map.addChild(controls);
 
+                pins.forEach((pin) => {
+                    const wrapper = createPin(pin)
 
-            workButton.addEventListener('click', () => {
-                const pinElements = document.querySelectorAll('.marker')
+                    // Настройка маркера
+                    const marker = new YMapMarker(
+                        {
+                            coordinates: pin.coordinates,
+                            mapFollowsOnDrag: true
+                        },
+                        wrapper
+                    );
 
-                pinElements.forEach((pin) => {
-                    if (pin.hasAttribute('data-work')) {
-                        pin.classList.remove('marker--hidden')
-                    } else {
-                        pin.classList.add('marker--hidden')
-                    }
+                    map.addChild(marker);
                 })
+            }
+
+            const filterButtons = document.querySelectorAll('[data-filter-pins]')
+            filterButtons && filterButtons.forEach((button) => {
+                button.addEventListener('click', () => filterButtonClickHandler(button))
             })
 
-            nearButton.addEventListener('click', () => {
-                const pinElements = document.querySelectorAll('.marker')
+            const nearButton = document.querySelector('[data-near]')
+            nearButton && nearButton.addEventListener('click', getGeolocation)
 
-                pinElements.forEach((pin) => {
-                    if (pin.hasAttribute('data-near')) {
-                        pin.classList.remove('marker--hidden')
-                    } else {
-                        pin.classList.add('marker--hidden')
-                    }
-                })
+            const allCloseButtons = document.querySelectorAll('.map-balloon__close')
+            // обрабатываем клик на крестик в баллуне
+            allCloseButtons && allCloseButtons.forEach((button) => {
+                button.addEventListener('click', () => balloonCloseButtonClickHandler(button))
             })
 
-            pins.forEach((pin) => {
-                const markerElement = document.createElement('div');
-                markerElement.className = 'marker';
-
-                pin.types.forEach((type) => {
-                    markerElement.setAttribute(`data-${type}`, 'true')
-                })
-
-                // Настройка маркера
-                const marker = new YMapMarker(
-                    {
-                        coordinates: pin.coordinates,
-                        mapFollowsOnDrag: true
-                    },
-                    markerElement
-                );
-
-                map.addChild(marker);
+            const allMarkerButtons = document.querySelectorAll('.marker__button')
+            // обрабатываем клик на маркер, открываем баллун
+            allMarkerButtons && allMarkerButtons.forEach((button) => {
+                button.addEventListener('click', () => markerButtonClickHandler(button))
             })
 
-
-            // Карта с кастомными стилями
+            // подключаем стили
             map.addChild(new YMapDefaultSchemeLayer({
                 customization: styles
             }));

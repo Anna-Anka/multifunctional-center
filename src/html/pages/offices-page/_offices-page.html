@@ -22,23 +22,27 @@
             </div>
         </div>
         <div class="offices-page__links">
-            <button class="office-link office-link--map" type="button">
+            <button class="office-link office-link--map" data-filter-pins="office" type="button">
                 Центр оказания услуг
             </button>
-            <button class="office-link office-link--car" type="button">
+            <button class="office-link office-link--car" data-filter-pins="road" type="button">
                 Выездное обслуживание
             </button>
         </div>
         <div class="offices-page__buttons">
-            <button class="offices-page__button offices-page__button--work button button--secondary" type="button">
+            <button class="offices-page__button button button--secondary" data-filter-pins="work" type="button">
                 Сейчас работает
             </button>
-            <button class="offices-page__button offices-page__button--near button button--secondary" type="button">
+            <button class="offices-page__button button button--secondary" data-near type="button">
                 Рядом
             </button>
         </div>
         <div class="offices-page__map">
-            <div data-map></div>
+            <!-- 
+            data-map="advance" — для страницы со всеми офисами 
+            data-map="base" — для страницы с одним офисом
+            -->
+            <div data-map="advance"></div>
         </div>
     </div>
 </section>

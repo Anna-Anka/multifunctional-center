@@ -77,11 +77,12 @@
                                     </div>
                                     <div>
                                         <label class="form__label" for="name">Имя*</label>
-                                        <input class="form__field" id="name" name="name" type="text" placeholder="Василий" required>
+                                        <input class="form__field" id="name" name="name" type="text" placeholder="Василий" disabled required>
                                     </div>
                                     <div>
                                         <label class="form__label" for="patronymic">Отчество</label>
-                                        <input class="form__field" id="patronymic" name="patronymic" type="text" placeholder="Петрович">
+                                        <input class="form__field form__field--error" id="patronymic" name="patronymic" type="text" placeholder="Петрович">
+                                        <span class="form__error">Текст ошибки</span>
                                     </div>
                                     <div>
                                         <label class="form__label" for="date-of-birth">Дата рождения</label>

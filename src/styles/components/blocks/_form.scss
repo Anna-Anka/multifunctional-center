@@ -49,6 +49,10 @@
 			border-color 0.3s,
 			background-color 0.3s;
 
+		&:not(:last-child) {
+			margin-bottom: 4px;
+		}
+
 		&:focus {
 			border-color: var(--color-red-500);
 		}
@@ -75,6 +79,12 @@
 			min-height: 76px;
 			resize: none;
 		}
+	}
+
+	&__error {
+		display: inline-block;
+		font-size: 10px;
+		color: var(--color-red-900);
 	}
 
 	&__agree {
