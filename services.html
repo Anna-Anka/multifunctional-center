@@ -192,29 +192,246 @@
     </div>
 </header>
 
-<!-- <div class="graph-modal">
-    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="">
+<div class="graph-modal">
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-feedback-form" id="modal-feedback-form">
     <div class="graph-modal__box">
         <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <form class="graph-modal__form form">
+            <div class="graph-modal__header">
+                <span class="graph-modal__title">Оставьте Ваш отзыв о работе наших центров</span>
+                <div class="graph-modal__text">
+                     <p> В соответствии с Федеральным законом от 02.05.2006 N59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации" </p> 
+                </div>
+            </div>
+            <div class="graph-modal__items">
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-feedback-form-name">Имя</label>
+                    <input class="form__field" id="modal-feedback-form-surname" name="name" type="text" placeholder="Введите Ваше имя*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-feedback-form-surname">Фамилия</label>
+                    <input class="form__field" id="modal-feedback-form-surname" name="surname" type="text" placeholder="Введите Вашу фамилию*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-feedback-form-patronymic">Отчество</label>
+                    <input class="form__field" id="modal-feedback-form-patronymic" name="patronymic" type="text" placeholder="Введите Ваше Отчество*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-feedback-form-email">Электронная почта</label>
+                    <input class="form__field" id="modal-feedback-form-email" name="email" type="email" placeholder="Введите Ваш e-mail*" required>
+                </div>
+                <div class="graph-modal__item graph-modal__item--long">
+                    <label class="sr-only" for="modal-feedback-form-message">Сообщение</label>
+                    <textarea class="form__field form__field--textarea" id="modal-feedback-form-message" name="message" placeholder="Напишите Ваш отзыв*"></textarea>
+                </div>
+                
+            </div>
+            <div class="form__footer">
+                <label class="form__agree">
+                    <input class="form__hidden" type="checkbox" name="agree" value="isAgree">
+                    <span class="form__visible form__visible--checkbox" aria-hidden="true"></span>
+                    Даю согласие на обработку своих персональных данных
+                </label>
+                <button class="button button--fill" type="submit">
+                    Отправить
+                </button>
+            </div>
+            <div class="graph-modal__info">
+                <div class="graph-modal__subtext">
+                    <p>
+                        * обязательные поля (в соответствии с п.3 ст.7 Федерального закона от 02.05.2006 №59-ФЗ)
+                    </p>
+                </div>
+                <div class="form__links">
+                    <a href="#">
+                        Политика обработки персональных данных
+                    </a>
+                    <a href="#">
+                        Согласие на обработку персональных данных
+                    </a>
+                    <a href="#">
+                        Стандарт работы с обращениями
+                    </a>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-    <div class="graph-modal__container graph-modal__container--thank" role="dialog" aria-modal="true" data-graph-target="modal-thank">
+
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-question-form" id="modal-question-form">
     <div class="graph-modal__box">
-        <div class="graph-modal__header">
-            <span class="graph-modal__title title">
-                Спасибо за обратную связь!
-            </span>
-            <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
-        </div>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <form class="graph-modal__form form">
+            <div class="graph-modal__header">
+                <span class="graph-modal__title">Задайте Ваш вопрос</span>
+                <div class="graph-modal__text">
+                     <p> В соответствии с Федеральным законом от 02.05.2006 N59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации" </p> 
+                </div>
+            </div>
+            <div class="graph-modal__items">
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-question-form-name">Имя</label>
+                    <input class="form__field" id="modal-question-form-surname" name="name" type="text" placeholder="Введите Ваше имя*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-question-form-surname">Фамилия</label>
+                    <input class="form__field" id="modal-question-form-surname" name="surname" type="text" placeholder="Введите Вашу фамилию*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-question-form-patronymic">Отчество</label>
+                    <input class="form__field" id="modal-question-form-patronymic" name="patronymic" type="text" placeholder="Введите Ваше Отчество*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-question-form-email">Электронная почта</label>
+                    <input class="form__field" id="modal-question-form-email" name="email" type="email" placeholder="Введите Ваш e-mail*" required>
+                </div>
+                <div class="graph-modal__item graph-modal__item--long">
+                    <label class="sr-only" for="modal-question-form-message">Сообщение</label>
+                    <textarea class="form__field form__field--textarea" id="modal-question-form-message" name="message" placeholder="Напишите Ваш вопрос*"></textarea>
+                </div>
+                
+            </div>
+            <div class="form__footer">
+                <label class="form__agree">
+                    <input class="form__hidden" type="checkbox" name="agree" value="isAgree">
+                    <span class="form__visible form__visible--checkbox" aria-hidden="true"></span>
+                    Даю согласие на обработку своих персональных данных
+                </label>
+                <button class="button button--fill" type="submit">
+                    Отправить
+                </button>
+            </div>
+            <div class="graph-modal__info">
+                <div class="graph-modal__subtext">
+                    <p>
+                        * обязательные поля (в соответствии с п.3 ст.7 Федерального закона от 02.05.2006 №59-ФЗ)
+                    </p>
+                </div>
+                <div class="form__links">
+                    <a href="#">
+                        Политика обработки персональных данных
+                    </a>
+                    <a href="#">
+                        Согласие на обработку персональных данных
+                    </a>
+                    <a href="#">
+                        Стандарт работы с обращениями
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-form" id="modal-vacancy-form">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <form class="graph-modal__form form">
+            <div class="graph-modal__header">
+                <span class="graph-modal__title">Задайте Ваш вопрос</span>
+                <div class="graph-modal__text">
+                     <p> В соответствии с Федеральным законом от 02.05.2006 N59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации" </p> 
+                </div>
+            </div>
+            <div class="graph-modal__items">
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-vacancy-form-name">Имя</label>
+                    <input class="form__field" id="modal-vacancy-form-surname" name="name" type="text" placeholder="Введите Ваше имя*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-vacancy-form-surname">Фамилия</label>
+                    <input class="form__field" id="modal-vacancy-form-surname" name="surname" type="text" placeholder="Введите Вашу фамилию*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-vacancy-form-patronymic">Отчество</label>
+                    <input class="form__field" id="modal-vacancy-form-patronymic" name="patronymic" type="text" placeholder="Введите Ваше Отчество*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="modal-vacancy-form-email">Электронная почта</label>
+                    <input class="form__field" id="modal-vacancy-form-email" name="email" type="email" placeholder="Введите Ваш e-mail*" required>
+                </div>
+                <div class="graph-modal__item graph-modal__item--long">
+                    <label class="sr-only" for="modal-vacancy-form-message">Сообщение</label>
+                    <textarea class="form__field form__field--textarea" id="modal-vacancy-form-message" name="message" placeholder="Сопроводительный текст"></textarea>
+                </div>
+                
+                <div class="graph-modal__item graph-modal__item--long">
+                    <label class="sr-only" for="modal-vacancy-form-cv">Прикрепить резюме</label>
+                    <input class="form__field" id="modal-vacancy-form-cv" name="cv-file" type="file" placeholder="Введите Ваш e-mail*" required>
+                </div>
+                
+            </div>
+            <div class="form__footer">
+                <label class="form__agree">
+                    <input class="form__hidden" type="checkbox" name="agree" value="isAgree">
+                    <span class="form__visible form__visible--checkbox" aria-hidden="true"></span>
+                    Даю согласие на обработку своих персональных данных
+                </label>
+                <button class="button button--fill" type="submit">
+                    Отправить
+                </button>
+            </div>
+            <div class="graph-modal__info">
+                <div class="graph-modal__subtext">
+                    <p>
+                        * обязательные поля (в соответствии с п.3 ст.7 Федерального закона от 02.05.2006 №59-ФЗ)
+                    </p>
+                </div>
+                <div class="form__links">
+                    <a href="#">
+                        Политика обработки персональных данных
+                    </a>
+                    <a href="#">
+                        Согласие на обработку персональных данных
+                    </a>
+                    <a href="#">
+                        Стандарт работы с обращениями
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-feedback-success" id="modal-feedback-success">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
         <div class="graph-modal__text">
             <p>
-                    В ближайшее время обработаем данные и опубликуем пост
-                </p>
+                Спасибо, Ваш отзыв отправлен!
+            </p>
         </div>
-        <button class="graph-modal__button button js-modal-close" type="button">Отлично!</button>
     </div>
 </div>
-</div> -->
+
+    <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-question-success" id="modal-question-success">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <div class="graph-modal__text">
+            <p>
+                Спасибо, Ваш вопрос отправлен!
+            </p>
+        </div>
+    </div>
+</div>
+
+    <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-success" id="modal-vacancy-success">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <div class="graph-modal__text">
+            <p>
+                Спасибо, Ваше резюме отправлено!
+            </p>
+        </div>
+    </div>
+</div>
+
+    <div class="btn-thanks">
+        <button type="button" data-graph-path="modal-feedback-success" style="display: none;"></button>
+        <button type="button" data-graph-path="modal-question-success" style="display: none;"></button>
+        <button type="button" data-graph-path="modal-vacancy-success" style="display: none;"></button>
+    </div>
+</div>
 
 <div class="breadcrumbs">
     <div class="container">
@@ -264,92 +481,92 @@
             </ul>
             <div class="tabs__content">
                 <div class="tabs__panel">
-                    <form class="services-page__form services-filters" action="#">
+                    <form class="services-page__form services-filters form" action="#">
                         <fieldset class="services-filters__list">
                             <legend class="sr-only">Выберите ситуацию</legend>
                             <ul class="services-filters__radio">
                                 <li>
                                     <label class="services-filters__box">
                                         Беременность
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="pregnancy" checked>
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="pregnancy" checked>
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Трудная жизненная ситуация
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="difficult-life-situation">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="difficult-life-situation">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Рождение ребёнка
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="birth-child">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="birth-child">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Открытие своего дела
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="starting-business">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="starting-business">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Выход на пенсию
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="retirement">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="retirement">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Утрата близкого человека
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="loss-loved-person">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="loss-loved-person">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Оформление удостоверения о праве на льготы
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="certificate-benefits">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="certificate-benefits">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Оформление документов
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="registration-documents">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="registration-documents">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Индивидуальное жилищное строительство
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="individual-housing-construction">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="individual-housing-construction">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Приобретение (отчуждение) недвижимости
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="acquisition-real-estate">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="acquisition-real-estate">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Перемена имени
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="name-change">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="name-change">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Потеря и поиск работы
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="job-loss-search">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="job-loss-search">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                             </ul>
@@ -549,22 +766,22 @@
                                 <li>
                                     <label class="services-filters__box">
                                         Беременность
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="pregnancy" checked>
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="pregnancy" checked>
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Трудная жизненная ситуация
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="difficult-life-situation">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="difficult-life-situation">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                                 <li>
                                     <label class="services-filters__box">
                                         Рождение ребёнка
-                                        <input class="services-filters__hidden" type="radio" name="services-situation" value="birth-child">
-                                        <span class="services-filters__visible" aria-hidden="true"></span>
+                                        <input class="form__hidden" type="radio" name="services-situation" value="birth-child">
+                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
                                     </label>
                                 </li>
                             </ul>
