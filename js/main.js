@@ -195,6 +195,9 @@ if (document.querySelector('[data-tabs="all-news"]')) {
 if (document.querySelector('[data-tabs="documents-page"]')) {
   new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('documents-page');
 }
+if (document.querySelector('[data-tabs="appointments-page"]')) {
+  new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('appointments-page');
+}
 
 /***/ }),
 
@@ -354,6 +357,105 @@ __webpack_async_result__();
 
 /***/ }),
 
+/***/ "./src/js/project/map/_data.js":
+/*!*************************************!*\
+  !*** ./src/js/project/map/_data.js ***!
+  \*************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   advanceMapSettings: () => (/* binding */ advanceMapSettings),
+/* harmony export */   ariaLabelMarkerButton: () => (/* binding */ ariaLabelMarkerButton),
+/* harmony export */   baseMapSettings: () => (/* binding */ baseMapSettings),
+/* harmony export */   pins: () => (/* binding */ pins)
+/* harmony export */ });
+// work - Сейчас работает,
+// office - Центр оказания услуг,
+// road - Выездное обслуживание
+var pins = [{
+  coordinates: [37.65, 55.75],
+  types: ['work', 'office'],
+  id: 'element-1',
+  htmlContent: {
+    title: 'Выездное обслуживание (Анавгай)',
+    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
+    hrefValue: '#'
+  }
+}, {
+  coordinates: [37.66, 55.76],
+  types: ['road'],
+  id: 'element-2',
+  htmlContent: {
+    title: 'Выездное обслуживание (Анавгай)',
+    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
+    hrefValue: '#'
+  }
+}, {
+  coordinates: [37.67, 55.77],
+  types: ['office'],
+  id: 'element-3',
+  htmlContent: {
+    title: 'Выездное обслуживание (Анавгай)',
+    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
+    hrefValue: '#'
+  }
+}, {
+  coordinates: [37.66, 55.76],
+  types: ['work'],
+  id: 'element-4',
+  htmlContent: {
+    title: 'Выездное обслуживание',
+    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p>",
+    hrefValue: '#'
+  }
+}, {
+  coordinates: [37.65, 55.74],
+  types: ['work'],
+  id: 'element-5',
+  htmlContent: {
+    title: 'Выездное обслуживание (Анавгай)',
+    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
+    hrefValue: '#'
+  }
+}, {
+  coordinates: [37.63, 55.72],
+  types: ['office'],
+  id: 'element-7',
+  htmlContent: {
+    title: 'Выездное обслуживание',
+    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p>",
+    hrefValue: '#'
+  }
+}, {
+  coordinates: [37.64, 55.73],
+  types: ['road'],
+  id: 'element-6',
+  htmlContent: {
+    title: 'Выездное обслуживание',
+    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p>",
+    hrefValue: '#'
+  }
+}];
+var ariaLabelMarkerButton = {
+  nowOpen: 'Закрыть дополнительную информацию',
+  nowClose: 'Открыть дополнительную информацию'
+};
+var advanceMapSettings = {
+  location: {
+    center: [37.65080999999997, 55.758412068983525],
+    zoom: 12
+  }
+};
+var baseMapSettings = {
+  location: {
+    center: [37.65080999999997, 55.758412068983525],
+    zoom: 12
+  }
+};
+
+/***/ }),
+
 /***/ "./src/js/project/map/_map.js":
 /*!************************************!*\
   !*** ./src/js/project/map/_map.js ***!
@@ -364,6 +466,9 @@ __webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ymaps3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ymaps3 */ "ymaps3");
 /* harmony import */ var _styles_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_styles.json */ "./src/js/project/map/_styles.json");
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_data.js */ "./src/js/project/map/_data.js");
+/* harmony import */ var _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/_geolocation.js */ "./src/js/project/map/utils/_geolocation.js");
+/* harmony import */ var _utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/_handlers.js */ "./src/js/project/map/utils/_handlers.js");
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([ymaps3__WEBPACK_IMPORTED_MODULE_0__]);
 ymaps3__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -372,36 +477,33 @@ function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
+
+
+
+function createPin(pin) {
+  var wrapper = document.createElement('div');
+  wrapper.className = 'marker';
+  wrapper.setAttribute('data-custom-marker', 'true');
+  var markerButton = document.createElement('button');
+  markerButton.className = 'marker__button';
+  markerButton.setAttribute('aria-haspopup', 'true');
+  (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonNowCloseA11y)(markerButton);
+  markerButton.setAttribute('aria-controls', pin.id);
+  var balloonWrapper = document.createElement('div');
+  balloonWrapper.innerHTML = "<div class=\"map-balloon map-balloon--hidden\" role=\"tooltip\" id=\"".concat(pin.id, "\">\n    <div class=\"map-balloon__header\">\n        <span class=\"map-balloon__title\">\n            ").concat(pin.htmlContent.title, "\n        </span>\n        <button class=\"map-balloon__close\" type=\"button\" aria-label=\"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"></button>\n    </div>\n    <div class=\"map-balloon__body\">\n        ").concat(pin.htmlContent.body, "\n    </div>\n    <a class=\"map-balloon__button button button--fill\" href=\"").concat(pin.htmlContent.hrefValue, "\">\n        \u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F\n    </a>\n</div>");
+  wrapper.append(markerButton);
+  wrapper.append(balloonWrapper);
+  pin.types.forEach(function (type) {
+    wrapper.setAttribute("data-".concat(type), 'true');
+  });
+  return wrapper;
+}
 (function () {
-  var COMMON_LOCATION_PARAMS = {
-    easing: 'ease-in-out',
-    duration: 2000,
-    zoom: 15
-  };
-
-  // work, near, office, road
-
-  var pins = [{
-    coordinates: [37.65, 55.75],
-    types: ['work']
-  }, {
-    coordinates: [36.65, 56.75],
-    types: ['work']
-  }, {
-    coordinates: [38.65, 54.75],
-    types: ['near']
-  }, {
-    coordinates: [40.65, 52.75],
-    types: ['near']
-  }];
   var mapElement = document.querySelector('[data-map]');
-  var workButton = document.querySelector('.offices-page__button--work');
-  var nearButton = document.querySelector('.offices-page__button--near');
   if (mapElement) {
-    // let center = [53.095884, 158.349753];
     var initMap = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker, Placemark, _yield$ymaps3$import, YMapZoomControl, YMapGeolocationControl, map, controls;
+        var YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker, _yield$ymaps3$import, YMapZoomControl, YMapGeolocationControl, map, controls, filterButtons, nearButton, allCloseButtons, allMarkerButtons;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
@@ -411,8 +513,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
               _context.next = 4;
               return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"].registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@0.0.2', '@yandex/ymaps3-controls@0.0.1');
             case 4:
-              // + YMapControls, YMapScaleControl
-              YMap = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMap, YMapDefaultSchemeLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultFeaturesLayer, YMapControls = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapControls, YMapMarker = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapMarker, Placemark = ymaps3__WEBPACK_IMPORTED_MODULE_0__.Placemark;
+              YMap = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMap, YMapDefaultSchemeLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultFeaturesLayer, YMapControls = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapControls, YMapMarker = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapMarker;
               _context.next = 7;
               return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"]('@yandex/ymaps3-default-ui-theme');
             case 7:
@@ -420,61 +521,53 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
               YMapZoomControl = _yield$ymaps3$import.YMapZoomControl;
               YMapGeolocationControl = _yield$ymaps3$import.YMapGeolocationControl;
               // создание карты
-              map = new YMap(document.querySelector('[data-map]'), {
-                location: {
-                  center: center,
-                  zoom: 5
-                  // zoom: 14
-                }
-              });
+              map = new YMap(mapElement, isBaseMap ? _data_js__WEBPACK_IMPORTED_MODULE_2__.baseMapSettings : _data_js__WEBPACK_IMPORTED_MODULE_2__.advanceMapSettings);
               map.addChild(new YMapDefaultFeaturesLayer({}));
-              controls = new YMapControls({
-                position: 'right'
-              }); //Добавление кнопок + и 
-              controls.addChild(new YMapZoomControl({}));
-              // Добавление кнопки геолокации
-              controls.addChild(new YMapGeolocationControl({}));
-              map.addChild(controls);
-              workButton.addEventListener('click', function () {
-                var pinElements = document.querySelectorAll('.marker');
-                pinElements.forEach(function (pin) {
-                  if (pin.hasAttribute('data-work')) {
-                    pin.classList.remove('marker--hidden');
-                  } else {
-                    pin.classList.add('marker--hidden');
-                  }
-                });
-              });
-              nearButton.addEventListener('click', function () {
-                var pinElements = document.querySelectorAll('.marker');
-                pinElements.forEach(function (pin) {
-                  if (pin.hasAttribute('data-near')) {
-                    pin.classList.remove('marker--hidden');
-                  } else {
-                    pin.classList.add('marker--hidden');
-                  }
-                });
-              });
-              pins.forEach(function (pin) {
-                var markerElement = document.createElement('div');
-                markerElement.className = 'marker';
-                pin.types.forEach(function (type) {
-                  markerElement.setAttribute("data-".concat(type), 'true');
-                });
+              if (!isBaseMap) {
+                controls = new YMapControls({
+                  position: 'right'
+                }); //Добавление кнопок + и 
+                controls.addChild(new YMapZoomControl({}));
+                // Добавление кнопки геолокации
+                controls.addChild(new YMapGeolocationControl({}));
+                map.addChild(controls);
+                _data_js__WEBPACK_IMPORTED_MODULE_2__.pins.forEach(function (pin) {
+                  var wrapper = createPin(pin);
 
-                // Настройка маркера
-                var marker = new YMapMarker({
-                  coordinates: pin.coordinates,
-                  mapFollowsOnDrag: true
-                }, markerElement);
-                map.addChild(marker);
+                  // Настройка маркера
+                  var marker = new YMapMarker({
+                    coordinates: pin.coordinates,
+                    mapFollowsOnDrag: true
+                  }, wrapper);
+                  map.addChild(marker);
+                });
+              }
+              filterButtons = document.querySelectorAll('[data-filter-pins]');
+              filterButtons && filterButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.filterButtonClickHandler)(button);
+                });
+              });
+              nearButton = document.querySelector('[data-near]');
+              nearButton && nearButton.addEventListener('click', _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_3__.getGeolocation);
+              allCloseButtons = document.querySelectorAll('.map-balloon__close'); // обрабатываем клик на крестик в баллуне
+              allCloseButtons && allCloseButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.balloonCloseButtonClickHandler)(button);
+                });
+              });
+              allMarkerButtons = document.querySelectorAll('.marker__button'); // обрабатываем клик на маркер, открываем баллун
+              allMarkerButtons && allMarkerButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonClickHandler)(button);
+                });
               });
 
-              // Карта с кастомными стилями
+              // подключаем стили
               map.addChild(new YMapDefaultSchemeLayer({
                 customization: _styles_json__WEBPACK_IMPORTED_MODULE_1__
               }));
-            case 20:
+            case 22:
             case "end":
               return _context.stop();
           }
@@ -484,13 +577,137 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         return _ref.apply(this, arguments);
       };
     }();
-    var center = [37.65080999999997, 55.758412068983525];
+    var isBaseMap = mapElement.getAttribute('data-map') === 'base';
     ;
     initMap();
   }
 })();
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ "./src/js/project/map/utils/_geolocation.js":
+/*!**************************************************!*\
+  !*** ./src/js/project/map/utils/_geolocation.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getGeolocation: () => (/* binding */ getGeolocation)
+/* harmony export */ });
+function haversineDistance(coord1, coord2) {
+  var R = 6371; // Радиус Земли в километрах
+  var dLat = (coord2[1] - coord1[1]) * Math.PI / 180; // Разница в широте
+  var dLon = (coord2[0] - coord1[0]) * Math.PI / 180; // Разница в долготе
+
+  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(coord1[1] * Math.PI / 180) * Math.cos(coord2[1] * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c; // Возвращаем расстояние в километрах
+}
+function getGeolocation() {
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      var userCoords = [position.coords.latitude, position.coords.longitude];
+      var closestPin = null;
+      var closestDistance = Infinity;
+
+      // Ищем ближайший объект
+      pins.forEach(function (pin) {
+        var distance = haversineDistance(userCoords, pin.coordinates);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestPin = pin;
+        }
+      });
+      var wrappers = document.querySelectorAll('.marker');
+      wrappers.forEach(function (wrapper) {
+        wrapper.classList.add('marker--hidden');
+        checkMarkerA11yByWrapperClass(wrapper);
+      });
+      var balloon = document.getElementById(closestPin.id);
+      var wrapper = balloon.closest('.marker');
+      wrapper.classList.remove('marker--hidden');
+      checkMarkerA11yByWrapperClass(wrapper);
+    }, function (error) {
+      console.error("Ошибка получения местоположения: " + error.message);
+    });
+  } else {
+    console.log("Геолокация не поддерживается вашим браузером.");
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/project/map/utils/_handlers.js":
+/*!***********************************************!*\
+  !*** ./src/js/project/map/utils/_handlers.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   balloonCloseButtonClickHandler: () => (/* binding */ balloonCloseButtonClickHandler),
+/* harmony export */   filterButtonClickHandler: () => (/* binding */ filterButtonClickHandler),
+/* harmony export */   markerButtonClickHandler: () => (/* binding */ markerButtonClickHandler),
+/* harmony export */   markerButtonNowCloseA11y: () => (/* binding */ markerButtonNowCloseA11y)
+/* harmony export */ });
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_data.js */ "./src/js/project/map/_data.js");
+
+function markerButtonNowCloseA11y(marker) {
+  marker.setAttribute('aria-expanded', 'false');
+  marker.setAttribute('aria-label', _data_js__WEBPACK_IMPORTED_MODULE_0__.ariaLabelMarkerButton.nowClose);
+}
+function markerButtonNowOpenA11y(marker) {
+  marker.setAttribute('aria-expanded', 'true');
+  marker.setAttribute('aria-label', _data_js__WEBPACK_IMPORTED_MODULE_0__.ariaLabelMarkerButton.nowOpen);
+}
+function checkMarkerA11yByWrapperClass(wrapper) {
+  var marker = wrapper.querySelector('.marker__button');
+  wrapper.classList.contains('marker--hidden') ? markerButtonNowCloseA11y(marker) : markerButtonNowOpenA11y(marker);
+}
+function filterButtonClickHandler(button) {
+  var value = button.getAttribute('data-filter-pins');
+  var wrappers = document.querySelectorAll('.marker');
+  wrappers.forEach(function (wrapper) {
+    wrapper.hasAttribute("data-".concat(value)) ? wrapper.classList.remove('marker--hidden') : wrapper.classList.add('marker--hidden');
+    checkMarkerA11yByWrapperClass(wrapper);
+  });
+}
+function balloonCloseButtonClickHandler(button) {
+  var wrapper = button.closest('.marker');
+  var balloon = wrapper.querySelector('.map-balloon');
+  var marker = wrapper.querySelector('.marker__button');
+  markerButtonNowCloseA11y(marker);
+  balloon && balloon.classList.add('map-balloon--hidden');
+}
+function changeParentZIndex(wrapper) {
+  var balloon = wrapper.querySelector('.map-balloon');
+  var parent = wrapper.parentNode;
+  var parentStyles = parent.getAttribute('style');
+  var transformStyle = parentStyles.split(';')[0];
+  if (balloon.classList.contains('map-balloon--hidden')) {
+    parent.setAttribute('style', "".concat(transformStyle, "; z-index: 0;"));
+  } else {
+    parent.setAttribute('style', "".concat(transformStyle, "; z-index: 1;"));
+  }
+}
+function markerButtonClickHandler(button) {
+  var allBalloons = document.querySelectorAll('.map-balloon');
+  allBalloons.forEach(function (balloon) {
+    balloon.classList.add('map-balloon--hidden');
+    var wrapper = balloon.closest('.marker');
+    var marker = wrapper.querySelector('.marker__button');
+    changeParentZIndex(wrapper);
+    markerButtonNowCloseA11y(marker);
+  });
+  var parent = button.closest('.marker');
+  var balloon = parent.querySelector('.map-balloon');
+  markerButtonNowOpenA11y(button);
+  balloon && balloon.classList.remove('map-balloon--hidden');
+  changeParentZIndex(parent);
+}
 
 /***/ }),
 
@@ -623,7 +840,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/index.js */ "./src/js/utils/index.js");
 
 (function () {
-  console.log('a');
   var burgerButton = document.querySelector('[data-burger-button]');
   var menu = document.querySelector('[data-menu]');
   var menuLinks = document.querySelectorAll('[data-menu-link]');
@@ -684,6 +900,42 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/templates/_stepper.js":
+/*!**************************************!*\
+  !*** ./src/js/templates/_stepper.js ***!
+  \**************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+(function () {
+  if (document.querySelector('.stepper')) {
+    var stepper = document.querySelector('.stepper');
+    var stepperInput = stepper.querySelector('.stepper__input');
+    var stepperBtnUp = stepper.querySelector('.stepper__btn--up');
+    var stepperBtnDown = stepper.querySelector('.stepper__btn--down');
+    var count = stepperInput.value;
+    stepperInput.addEventListener('change', function (e) {
+      var self = e.currentTarget;
+      if (!self.value) {
+        self.value = 1;
+      }
+      count = stepperInput.value;
+    });
+    stepperBtnUp.addEventListener('click', function (e) {
+      e.preventDefault();
+      count++;
+      stepperInput.value = count;
+    });
+    stepperBtnDown.addEventListener('click', function (e) {
+      e.preventDefault();
+      count--;
+      stepperInput.value = count;
+    });
+  }
+})();
+
+/***/ }),
+
 /***/ "./src/js/templates/index.js":
 /*!***********************************!*\
   !*** ./src/js/templates/index.js ***!
@@ -692,6 +944,8 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_burger.js */ "./src/js/templates/_burger.js");
+/* harmony import */ var _stepper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_stepper.js */ "./src/js/templates/_stepper.js");
+
 
 
 /***/ }),
