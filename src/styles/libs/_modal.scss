@@ -37,6 +37,16 @@
 			padding: 20px;
 			width: 90%;
 		}
+
+		&--success {
+			.graph-modal {
+				&__box {
+					@include flex-alignment;
+
+					min-height: 200px;
+				}
+			}
+		}
 	}
 
 	&__close {

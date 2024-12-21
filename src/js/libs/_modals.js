@@ -2,13 +2,27 @@ import GraphModal from 'graph-modal';
 
 new GraphModal();
 
-// * Код к модальному окну для "спасибо"
-// if (document.querySelector('.modal-thank')) {
-//     const btnThank = document.querySelector('.modal-thank');
+(function() {
+    const buttons = document.querySelectorAll('.btn-thanks [data-graph-path]')
 
-//     btnThank.addEventListener('click', () => {
-//         new GraphModal('modal').open('modal-thank');
-//     });
+    if (buttons) {
+        buttons.forEach((button) => {
+            const value = button.getAttribute('data-graph-path')
 
-//     // btnThank.click();
-// }
+            button.addEventListener('click', () => {
+                new GraphModal('modal').open(value);
+            });
+        })
+    }
+
+    const feedbackButton = document.querySelector('[data-graph-path="modal-feedback-success"]')
+    const vacancyButton = document.querySelector('[data-graph-path="modal-vacancy-success"]')
+    const questionButton = document.querySelector('[data-graph-path="modal-question-success"]')
+
+   // feedbackButton?.click() // Открыть модальное окно "спасибо за отзыв"
+    // vacancyButton?.click() // Открыть модальное окно "спасибо за вопрос"
+    // questionButton?.click() // Открыть модальное окно "спасибо за резюме"
+})()
+
+
+

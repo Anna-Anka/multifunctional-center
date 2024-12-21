@@ -19,4 +19,25 @@
     'text': ['В соответствии с Федеральным законом от 02.05.2006 N59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации"'],
     'textareaPlaceholder': 'Сопроводительный текст'
     })
+
+    @include('./_modal-success.html', {
+    'target': 'modal-feedback-success',
+    'text': 'Спасибо, Ваш отзыв отправлен!',
+    })
+
+    @include('./_modal-success.html', {
+    'target': 'modal-question-success',
+    'text': 'Спасибо, Ваш вопрос отправлен!',
+    })
+
+    @include('./_modal-success.html', {
+    'target': 'modal-vacancy-success',
+    'text': 'Спасибо, Ваше резюме отправлено!',
+    })
+
+    <div class="btn-thanks">
+        <button type="button" data-graph-path="modal-feedback-success" style="display: none;"></button>
+        <button type="button" data-graph-path="modal-question-success" style="display: none;"></button>
+        <button type="button" data-graph-path="modal-vacancy-success" style="display: none;"></button>
+    </div>
 </div>

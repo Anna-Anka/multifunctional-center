@@ -1,5 +1,7 @@
 .header {
 	.choices {
+		height: 100%;
+
 		&[data-type*='select-one'] {
 			&::after {
 				right: 10px;
@@ -13,6 +15,7 @@
 			border-top-left-radius: 4px;
 			border-bottom-left-radius: 4px;
 			padding: 10px 20px 0;
+			height: 100%;
 			color: var(--color-white);
 			background-color: var(--color-brown-600);
 		}
