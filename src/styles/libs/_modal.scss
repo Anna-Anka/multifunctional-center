@@ -113,14 +113,19 @@
 	}
 
 	&__item {
-		@include mq(md, min) {
-			flex-basis: calc(50% - 8px);
+		flex-basis: calc(50% - 8px);
+
+		@include mq(md) {
+			flex-basis: 100%;
 		}
 
-		&--textarea {
+		&--long {
 			flex-grow: 1;
 			flex-basis: 100%;
-			height: 94px;
+
+			textarea {
+				height: 94px;
+			}
 		}
 	}
 

@@ -25,10 +25,16 @@
                     <label class="sr-only" for="@target-email">Электронная почта</label>
                     <input class="form__field" id="@target-email" name="email" type="email" placeholder="Введите Ваш e-mail*" required>
                 </div>
-                <div class="graph-modal__item graph-modal__item--textarea">
+                <div class="graph-modal__item graph-modal__item--long">
                     <label class="sr-only" for="@target-message">Сообщение</label>
                     <textarea class="form__field form__field--textarea" id="@target-message" name="message" placeholder="@textareaPlaceholder"></textarea>
                 </div>
+                @if(typeof cv !== 'undefined' && cv) {
+                <div class="graph-modal__item graph-modal__item--long">
+                    <label class="sr-only" for="@target-cv">Прикрепить резюме</label>
+                    <input class="form__field" id="@target-cv" name="cv-file" type="file" placeholder="Введите Ваш e-mail*" required>
+                </div>
+                }
             </div>
             <div class="form__footer">
                 <label class="form__agree">
