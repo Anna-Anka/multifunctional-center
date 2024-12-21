@@ -1,0 +1,63 @@
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="@target" id="@target">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <form class="graph-modal__form form">
+            <div class="graph-modal__header">
+                <span class="graph-modal__title">@title</span>
+                <div class="graph-modal__text">
+                    @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
+                </div>
+            </div>
+            <div class="graph-modal__items">
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="@target-name">Имя</label>
+                    <input class="form__field" id="@target-surname" name="name" type="text" placeholder="Введите Ваше имя*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="@target-surname">Фамилия</label>
+                    <input class="form__field" id="@target-surname" name="surname" type="text" placeholder="Введите Вашу фамилию*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="@target-patronymic">Отчество</label>
+                    <input class="form__field" id="@target-patronymic" name="patronymic" type="text" placeholder="Введите Ваше Отчество*" required>
+                </div>
+                <div class="graph-modal__item">
+                    <label class="sr-only" for="@target-email">Электронная почта</label>
+                    <input class="form__field" id="@target-email" name="email" type="email" placeholder="Введите Ваш e-mail*" required>
+                </div>
+                <div class="graph-modal__item graph-modal__item--textarea">
+                    <label class="sr-only" for="@target-message">Сообщение</label>
+                    <textarea class="form__field form__field--textarea" id="@target-message" name="message" placeholder="@textareaPlaceholder"></textarea>
+                </div>
+            </div>
+            <div class="form__footer">
+                <label class="form__agree">
+                    <input class="form__hidden" type="checkbox" name="agree" value="isAgree">
+                    <span class="form__visible form__visible--checkbox" aria-hidden="true"></span>
+                    Даю согласие на обработку своих персональных данных
+                </label>
+                <button class="button button--fill" type="submit">
+                    Отправить
+                </button>
+            </div>
+            <div class="graph-modal__info">
+                <div class="graph-modal__subtext">
+                    <p>
+                        * обязательные поля (в соответствии с п.3 ст.7 Федерального закона от 02.05.2006 №59-ФЗ)
+                    </p>
+                </div>
+                <div class="form__links">
+                    <a href="#">
+                        Политика обработки персональных данных
+                    </a>
+                    <a href="#">
+                        Согласие на обработку персональных данных
+                    </a>
+                    <a href="#">
+                        Стандарт работы с обращениями
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

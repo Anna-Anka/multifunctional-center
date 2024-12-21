@@ -1,0 +1,76 @@
+.appointments-pre {
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 32px;
+
+		&:not(:last-child) {
+			margin-bottom: 44px;
+
+			@include mq(lg) {
+				margin-bottom: 32px;
+			}
+		}
+
+		@include mq(lg) {
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
+	}
+
+	&__info {
+		@include mq(lg, min) {
+			flex-basis: 60%;
+		}
+	}
+
+	&__submit {
+		@include mq(lg, min) {
+			flex-basis: 31%;
+			align-self: flex-start;
+		}
+	}
+
+	.form {
+		&__agree {
+			margin-bottom: 8px;
+
+			@include mq(lg) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	.choices {
+		&.is-focused,
+		&.is-open {
+			.choices {
+				&__inner {
+					border-color: var(--color-grey-450);
+					border-radius: 4px 4px 0 0;
+				}
+
+				&__list {
+					&--dropdown,
+					&[aria-expanded] {
+						border: 1px solid var(--color-grey-420);
+						border-top: 0;
+						border-radius: 0 0 4px 4px;
+						padding: 16px 4px 16px 8px;
+					}
+				}
+			}
+		}
+
+		&[data-type*='select-one'] .choices__inner {
+			padding-bottom: 8px;
+		}
+
+		&__inner {
+			border: 1px solid var(--color-grey-450);
+			border-radius: 4px;
+			padding: 8px 32px 8px 8px;
+			min-height: 34px;
+		}
+	}
+}

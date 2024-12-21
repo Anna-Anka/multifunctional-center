@@ -39,12 +39,10 @@ function changeParentZIndex(wrapper) {
     const parentStyles = parent.getAttribute('style')
 
     const transformStyle = parentStyles.split(';')[0]
-    console.log(transformStyle)
 
     if (balloon.classList.contains('map-balloon--hidden')) {
         parent.setAttribute('style', `${transformStyle}; z-index: 0;`);
     } else {
-        console.log('z-1')
         parent.setAttribute('style', `${transformStyle}; z-index: 1;`);
     }
 }
