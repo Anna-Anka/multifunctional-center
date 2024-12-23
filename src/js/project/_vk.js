@@ -2,7 +2,7 @@ import * as VKID from '@vkid/sdk';
 
 VKID.Config.init({
     app: 52881883,
-    redirectUrl: 'http://localhost:3000/',
+    redirectUrl: 'https://anna-anka.github.io/multifunctional-center/',
     state: 'state',
     codeVerifier: 'codeVerifier',
     scope: 'phone email',

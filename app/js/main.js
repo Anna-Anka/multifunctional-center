@@ -7997,7 +7997,7 @@ __webpack_require__.r(__webpack_exports__);
 
 _vkid_sdk__WEBPACK_IMPORTED_MODULE_0__.Config.init({
   app: 52881883,
-  redirectUrl: 'http://localhost:3000/',
+  redirectUrl: 'https://anna-anka.github.io/multifunctional-center/',
   state: 'state',
   codeVerifier: 'codeVerifier',
   scope: 'phone email'
