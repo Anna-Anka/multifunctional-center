@@ -8,74 +8,74 @@
                         <span class="side-menu__text side-menu__text--icon">
                             Задайте вопрос, если не нашли ответ
                         </span>
-                        <a class="side-menu__button button button--fill" href="#">
+                        <button class="side-menu__button button button--fill" data-graph-path="modal-question-form" aria-controls="modal-question-form" type="button">
                             Задать вопрос
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <ul class="side-menu__items">
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#rf-passport" data-scroll>
                             Паспорт РФ
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#foreign-passport" data-scroll>
                             Заграничный паспорт
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#migration-records" data-scroll>
                             Миграционный учёт
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#driver-license" data-scroll>
                             Водительское удостоверение
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#cadastral-registration" data-scroll>
                             Регистрации прав собственности, кадастровый учёт
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#tax-inspectorate" data-scroll>
                             Налоговая инспекция
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#" data-scroll>
                             Пенсионный фонд
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#" data-scroll>
                             Детские пособия
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#" data-scroll>
                             Удостоверения
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#" data-scroll>
                             Иные пособия, выплаты, компенсации
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#" data-scroll>
                             QR-код вакцинация
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#" data-scroll>
                             ЛК Госуслуг
                         </a>
                     </li>
                     <li class="side-menu__item">
-                        <a class="side-menu__link" href="#">
+                        <a class="side-menu__link" href="#" data-scroll>
                             Прочее
                         </a>
                     </li>
@@ -83,32 +83,32 @@
             </div>
             <div class="page-wrapper__content">
                 <ul class="questions-page__items">
-                    <li class="questions-page__item">
+                    <li class="questions-page__item" id="rf-passport">
                         @include('../../components/cards/_text-card.html', {
                         'text': 'Здравствуйте! Обратилась 10.06.24 в отделение СФР по Камчатскому краю за возвратом справки о смерти ф-11 моего отца. Денежные средства (пособие на погребение) перечислила обратно фонду 10.06.24. Справка нужна для предъявления в военный комиссариат. Повторно обращалась в фонд 23.07.24, деньги фондом получены, но по состоянию на 06.08.24 документ мне не выдан. Прошу принять меры и сообщить, когда я могу получить необходимую мне справку! ssmb@yandex.ru'
                         })
                     </li>
-                    <li class="questions-page__item">
+                    <li class="questions-page__item" id="foreign-passport">
                         @include('../../components/cards/_text-card.html', {
                         'text': 'Здравствуйте! Обратилась 10.06.24 в отделение СФР по Камчатскому краю за возвратом справки о смерти ф-11 моего отца.'
                         })
                     </li>
-                    <li class="questions-page__item">
+                    <li class="questions-page__item" id="migration-records">
                         @include('../../components/cards/_text-card.html', {
                         'text': 'Здравствуйте! Обратилась 10.06.24 в отделение СФР по Камчатскому краю за возвратом справки о смерти ф-11 моего отца. Денежные средства (пособие на погребение) перечислила обратно фонду 10.06.24. Справка нужна для предъявления в военный комиссариат. Повторно обращалась в фонд 23.07.24, деньги фондом получены, но по состоянию на 06.08.24 документ мне не выдан. Прошу принять меры и сообщить, когда я могу получить необходимую мне справку! ssmb@yandex.ru'
                         })
                     </li>
-                    <li class="questions-page__item">
+                    <li class="questions-page__item" id="driver-license">
                         @include('../../components/cards/_text-card.html', {
                         'text': 'Здравствуйте! Обратилась 10.06.24 в отделение СФР по Камчатскому краю за возвратом справки о смерти ф-11 моего отца. Денежные средства (пособие на погребение) перечислила обратно фонду 10.06.24. Справка нужна для предъявления в военный комиссариат. Повторно обращалась в фонд 23.07.24, деньги фондом получены, но по состоянию на 06.08.24 документ мне не выдан. Прошу принять меры и сообщить, когда я могу получить необходимую мне справку! ssmb@yandex.ru'
                         })
                     </li>
-                    <li class="questions-page__item">
+                    <li class="questions-page__item" id="cadastral-registration">
                         @include('../../components/cards/_text-card.html', {
                         'text': 'Здравствуйте! Обратилась 10.06.24 в отделение СФР по Камчатскому краю за возвратом справки о смерти ф-11 моего отца. Денежные средства (пособие на погребение) перечислила обратно фонду 10.06.24. Справка нужна для предъявления в военный комиссариат. Повторно обращалась в фонд 23.07.24, деньги фондом получены, но по состоянию на 06.08.24 документ мне не выдан. Прошу принять меры и сообщить, когда я могу получить необходимую мне справку! ssmb@yandex.ru'
                         })
                     </li>
-                    <li class="questions-page__item">
+                    <li class="questions-page__item" id="tax-inspectorate">
                         @include('../../components/cards/_text-card.html', {
                         'text': 'Здравствуйте! Обратилась 10.06.24 в отделение СФР по Камчатскому краю за возвратом справки о смерти ф-11 моего отца. Денежные средства (пособие на погребение) перечислила обратно фонду 10.06.24.'
                         })

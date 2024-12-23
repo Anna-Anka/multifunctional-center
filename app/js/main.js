@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/graph-modal/src/graph-modal.js":
@@ -8,6 +7,7 @@
   \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ GraphModal)
@@ -209,6 +209,7 @@ class GraphModal {
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ GraphTabs)
@@ -329,12 +330,25 @@ class GraphTabs {
 
 /***/ }),
 
+/***/ "./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js ***!
+  \************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! smooth-scroll v16.1.3 | (c) 2020 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/smooth-scroll */
+window.Element&&!Element.prototype.closest&&(Element.prototype.closest=function(e){var t,n=(this.document||this.ownerDocument).querySelectorAll(e),o=this;do{for(t=n.length;0<=--t&&n.item(t)!==o;);}while(t<0&&(o=o.parentElement));return o}),(function(){if("function"==typeof window.CustomEvent)return;function e(e,t){t=t||{bubbles:!1,cancelable:!1,detail:void 0};var n=document.createEvent("CustomEvent");return n.initCustomEvent(e,t.bubbles,t.cancelable,t.detail),n}e.prototype=window.Event.prototype,window.CustomEvent=e})(),(function(){for(var r=0,e=["ms","moz","webkit","o"],t=0;t<e.length&&!window.requestAnimationFrame;++t)window.requestAnimationFrame=window[e[t]+"RequestAnimationFrame"],window.cancelAnimationFrame=window[e[t]+"CancelAnimationFrame"]||window[e[t]+"CancelRequestAnimationFrame"];window.requestAnimationFrame||(window.requestAnimationFrame=function(e,t){var n=(new Date).getTime(),o=Math.max(0,16-(n-r)),a=window.setTimeout((function(){e(n+o)}),o);return r=n+o,a}),window.cancelAnimationFrame||(window.cancelAnimationFrame=function(e){clearTimeout(e)})})(),(function(e,t){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return t(e)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):0})("undefined"!=typeof __webpack_require__.g?__webpack_require__.g:"undefined"!=typeof window?window:this,(function(M){"use strict";var q={ignore:"[data-scroll-ignore]",header:null,topOnEmptyHash:!0,speed:500,speedAsDuration:!1,durationMax:null,durationMin:null,clip:!0,offset:0,easing:"easeInOutCubic",customEasing:null,updateURL:!0,popstate:!0,emitEvents:!0},I=function(){var n={};return Array.prototype.forEach.call(arguments,(function(e){for(var t in e){if(!e.hasOwnProperty(t))return;n[t]=e[t]}})),n},r=function(e){"#"===e.charAt(0)&&(e=e.substr(1));for(var t,n=String(e),o=n.length,a=-1,r="",i=n.charCodeAt(0);++a<o;){if(0===(t=n.charCodeAt(a)))throw new InvalidCharacterError("Invalid character: the input contains U+0000.");1<=t&&t<=31||127==t||0===a&&48<=t&&t<=57||1===a&&48<=t&&t<=57&&45===i?r+="\\"+t.toString(16)+" ":r+=128<=t||45===t||95===t||48<=t&&t<=57||65<=t&&t<=90||97<=t&&t<=122?n.charAt(a):"\\"+n.charAt(a)}return"#"+r},F=function(){return Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.body.clientHeight,document.documentElement.clientHeight)},L=function(e){return e?(t=e,parseInt(M.getComputedStyle(t).height,10)+e.offsetTop):0;var t},x=function(e,t,n){0===e&&document.body.focus(),n||(e.focus(),document.activeElement!==e&&(e.setAttribute("tabindex","-1"),e.focus(),e.style.outline="none"),M.scrollTo(0,t))},H=function(e,t,n,o){if(t.emitEvents&&"function"==typeof M.CustomEvent){var a=new CustomEvent(e,{bubbles:!0,detail:{anchor:n,toggle:o}});document.dispatchEvent(a)}};return function(o,e){var b,a,A,O,C={};C.cancelScroll=function(e){cancelAnimationFrame(O),O=null,e||H("scrollCancel",b)},C.animateScroll=function(a,r,e){C.cancelScroll();var i=I(b||q,e||{}),c="[object Number]"===Object.prototype.toString.call(a),t=c||!a.tagName?null:a;if(c||t){var s=M.pageYOffset;i.header&&!A&&(A=document.querySelector(i.header));var n,o,u,l,m,d,f,h,p=L(A),g=c?a:(function(e,t,n,o){var a=0;if(e.offsetParent)for(;a+=e.offsetTop,e=e.offsetParent;);return a=Math.max(a-t-n,0),o&&(a=Math.min(a,F()-M.innerHeight)),a})(t,p,parseInt("function"==typeof i.offset?i.offset(a,r):i.offset,10),i.clip),y=g-s,v=F(),w=0,S=(n=y,u=(o=i).speedAsDuration?o.speed:Math.abs(n/1e3*o.speed),o.durationMax&&u>o.durationMax?o.durationMax:o.durationMin&&u<o.durationMin?o.durationMin:parseInt(u,10)),E=function(e){var t,n,o;l||(l=e),w+=e-l,d=s+y*(n=m=1<(m=0===S?0:w/S)?1:m,"easeInQuad"===(t=i).easing&&(o=n*n),"easeOutQuad"===t.easing&&(o=n*(2-n)),"easeInOutQuad"===t.easing&&(o=n<.5?2*n*n:(4-2*n)*n-1),"easeInCubic"===t.easing&&(o=n*n*n),"easeOutCubic"===t.easing&&(o=--n*n*n+1),"easeInOutCubic"===t.easing&&(o=n<.5?4*n*n*n:(n-1)*(2*n-2)*(2*n-2)+1),"easeInQuart"===t.easing&&(o=n*n*n*n),"easeOutQuart"===t.easing&&(o=1- --n*n*n*n),"easeInOutQuart"===t.easing&&(o=n<.5?8*n*n*n*n:1-8*--n*n*n*n),"easeInQuint"===t.easing&&(o=n*n*n*n*n),"easeOutQuint"===t.easing&&(o=1+--n*n*n*n*n),"easeInOutQuint"===t.easing&&(o=n<.5?16*n*n*n*n*n:1+16*--n*n*n*n*n),t.customEasing&&(o=t.customEasing(n)),o||n),M.scrollTo(0,Math.floor(d)),(function(e,t){var n=M.pageYOffset;if(e==t||n==t||(s<t&&M.innerHeight+n)>=v)return C.cancelScroll(!0),x(a,t,c),H("scrollStop",i,a,r),!(O=l=null)})(d,g)||(O=M.requestAnimationFrame(E),l=e)};0===M.pageYOffset&&M.scrollTo(0,0),f=a,h=i,c||history.pushState&&h.updateURL&&history.pushState({smoothScroll:JSON.stringify(h),anchor:f.id},document.title,f===document.documentElement?"#top":"#"+f.id),"matchMedia"in M&&M.matchMedia("(prefers-reduced-motion)").matches?x(a,Math.floor(g),!1):(H("scrollStart",i,a,r),C.cancelScroll(!0),M.requestAnimationFrame(E))}};var t=function(e){if(!e.defaultPrevented&&!(0!==e.button||e.metaKey||e.ctrlKey||e.shiftKey)&&"closest"in e.target&&(a=e.target.closest(o))&&"a"===a.tagName.toLowerCase()&&!e.target.closest(b.ignore)&&a.hostname===M.location.hostname&&a.pathname===M.location.pathname&&/#/.test(a.href)){var t,n;try{t=r(decodeURIComponent(a.hash))}catch(e){t=r(a.hash)}if("#"===t){if(!b.topOnEmptyHash)return;n=document.documentElement}else n=document.querySelector(t);(n=n||"#top"!==t?n:document.documentElement)&&(e.preventDefault(),(function(e){if(history.replaceState&&e.updateURL&&!history.state){var t=M.location.hash;t=t||"",history.replaceState({smoothScroll:JSON.stringify(e),anchor:t||M.pageYOffset},document.title,t||M.location.href)}})(b),C.animateScroll(n,a))}},n=function(e){if(null!==history.state&&history.state.smoothScroll&&history.state.smoothScroll===JSON.stringify(b)){var t=history.state.anchor;"string"==typeof t&&t&&!(t=document.querySelector(r(history.state.anchor)))||C.animateScroll(t,null,{updateURL:!1})}};C.destroy=function(){b&&(document.removeEventListener("click",t,!1),M.removeEventListener("popstate",n,!1),C.cancelScroll(),O=A=a=b=null)};return (function(){if(!("querySelector"in document&&"addEventListener"in M&&"requestAnimationFrame"in M&&"closest"in M.Element.prototype))throw"Smooth Scroll: This browser does not support the required JavaScript methods and browser APIs.";C.destroy(),b=I(q,e||{}),A=b.header?document.querySelector(b.header):null,document.addEventListener("click",t,!1),b.updateURL&&b.popstate&&M.addEventListener("popstate",n,!1)})(),C}}));
+
+/***/ }),
+
 /***/ "ymaps3":
 /*!*******************************************************************************************************************!*\
   !*** external ["https://api-maps.yandex.ru/v3/?apikey=5e824dbc-8855-473a-8c31-de0cc93c4481&lang=ru_RU","ymaps3"] ***!
   \*******************************************************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 var __webpack_error__ = new Error();
 module.exports = new Promise((resolve, reject) => {
 	if(typeof ymaps3 !== "undefined") return resolve();
@@ -358,6 +372,7 @@ module.exports = new Promise((resolve, reject) => {
   \*********************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.mjs");
 
@@ -384,6 +399,7 @@ __webpack_require__.r(__webpack_exports__);
   \********************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graph_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-modal */ "./node_modules/graph-modal/src/graph-modal.js");
 
@@ -409,12 +425,29 @@ new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
 /***/ }),
 
+/***/ "./src/js/libs/_smooth-scroll.js":
+/*!***************************************!*\
+  !*** ./src/js/libs/_smooth-scroll.js ***!
+  \***************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var smooth_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-scroll */ "./node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js");
+
+new smooth_scroll__WEBPACK_IMPORTED_MODULE_0__('a[data-scroll]', {
+  offset: 16
+});
+
+/***/ }),
+
 /***/ "./src/js/libs/_tabs.js":
 /*!******************************!*\
   !*** ./src/js/libs/_tabs.js ***!
   \******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graph_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-tabs */ "./node_modules/graph-tabs/src/graph-tabs.js");
 
@@ -439,10 +472,13 @@ if (document.querySelector('[data-tabs="appointments-page"]')) {
   \******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _choices_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_choices.js */ "./src/js/libs/_choices.js");
 /* harmony import */ var _tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_tabs.js */ "./src/js/libs/_tabs.js");
 /* harmony import */ var _modals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_modals.js */ "./src/js/libs/_modals.js");
+/* harmony import */ var _smooth_scroll_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_smooth-scroll.js */ "./src/js/libs/_smooth-scroll.js");
+
 
 
 
@@ -455,6 +491,7 @@ __webpack_require__.r(__webpack_exports__);
   \************************/
 /***/ ((__webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _libs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libs/index.js */ "./src/js/libs/index.js");
@@ -479,6 +516,7 @@ __webpack_async_result__();
   \*********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 (function () {
   var prevButton = document.querySelector('.breadcrumbs__prev button');
@@ -497,6 +535,7 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 (function () {
   var blocks = document.querySelectorAll('.select-mobile');
@@ -551,6 +590,7 @@ __webpack_require__.r(__webpack_exports__);
   \************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 (function () {
   var mobileItems = document.querySelectorAll('.header .menu__item--mobile');
@@ -568,6 +608,7 @@ __webpack_require__.r(__webpack_exports__);
   \*********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 (function () {
   var filters = document.querySelectorAll('.services-filters');
@@ -613,6 +654,7 @@ __webpack_require__.r(__webpack_exports__);
   \*********************************/
 /***/ ((__webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_item_highlight_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_menu-item-highlight.js */ "./src/js/project/_menu-item-highlight.js");
@@ -644,6 +686,7 @@ __webpack_async_result__();
   \*************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   advanceMapSettings: () => (/* binding */ advanceMapSettings),
@@ -743,6 +786,7 @@ var baseMapSettings = {
   \************************************/
 /***/ ((__webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ymaps3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ymaps3 */ "ymaps3");
@@ -874,6 +918,7 @@ __webpack_async_result__();
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getGeolocation: () => (/* binding */ getGeolocation)
@@ -927,6 +972,7 @@ function getGeolocation() {
   \***********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   balloonCloseButtonClickHandler: () => (/* binding */ balloonCloseButtonClickHandler),
@@ -998,6 +1044,7 @@ function markerButtonClickHandler(button) {
   \***************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
@@ -1050,6 +1097,7 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
@@ -1080,6 +1128,7 @@ if (document.querySelector('.office-department__swiper')) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
@@ -1117,6 +1166,7 @@ if (document.querySelector('.partners__swiper')) {
   \*************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/index.js */ "./src/js/utils/index.js");
 
@@ -1187,6 +1237,7 @@ __webpack_require__.r(__webpack_exports__);
   \**************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 (function () {
   if (document.querySelector('.stepper')) {
@@ -1223,6 +1274,7 @@ __webpack_require__.r(__webpack_exports__);
   \***********************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_burger.js */ "./src/js/templates/_burger.js");
 /* harmony import */ var _stepper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_stepper.js */ "./src/js/templates/_stepper.js");
@@ -1237,6 +1289,7 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   disableScroll: () => (/* binding */ disableScroll)
@@ -1268,6 +1321,7 @@ var disableScroll = function disableScroll() {
   \****************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   enableScroll: () => (/* binding */ enableScroll)
@@ -1301,6 +1355,7 @@ var enableScroll = function enableScroll() {
   \***********************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   throttle: () => (/* binding */ throttle)
@@ -1340,6 +1395,7 @@ var throttle = function throttle(func) {
   \*******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   globalVars: () => (/* binding */ globalVars)
@@ -1360,6 +1416,7 @@ var globalVars = {
   \*******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   disableScroll: () => (/* reexport safe */ _disable_scroll_js__WEBPACK_IMPORTED_MODULE_0__.disableScroll),
@@ -1391,6 +1448,7 @@ __webpack_require__.r(__webpack_exports__);
   \*******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Choices)
@@ -6578,6 +6636,7 @@ var Choices = /** @class */ (function () {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ A11y)
@@ -6973,6 +7032,7 @@ function A11y(_ref) {
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Autoplay)
@@ -7292,6 +7352,7 @@ function Autoplay(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Controller)
@@ -7498,6 +7559,7 @@ function Controller(_ref) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCards)
@@ -7642,6 +7704,7 @@ function EffectCards(_ref) {
   \**********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCoverflow)
@@ -7764,6 +7827,7 @@ function EffectCoverflow(_ref) {
   \*********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCreative)
@@ -7929,6 +7993,7 @@ function EffectCreative(_ref) {
   \*****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectCube)
@@ -8119,6 +8184,7 @@ function EffectCube(_ref) {
   \*****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFade)
@@ -8203,6 +8269,7 @@ function EffectFade(_ref) {
   \*****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ EffectFlip)
@@ -8333,6 +8400,7 @@ function EffectFlip(_ref) {
   \***************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ freeMode)
@@ -8585,6 +8653,7 @@ function freeMode(_ref) {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Grid)
@@ -8754,6 +8823,7 @@ function Grid(_ref) {
   \*********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ HashNavigation)
@@ -8863,6 +8933,7 @@ function HashNavigation(_ref) {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ History)
@@ -9020,6 +9091,7 @@ function History(_ref) {
   \***********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   A11y: () => (/* reexport safe */ _a11y_mjs__WEBPACK_IMPORTED_MODULE_9__["default"]),
@@ -9101,6 +9173,7 @@ __webpack_require__.r(__webpack_exports__);
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Keyboard)
@@ -9234,6 +9307,7 @@ function Keyboard(_ref) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Manipulation)
@@ -9439,6 +9513,7 @@ function Manipulation(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Mousewheel)
@@ -9850,6 +9925,7 @@ function Mousewheel(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Navigation)
@@ -10066,6 +10142,7 @@ function Navigation(_ref) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Pagination)
@@ -10543,6 +10620,7 @@ function Pagination(_ref) {
   \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Parallax)
@@ -10682,6 +10760,7 @@ function Parallax(_ref) {
   \***************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Scrollbar)
@@ -11066,6 +11145,7 @@ function Scrollbar(_ref) {
   \************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Thumb)
@@ -11275,6 +11355,7 @@ function Thumb(_ref) {
   \*************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Virtual)
@@ -11640,6 +11721,7 @@ function Virtual(_ref) {
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Zoom)
@@ -12282,6 +12364,7 @@ function Zoom(_ref) {
   \************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ classesToSelector)
@@ -12305,6 +12388,7 @@ function classesToSelector(classes) {
   \**********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createElementIfNotDefined)
@@ -12341,6 +12425,7 @@ function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   c: () => (/* binding */ createShadow)
@@ -12370,6 +12455,7 @@ function createShadow(suffix, slideEl, side) {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectInit)
@@ -12442,6 +12528,7 @@ function effectInit(params) {
   \******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectTarget)
@@ -12469,6 +12556,7 @@ function effectTarget(effectParams, slideEl) {
   \**********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   e: () => (/* binding */ effectVirtualTransitionEnd)
@@ -12532,6 +12620,7 @@ function effectVirtualTransitionEnd(_ref) {
   \*******************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ getWindow),
@@ -12692,6 +12781,7 @@ function getWindow() {
   \****************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   S: () => (/* binding */ Swiper),
@@ -16621,6 +16711,7 @@ Swiper.use([Resize, Observer]);
   \**********************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   a: () => (/* binding */ elementParents),
@@ -16974,6 +17065,7 @@ function getRotateFix(swiper) {
   \****************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Swiper: () => (/* reexport safe */ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S),
@@ -17003,6 +17095,7 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = /*#__PURE__*/JSON.parse('[{"tags":"country","elements":"geometry.fill","stylers":[{"color":"#8c8c8c"},{"zoom":0,"opacity":0.8},{"zoom":1,"opacity":0.8},{"zoom":2,"opacity":0.8},{"zoom":3,"opacity":0.8},{"zoom":4,"opacity":0.8},{"zoom":5,"opacity":1},{"zoom":6,"opacity":1},{"zoom":7,"opacity":1},{"zoom":8,"opacity":1},{"zoom":9,"opacity":1},{"zoom":10,"opacity":1},{"zoom":11,"opacity":1},{"zoom":12,"opacity":1},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"country","elements":"geometry.outline","stylers":[{"color":"#dedede"},{"zoom":0,"opacity":0.15},{"zoom":1,"opacity":0.15},{"zoom":2,"opacity":0.15},{"zoom":3,"opacity":0.15},{"zoom":4,"opacity":0.15},{"zoom":5,"opacity":0.15},{"zoom":6,"opacity":0.25},{"zoom":7,"opacity":0.5},{"zoom":8,"opacity":0.47},{"zoom":9,"opacity":0.44},{"zoom":10,"opacity":0.41},{"zoom":11,"opacity":0.38},{"zoom":12,"opacity":0.35},{"zoom":13,"opacity":0.33},{"zoom":14,"opacity":0.3},{"zoom":15,"opacity":0.28},{"zoom":16,"opacity":0.25},{"zoom":17,"opacity":0.25},{"zoom":18,"opacity":0.25},{"zoom":19,"opacity":0.25},{"zoom":20,"opacity":0.25},{"zoom":21,"opacity":0.25}]},{"tags":"region","elements":"geometry.fill","stylers":[{"zoom":0,"color":"#a6a6a6","opacity":0.5},{"zoom":1,"color":"#a6a6a6","opacity":0.5},{"zoom":2,"color":"#a6a6a6","opacity":0.5},{"zoom":3,"color":"#a6a6a6","opacity":0.5},{"zoom":4,"color":"#a6a6a6","opacity":0.5},{"zoom":5,"color":"#a6a6a6","opacity":0.5},{"zoom":6,"color":"#a6a6a6","opacity":1},{"zoom":7,"color":"#a6a6a6","opacity":1},{"zoom":8,"color":"#8c8c8c","opacity":1},{"zoom":9,"color":"#8c8c8c","opacity":1},{"zoom":10,"color":"#8c8c8c","opacity":1},{"zoom":11,"color":"#8c8c8c","opacity":1},{"zoom":12,"color":"#8c8c8c","opacity":1},{"zoom":13,"color":"#8c8c8c","opacity":1},{"zoom":14,"color":"#8c8c8c","opacity":1},{"zoom":15,"color":"#8c8c8c","opacity":1},{"zoom":16,"color":"#8c8c8c","opacity":1},{"zoom":17,"color":"#8c8c8c","opacity":1},{"zoom":18,"color":"#8c8c8c","opacity":1},{"zoom":19,"color":"#8c8c8c","opacity":1},{"zoom":20,"color":"#8c8c8c","opacity":1},{"zoom":21,"color":"#8c8c8c","opacity":1}]},{"tags":"region","elements":"geometry.outline","stylers":[{"color":"#dedede"},{"zoom":0,"opacity":0.15},{"zoom":1,"opacity":0.15},{"zoom":2,"opacity":0.15},{"zoom":3,"opacity":0.15},{"zoom":4,"opacity":0.15},{"zoom":5,"opacity":0.15},{"zoom":6,"opacity":0.25},{"zoom":7,"opacity":0.5},{"zoom":8,"opacity":0.47},{"zoom":9,"opacity":0.44},{"zoom":10,"opacity":0.41},{"zoom":11,"opacity":0.38},{"zoom":12,"opacity":0.35},{"zoom":13,"opacity":0.33},{"zoom":14,"opacity":0.3},{"zoom":15,"opacity":0.28},{"zoom":16,"opacity":0.25},{"zoom":17,"opacity":0.25},{"zoom":18,"opacity":0.25},{"zoom":19,"opacity":0.25},{"zoom":20,"opacity":0.25},{"zoom":21,"opacity":0.25}]},{"tags":{"any":"admin","none":["country","region","locality","district","address"]},"elements":"geometry.fill","stylers":[{"color":"#8c8c8c"},{"zoom":0,"opacity":0.5},{"zoom":1,"opacity":0.5},{"zoom":2,"opacity":0.5},{"zoom":3,"opacity":0.5},{"zoom":4,"opacity":0.5},{"zoom":5,"opacity":0.5},{"zoom":6,"opacity":1},{"zoom":7,"opacity":1},{"zoom":8,"opacity":1},{"zoom":9,"opacity":1},{"zoom":10,"opacity":1},{"zoom":11,"opacity":1},{"zoom":12,"opacity":1},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":{"any":"admin","none":["country","region","locality","district","address"]},"elements":"geometry.outline","stylers":[{"color":"#dedede"},{"zoom":0,"opacity":0.15},{"zoom":1,"opacity":0.15},{"zoom":2,"opacity":0.15},{"zoom":3,"opacity":0.15},{"zoom":4,"opacity":0.15},{"zoom":5,"opacity":0.15},{"zoom":6,"opacity":0.25},{"zoom":7,"opacity":0.5},{"zoom":8,"opacity":0.47},{"zoom":9,"opacity":0.44},{"zoom":10,"opacity":0.41},{"zoom":11,"opacity":0.38},{"zoom":12,"opacity":0.35},{"zoom":13,"opacity":0.33},{"zoom":14,"opacity":0.3},{"zoom":15,"opacity":0.28},{"zoom":16,"opacity":0.25},{"zoom":17,"opacity":0.25},{"zoom":18,"opacity":0.25},{"zoom":19,"opacity":0.25},{"zoom":20,"opacity":0.25},{"zoom":21,"opacity":0.25}]},{"tags":{"any":"landcover","none":"vegetation"},"stylers":[{"hue":"#c7cfd6"}]},{"tags":"vegetation","elements":"geometry","stylers":[{"zoom":0,"color":"#aab6c0","opacity":0.1},{"zoom":1,"color":"#aab6c0","opacity":0.1},{"zoom":2,"color":"#aab6c0","opacity":0.1},{"zoom":3,"color":"#aab6c0","opacity":0.1},{"zoom":4,"color":"#aab6c0","opacity":0.1},{"zoom":5,"color":"#aab6c0","opacity":0.1},{"zoom":6,"color":"#aab6c0","opacity":0.2},{"zoom":7,"color":"#c7cfd6","opacity":0.3},{"zoom":8,"color":"#c7cfd6","opacity":0.4},{"zoom":9,"color":"#c7cfd6","opacity":0.6},{"zoom":10,"color":"#c7cfd6","opacity":0.8},{"zoom":11,"color":"#c7cfd6","opacity":1},{"zoom":12,"color":"#c7cfd6","opacity":1},{"zoom":13,"color":"#c7cfd6","opacity":1},{"zoom":14,"color":"#cdd4da","opacity":1},{"zoom":15,"color":"#d3d9df","opacity":1},{"zoom":16,"color":"#d3d9df","opacity":1},{"zoom":17,"color":"#d3d9df","opacity":1},{"zoom":18,"color":"#d3d9df","opacity":1},{"zoom":19,"color":"#d3d9df","opacity":1},{"zoom":20,"color":"#d3d9df","opacity":1},{"zoom":21,"color":"#d3d9df","opacity":1}]},{"tags":"park","elements":"geometry","stylers":[{"zoom":0,"color":"#c7cfd6","opacity":0.1},{"zoom":1,"color":"#c7cfd6","opacity":0.1},{"zoom":2,"color":"#c7cfd6","opacity":0.1},{"zoom":3,"color":"#c7cfd6","opacity":0.1},{"zoom":4,"color":"#c7cfd6","opacity":0.1},{"zoom":5,"color":"#c7cfd6","opacity":0.1},{"zoom":6,"color":"#c7cfd6","opacity":0.2},{"zoom":7,"color":"#c7cfd6","opacity":0.3},{"zoom":8,"color":"#c7cfd6","opacity":0.4},{"zoom":9,"color":"#c7cfd6","opacity":0.6},{"zoom":10,"color":"#c7cfd6","opacity":0.8},{"zoom":11,"color":"#c7cfd6","opacity":1},{"zoom":12,"color":"#c7cfd6","opacity":1},{"zoom":13,"color":"#c7cfd6","opacity":1},{"zoom":14,"color":"#cdd4da","opacity":1},{"zoom":15,"color":"#d3d9df","opacity":1},{"zoom":16,"color":"#d3d9df","opacity":0.9},{"zoom":17,"color":"#d3d9df","opacity":0.8},{"zoom":18,"color":"#d3d9df","opacity":0.7},{"zoom":19,"color":"#d3d9df","opacity":0.7},{"zoom":20,"color":"#d3d9df","opacity":0.7},{"zoom":21,"color":"#d3d9df","opacity":0.7}]},{"tags":"national_park","elements":"geometry","stylers":[{"zoom":0,"color":"#c7cfd6","opacity":0.1},{"zoom":1,"color":"#c7cfd6","opacity":0.1},{"zoom":2,"color":"#c7cfd6","opacity":0.1},{"zoom":3,"color":"#c7cfd6","opacity":0.1},{"zoom":4,"color":"#c7cfd6","opacity":0.1},{"zoom":5,"color":"#c7cfd6","opacity":0.1},{"zoom":6,"color":"#c7cfd6","opacity":0.2},{"zoom":7,"color":"#c7cfd6","opacity":0.3},{"zoom":8,"color":"#c7cfd6","opacity":0.4},{"zoom":9,"color":"#c7cfd6","opacity":0.6},{"zoom":10,"color":"#c7cfd6","opacity":0.8},{"zoom":11,"color":"#c7cfd6","opacity":1},{"zoom":12,"color":"#c7cfd6","opacity":1},{"zoom":13,"color":"#c7cfd6","opacity":1},{"zoom":14,"color":"#cdd4da","opacity":1},{"zoom":15,"color":"#d3d9df","opacity":1},{"zoom":16,"color":"#d3d9df","opacity":0.7},{"zoom":17,"color":"#d3d9df","opacity":0.7},{"zoom":18,"color":"#d3d9df","opacity":0.7},{"zoom":19,"color":"#d3d9df","opacity":0.7},{"zoom":20,"color":"#d3d9df","opacity":0.7},{"zoom":21,"color":"#d3d9df","opacity":0.7}]},{"tags":"cemetery","elements":"geometry","stylers":[{"zoom":0,"color":"#c7cfd6"},{"zoom":1,"color":"#c7cfd6"},{"zoom":2,"color":"#c7cfd6"},{"zoom":3,"color":"#c7cfd6"},{"zoom":4,"color":"#c7cfd6"},{"zoom":5,"color":"#c7cfd6"},{"zoom":6,"color":"#c7cfd6"},{"zoom":7,"color":"#c7cfd6"},{"zoom":8,"color":"#c7cfd6"},{"zoom":9,"color":"#c7cfd6"},{"zoom":10,"color":"#c7cfd6"},{"zoom":11,"color":"#c7cfd6"},{"zoom":12,"color":"#c7cfd6"},{"zoom":13,"color":"#c7cfd6"},{"zoom":14,"color":"#cdd4da"},{"zoom":15,"color":"#d3d9df"},{"zoom":16,"color":"#d3d9df"},{"zoom":17,"color":"#d3d9df"},{"zoom":18,"color":"#d3d9df"},{"zoom":19,"color":"#d3d9df"},{"zoom":20,"color":"#d3d9df"},{"zoom":21,"color":"#d3d9df"}]},{"tags":"sports_ground","elements":"geometry","stylers":[{"zoom":0,"color":"#b8c2cb","opacity":0},{"zoom":1,"color":"#b8c2cb","opacity":0},{"zoom":2,"color":"#b8c2cb","opacity":0},{"zoom":3,"color":"#b8c2cb","opacity":0},{"zoom":4,"color":"#b8c2cb","opacity":0},{"zoom":5,"color":"#b8c2cb","opacity":0},{"zoom":6,"color":"#b8c2cb","opacity":0},{"zoom":7,"color":"#b8c2cb","opacity":0},{"zoom":8,"color":"#b8c2cb","opacity":0},{"zoom":9,"color":"#b8c2cb","opacity":0},{"zoom":10,"color":"#b8c2cb","opacity":0},{"zoom":11,"color":"#b8c2cb","opacity":0},{"zoom":12,"color":"#b8c2cb","opacity":0},{"zoom":13,"color":"#b8c2cb","opacity":0},{"zoom":14,"color":"#bec7cf","opacity":0},{"zoom":15,"color":"#c4ccd4","opacity":0.5},{"zoom":16,"color":"#c5cdd5","opacity":1},{"zoom":17,"color":"#c6ced5","opacity":1},{"zoom":18,"color":"#c7ced6","opacity":1},{"zoom":19,"color":"#c8cfd7","opacity":1},{"zoom":20,"color":"#c9d0d7","opacity":1},{"zoom":21,"color":"#cad1d8","opacity":1}]},{"tags":"terrain","elements":"geometry","stylers":[{"hue":"#e1e3e5"},{"zoom":0,"opacity":0.3},{"zoom":1,"opacity":0.3},{"zoom":2,"opacity":0.3},{"zoom":3,"opacity":0.3},{"zoom":4,"opacity":0.3},{"zoom":5,"opacity":0.35},{"zoom":6,"opacity":0.4},{"zoom":7,"opacity":0.6},{"zoom":8,"opacity":0.8},{"zoom":9,"opacity":0.9},{"zoom":10,"opacity":1},{"zoom":11,"opacity":1},{"zoom":12,"opacity":1},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"geographic_line","elements":"geometry","stylers":[{"color":"#747d86"}]},{"tags":"land","elements":"geometry","stylers":[{"zoom":0,"color":"#e1e3e4"},{"zoom":1,"color":"#e1e3e4"},{"zoom":2,"color":"#e1e3e4"},{"zoom":3,"color":"#e1e3e4"},{"zoom":4,"color":"#e1e3e4"},{"zoom":5,"color":"#e4e5e6"},{"zoom":6,"color":"#e6e8e9"},{"zoom":7,"color":"#e9eaeb"},{"zoom":8,"color":"#ecedee"},{"zoom":9,"color":"#ecedee"},{"zoom":10,"color":"#ecedee"},{"zoom":11,"color":"#ecedee"},{"zoom":12,"color":"#ecedee"},{"zoom":13,"color":"#ecedee"},{"zoom":14,"color":"#eeeff0"},{"zoom":15,"color":"#f1f2f3"},{"zoom":16,"color":"#f1f2f3"},{"zoom":17,"color":"#f2f3f4"},{"zoom":18,"color":"#f2f3f4"},{"zoom":19,"color":"#f3f4f4"},{"zoom":20,"color":"#f3f4f5"},{"zoom":21,"color":"#f4f5f5"}]},{"tags":"residential","elements":"geometry","stylers":[{"zoom":0,"color":"#e1e3e5","opacity":0.5},{"zoom":1,"color":"#e1e3e5","opacity":0.5},{"zoom":2,"color":"#e1e3e5","opacity":0.5},{"zoom":3,"color":"#e1e3e5","opacity":0.5},{"zoom":4,"color":"#e1e3e5","opacity":0.5},{"zoom":5,"color":"#e1e3e5","opacity":0.5},{"zoom":6,"color":"#e1e3e5","opacity":0.5},{"zoom":7,"color":"#e1e3e5","opacity":0.5},{"zoom":8,"color":"#e1e3e5","opacity":0.5},{"zoom":9,"color":"#e1e3e5","opacity":0.5},{"zoom":10,"color":"#e1e3e5","opacity":0.5},{"zoom":11,"color":"#e1e3e5","opacity":0.5},{"zoom":12,"color":"#e1e3e5","opacity":0.5},{"zoom":13,"color":"#e1e3e5","opacity":1},{"zoom":14,"color":"#e6e8e9","opacity":1},{"zoom":15,"color":"#ecedee","opacity":1},{"zoom":16,"color":"#edeeef","opacity":1},{"zoom":17,"color":"#eeeff0","opacity":1},{"zoom":18,"color":"#eeeff0","opacity":1},{"zoom":19,"color":"#eff0f1","opacity":1},{"zoom":20,"color":"#f0f1f2","opacity":1},{"zoom":21,"color":"#f1f2f3","opacity":1}]},{"tags":"locality","elements":"geometry","stylers":[{"zoom":0,"color":"#e1e3e5"},{"zoom":1,"color":"#e1e3e5"},{"zoom":2,"color":"#e1e3e5"},{"zoom":3,"color":"#e1e3e5"},{"zoom":4,"color":"#e1e3e5"},{"zoom":5,"color":"#e1e3e5"},{"zoom":6,"color":"#e1e3e5"},{"zoom":7,"color":"#e1e3e5"},{"zoom":8,"color":"#e1e3e5"},{"zoom":9,"color":"#e1e3e5"},{"zoom":10,"color":"#e1e3e5"},{"zoom":11,"color":"#e1e3e5"},{"zoom":12,"color":"#e1e3e5"},{"zoom":13,"color":"#e1e3e5"},{"zoom":14,"color":"#e6e8e9"},{"zoom":15,"color":"#ecedee"},{"zoom":16,"color":"#edeeef"},{"zoom":17,"color":"#eeeff0"},{"zoom":18,"color":"#eeeff0"},{"zoom":19,"color":"#eff0f1"},{"zoom":20,"color":"#f0f1f2"},{"zoom":21,"color":"#f1f2f3"}]},{"tags":{"any":"structure","none":["building","fence"]},"elements":"geometry","stylers":[{"opacity":0.9},{"zoom":0,"color":"#e1e3e5"},{"zoom":1,"color":"#e1e3e5"},{"zoom":2,"color":"#e1e3e5"},{"zoom":3,"color":"#e1e3e5"},{"zoom":4,"color":"#e1e3e5"},{"zoom":5,"color":"#e1e3e5"},{"zoom":6,"color":"#e1e3e5"},{"zoom":7,"color":"#e1e3e5"},{"zoom":8,"color":"#e1e3e5"},{"zoom":9,"color":"#e1e3e5"},{"zoom":10,"color":"#e1e3e5"},{"zoom":11,"color":"#e1e3e5"},{"zoom":12,"color":"#e1e3e5"},{"zoom":13,"color":"#e1e3e5"},{"zoom":14,"color":"#e6e8e9"},{"zoom":15,"color":"#ecedee"},{"zoom":16,"color":"#edeeef"},{"zoom":17,"color":"#eeeff0"},{"zoom":18,"color":"#eeeff0"},{"zoom":19,"color":"#eff0f1"},{"zoom":20,"color":"#f0f1f2"},{"zoom":21,"color":"#f1f2f3"}]},{"tags":"building","elements":"geometry.fill","stylers":[{"color":"#dee0e3"},{"zoom":0,"opacity":0.7},{"zoom":1,"opacity":0.7},{"zoom":2,"opacity":0.7},{"zoom":3,"opacity":0.7},{"zoom":4,"opacity":0.7},{"zoom":5,"opacity":0.7},{"zoom":6,"opacity":0.7},{"zoom":7,"opacity":0.7},{"zoom":8,"opacity":0.7},{"zoom":9,"opacity":0.7},{"zoom":10,"opacity":0.7},{"zoom":11,"opacity":0.7},{"zoom":12,"opacity":0.7},{"zoom":13,"opacity":0.7},{"zoom":14,"opacity":0.7},{"zoom":15,"opacity":0.7},{"zoom":16,"opacity":0.9},{"zoom":17,"opacity":0.6},{"zoom":18,"opacity":0.6},{"zoom":19,"opacity":0.6},{"zoom":20,"opacity":0.6},{"zoom":21,"opacity":0.6}]},{"tags":"building","elements":"geometry.outline","stylers":[{"color":"#c8ccd1"},{"zoom":0,"opacity":0.5},{"zoom":1,"opacity":0.5},{"zoom":2,"opacity":0.5},{"zoom":3,"opacity":0.5},{"zoom":4,"opacity":0.5},{"zoom":5,"opacity":0.5},{"zoom":6,"opacity":0.5},{"zoom":7,"opacity":0.5},{"zoom":8,"opacity":0.5},{"zoom":9,"opacity":0.5},{"zoom":10,"opacity":0.5},{"zoom":11,"opacity":0.5},{"zoom":12,"opacity":0.5},{"zoom":13,"opacity":0.5},{"zoom":14,"opacity":0.5},{"zoom":15,"opacity":0.5},{"zoom":16,"opacity":0.5},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":{"any":"urban_area","none":["residential","industrial","cemetery","park","medical","sports_ground","beach","construction_site"]},"elements":"geometry","stylers":[{"zoom":0,"color":"#d6d9dc","opacity":1},{"zoom":1,"color":"#d6d9dc","opacity":1},{"zoom":2,"color":"#d6d9dc","opacity":1},{"zoom":3,"color":"#d6d9dc","opacity":1},{"zoom":4,"color":"#d6d9dc","opacity":1},{"zoom":5,"color":"#d6d9dc","opacity":1},{"zoom":6,"color":"#d6d9dc","opacity":1},{"zoom":7,"color":"#d6d9dc","opacity":1},{"zoom":8,"color":"#d6d9dc","opacity":1},{"zoom":9,"color":"#d6d9dc","opacity":1},{"zoom":10,"color":"#d6d9dc","opacity":1},{"zoom":11,"color":"#d6d9dc","opacity":1},{"zoom":12,"color":"#d6d9dc","opacity":1},{"zoom":13,"color":"#d6d9dc","opacity":1},{"zoom":14,"color":"#dddfe2","opacity":1},{"zoom":15,"color":"#e4e6e8","opacity":1},{"zoom":16,"color":"#ebeced","opacity":0.67},{"zoom":17,"color":"#f2f3f3","opacity":0.33},{"zoom":18,"color":"#f2f3f3","opacity":0},{"zoom":19,"color":"#f2f3f3","opacity":0},{"zoom":20,"color":"#f2f3f3","opacity":0},{"zoom":21,"color":"#f2f3f3","opacity":0}]},{"tags":"poi","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"poi","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"poi","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"outdoor","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"outdoor","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"outdoor","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"park","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"park","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"park","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"cemetery","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"cemetery","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"cemetery","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"beach","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"beach","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"beach","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"medical","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"medical","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"medical","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"shopping","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"shopping","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"shopping","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"commercial_services","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"commercial_services","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"commercial_services","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"food_and_drink","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"food_and_drink","elements":"label.text.fill","stylers":[{"color":"#778088"}]},{"tags":"food_and_drink","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"road","elements":"label.icon","types":"point","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"},{"tertiary-color":"#ffffff"}]},{"tags":"road","elements":"label.text.fill","types":"point","stylers":[{"color":"#ffffff"}]},{"tags":"entrance","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"}]},{"tags":"locality","elements":"label.icon","stylers":[{"color":"#9da6af"},{"secondary-color":"#ffffff"}]},{"tags":"country","elements":"label.text.fill","stylers":[{"opacity":0.8},{"color":"#8f969e"}]},{"tags":"country","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"region","elements":"label.text.fill","stylers":[{"color":"#8f969e"},{"opacity":0.8}]},{"tags":"region","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"district","elements":"label.text.fill","stylers":[{"color":"#8f969e"},{"opacity":0.8}]},{"tags":"district","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":{"any":"admin","none":["country","region","locality","district","address"]},"elements":"label.text.fill","stylers":[{"color":"#8f969e"}]},{"tags":{"any":"admin","none":["country","region","locality","district","address"]},"elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"locality","elements":"label.text.fill","stylers":[{"zoom":0,"color":"#778088"},{"zoom":1,"color":"#778088"},{"zoom":2,"color":"#778088"},{"zoom":3,"color":"#778088"},{"zoom":4,"color":"#778088"},{"zoom":5,"color":"#757e86"},{"zoom":6,"color":"#737c83"},{"zoom":7,"color":"#717a81"},{"zoom":8,"color":"#6f777f"},{"zoom":9,"color":"#6d757c"},{"zoom":10,"color":"#6b737a"},{"zoom":11,"color":"#6b737a"},{"zoom":12,"color":"#6b737a"},{"zoom":13,"color":"#6b737a"},{"zoom":14,"color":"#6b737a"},{"zoom":15,"color":"#6b737a"},{"zoom":16,"color":"#6b737a"},{"zoom":17,"color":"#6b737a"},{"zoom":18,"color":"#6b737a"},{"zoom":19,"color":"#6b737a"},{"zoom":20,"color":"#6b737a"},{"zoom":21,"color":"#6b737a"}]},{"tags":"locality","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"road","elements":"label.text.fill","types":"polyline","stylers":[{"color":"#778088"}]},{"tags":"road","elements":"label.text.outline","types":"polyline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"road","elements":"geometry.fill.pattern","types":"polyline","stylers":[{"scale":1},{"color":"#adb3b8"}]},{"tags":"road","elements":"label.text.fill","types":"point","stylers":[{"color":"#ffffff"}]},{"tags":"structure","elements":"label.text.fill","stylers":[{"color":"#5f666d"},{"opacity":0.5}]},{"tags":"structure","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"entrance","elements":"label.text.fill","stylers":[{"color":"#5f666d"},{"opacity":1}]},{"tags":"entrance","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"address","elements":"label.text.fill","stylers":[{"color":"#5f666d"},{"zoom":0,"opacity":0.9},{"zoom":1,"opacity":0.9},{"zoom":2,"opacity":0.9},{"zoom":3,"opacity":0.9},{"zoom":4,"opacity":0.9},{"zoom":5,"opacity":0.9},{"zoom":6,"opacity":0.9},{"zoom":7,"opacity":0.9},{"zoom":8,"opacity":0.9},{"zoom":9,"opacity":0.9},{"zoom":10,"opacity":0.9},{"zoom":11,"opacity":0.9},{"zoom":12,"opacity":0.9},{"zoom":13,"opacity":0.9},{"zoom":14,"opacity":0.9},{"zoom":15,"opacity":0.9},{"zoom":16,"opacity":0.9},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"address","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"opacity":0.5}]},{"tags":"landscape","elements":"label.text.fill","stylers":[{"zoom":0,"color":"#8f969e","opacity":1},{"zoom":1,"color":"#8f969e","opacity":1},{"zoom":2,"color":"#8f969e","opacity":1},{"zoom":3,"color":"#8f969e","opacity":1},{"zoom":4,"color":"#5f666d","opacity":0.5},{"zoom":5,"color":"#5f666d","opacity":0.5},{"zoom":6,"color":"#5f666d","opacity":0.5},{"zoom":7,"color":"#5f666d","opacity":0.5},{"zoom":8,"color":"#5f666d","opacity":0.5},{"zoom":9,"color":"#5f666d","opacity":0.5},{"zoom":10,"color":"#5f666d","opacity":0.5},{"zoom":11,"color":"#5f666d","opacity":0.5},{"zoom":12,"color":"#5f666d","opacity":0.5},{"zoom":13,"color":"#5f666d","opacity":0.5},{"zoom":14,"color":"#5f666d","opacity":0.5},{"zoom":15,"color":"#5f666d","opacity":0.5},{"zoom":16,"color":"#5f666d","opacity":0.5},{"zoom":17,"color":"#5f666d","opacity":0.5},{"zoom":18,"color":"#5f666d","opacity":0.5},{"zoom":19,"color":"#5f666d","opacity":0.5},{"zoom":20,"color":"#5f666d","opacity":0.5},{"zoom":21,"color":"#5f666d","opacity":0.5}]},{"tags":"landscape","elements":"label.text.outline","stylers":[{"color":"#ffffff"},{"zoom":0,"opacity":0.5},{"zoom":1,"opacity":0.5},{"zoom":2,"opacity":0.5},{"zoom":3,"opacity":0.5},{"zoom":4,"opacity":0},{"zoom":5,"opacity":0},{"zoom":6,"opacity":0},{"zoom":7,"opacity":0},{"zoom":8,"opacity":0},{"zoom":9,"opacity":0},{"zoom":10,"opacity":0},{"zoom":11,"opacity":0},{"zoom":12,"opacity":0},{"zoom":13,"opacity":0},{"zoom":14,"opacity":0},{"zoom":15,"opacity":0},{"zoom":16,"opacity":0},{"zoom":17,"opacity":0},{"zoom":18,"opacity":0},{"zoom":19,"opacity":0},{"zoom":20,"opacity":0},{"zoom":21,"opacity":0}]},{"tags":"water","elements":"label.text.fill","stylers":[{"color":"#5e6871"},{"opacity":0.8}]},{"tags":"water","elements":"label.text.outline","types":"polyline","stylers":[{"color":"#ffffff"},{"opacity":0.2}]},{"tags":{"any":"road_1","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":3.3},{"zoom":7,"scale":3.55},{"zoom":8,"scale":3.92},{"zoom":9,"scale":4.44},{"zoom":10,"scale":4.01},{"zoom":11,"scale":3.39},{"zoom":12,"scale":2.94},{"zoom":13,"scale":2.53},{"zoom":14,"scale":2.26},{"zoom":15,"scale":2.11},{"zoom":16,"scale":2.07},{"zoom":17,"scale":1.64},{"zoom":18,"scale":1.35},{"zoom":19,"scale":1.16},{"zoom":20,"scale":1.05},{"zoom":21,"scale":1}]},{"tags":{"any":"road_1"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1},{"zoom":1,"scale":1},{"zoom":2,"scale":1},{"zoom":3,"scale":1},{"zoom":4,"scale":1},{"zoom":5,"scale":1},{"zoom":6,"scale":2.18},{"zoom":7,"scale":2.18},{"zoom":8,"scale":2.25},{"zoom":9,"scale":2.4},{"zoom":10,"scale":2.4},{"zoom":11,"scale":2.26},{"zoom":12,"scale":2.15},{"zoom":13,"scale":2},{"zoom":14,"scale":1.9},{"zoom":15,"scale":1.86},{"zoom":16,"scale":1.88},{"zoom":17,"scale":1.53},{"zoom":18,"scale":1.28},{"zoom":19,"scale":1.11},{"zoom":20,"scale":1.01},{"zoom":21,"scale":0.96}]},{"tags":{"any":"road_2","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":3.3},{"zoom":7,"scale":3.55},{"zoom":8,"scale":3.92},{"zoom":9,"scale":4.44},{"zoom":10,"scale":4.01},{"zoom":11,"scale":3.39},{"zoom":12,"scale":2.94},{"zoom":13,"scale":2.53},{"zoom":14,"scale":2.26},{"zoom":15,"scale":2.11},{"zoom":16,"scale":2.07},{"zoom":17,"scale":1.64},{"zoom":18,"scale":1.35},{"zoom":19,"scale":1.16},{"zoom":20,"scale":1.05},{"zoom":21,"scale":1}]},{"tags":{"any":"road_2"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1},{"zoom":1,"scale":1},{"zoom":2,"scale":1},{"zoom":3,"scale":1},{"zoom":4,"scale":1},{"zoom":5,"scale":1},{"zoom":6,"scale":2.18},{"zoom":7,"scale":2.18},{"zoom":8,"scale":2.25},{"zoom":9,"scale":2.4},{"zoom":10,"scale":2.4},{"zoom":11,"scale":2.26},{"zoom":12,"scale":2.15},{"zoom":13,"scale":2},{"zoom":14,"scale":1.9},{"zoom":15,"scale":1.86},{"zoom":16,"scale":1.88},{"zoom":17,"scale":1.53},{"zoom":18,"scale":1.28},{"zoom":19,"scale":1.11},{"zoom":20,"scale":1.01},{"zoom":21,"scale":0.96}]},{"tags":{"any":"road_3","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":2.79},{"zoom":10,"scale":2.91},{"zoom":11,"scale":1.86},{"zoom":12,"scale":1.86},{"zoom":13,"scale":1.54},{"zoom":14,"scale":1.32},{"zoom":15,"scale":1.2},{"zoom":16,"scale":1.15},{"zoom":17,"scale":1.01},{"zoom":18,"scale":0.93},{"zoom":19,"scale":0.91},{"zoom":20,"scale":0.93},{"zoom":21,"scale":1}]},{"tags":{"any":"road_3"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1.14},{"zoom":1,"scale":1.14},{"zoom":2,"scale":1.14},{"zoom":3,"scale":1.14},{"zoom":4,"scale":1.14},{"zoom":5,"scale":1.14},{"zoom":6,"scale":1.14},{"zoom":7,"scale":1.14},{"zoom":8,"scale":0.92},{"zoom":9,"scale":3.01},{"zoom":10,"scale":1.95},{"zoom":11,"scale":1.46},{"zoom":12,"scale":1.52},{"zoom":13,"scale":1.35},{"zoom":14,"scale":1.22},{"zoom":15,"scale":1.14},{"zoom":16,"scale":1.11},{"zoom":17,"scale":0.98},{"zoom":18,"scale":0.9},{"zoom":19,"scale":0.88},{"zoom":20,"scale":0.9},{"zoom":21,"scale":0.96}]},{"tags":{"any":"road_4","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":0},{"zoom":10,"scale":1.88},{"zoom":11,"scale":1.4},{"zoom":12,"scale":1.57},{"zoom":13,"scale":1.32},{"zoom":14,"scale":1.16},{"zoom":15,"scale":1.07},{"zoom":16,"scale":1.28},{"zoom":17,"scale":1.1},{"zoom":18,"scale":0.99},{"zoom":19,"scale":0.94},{"zoom":20,"scale":0.95},{"zoom":21,"scale":1}]},{"tags":{"any":"road_4"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1},{"zoom":1,"scale":1},{"zoom":2,"scale":1},{"zoom":3,"scale":1},{"zoom":4,"scale":1},{"zoom":5,"scale":1},{"zoom":6,"scale":1},{"zoom":7,"scale":1},{"zoom":8,"scale":1},{"zoom":9,"scale":0.8},{"zoom":10,"scale":1.36},{"zoom":11,"scale":1.15},{"zoom":12,"scale":1.3},{"zoom":13,"scale":1.17},{"zoom":14,"scale":1.08},{"zoom":15,"scale":1.03},{"zoom":16,"scale":1.21},{"zoom":17,"scale":1.05},{"zoom":18,"scale":0.96},{"zoom":19,"scale":0.91},{"zoom":20,"scale":0.91},{"zoom":21,"scale":0.96}]},{"tags":{"any":"road_5","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":0},{"zoom":10,"scale":0},{"zoom":11,"scale":0},{"zoom":12,"scale":1.39},{"zoom":13,"scale":1.05},{"zoom":14,"scale":0.9},{"zoom":15,"scale":1.05},{"zoom":16,"scale":1.22},{"zoom":17,"scale":1.04},{"zoom":18,"scale":0.94},{"zoom":19,"scale":0.91},{"zoom":20,"scale":0.93},{"zoom":21,"scale":1}]},{"tags":{"any":"road_5"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1},{"zoom":1,"scale":1},{"zoom":2,"scale":1},{"zoom":3,"scale":1},{"zoom":4,"scale":1},{"zoom":5,"scale":1},{"zoom":6,"scale":1},{"zoom":7,"scale":1},{"zoom":8,"scale":1},{"zoom":9,"scale":1},{"zoom":10,"scale":1},{"zoom":11,"scale":0.44},{"zoom":12,"scale":1.15},{"zoom":13,"scale":0.97},{"zoom":14,"scale":0.87},{"zoom":15,"scale":1.01},{"zoom":16,"scale":1.16},{"zoom":17,"scale":1},{"zoom":18,"scale":0.91},{"zoom":19,"scale":0.88},{"zoom":20,"scale":0.89},{"zoom":21,"scale":0.96}]},{"tags":{"any":"road_6","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":0},{"zoom":10,"scale":0},{"zoom":11,"scale":0},{"zoom":12,"scale":0},{"zoom":13,"scale":2.5},{"zoom":14,"scale":1.41},{"zoom":15,"scale":1.39},{"zoom":16,"scale":1.45},{"zoom":17,"scale":1.16},{"zoom":18,"scale":1},{"zoom":19,"scale":0.94},{"zoom":20,"scale":0.94},{"zoom":21,"scale":1}]},{"tags":{"any":"road_6"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1},{"zoom":1,"scale":1},{"zoom":2,"scale":1},{"zoom":3,"scale":1},{"zoom":4,"scale":1},{"zoom":5,"scale":1},{"zoom":6,"scale":1},{"zoom":7,"scale":1},{"zoom":8,"scale":1},{"zoom":9,"scale":1},{"zoom":10,"scale":1},{"zoom":11,"scale":1},{"zoom":12,"scale":1},{"zoom":13,"scale":1.65},{"zoom":14,"scale":1.21},{"zoom":15,"scale":1.26},{"zoom":16,"scale":1.35},{"zoom":17,"scale":1.1},{"zoom":18,"scale":0.97},{"zoom":19,"scale":0.91},{"zoom":20,"scale":0.91},{"zoom":21,"scale":0.96}]},{"tags":{"any":"road_7","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":0},{"zoom":10,"scale":0},{"zoom":11,"scale":0},{"zoom":12,"scale":0},{"zoom":13,"scale":0},{"zoom":14,"scale":1},{"zoom":15,"scale":0.87},{"zoom":16,"scale":0.97},{"zoom":17,"scale":0.89},{"zoom":18,"scale":0.86},{"zoom":19,"scale":0.88},{"zoom":20,"scale":0.92},{"zoom":21,"scale":1}]},{"tags":{"any":"road_7"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1},{"zoom":1,"scale":1},{"zoom":2,"scale":1},{"zoom":3,"scale":1},{"zoom":4,"scale":1},{"zoom":5,"scale":1},{"zoom":6,"scale":1},{"zoom":7,"scale":1},{"zoom":8,"scale":1},{"zoom":9,"scale":1},{"zoom":10,"scale":1},{"zoom":11,"scale":1},{"zoom":12,"scale":1},{"zoom":13,"scale":1},{"zoom":14,"scale":0.93},{"zoom":15,"scale":0.85},{"zoom":16,"scale":0.94},{"zoom":17,"scale":0.86},{"zoom":18,"scale":0.83},{"zoom":19,"scale":0.84},{"zoom":20,"scale":0.88},{"zoom":21,"scale":0.95}]},{"tags":{"any":"road_minor","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":0},{"zoom":10,"scale":0},{"zoom":11,"scale":0},{"zoom":12,"scale":0},{"zoom":13,"scale":0},{"zoom":14,"scale":0},{"zoom":15,"scale":0},{"zoom":16,"scale":1},{"zoom":17,"scale":1},{"zoom":18,"scale":1},{"zoom":19,"scale":1},{"zoom":20,"scale":1},{"zoom":21,"scale":1}]},{"tags":{"any":"road_minor"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":0.29},{"zoom":1,"scale":0.29},{"zoom":2,"scale":0.29},{"zoom":3,"scale":0.29},{"zoom":4,"scale":0.29},{"zoom":5,"scale":0.29},{"zoom":6,"scale":0.29},{"zoom":7,"scale":0.29},{"zoom":8,"scale":0.29},{"zoom":9,"scale":0.29},{"zoom":10,"scale":0.29},{"zoom":11,"scale":0.29},{"zoom":12,"scale":0.29},{"zoom":13,"scale":0.29},{"zoom":14,"scale":0.29},{"zoom":15,"scale":0.29},{"zoom":16,"scale":1},{"zoom":17,"scale":0.9},{"zoom":18,"scale":0.91},{"zoom":19,"scale":0.92},{"zoom":20,"scale":0.93},{"zoom":21,"scale":0.95}]},{"tags":{"any":"road_unclassified","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#ffffff"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":0},{"zoom":10,"scale":0},{"zoom":11,"scale":0},{"zoom":12,"scale":0},{"zoom":13,"scale":0},{"zoom":14,"scale":0},{"zoom":15,"scale":0},{"zoom":16,"scale":1},{"zoom":17,"scale":1},{"zoom":18,"scale":1},{"zoom":19,"scale":1},{"zoom":20,"scale":1},{"zoom":21,"scale":1}]},{"tags":{"any":"road_unclassified"},"elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":0.29},{"zoom":1,"scale":0.29},{"zoom":2,"scale":0.29},{"zoom":3,"scale":0.29},{"zoom":4,"scale":0.29},{"zoom":5,"scale":0.29},{"zoom":6,"scale":0.29},{"zoom":7,"scale":0.29},{"zoom":8,"scale":0.29},{"zoom":9,"scale":0.29},{"zoom":10,"scale":0.29},{"zoom":11,"scale":0.29},{"zoom":12,"scale":0.29},{"zoom":13,"scale":0.29},{"zoom":14,"scale":0.29},{"zoom":15,"scale":0.29},{"zoom":16,"scale":1},{"zoom":17,"scale":0.9},{"zoom":18,"scale":0.91},{"zoom":19,"scale":0.92},{"zoom":20,"scale":0.93},{"zoom":21,"scale":0.95}]},{"tags":{"all":"is_tunnel","none":"path"},"elements":"geometry.fill","stylers":[{"zoom":0,"color":"#dcdee0"},{"zoom":1,"color":"#dcdee0"},{"zoom":2,"color":"#dcdee0"},{"zoom":3,"color":"#dcdee0"},{"zoom":4,"color":"#dcdee0"},{"zoom":5,"color":"#dcdee0"},{"zoom":6,"color":"#dcdee0"},{"zoom":7,"color":"#dcdee0"},{"zoom":8,"color":"#dcdee0"},{"zoom":9,"color":"#dcdee0"},{"zoom":10,"color":"#dcdee0"},{"zoom":11,"color":"#dcdee0"},{"zoom":12,"color":"#dcdee0"},{"zoom":13,"color":"#dcdee0"},{"zoom":14,"color":"#e1e3e5"},{"zoom":15,"color":"#e6e8ea"},{"zoom":16,"color":"#e7e9eb"},{"zoom":17,"color":"#e8eaeb"},{"zoom":18,"color":"#e9eaec"},{"zoom":19,"color":"#eaebed"},{"zoom":20,"color":"#ebeced"},{"zoom":21,"color":"#ecedee"}]},{"tags":{"all":"path","none":"is_tunnel"},"elements":"geometry.fill","stylers":[{"color":"#c8ccd0"}]},{"tags":{"all":"path","none":"is_tunnel"},"elements":"geometry.outline","stylers":[{"opacity":0.7},{"zoom":0,"color":"#e1e3e5"},{"zoom":1,"color":"#e1e3e5"},{"zoom":2,"color":"#e1e3e5"},{"zoom":3,"color":"#e1e3e5"},{"zoom":4,"color":"#e1e3e5"},{"zoom":5,"color":"#e1e3e5"},{"zoom":6,"color":"#e1e3e5"},{"zoom":7,"color":"#e1e3e5"},{"zoom":8,"color":"#e1e3e5"},{"zoom":9,"color":"#e1e3e5"},{"zoom":10,"color":"#e1e3e5"},{"zoom":11,"color":"#e1e3e5"},{"zoom":12,"color":"#e1e3e5"},{"zoom":13,"color":"#e1e3e5"},{"zoom":14,"color":"#e6e8e9"},{"zoom":15,"color":"#ecedee"},{"zoom":16,"color":"#edeeef"},{"zoom":17,"color":"#eeeff0"},{"zoom":18,"color":"#eeeff0"},{"zoom":19,"color":"#eff0f1"},{"zoom":20,"color":"#f0f1f2"},{"zoom":21,"color":"#f1f2f3"}]},{"tags":"road_construction","elements":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"tags":"road_construction","elements":"geometry.outline","stylers":[{"zoom":0,"color":"#e4e6e8"},{"zoom":1,"color":"#e4e6e8"},{"zoom":2,"color":"#e4e6e8"},{"zoom":3,"color":"#e4e6e8"},{"zoom":4,"color":"#e4e6e8"},{"zoom":5,"color":"#e4e6e8"},{"zoom":6,"color":"#e4e6e8"},{"zoom":7,"color":"#e4e6e8"},{"zoom":8,"color":"#e4e6e8"},{"zoom":9,"color":"#e4e6e8"},{"zoom":10,"color":"#e4e6e8"},{"zoom":11,"color":"#e4e6e8"},{"zoom":12,"color":"#e4e6e8"},{"zoom":13,"color":"#e4e6e8"},{"zoom":14,"color":"#c8ccd0"},{"zoom":15,"color":"#e4e6e8"},{"zoom":16,"color":"#e8eaec"},{"zoom":17,"color":"#edeef0"},{"zoom":18,"color":"#f1f2f3"},{"zoom":19,"color":"#f6f7f7"},{"zoom":20,"color":"#fafbfb"},{"zoom":21,"color":"#ffffff"}]},{"tags":{"any":"ferry"},"stylers":[{"color":"#919ba4"}]},{"tags":"transit_location","elements":"label.icon","stylers":[{"saturation":-1},{"zoom":0,"opacity":0},{"zoom":1,"opacity":0},{"zoom":2,"opacity":0},{"zoom":3,"opacity":0},{"zoom":4,"opacity":0},{"zoom":5,"opacity":0},{"zoom":6,"opacity":0},{"zoom":7,"opacity":0},{"zoom":8,"opacity":0},{"zoom":9,"opacity":0},{"zoom":10,"opacity":0},{"zoom":11,"opacity":0},{"zoom":12,"opacity":0},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"transit_location","elements":"label.text","stylers":[{"zoom":0,"opacity":0},{"zoom":1,"opacity":0},{"zoom":2,"opacity":0},{"zoom":3,"opacity":0},{"zoom":4,"opacity":0},{"zoom":5,"opacity":0},{"zoom":6,"opacity":0},{"zoom":7,"opacity":0},{"zoom":8,"opacity":0},{"zoom":9,"opacity":0},{"zoom":10,"opacity":0},{"zoom":11,"opacity":0},{"zoom":12,"opacity":0},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"transit_location","elements":"label.text.fill","stylers":[{"color":"#6c8993"}]},{"tags":"transit_location","elements":"label.text.outline","stylers":[{"color":"#ffffff"}]},{"tags":"transit_schema","elements":"geometry.fill","stylers":[{"color":"#6c8993"},{"scale":0.7},{"zoom":0,"opacity":0.6},{"zoom":1,"opacity":0.6},{"zoom":2,"opacity":0.6},{"zoom":3,"opacity":0.6},{"zoom":4,"opacity":0.6},{"zoom":5,"opacity":0.6},{"zoom":6,"opacity":0.6},{"zoom":7,"opacity":0.6},{"zoom":8,"opacity":0.6},{"zoom":9,"opacity":0.6},{"zoom":10,"opacity":0.6},{"zoom":11,"opacity":0.6},{"zoom":12,"opacity":0.6},{"zoom":13,"opacity":0.6},{"zoom":14,"opacity":0.6},{"zoom":15,"opacity":0.5},{"zoom":16,"opacity":0.4},{"zoom":17,"opacity":0.4},{"zoom":18,"opacity":0.4},{"zoom":19,"opacity":0.4},{"zoom":20,"opacity":0.4},{"zoom":21,"opacity":0.4}]},{"tags":"transit_schema","elements":"geometry.outline","stylers":[{"opacity":0}]},{"tags":"transit_line","elements":"geometry.fill.pattern","stylers":[{"color":"#949c9e"},{"zoom":0,"opacity":0},{"zoom":1,"opacity":0},{"zoom":2,"opacity":0},{"zoom":3,"opacity":0},{"zoom":4,"opacity":0},{"zoom":5,"opacity":0},{"zoom":6,"opacity":0},{"zoom":7,"opacity":0},{"zoom":8,"opacity":0},{"zoom":9,"opacity":0},{"zoom":10,"opacity":0},{"zoom":11,"opacity":0},{"zoom":12,"opacity":0},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"transit_line","elements":"geometry.fill","stylers":[{"color":"#949c9e"},{"scale":0.4},{"zoom":0,"opacity":0},{"zoom":1,"opacity":0},{"zoom":2,"opacity":0},{"zoom":3,"opacity":0},{"zoom":4,"opacity":0},{"zoom":5,"opacity":0},{"zoom":6,"opacity":0},{"zoom":7,"opacity":0},{"zoom":8,"opacity":0},{"zoom":9,"opacity":0},{"zoom":10,"opacity":0},{"zoom":11,"opacity":0},{"zoom":12,"opacity":0},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"water","elements":"geometry","stylers":[{"zoom":0,"color":"#adb4bb"},{"zoom":1,"color":"#adb4bb"},{"zoom":2,"color":"#adb4bb"},{"zoom":3,"color":"#adb4bb"},{"zoom":4,"color":"#adb4bb"},{"zoom":5,"color":"#adb4bb"},{"zoom":6,"color":"#adb4bb"},{"zoom":7,"color":"#adb4bb"},{"zoom":8,"color":"#afb6bd"},{"zoom":9,"color":"#b1b7be"},{"zoom":10,"color":"#b3b9c0"},{"zoom":11,"color":"#b4bac1"},{"zoom":12,"color":"#b4bbc1"},{"zoom":13,"color":"#b5bcc2"},{"zoom":14,"color":"#b6bdc3"},{"zoom":15,"color":"#b8bec4"},{"zoom":16,"color":"#b9c0c5"},{"zoom":17,"color":"#bbc1c6"},{"zoom":18,"color":"#bcc2c8"},{"zoom":19,"color":"#bec3c9"},{"zoom":20,"color":"#bfc5ca"},{"zoom":21,"color":"#c1c6cb"}]},{"tags":"water","elements":"geometry","types":"polyline","stylers":[{"zoom":0,"opacity":0.4},{"zoom":1,"opacity":0.4},{"zoom":2,"opacity":0.4},{"zoom":3,"opacity":0.4},{"zoom":4,"opacity":0.6},{"zoom":5,"opacity":0.8},{"zoom":6,"opacity":1},{"zoom":7,"opacity":1},{"zoom":8,"opacity":1},{"zoom":9,"opacity":1},{"zoom":10,"opacity":1},{"zoom":11,"opacity":1},{"zoom":12,"opacity":1},{"zoom":13,"opacity":1},{"zoom":14,"opacity":1},{"zoom":15,"opacity":1},{"zoom":16,"opacity":1},{"zoom":17,"opacity":1},{"zoom":18,"opacity":1},{"zoom":19,"opacity":1},{"zoom":20,"opacity":1},{"zoom":21,"opacity":1}]},{"tags":"bathymetry","elements":"geometry","stylers":[{"hue":"#adb4bb"}]},{"tags":{"any":["industrial","construction_site"]},"elements":"geometry","stylers":[{"zoom":0,"color":"#dcdee0"},{"zoom":1,"color":"#dcdee0"},{"zoom":2,"color":"#dcdee0"},{"zoom":3,"color":"#dcdee0"},{"zoom":4,"color":"#dcdee0"},{"zoom":5,"color":"#dcdee0"},{"zoom":6,"color":"#dcdee0"},{"zoom":7,"color":"#dcdee0"},{"zoom":8,"color":"#dcdee0"},{"zoom":9,"color":"#dcdee0"},{"zoom":10,"color":"#dcdee0"},{"zoom":11,"color":"#dcdee0"},{"zoom":12,"color":"#dcdee0"},{"zoom":13,"color":"#dcdee0"},{"zoom":14,"color":"#e1e3e5"},{"zoom":15,"color":"#e7e8ea"},{"zoom":16,"color":"#e8e9eb"},{"zoom":17,"color":"#e9eaeb"},{"zoom":18,"color":"#e9eaec"},{"zoom":19,"color":"#eaebed"},{"zoom":20,"color":"#ebeced"},{"zoom":21,"color":"#ecedee"}]},{"tags":{"any":"transit","none":["transit_location","transit_line","transit_schema","is_unclassified_transit"]},"elements":"geometry","stylers":[{"zoom":0,"color":"#dcdee0"},{"zoom":1,"color":"#dcdee0"},{"zoom":2,"color":"#dcdee0"},{"zoom":3,"color":"#dcdee0"},{"zoom":4,"color":"#dcdee0"},{"zoom":5,"color":"#dcdee0"},{"zoom":6,"color":"#dcdee0"},{"zoom":7,"color":"#dcdee0"},{"zoom":8,"color":"#dcdee0"},{"zoom":9,"color":"#dcdee0"},{"zoom":10,"color":"#dcdee0"},{"zoom":11,"color":"#dcdee0"},{"zoom":12,"color":"#dcdee0"},{"zoom":13,"color":"#dcdee0"},{"zoom":14,"color":"#e1e3e5"},{"zoom":15,"color":"#e7e8ea"},{"zoom":16,"color":"#e8e9eb"},{"zoom":17,"color":"#e9eaeb"},{"zoom":18,"color":"#e9eaec"},{"zoom":19,"color":"#eaebed"},{"zoom":20,"color":"#ebeced"},{"zoom":21,"color":"#ecedee"}]},{"tags":"fence","elements":"geometry.fill","stylers":[{"color":"#d1d4d6"},{"zoom":0,"opacity":0.75},{"zoom":1,"opacity":0.75},{"zoom":2,"opacity":0.75},{"zoom":3,"opacity":0.75},{"zoom":4,"opacity":0.75},{"zoom":5,"opacity":0.75},{"zoom":6,"opacity":0.75},{"zoom":7,"opacity":0.75},{"zoom":8,"opacity":0.75},{"zoom":9,"opacity":0.75},{"zoom":10,"opacity":0.75},{"zoom":11,"opacity":0.75},{"zoom":12,"opacity":0.75},{"zoom":13,"opacity":0.75},{"zoom":14,"opacity":0.75},{"zoom":15,"opacity":0.75},{"zoom":16,"opacity":0.75},{"zoom":17,"opacity":0.45},{"zoom":18,"opacity":0.45},{"zoom":19,"opacity":0.45},{"zoom":20,"opacity":0.45},{"zoom":21,"opacity":0.45}]},{"tags":"medical","elements":"geometry","stylers":[{"zoom":0,"color":"#dcdee0"},{"zoom":1,"color":"#dcdee0"},{"zoom":2,"color":"#dcdee0"},{"zoom":3,"color":"#dcdee0"},{"zoom":4,"color":"#dcdee0"},{"zoom":5,"color":"#dcdee0"},{"zoom":6,"color":"#dcdee0"},{"zoom":7,"color":"#dcdee0"},{"zoom":8,"color":"#dcdee0"},{"zoom":9,"color":"#dcdee0"},{"zoom":10,"color":"#dcdee0"},{"zoom":11,"color":"#dcdee0"},{"zoom":12,"color":"#dcdee0"},{"zoom":13,"color":"#dcdee0"},{"zoom":14,"color":"#e1e3e5"},{"zoom":15,"color":"#e7e8ea"},{"zoom":16,"color":"#e8e9eb"},{"zoom":17,"color":"#e9eaeb"},{"zoom":18,"color":"#e9eaec"},{"zoom":19,"color":"#eaebed"},{"zoom":20,"color":"#ebeced"},{"zoom":21,"color":"#ecedee"}]},{"tags":"beach","elements":"geometry","stylers":[{"zoom":0,"color":"#dcdee0","opacity":0.3},{"zoom":1,"color":"#dcdee0","opacity":0.3},{"zoom":2,"color":"#dcdee0","opacity":0.3},{"zoom":3,"color":"#dcdee0","opacity":0.3},{"zoom":4,"color":"#dcdee0","opacity":0.3},{"zoom":5,"color":"#dcdee0","opacity":0.3},{"zoom":6,"color":"#dcdee0","opacity":0.3},{"zoom":7,"color":"#dcdee0","opacity":0.3},{"zoom":8,"color":"#dcdee0","opacity":0.3},{"zoom":9,"color":"#dcdee0","opacity":0.3},{"zoom":10,"color":"#dcdee0","opacity":0.3},{"zoom":11,"color":"#dcdee0","opacity":0.3},{"zoom":12,"color":"#dcdee0","opacity":0.3},{"zoom":13,"color":"#dcdee0","opacity":0.65},{"zoom":14,"color":"#e1e3e5","opacity":1},{"zoom":15,"color":"#e7e8ea","opacity":1},{"zoom":16,"color":"#e8e9eb","opacity":1},{"zoom":17,"color":"#e9eaeb","opacity":1},{"zoom":18,"color":"#e9eaec","opacity":1},{"zoom":19,"color":"#eaebed","opacity":1},{"zoom":20,"color":"#ebeced","opacity":1},{"zoom":21,"color":"#ecedee","opacity":1}]},{"tags":{"all":["is_tunnel","path"]},"elements":"geometry.fill","stylers":[{"color":"#c3c7cb"},{"opacity":0.3}]},{"tags":{"all":["is_tunnel","path"]},"elements":"geometry.outline","stylers":[{"opacity":0}]},{"tags":"road_limited","elements":"geometry.fill","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":0},{"zoom":1,"scale":0},{"zoom":2,"scale":0},{"zoom":3,"scale":0},{"zoom":4,"scale":0},{"zoom":5,"scale":0},{"zoom":6,"scale":0},{"zoom":7,"scale":0},{"zoom":8,"scale":0},{"zoom":9,"scale":0},{"zoom":10,"scale":0},{"zoom":11,"scale":0},{"zoom":12,"scale":0},{"zoom":13,"scale":0.1},{"zoom":14,"scale":0.2},{"zoom":15,"scale":0.3},{"zoom":16,"scale":0.5},{"zoom":17,"scale":0.6},{"zoom":18,"scale":0.7},{"zoom":19,"scale":0.88},{"zoom":20,"scale":0.92},{"zoom":21,"scale":1}]},{"tags":"road_limited","elements":"geometry.outline","stylers":[{"color":"#c8ccd0"},{"zoom":0,"scale":1},{"zoom":1,"scale":1},{"zoom":2,"scale":1},{"zoom":3,"scale":1},{"zoom":4,"scale":1},{"zoom":5,"scale":1},{"zoom":6,"scale":1},{"zoom":7,"scale":1},{"zoom":8,"scale":1},{"zoom":9,"scale":1},{"zoom":10,"scale":1},{"zoom":11,"scale":1},{"zoom":12,"scale":1},{"zoom":13,"scale":0.1},{"zoom":14,"scale":0.2},{"zoom":15,"scale":0.3},{"zoom":16,"scale":0.5},{"zoom":17,"scale":0.6},{"zoom":18,"scale":0.7},{"zoom":19,"scale":0.84},{"zoom":20,"scale":0.88},{"zoom":21,"scale":0.95}]},{"tags":{"any":"landcover","none":"vegetation"},"stylers":{"visibility":"off"}}]');
 
 /***/ })
@@ -17027,7 +17120,7 @@ module.exports = /*#__PURE__*/JSON.parse('[{"tags":"country","elements":"geometr
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -17113,6 +17206,18 @@ module.exports = /*#__PURE__*/JSON.parse('[{"tags":"country","elements":"geometr
 /******/ 				}
 /******/ 			}
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
