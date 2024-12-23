@@ -30,155 +30,163 @@
             <div class="tabs__content">
                 <div class="tabs__panel">
                     <form class="services-page__form services-filters form" action="#">
-                        <fieldset class="services-filters__list">
-                            <legend class="sr-only">Выберите ситуацию</legend>
-                            <ul class="services-filters__radio">
-                                <li>
-                                    <label class="services-filters__box">
-                                        Беременность
-                                        <input class="form__hidden" type="radio" name="services-situation" value="pregnancy" checked>
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Трудная жизненная ситуация
-                                        <input class="form__hidden" type="radio" name="services-situation" value="difficult-life-situation">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Рождение ребёнка
-                                        <input class="form__hidden" type="radio" name="services-situation" value="birth-child">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Открытие своего дела
-                                        <input class="form__hidden" type="radio" name="services-situation" value="starting-business">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Выход на пенсию
-                                        <input class="form__hidden" type="radio" name="services-situation" value="retirement">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Утрата близкого человека
-                                        <input class="form__hidden" type="radio" name="services-situation" value="loss-loved-person">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Оформление удостоверения о праве на льготы
-                                        <input class="form__hidden" type="radio" name="services-situation" value="certificate-benefits">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Оформление документов
-                                        <input class="form__hidden" type="radio" name="services-situation" value="registration-documents">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Индивидуальное жилищное строительство
-                                        <input class="form__hidden" type="radio" name="services-situation" value="individual-housing-construction">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Приобретение (отчуждение) недвижимости
-                                        <input class="form__hidden" type="radio" name="services-situation" value="acquisition-real-estate">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Перемена имени
-                                        <input class="form__hidden" type="radio" name="services-situation" value="name-change">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Потеря и поиск работы
-                                        <input class="form__hidden" type="radio" name="services-situation" value="job-loss-search">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </fieldset>
-                        <fieldset class="services-filters__list">
-                            <legend class="sr-only">Выберите варианты</legend>
-                            <ul class="services-filters__selects">
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-childrens">
-                                        Наличие детей
-                                    </label>
-                                    <select name="services-select" id="services-childrens" data-placeholder="Наличие детей" data-choice>
-                                        <option value="yes">
-                                            Есть
-                                        </option>
-                                        <option value="no">
-                                            Нет
-                                        </option>
-                                    </select>
-                                </li>
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-family-status">
-                                        Семейное положение
-                                    </label>
-                                    <select name="services-select" id="services-family-status" data-placeholder="Семейное положение" data-choice>
-                                        <option value="married">
-                                            В браке
-                                        </option>
-                                        <option value="single">
-                                            Холост
-                                        </option>
-                                    </select>
-                                </li>
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-nationality">
-                                        Гражданство
-                                    </label>
-                                    <select name="services-select" id="services-nationality" data-placeholder="Гражданство" data-choice>
-                                        <option value="yes">
-                                            Есть
-                                        </option>
-                                        <option value="no">
-                                            Нет
-                                        </option>
-                                    </select>
-                                </li>
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-age">
-                                        Возраст заявителя
-                                    </label>
-                                    <select name="services-select" id="services-age" data-placeholder="Возраст заявителя" data-choice>
-                                        <option value="14">
-                                            14
-                                        </option>
-                                        <option value="16">
-                                            16
-                                        </option>
-                                        <option value="18">
-                                            18+
-                                        </option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </fieldset>
+                        <div class="services-filters__manage">
+                            <button class="services-filters__show" type="button" aria-expanded="fase" aria-label="Открыть дополнительные параметры" aria-controls="services-page-tab-1">
+                                Дополнительные парметры
+                            </button>
+                            <button class="services-filters__close" type="button" aria-label="Закрыть дополнительные параметры" aria-controls="services-page-tab-1"></button>
+                        </div>
+                        <div class="services-filters__wrapper" id="services-page-tab-1">
+                            <fieldset>
+                                <legend class="sr-only">Выберите ситуацию</legend>
+                                <ul class="services-filters__radio">
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Беременность
+                                            <input class="form__hidden" type="radio" name="services-situation" value="pregnancy" checked>
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Трудная жизненная ситуация
+                                            <input class="form__hidden" type="radio" name="services-situation" value="difficult-life-situation">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Рождение ребёнка
+                                            <input class="form__hidden" type="radio" name="services-situation" value="birth-child">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Открытие своего дела
+                                            <input class="form__hidden" type="radio" name="services-situation" value="starting-business">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Выход на пенсию
+                                            <input class="form__hidden" type="radio" name="services-situation" value="retirement">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Утрата близкого человека
+                                            <input class="form__hidden" type="radio" name="services-situation" value="loss-loved-person">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Оформление удостоверения о праве на льготы
+                                            <input class="form__hidden" type="radio" name="services-situation" value="certificate-benefits">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Оформление документов
+                                            <input class="form__hidden" type="radio" name="services-situation" value="registration-documents">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Индивидуальное жилищное строительство
+                                            <input class="form__hidden" type="radio" name="services-situation" value="individual-housing-construction">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Приобретение (отчуждение) недвижимости
+                                            <input class="form__hidden" type="radio" name="services-situation" value="acquisition-real-estate">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Перемена имени
+                                            <input class="form__hidden" type="radio" name="services-situation" value="name-change">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Потеря и поиск работы
+                                            <input class="form__hidden" type="radio" name="services-situation" value="job-loss-search">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="sr-only">Выберите варианты</legend>
+                                <ul class="services-filters__selects">
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-childrens">
+                                            Наличие детей
+                                        </label>
+                                        <select name="services-select" id="services-childrens" data-placeholder="Наличие детей" data-choice>
+                                            <option value="yes">
+                                                Есть
+                                            </option>
+                                            <option value="no">
+                                                Нет
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-family-status">
+                                            Семейное положение
+                                        </label>
+                                        <select name="services-select" id="services-family-status" data-placeholder="Семейное положение" data-choice>
+                                            <option value="married">
+                                                В браке
+                                            </option>
+                                            <option value="single">
+                                                Холост
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-nationality">
+                                            Гражданство
+                                        </label>
+                                        <select name="services-select" id="services-nationality" data-placeholder="Гражданство" data-choice>
+                                            <option value="yes">
+                                                Есть
+                                            </option>
+                                            <option value="no">
+                                                Нет
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-age">
+                                            Возраст заявителя
+                                        </label>
+                                        <select name="services-select" id="services-age" data-placeholder="Возраст заявителя" data-choice>
+                                            <option value="14">
+                                                14
+                                            </option>
+                                            <option value="16">
+                                                16
+                                            </option>
+                                            <option value="18">
+                                                18+
+                                            </option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div>
                     </form>
                     <ul class="services-page__items">
                         <li class="services-page__item">
@@ -248,32 +256,40 @@
                 </div>
                 <div class="tabs__panel">
                     <form class="services-page__form services-filters" action="#">
-                        <fieldset class="services-filters__list">
-                            <legend class="sr-only">Выберите ситуацию</legend>
-                            <ul class="services-filters__radio">
-                                <li>
-                                    <label class="services-filters__box">
-                                        Беременность
-                                        <input class="form__hidden" type="radio" name="services-situation" value="pregnancy" checked>
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Трудная жизненная ситуация
-                                        <input class="form__hidden" type="radio" name="services-situation" value="difficult-life-situation">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="services-filters__box">
-                                        Рождение ребёнка
-                                        <input class="form__hidden" type="radio" name="services-situation" value="birth-child">
-                                        <span class="form__visible form__visible--radio" aria-hidden="true"></span>
-                                    </label>
-                                </li>
-                            </ul>
-                        </fieldset>
+                        <div class="services-filters__manage">
+                            <button class="services-filters__show" type="button" aria-label="Открыть дополнительные параметры" aria-expanded="fase" aria-controls="services-page-tab-2">
+                                Дополнительные парметры
+                            </button>
+                            <button class="services-filters__close" type="button" aria-label="Закрыть дополнительные параметры" aria-controls="services-page-tab-2"></button>
+                        </div>
+                        <div class="services-filters__wrapper" id="services-page-tab-2">
+                            <fieldset class="services-filters__list">
+                                <legend class="sr-only">Выберите ситуацию</legend>
+                                <ul class="services-filters__radio">
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Беременность
+                                            <input class="form__hidden" type="radio" name="services-situation" value="pregnancy" checked>
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Трудная жизненная ситуация
+                                            <input class="form__hidden" type="radio" name="services-situation" value="difficult-life-situation">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="services-filters__box">
+                                            Рождение ребёнка
+                                            <input class="form__hidden" type="radio" name="services-situation" value="birth-child">
+                                            <span class="form__visible form__visible--radio" aria-hidden="true"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div>
                     </form>
                     <ul class="services-page__items">
                         <li class="services-page__item">
@@ -295,66 +311,74 @@
                 </div>
                 <div class="tabs__panel">
                     <form class="services-page__form services-filters" action="#">
-                        <fieldset class="services-filters__list">
-                            <legend class="sr-only">Выберите варианты</legend>
-                            <ul class="services-filters__selects">
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-childrens">
-                                        Наличие детей
-                                    </label>
-                                    <select name="services-select" id="services-childrens" data-placeholder="Наличие детей" data-choice>
-                                        <option value="yes">
-                                            Есть
-                                        </option>
-                                        <option value="no">
-                                            Нет
-                                        </option>
-                                    </select>
-                                </li>
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-family-status">
-                                        Семейное положение
-                                    </label>
-                                    <select name="services-select" id="services-family-status" data-placeholder="Семейное положение" data-choice>
-                                        <option value="married">
-                                            В браке
-                                        </option>
-                                        <option value="single">
-                                            Холост
-                                        </option>
-                                    </select>
-                                </li>
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-nationality">
-                                        Гражданство
-                                    </label>
-                                    <select name="services-select" id="services-nationality" data-placeholder="Гражданство" data-choice>
-                                        <option value="yes">
-                                            Есть
-                                        </option>
-                                        <option value="no">
-                                            Нет
-                                        </option>
-                                    </select>
-                                </li>
-                                <li class="services-filters__select">
-                                    <label class="sr-only" for="services-age">
-                                        Возраст заявителя
-                                    </label>
-                                    <select name="services-select" id="services-age" data-placeholder="Возраст заявителя" data-choice>
-                                        <option value="14">
-                                            14
-                                        </option>
-                                        <option value="16">
-                                            16
-                                        </option>
-                                        <option value="18">
-                                            18+
-                                        </option>
-                                    </select>
-                                </li>
-                            </ul>
-                        </fieldset>
+                        <div class="services-filters__manage">
+                            <button class="services-filters__show" type="button" aria-label="Открыть дополнительные параметры" aria-expanded="fase" aria-controls="services-page-tab-3">
+                                Дополнительные парметры
+                            </button>
+                            <button class="services-filters__close" type="button" aria-label="Закрыть дополнительные параметры" aria-controls="services-page-tab-3"></button>
+                        </div>
+                        <div class="services-filters__wrapper" id="services-page-tab-3">
+                            <fieldset class="services-filters__list">
+                                <legend class="sr-only">Выберите варианты</legend>
+                                <ul class="services-filters__selects">
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-childrens">
+                                            Наличие детей
+                                        </label>
+                                        <select name="services-select" id="services-childrens" data-placeholder="Наличие детей" data-choice>
+                                            <option value="yes">
+                                                Есть
+                                            </option>
+                                            <option value="no">
+                                                Нет
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-family-status">
+                                            Семейное положение
+                                        </label>
+                                        <select name="services-select" id="services-family-status" data-placeholder="Семейное положение" data-choice>
+                                            <option value="married">
+                                                В браке
+                                            </option>
+                                            <option value="single">
+                                                Холост
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-nationality">
+                                            Гражданство
+                                        </label>
+                                        <select name="services-select" id="services-nationality" data-placeholder="Гражданство" data-choice>
+                                            <option value="yes">
+                                                Есть
+                                            </option>
+                                            <option value="no">
+                                                Нет
+                                            </option>
+                                        </select>
+                                    </li>
+                                    <li class="services-filters__select">
+                                        <label class="sr-only" for="services-age">
+                                            Возраст заявителя
+                                        </label>
+                                        <select name="services-select" id="services-age" data-placeholder="Возраст заявителя" data-choice>
+                                            <option value="14">
+                                                14
+                                            </option>
+                                            <option value="16">
+                                                16
+                                            </option>
+                                            <option value="18">
+                                                18+
+                                            </option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </div>
                     </form>
                     <ul class="services-page__items">
                         <li class="services-page__item">

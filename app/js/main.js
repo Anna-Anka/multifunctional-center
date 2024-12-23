@@ -562,6 +562,51 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/project/_services-filters.js":
+/*!*********************************************!*\
+  !*** ./src/js/project/_services-filters.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+(function () {
+  var filters = document.querySelectorAll('.services-filters');
+  var changeA11yByClass = function changeA11yByClass(wrapper, openButton, closeButton) {
+    if (wrapper.classList.contains('services-filters__wrapper--visible')) {
+      openButton.setAttribute('aria-expanded', 'true');
+      closeButton.setAttribute('aria-expanded', 'true');
+      openButton.setAttribute('aria-label', 'Закрыть параметры');
+    } else {
+      openButton.setAttribute('aria-expanded', 'false');
+      closeButton.setAttribute('aria-expanded', 'false');
+      openButton.setAttribute('aria-label', 'Открыть параметры');
+    }
+  };
+  if (!filters) {
+    return;
+  }
+  filters.forEach(function (filter) {
+    var wrapper = filter.querySelector('.services-filters__wrapper');
+    var openButton = filter.querySelector('.services-filters__show');
+    var closeButton = filter.querySelector('.services-filters__close');
+    if (!wrapper || !openButton || !closeButton) {
+      return;
+    }
+    openButton.addEventListener('click', function () {
+      closeButton.classList.toggle('services-filters__close--visible');
+      wrapper.classList.toggle('services-filters__wrapper--visible');
+      changeA11yByClass(wrapper, openButton, closeButton);
+    });
+    closeButton.addEventListener('click', function () {
+      closeButton.classList.remove('services-filters__close--visible');
+      wrapper.classList.remove('services-filters__wrapper--visible');
+      changeA11yByClass(wrapper, openButton, closeButton);
+    });
+  });
+})();
+
+/***/ }),
+
 /***/ "./src/js/project/index.js":
 /*!*********************************!*\
   !*** ./src/js/project/index.js ***!
@@ -573,12 +618,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_item_highlight_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_menu-item-highlight.js */ "./src/js/project/_menu-item-highlight.js");
 /* harmony import */ var _header_search_mobile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_header-search-mobile.js */ "./src/js/project/_header-search-mobile.js");
 /* harmony import */ var _breadcrumbs_prev_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_breadcrumbs-prev.js */ "./src/js/project/_breadcrumbs-prev.js");
-/* harmony import */ var _map_map_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./map/_map.js */ "./src/js/project/map/_map.js");
-/* harmony import */ var _sliders_partners_slider_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sliders/_partners-slider.js */ "./src/js/project/sliders/_partners-slider.js");
-/* harmony import */ var _sliders_gallery_slider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sliders/_gallery-slider.js */ "./src/js/project/sliders/_gallery-slider.js");
-/* harmony import */ var _sliders_office_slider_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sliders/_office-slider.js */ "./src/js/project/sliders/_office-slider.js");
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_map_map_js__WEBPACK_IMPORTED_MODULE_3__]);
-_map_map_js__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var _services_filters_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_services-filters.js */ "./src/js/project/_services-filters.js");
+/* harmony import */ var _map_map_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./map/_map.js */ "./src/js/project/map/_map.js");
+/* harmony import */ var _sliders_partners_slider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sliders/_partners-slider.js */ "./src/js/project/sliders/_partners-slider.js");
+/* harmony import */ var _sliders_gallery_slider_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sliders/_gallery-slider.js */ "./src/js/project/sliders/_gallery-slider.js");
+/* harmony import */ var _sliders_office_slider_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sliders/_office-slider.js */ "./src/js/project/sliders/_office-slider.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_map_map_js__WEBPACK_IMPORTED_MODULE_4__]);
+_map_map_js__WEBPACK_IMPORTED_MODULE_4__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
 
 
 
