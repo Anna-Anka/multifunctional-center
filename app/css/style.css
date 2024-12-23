@@ -4651,6 +4651,10 @@ body {
   filter: invert(66%) sepia(14%) saturate(1142%) hue-rotate(346deg) brightness(94%) contrast(84%);
 }
 
+#VkIdSdkOneTap {
+  background-color: red;
+}
+
 .all-news__items:not(:last-child) {
   margin-bottom: 32px;
 }

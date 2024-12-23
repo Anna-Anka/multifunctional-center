@@ -1,9 +1,22 @@
-import {Config} from '@vkid/sdk';
+import * as VKID from '@vkid/sdk';
 
-Config.init({
+VKID.Config.init({
     app: 52881883,
-    redirectUrl: 'https://mysite.com',
+    redirectUrl: 'http://localhost:3000/',
+    state: 'state',
+    codeVerifier: 'codeVerifier',
+    scope: 'phone email',
 });
+
+const oneTap = new VKID.OneTap();
+
+const container = document.getElementById('VkIdSdkOneTap');
+
+if (container) {
+    oneTap
+        .render({ container })
+        .on(VKID.WidgetEvents.ERROR, console.error);
+}
 
 
 // VK.Widgets.CommunityMessages("vk_community_messages", 433458018);
