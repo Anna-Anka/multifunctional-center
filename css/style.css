@@ -2983,8 +2983,11 @@ body {
 }
 
 .breadcrumbs__prev {
-  width: 20px;
-  height: 20px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-preferred-size: 20px;
+  flex-basis: 20px;
+  aspect-ratio: 1;
 }
 
 .breadcrumbs__prev button {
@@ -4649,10 +4652,6 @@ body {
 .service-page .side-menu__text--icon::before {
   -webkit-filter: invert(66%) sepia(14%) saturate(1142%) hue-rotate(346deg) brightness(94%) contrast(84%);
   filter: invert(66%) sepia(14%) saturate(1142%) hue-rotate(346deg) brightness(94%) contrast(84%);
-}
-
-#VkIdSdkOneTap {
-  background-color: red;
 }
 
 .all-news__items:not(:last-child) {
