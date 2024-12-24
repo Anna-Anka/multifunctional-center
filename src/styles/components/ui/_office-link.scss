@@ -1,11 +1,23 @@
 .office-link {
+	@include focus-visible;
+
 	position: relative;
-	padding-left: 32px;
+	padding: 4px 0 4px 32px;
 	font-family: var(--font-secondary);
 	font-weight: 700;
 	font-size: 14px;
 	text-decoration: underline;
 	color: var(--color-red-500);
+	transition:
+		box-shadow 0.3s,
+		border-radius 0.3s,
+		opacity 0.3s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 0.8;
+		}
+	}
 
 	&::before {
 		@include bg-properties(contain);
@@ -13,11 +25,12 @@
 		content: '';
 		position: absolute;
 		left: 0;
-		top: -6px;
+		top: 50%;
 		width: 24px;
 		height: 24px;
 		filter: invert(39%) sepia(97%) saturate(2430%) hue-rotate(342deg)
 			brightness(98%) contrast(90%);
+		transform: translateY(-50%);
 	}
 
 	&--car {

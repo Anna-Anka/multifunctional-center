@@ -36,14 +36,11 @@ export function balloonCloseButtonClickHandler(button) {
 function changeParentZIndex(wrapper) {
     const balloon = wrapper.querySelector('.map-balloon')
     const parent = wrapper.parentNode
-    const parentStyles = parent.getAttribute('style')
-
-    const transformStyle = parentStyles.split(';')[0]
 
     if (balloon.classList.contains('map-balloon--hidden')) {
-        parent.setAttribute('style', `${transformStyle}; z-index: 0;`);
+        parent.classList.remove('ymaps3x0--marker--active')
     } else {
-        parent.setAttribute('style', `${transformStyle}; z-index: 1;`);
+        parent.classList.add('ymaps3x0--marker--active')
     }
 }
 

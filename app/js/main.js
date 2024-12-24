@@ -1012,12 +1012,10 @@ function balloonCloseButtonClickHandler(button) {
 function changeParentZIndex(wrapper) {
   var balloon = wrapper.querySelector('.map-balloon');
   var parent = wrapper.parentNode;
-  var parentStyles = parent.getAttribute('style');
-  var transformStyle = parentStyles.split(';')[0];
   if (balloon.classList.contains('map-balloon--hidden')) {
-    parent.setAttribute('style', "".concat(transformStyle, "; z-index: 0;"));
+    parent.classList.remove('ymaps3x0--marker--active');
   } else {
-    parent.setAttribute('style', "".concat(transformStyle, "; z-index: 1;"));
+    parent.classList.add('ymaps3x0--marker--active');
   }
 }
 function markerButtonClickHandler(button) {
