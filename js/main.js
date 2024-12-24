@@ -692,11 +692,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   advanceMapSettings: () => (/* binding */ advanceMapSettings),
 /* harmony export */   ariaLabelMarkerButton: () => (/* binding */ ariaLabelMarkerButton),
 /* harmony export */   baseMapSettings: () => (/* binding */ baseMapSettings),
-/* harmony export */   pins: () => (/* binding */ pins)
+/* harmony export */   getArrayPins: () => (/* binding */ getArrayPins)
 /* harmony export */ });
 // work - Сейчас работает,
 // office - Центр оказания услуг,
 // road - Выездное обслуживание
+
+var getArrayPins = function getArrayPins(isBaseMap) {
+  return isBaseMap ? defaultPins : pins;
+};
+var defaultPins = [{
+  coordinates: [37.65, 55.75],
+  types: ['work', 'office'],
+  id: 'element-1'
+}];
 var pins = [{
   coordinates: [37.65, 55.75],
   types: ['work', 'office'],
@@ -811,13 +820,17 @@ function createPin(pin) {
   wrapper.setAttribute('data-custom-marker', 'true');
   var markerButton = document.createElement('button');
   markerButton.className = 'marker__button';
-  markerButton.setAttribute('aria-haspopup', 'true');
-  (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonNowCloseA11y)(markerButton);
-  markerButton.setAttribute('aria-controls', pin.id);
-  var balloonWrapper = document.createElement('div');
-  balloonWrapper.innerHTML = "<div class=\"map-balloon map-balloon--hidden\" role=\"tooltip\" id=\"".concat(pin.id, "\">\n    <div class=\"map-balloon__header\">\n        <span class=\"map-balloon__title\">\n            ").concat(pin.htmlContent.title, "\n        </span>\n        <button class=\"map-balloon__close\" type=\"button\" aria-label=\"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"></button>\n    </div>\n    <div class=\"map-balloon__body\">\n        ").concat(pin.htmlContent.body, "\n    </div>\n    <a class=\"map-balloon__button button button--fill\" href=\"").concat(pin.htmlContent.hrefValue, "\">\n        \u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F\n    </a>\n</div>");
   wrapper.append(markerButton);
-  wrapper.append(balloonWrapper);
+  if (pin.htmlContent) {
+    markerButton.setAttribute('aria-haspopup', 'true');
+    (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonNowCloseA11y)(markerButton);
+    markerButton.setAttribute('aria-controls', pin.id);
+    var balloonWrapper = document.createElement('div');
+    balloonWrapper.innerHTML = "<div class=\"map-balloon map-balloon--hidden\" role=\"tooltip\" id=\"".concat(pin.id, "\">\n    <div class=\"map-balloon__header\">\n        <span class=\"map-balloon__title\">\n            ").concat(pin.htmlContent.title, "\n        </span>\n        <button class=\"map-balloon__close\" type=\"button\" aria-label=\"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"></button>\n    </div>\n    <div class=\"map-balloon__body\">\n        ").concat(pin.htmlContent.body, "\n    </div>\n    <a class=\"map-balloon__button button button--fill\" href=\"").concat(pin.htmlContent.hrefValue, "\">\n        \u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F\n    </a>\n</div>");
+    wrapper.append(balloonWrapper);
+  } else {
+    markerButton.setAttribute('disabled', 'true');
+  }
   pin.types.forEach(function (type) {
     wrapper.setAttribute("data-".concat(type), 'true');
   });
@@ -856,17 +869,17 @@ function createPin(pin) {
                 // Добавление кнопки геолокации
                 controls.addChild(new YMapGeolocationControl({}));
                 map.addChild(controls);
-                _data_js__WEBPACK_IMPORTED_MODULE_2__.pins.forEach(function (pin) {
-                  var wrapper = createPin(pin);
-
-                  // Настройка маркера
-                  var marker = new YMapMarker({
-                    coordinates: pin.coordinates,
-                    mapFollowsOnDrag: true
-                  }, wrapper);
-                  map.addChild(marker);
-                });
               }
+              (0,_data_js__WEBPACK_IMPORTED_MODULE_2__.getArrayPins)(isBaseMap).forEach(function (pin) {
+                var wrapper = createPin(pin);
+
+                // Настройка маркера
+                var marker = new YMapMarker({
+                  coordinates: pin.coordinates,
+                  mapFollowsOnDrag: true
+                }, wrapper);
+                map.addChild(marker);
+              });
               filterButtons = document.querySelectorAll('[data-filter-pins]');
               filterButtons && filterButtons.forEach(function (button) {
                 button.addEventListener('click', function () {
@@ -892,7 +905,7 @@ function createPin(pin) {
               map.addChild(new YMapDefaultSchemeLayer({
                 customization: _styles_json__WEBPACK_IMPORTED_MODULE_1__
               }));
-            case 22:
+            case 23:
             case "end":
               return _context.stop();
           }
@@ -1012,12 +1025,13 @@ function balloonCloseButtonClickHandler(button) {
 function changeParentZIndex(wrapper) {
   var balloon = wrapper.querySelector('.map-balloon');
   var parent = wrapper.parentNode;
-  var parentStyles = parent.getAttribute('style');
-  var transformStyle = parentStyles.split(';')[0];
+  if (!balloon) {
+    return;
+  }
   if (balloon.classList.contains('map-balloon--hidden')) {
-    parent.setAttribute('style', "".concat(transformStyle, "; z-index: 0;"));
+    parent.classList.remove('ymaps3x0--marker--active');
   } else {
-    parent.setAttribute('style', "".concat(transformStyle, "; z-index: 1;"));
+    parent.classList.add('ymaps3x0--marker--active');
   }
 }
 function markerButtonClickHandler(button) {
@@ -1038,6 +1052,26 @@ function markerButtonClickHandler(button) {
 
 /***/ }),
 
+/***/ "./src/js/project/sliders/_a11y-data.js":
+/*!**********************************************!*\
+  !*** ./src/js/project/sliders/_a11y-data.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   sliderA11y: () => (/* binding */ sliderA11y)
+/* harmony export */ });
+var sliderA11y = {
+  prevSlideMessage: 'Предыдущий слайд',
+  nextSlideMessage: 'Следующий слайд',
+  firstSlideMessage: 'Первый слайд',
+  lastSlideMessage: 'Последний слайд'
+};
+
+/***/ }),
+
 /***/ "./src/js/project/sliders/_gallery-slider.js":
 /*!***************************************************!*\
   !*** ./src/js/project/sliders/_gallery-slider.js ***!
@@ -1050,7 +1084,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.A11y]);
 var sliderMain = document.querySelector('.gallery-page .slider-main');
 var sliderNav = document.querySelector('.gallery-page .slider-nav');
 var wrapperSliderNav = document.querySelector('.gallery-page__thumbs');
@@ -1099,17 +1133,20 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var _a11y_data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_a11y-data.js */ "./src/js/project/sliders/_a11y-data.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation]);
+
+swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.a11y]);
 if (document.querySelector('.office-department__swiper')) {
-  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.office-department__swiper', _defineProperty({
+  new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.office-department__swiper', _defineProperty({
+    a11y: _a11y_data_js__WEBPACK_IMPORTED_MODULE_0__.sliderA11y,
     spaceBetween: 16,
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -1130,13 +1167,16 @@ if (document.querySelector('.office-department__swiper')) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var _a11y_data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_a11y-data.js */ "./src/js/project/sliders/_a11y-data.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Grid]);
+
+swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.A11y]);
 if (document.querySelector('.partners__swiper')) {
-  new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partners__swiper', {
+  new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.partners__swiper', {
+    a11y: _a11y_data_js__WEBPACK_IMPORTED_MODULE_0__.sliderA11y,
     breakpoints: {
       992: {
         spaceBetween: 32,
