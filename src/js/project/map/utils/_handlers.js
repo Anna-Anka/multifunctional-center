@@ -37,6 +37,10 @@ function changeParentZIndex(wrapper) {
     const balloon = wrapper.querySelector('.map-balloon')
     const parent = wrapper.parentNode
 
+    if (!balloon) {
+        return
+    }
+
     if (balloon.classList.contains('map-balloon--hidden')) {
         parent.classList.remove('ymaps3x0--marker--active')
     } else {

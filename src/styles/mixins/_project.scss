@@ -15,3 +15,16 @@
 	padding: $padding;
 	background-color: $bg;
 }
+
+@mixin map {
+	iframe,
+	div[data-map] {
+		width: 100%;
+		height: 100%;
+	}
+
+	iframe {
+		border: 0;
+		border-radius: 4px;
+	}
+}

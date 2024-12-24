@@ -1,7 +1,20 @@
 // work - Сейчас работает,
 // office - Центр оказания услуг,
 // road - Выездное обслуживание
-export const pins = [
+
+export const getArrayPins = (isBaseMap) => {
+    return isBaseMap ? defaultPins : pins
+}
+
+const defaultPins = [
+    {
+        coordinates: [37.65, 55.75],
+        types: ['work', 'office'],
+        id: 'element-1',
+    },
+]
+
+const pins = [
     {
         coordinates: [37.65, 55.75],
         types: ['work', 'office'],

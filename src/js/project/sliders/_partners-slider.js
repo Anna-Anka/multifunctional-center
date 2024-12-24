@@ -1,3 +1,4 @@
+import {sliderA11y} from './_a11y-data.js'
 import Swiper from 'swiper';
 import { Navigation, Grid, A11y } from "swiper/modules";
 Swiper.use([Navigation, Grid, A11y]);
@@ -5,12 +6,7 @@ Swiper.use([Navigation, Grid, A11y]);
 if (document.querySelector('.partners__swiper')) {
     new Swiper('.partners__swiper', {
 
-        a11y: {
-            prevSlideMessage: 'Предыдущий слайд',
-            nextSlideMessage: 'Следующий слайд',
-            firstSlideMessage: 'Первый слайд',
-            lastSlideMessage: 'Последний слайд',
-        },
+        a11y: sliderA11y,
 
         breakpoints: {
             992: {

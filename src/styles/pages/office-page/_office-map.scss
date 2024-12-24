@@ -1,4 +1,6 @@
 .office-map {
+	@include map;
+
 	position: relative;
 	padding-bottom: 41.5%;
 
@@ -17,16 +19,5 @@
 	&__content {
 		position: absolute;
 		inset: 0;
-	}
-
-	div,
-	iframe {
-		width: 100%;
-		height: 100%;
-	}
-
-	iframe {
-		border: 0;
-		border-radius: 4px;
 	}
 }

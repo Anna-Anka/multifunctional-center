@@ -65,6 +65,7 @@
 	}
 
 	&__picture {
+		flex-shrink: 0;
 		flex-basis: 145px;
 		align-self: flex-end;
 		aspect-ratio: 1 / 1;

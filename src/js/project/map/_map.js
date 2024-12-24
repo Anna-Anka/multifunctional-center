@@ -1,6 +1,6 @@
 import * as ymaps3 from 'ymaps3';
 import styles from './_styles.json';
-import { pins, advanceMapSettings, baseMapSettings } from './_data.js'
+import { getArrayPins, advanceMapSettings, baseMapSettings } from './_data.js'
 import { getGeolocation } from './utils/_geolocation.js'
 import { markerButtonNowCloseA11y, filterButtonClickHandler, balloonCloseButtonClickHandler, markerButtonClickHandler } from './utils/_handlers.js';
 
@@ -11,12 +11,16 @@ function createPin(pin) {
 
     const markerButton = document.createElement('button')
     markerButton.className = 'marker__button';
-    markerButton.setAttribute('aria-haspopup', 'true')
-    markerButtonNowCloseA11y(markerButton)
-    markerButton.setAttribute('aria-controls', pin.id)
+    
+    wrapper.append(markerButton)
 
-    const balloonWrapper = document.createElement('div')
-    balloonWrapper.innerHTML = `<div class="map-balloon map-balloon--hidden" role="tooltip" id="${pin.id}">
+    if (pin.htmlContent) {
+        markerButton.setAttribute('aria-haspopup', 'true')
+        markerButtonNowCloseA11y(markerButton)
+        markerButton.setAttribute('aria-controls', pin.id)
+
+        const balloonWrapper = document.createElement('div')
+        balloonWrapper.innerHTML = `<div class="map-balloon map-balloon--hidden" role="tooltip" id="${pin.id}">
     <div class="map-balloon__header">
         <span class="map-balloon__title">
             ${pin.htmlContent.title}
@@ -30,9 +34,11 @@ function createPin(pin) {
         Записаться
     </a>
 </div>`;
-    wrapper.append(markerButton)
-    wrapper.append(balloonWrapper)
-
+        wrapper.append(balloonWrapper)
+    } else {
+        markerButton.setAttribute('disabled', 'true')
+    }
+    
     pin.types.forEach((type) => {
         wrapper.setAttribute(`data-${type}`, 'true')
     })
@@ -71,22 +77,22 @@ function createPin(pin) {
                 // Добавление кнопки геолокации
                 controls.addChild(new YMapGeolocationControl({}));
                 map.addChild(controls);
-
-                pins.forEach((pin) => {
-                    const wrapper = createPin(pin)
-
-                    // Настройка маркера
-                    const marker = new YMapMarker(
-                        {
-                            coordinates: pin.coordinates,
-                            mapFollowsOnDrag: true
-                        },
-                        wrapper
-                    );
-
-                    map.addChild(marker);
-                })
             }
+
+            getArrayPins(isBaseMap).forEach((pin) => {
+                const wrapper = createPin(pin)
+
+                // Настройка маркера
+                const marker = new YMapMarker(
+                    {
+                        coordinates: pin.coordinates,
+                        mapFollowsOnDrag: true
+                    },
+                    wrapper
+                );
+
+                map.addChild(marker);
+            })
 
             const filterButtons = document.querySelectorAll('[data-filter-pins]')
             filterButtons && filterButtons.forEach((button) => {
