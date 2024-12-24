@@ -1050,7 +1050,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.A11y]);
 var sliderMain = document.querySelector('.gallery-page .slider-main');
 var sliderNav = document.querySelector('.gallery-page .slider-nav');
 var wrapperSliderNav = document.querySelector('.gallery-page__thumbs');
@@ -1134,9 +1134,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Grid]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Grid, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.A11y]);
 if (document.querySelector('.partners__swiper')) {
   new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.partners__swiper', {
+    a11y: {
+      prevSlideMessage: 'Предыдущий слайд',
+      nextSlideMessage: 'Следующий слайд',
+      firstSlideMessage: 'Первый слайд',
+      lastSlideMessage: 'Последний слайд'
+    },
     breakpoints: {
       992: {
         spaceBetween: 32,

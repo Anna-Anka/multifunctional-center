@@ -117,6 +117,10 @@
 	&__item {
 		flex-basis: 45%;
 
+		a {
+			@include color-effects;
+		}
+
 		@include mq(sm) {
 			flex-grow: 1;
 			flex-basis: 48%;

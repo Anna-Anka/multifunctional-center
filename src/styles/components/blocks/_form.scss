@@ -15,17 +15,19 @@
 			}
 
 			.form__button {
+				@include flex-alignment;
+
 				position: absolute;
 				right: 15px;
 				top: 50%;
-				width: 16px;
-				height: 16px;
+				width: 24px;
+				height: 24px;
 				color: var(--color-brown-600);
 				transform: translateY(-50%);
 
 				svg {
-					width: 100%;
-					height: 100%;
+					width: 16px;
+					height: 16px;
 				}
 			}
 		}
@@ -48,10 +50,6 @@
 		transition:
 			border-color 0.3s,
 			background-color 0.3s;
-
-		&:not(:last-child) {
-			margin-bottom: 4px;
-		}
 
 		&:focus {
 			border-color: var(--color-red-500);
@@ -139,6 +137,7 @@
 
 	&__error {
 		display: inline-block;
+		margin-top: 4px;
 		font-size: 10px;
 		color: var(--color-red-900);
 	}

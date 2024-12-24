@@ -9,23 +9,16 @@
 	}
 
 	&__link {
+		@include color-effects(var(--color-white));
+		@include flex-simple(8px);
+
 		position: relative;
-		padding-right: 24px;
 		width: max-content;
 		color: var(--color-red-500);
 
-		&::before {
-			@include bg-properties(contain);
-
-			content: '';
-			position: absolute;
-			right: 0;
-			top: 0;
+		svg {
 			width: 16px;
 			height: 16px;
-			background-image: url('../img/icons/arrow-long.svg');
-			filter: invert(62%) sepia(26%) saturate(3774%) hue-rotate(340deg)
-				brightness(99%) contrast(89%);
 		}
 	}
 

@@ -13,13 +13,7 @@
 	}
 
 	&__text {
-		transition: color 0.3s;
-
-		@media (any-hover: hover) {
-			&:hover {
-				color: var(--color-red-500);
-			}
-		}
+		@include color-effects;
 	}
 
 	&__link {

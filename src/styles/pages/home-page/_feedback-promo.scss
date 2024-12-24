@@ -40,6 +40,8 @@
 		}
 
 		button {
+			@include underline-effects;
+
 			display: inline-block;
 			color: var(--color-red-500);
 		}
@@ -47,7 +49,6 @@
 
 	&__button {
 		flex-shrink: 0;
-		width: max-content;
 	}
 
 	.decor-lines {

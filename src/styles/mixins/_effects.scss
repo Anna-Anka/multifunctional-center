@@ -1,0 +1,57 @@
+@mixin focus-visible($color: var(--color-red-500)) {
+	&:focus-visible {
+		outline: 0;
+		border-radius: 2px;
+		box-shadow: 0 0 0 2px $color;
+	}
+}
+
+@mixin color-effects($color: var(--color-red-500)) {
+	transition:
+		color 0.3s,
+		border-radius 0.3s,
+		box-shadow 0.3s;
+
+	@include focus-visible($color);
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: $color;
+		}
+	}
+}
+
+@mixin border-effects($color: var(--color-red-500)) {
+	transition:
+		border-color 0.3s,
+		box-shadow 0.3s;
+
+	&:focus-visible {
+		outline: 0;
+		border-color: transparent;
+		box-shadow: 0 0 0 2px $color inset;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			border-color: $color;
+		}
+	}
+}
+
+@mixin underline-effects($color: var(--color-red-500)) {
+	text-decoration-line: underline;
+	text-decoration-color: transparent;
+	transition:
+		text-decoration-color 0.3s,
+		border-radius 0.3s,
+		box-shadow 0.3s;
+
+	@include focus-visible($color);
+
+	@media (any-hover: hover) {
+		&:hover {
+			text-decoration-color: $color;
+		}
+	}
+}

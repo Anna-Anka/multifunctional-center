@@ -26,6 +26,8 @@
 	}
 
 	&__link {
+		@include underline-effects;
+
 		color: var(--color-red-500);
 
 		@include mq(lg, min) {

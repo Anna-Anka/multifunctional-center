@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
-import { Navigation, Thumbs } from "swiper/modules";
+import { Navigation, Thumbs, A11y } from "swiper/modules";
 
-Swiper.use([Navigation, Thumbs]);
+Swiper.use([Navigation, Thumbs, A11y]);
 
 const sliderMain = document.querySelector('.gallery-page .slider-main');
 const sliderNav = document.querySelector('.gallery-page .slider-nav');
@@ -9,6 +9,7 @@ const wrapperSliderNav = document.querySelector('.gallery-page__thumbs')
 
 if (sliderNav && sliderMain && wrapperSliderNav) {
     const swiperSmall = new Swiper(sliderNav, {
+
         
         loopedSlides: 4,
         freeMode: true,
