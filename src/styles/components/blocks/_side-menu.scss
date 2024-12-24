@@ -65,6 +65,8 @@
 	}
 
 	&__link {
+		@include color-effects(var(--color-brown-600));
+
 		display: block;
 		padding: 4px 0;
 		font-size: 13px;

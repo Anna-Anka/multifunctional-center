@@ -9,7 +9,7 @@
 	}
 
 	&__link {
-		@include color-effects(var(--color-white));
+		@include color-effects(var(--color-white), var(--color-white));
 		@include flex-simple(8px);
 
 		position: relative;

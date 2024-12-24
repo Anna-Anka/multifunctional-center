@@ -6,13 +6,16 @@
 	}
 }
 
-@mixin color-effects($color: var(--color-red-500)) {
+@mixin color-effects(
+	$color: var(--color-red-500),
+	$shadow-color: var(--color-red-500)
+) {
 	transition:
 		color 0.3s,
 		border-radius 0.3s,
 		box-shadow 0.3s;
 
-	@include focus-visible($color);
+	@include focus-visible($shadow-color);
 
 	@media (any-hover: hover) {
 		&:hover {

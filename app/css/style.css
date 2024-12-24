@@ -3522,11 +3522,22 @@ body {
 }
 
 .side-menu__link {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   display: block;
   padding: 4px 0;
   font-size: 13px;
   text-decoration: underline;
   color: var(--color-red-500);
+}
+
+.side-menu__link:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .article-content {
@@ -7377,6 +7388,10 @@ body {
 
   .pagination__link:hover {
     background-color: var(--color-red-100);
+  }
+
+  .side-menu__link:hover {
+    color: var(--color-brown-600);
   }
 
   .footer__item a:hover {
