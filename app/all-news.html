@@ -436,13 +436,17 @@
     <div class="container">
         <ul class="breadcrumbs__items">
             <li class="breadcrumbs__prev">
-                <button type="button" aria-label="Вернуться назад"></button>
+                <button type="button" aria-label="Вернуться назад">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#arrow-long">
+                    </svg>
+                </button>
             </li>
              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__text" href="#">Главная</a>
+                <a class="breadcrumbs__link" href="#">Главная</a>
                 </li>
                 
-                 <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page" aria-disabled>Новости</span></li>
+                 <li class="breadcrumbs__item"><span class="breadcrumbs__link" aria-current="page" aria-disabled>Новости</span></li>
                     
         </ul>
     </div>
@@ -619,7 +623,7 @@
                     </ul>
                     <ul class="pagination">
     <li class="pagination__item pagination__item--prev">
-        <a class="pagination__link">Назад</a>
+        <a class="pagination__link pagination__link--disabled" aria-disabled>Назад</a>
     </li>
     <li class="pagination__item">
         <a class="pagination__link" href="#">1</a>
@@ -676,7 +680,7 @@
                     </ul>
                     <ul class="pagination">
     <li class="pagination__item pagination__item--prev">
-        <a class="pagination__link">Назад</a>
+        <a class="pagination__link pagination__link--disabled" aria-disabled>Назад</a>
     </li>
     <li class="pagination__item">
         <a class="pagination__link" href="#">1</a>
@@ -718,7 +722,7 @@
                     </ul>
                     <ul class="pagination">
     <li class="pagination__item pagination__item--prev">
-        <a class="pagination__link">Назад</a>
+        <a class="pagination__link pagination__link--disabled" aria-disabled>Назад</a>
     </li>
     <li class="pagination__item">
         <a class="pagination__link" href="#">1</a>

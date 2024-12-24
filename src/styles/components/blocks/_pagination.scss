@@ -56,8 +56,10 @@
 	}
 
 	&__link {
+		@include focus-visible;
+
 		display: block;
-		border: 1px solid var(--color-dark-600);
+		border: 1px solid var(--color-grey-270);
 		border-radius: 4px;
 		padding: 8px 16px;
 		font-family: var(--font-secondary);
@@ -68,16 +70,32 @@
 		transition:
 			color 0.3s,
 			background-color 0.3s,
-			border-color 0.3s;
+			border-color 0.3s,
+			background-color 0.3s,
+			box-shadow 0.3s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--color-red-100);
+			}
+		}
+
+		&--current,
+		&--dots {
+			border-color: transparent;
+			pointer-events: none;
+		}
+
+		&--disabled {
+			pointer-events: none;
+		}
 
 		&--current {
-			border-color: transparent;
 			color: var(--color-white);
 			background-color: var(--color-red-500);
 		}
 
 		&--dots {
-			border-color: transparent;
 			color: var(--color-dark-600);
 		}
 	}

@@ -93,6 +93,14 @@
 }
 
 .choices {
+	@media (any-hover: hover) {
+		&:hover {
+			.choices__list--single .choices__item--selectable {
+				color: var(--color-red-500);
+			}
+		}
+	}
+
 	&[data-type*='select-one'] {
 		&::after {
 			@include bg-properties(contain);
@@ -186,6 +194,7 @@
 					padding: 0;
 					padding-bottom: 2px;
 					font-size: 14px;
+					transition: color 0.3s;
 
 					&:not(:last-child) {
 						padding-bottom: 16px;

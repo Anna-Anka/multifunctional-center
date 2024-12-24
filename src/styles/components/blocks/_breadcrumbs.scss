@@ -21,15 +21,16 @@
 		aspect-ratio: 1;
 
 		button {
-			@include bg-properties(contain);
+			@include color-effects;
 
-			display: inline-block;
+			display: flex;
+			transform: rotate(180deg);
+		}
+
+		button,
+		svg {
 			width: 100%;
 			height: 100%;
-			background-image: url('../img/icons/arrow-long.svg');
-			filter: invert(44%) sepia(4%) saturate(10%) hue-rotate(27deg)
-				brightness(97%) contrast(87%);
-			transform: rotate(180deg);
 		}
 	}
 
@@ -41,6 +42,10 @@
 		&:not(:last-child) {
 			position: relative;
 			padding-right: 18px;
+
+			a {
+				@include color-effects;
+			}
 
 			&::before {
 				content: '';

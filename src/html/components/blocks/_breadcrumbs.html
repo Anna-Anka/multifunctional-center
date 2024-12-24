@@ -2,13 +2,17 @@
     <div class="container">
         <ul class="breadcrumbs__items">
             <li class="breadcrumbs__prev">
-                <button type="button" aria-label="Вернуться назад"></button>
+                <button type="button" aria-label="Вернуться назад">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#arrow-long">
+                    </svg>
+                </button>
             </li>
             @for (var i = 0; i < links.length - 1; i++) { <li class="breadcrumbs__item">
-                <a class="breadcrumbs__text" href="#">`+links[i]+`</a>
+                <a class="breadcrumbs__link" href="#">`+links[i]+`</a>
                 </li>
                 }
-                @for (var i = links.length - 1; i < links.length; i++) { <li class="breadcrumbs__item"><span class="breadcrumbs__text" aria-current="page" aria-disabled>`+links[i]+`</span></li>
+                @for (var i = links.length - 1; i < links.length; i++) { <li class="breadcrumbs__item"><span class="breadcrumbs__link" aria-current="page" aria-disabled>`+links[i]+`</span></li>
                     }
         </ul>
     </div>
