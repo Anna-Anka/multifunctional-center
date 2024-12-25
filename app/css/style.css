@@ -3796,20 +3796,37 @@ body {
 }
 
 .documents-block__item {
-  position: relative;
   border-bottom: 1px solid var(--color-grey-350);
-  padding: 16px 34px 16px 0;
+  padding: 16px 0;
   min-height: 56px;
 }
 
-.documents-block__item::before {
+.documents-block__item a {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  position: relative;
+  display: inline-block;
+  padding-right: 34px;
+  width: 100%;
+}
+
+.documents-block__item a:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
+}
+
+.documents-block__item a::before {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   content: "";
   position: absolute;
   right: 0;
-  top: 16px;
+  top: 0;
   width: 24px;
   height: 24px;
   background-image: url("../img/icons/document.svg");
@@ -4266,9 +4283,22 @@ body {
 }
 
 .search-card__link {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  -webkit-transition: text-decoration-color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: text-decoration-color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: text-decoration-color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: text-decoration-color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   display: inline-block;
   font-size: 16px;
   color: var(--color-red-500);
+}
+
+.search-card__link:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .search-card__link:not(:last-child) {
@@ -4304,6 +4334,20 @@ body {
   right: -14px;
   top: 0;
   font-size: inherit;
+}
+
+.search-card__item a {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.search-card__item a:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .team-card {
@@ -5103,6 +5147,20 @@ body {
   margin-bottom: 16px;
 }
 
+.question-page__question a {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.question-page__question a:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
+}
+
 .question-page__answer {
   line-height: 1.3;
 }
@@ -5154,6 +5212,20 @@ body {
   column-gap: 32px;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+}
+
+.telephone-directory__items a {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.telephone-directory__items a:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .documents-page .tabs__nav-btn {
@@ -7481,6 +7553,10 @@ body {
     color: var(--color-brown-600);
   }
 
+  .documents-block__item a:hover {
+    color: var(--color-red-500);
+  }
+
   .footer__item a:hover {
     color: var(--color-red-500);
   }
@@ -7503,6 +7579,14 @@ body {
   }
 
   .news-card__link:hover {
+    color: var(--color-red-500);
+  }
+
+  .search-card__link:hover {
+    text-decoration-color: var(--color-red-500);
+  }
+
+  .search-card__item a:hover {
     color: var(--color-red-500);
   }
 
@@ -7529,6 +7613,14 @@ body {
   }
 
   .services-filters__box:hover {
+    color: var(--color-red-500);
+  }
+
+  .question-page__question a:hover {
+    color: var(--color-red-500);
+  }
+
+  .telephone-directory__items a:hover {
     color: var(--color-red-500);
   }
 

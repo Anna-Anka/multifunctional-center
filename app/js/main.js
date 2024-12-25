@@ -1143,7 +1143,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 
-swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.a11y]);
+swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.A11y]);
 if (document.querySelector('.office-department__swiper')) {
   new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.office-department__swiper', _defineProperty({
     a11y: _a11y_data_js__WEBPACK_IMPORTED_MODULE_0__.sliderA11y,

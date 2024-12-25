@@ -1,7 +1,7 @@
 import { sliderA11y } from './_a11y-data.js'
 import Swiper from 'swiper';
-import { Navigation, a11y } from "swiper/modules";
-Swiper.use([Navigation, a11y]);
+import { Navigation, A11y } from "swiper/modules";
+Swiper.use([Navigation, A11y]);
 
 if (document.querySelector('.office-department__swiper')) {
     new Swiper('.office-department__swiper', {
