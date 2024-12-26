@@ -362,11 +362,11 @@ module.exports = new Promise((resolve, reject) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bvi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bvi */ "./node_modules/bvi/dist/js/bvi.min.js");
 
-document.addEventListener('DOMContentLoaded', function () {
-  var bvi = new isvek.Bvi();
-  console.log(bvi);
-  // Дополнительные настройки, если необходимо
-});
+if (document.querySelector('.menu__version')) {
+  new isvek.Bvi({
+    target: '.menu__version'
+  });
+}
 
 /***/ }),
 
