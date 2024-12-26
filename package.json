@@ -71,6 +71,8 @@
 	},
 	"dependencies": {
 		"@vkid/sdk": "^2.4.0",
+		"accessibility-plugin": "^1.2.2",
+		"bvi": "^1.0.2",
 		"choices.js": "^11.0.2",
 		"graph-modal": "^1.0.7",
 		"graph-tabs": "^1.0.2",

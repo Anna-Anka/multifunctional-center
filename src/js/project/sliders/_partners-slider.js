@@ -7,7 +7,6 @@ if (document.querySelector('.partners__swiper')) {
     new Swiper('.partners__swiper', {
 
         a11y: sliderA11y,
-        loop: true,
 
         breakpoints: {
             992: {
