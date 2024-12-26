@@ -28,10 +28,6 @@
 		}
 	}
 
-	.vacancy-info {
-		margin: auto 0;
-	}
-
 	.page-wrapper {
 		@include mq(md) {
 			flex-direction: column;

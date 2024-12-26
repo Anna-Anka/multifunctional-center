@@ -10,9 +10,12 @@ if (document.querySelector('.office-department__swiper')) {
         slidesPerView: 1,
         slidesPerGroup: 1,
         navigation: true,
+        loop: true,
+        
         navigation: {
             nextEl: '.swiper-container__button--next',
             prevEl: '.swiper-container__button--prev',
+            disabledClass: 'swiper-container__button--disabled'
         },
     });
 }

@@ -6,9 +6,21 @@
 		&:not(:last-child) {
 			margin-bottom: 16px;
 		}
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+
+		a {
+			@include color-effects;
+		}
 	}
 
 	&__button {
+		width: max-content;
+
 		@include mq(lg) {
 			padding: 8px 12px;
 		}

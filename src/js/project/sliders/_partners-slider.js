@@ -7,6 +7,7 @@ if (document.querySelector('.partners__swiper')) {
     new Swiper('.partners__swiper', {
 
         a11y: sliderA11y,
+        loop: true,
 
         breakpoints: {
             992: {
@@ -17,8 +18,9 @@ if (document.querySelector('.partners__swiper')) {
                     rows: 2,
                 },
                 navigation: {
-                    nextEl: '.partners__button--next',
-                    prevEl: '.partners__button--prev',
+                    nextEl: '.swiper-container__button--next',
+                    prevEl: '.swiper-container__button--prev',
+                    disabledClass: 'swiper-container__button--disabled'
                 },
             },
 

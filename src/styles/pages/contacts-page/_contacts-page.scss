@@ -28,6 +28,10 @@
 			font-size: 16px;
 		}
 
+		a {
+			@include color-effects;
+		}
+
 		span {
 			display: inline-block;
 

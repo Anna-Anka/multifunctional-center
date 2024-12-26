@@ -32,39 +32,24 @@
 		height: 86px;
 	}
 
-	&__button {
-		@include border-effects;
-
-		position: absolute;
-		top: 50%;
-		border: 1px solid transparent;
-		border-radius: 4px;
-		width: 24px;
-		height: 24px;
-
-		&::before {
-			@include bg-properties(contain);
-
-			content: '';
+	.swiper-container {
+		&__button {
 			position: absolute;
-			inset: 0;
-			background-image: url('../img/icons/arrow.svg');
-			filter: invert(64%) sepia(67%) saturate(1472%) hue-rotate(338deg)
-				brightness(98%) contrast(91%);
-		}
+			top: 50%;
 
-		&--next {
-			right: -50px;
-			transform: rotate(90deg) translateX(-50%);
-		}
+			&--next {
+				right: -50px;
+				transform: translateY(-50%);
+			}
 
-		&--prev {
-			left: -50px;
-			transform: rotate(-90deg) translateX(50%);
-		}
+			&--prev {
+				left: -50px;
+				transform: translateY(-50%) rotate(-180deg);
+			}
 
-		@include mq(lg) {
-			display: none;
+			@include mq(lg) {
+				display: none;
+			}
 		}
 	}
 }

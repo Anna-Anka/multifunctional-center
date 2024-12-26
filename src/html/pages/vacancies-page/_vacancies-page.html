@@ -4,31 +4,11 @@
             Вакансии
         </h1>
         <!-- <div class="vacancies-page__not">
-            <div class="vacancy-info">
-                <p class="vacancy-info__text">
-                    Уважаемые кандидаты! В целях формирования кадрового резерва предлагаем вам направлять резюме на адрес электронной почты <a href="mailto:mfcpk@mfc.kamgov.ru">mfcpk@mfc.kamgov.ru</a>
-                </p>
-                <button class="vacancy-info__button button button--fill" type="button">
-                    Образец резюме
-                    <svg aria-hidden>
-                        <use xlink:href="img/sprite.svg#contacts-book">
-                    </svg>
-                </button>
-            </div>
+            @include('../../components/blocks/_vacancies-info.html')
         </div> -->
         <div class="page-wrapper">
             <div class="page-wrapper__menu side-menu">
-                <div class="vacancy-info">
-                    <p class="vacancy-info__text">
-                        Уважаемые кандидаты! В целях формирования кадрового резерва предлагаем вам направлять резюме на адрес электронной почты <a href="mailto:mfcpk@mfc.kamgov.ru">mfcpk@mfc.kamgov.ru</a>
-                    </p>
-                    <button class="vacancy-info__button button button--fill" type="button">
-                        Образец резюме
-                        <svg aria-hidden>
-                            <use xlink:href="img/sprite.svg#contacts-book">
-                        </svg>
-                    </button>
-                </div>
+                @include('../../components/blocks/_vacancies-info.html')
             </div>
             <div class="page-wrapper__content">
                 <h2 class="sr-only">Список актуальных вакансий</h2>
