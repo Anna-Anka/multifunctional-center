@@ -255,6 +255,7 @@ class GraphTabs {
       el.setAttribute('role', 'tab');
       el.setAttribute('tabindex', '-1');
       el.setAttribute('id', `${this.selector}${i + 1}`);
+      el.setAttribute('aria-controls', `${this.selector}${i + 1}`);
       el.classList.remove('tabs__nav-btn--active');
     });
 
@@ -818,19 +819,22 @@ function createPin(pin) {
   var wrapper = document.createElement('div');
   wrapper.className = 'marker';
   wrapper.setAttribute('data-custom-marker', 'true');
-  var markerButton = document.createElement('button');
-  markerButton.className = 'marker__button';
-  wrapper.append(markerButton);
+  var markerButton;
+  var balloonWrapper;
   if (pin.htmlContent) {
+    markerButton = document.createElement('button');
     markerButton.setAttribute('aria-haspopup', 'true');
     (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonNowCloseA11y)(markerButton);
     markerButton.setAttribute('aria-controls', pin.id);
-    var balloonWrapper = document.createElement('div');
+    balloonWrapper = document.createElement('div');
     balloonWrapper.innerHTML = "<div class=\"map-balloon map-balloon--hidden\" role=\"tooltip\" id=\"".concat(pin.id, "\">\n    <div class=\"map-balloon__header\">\n        <span class=\"map-balloon__title\">\n            ").concat(pin.htmlContent.title, "\n        </span>\n        <button class=\"map-balloon__close\" type=\"button\" aria-label=\"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"></button>\n    </div>\n    <div class=\"map-balloon__body\">\n        ").concat(pin.htmlContent.body, "\n    </div>\n    <a class=\"map-balloon__button button button--fill\" href=\"").concat(pin.htmlContent.hrefValue, "\">\n        \u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F\n    </a>\n</div>");
-    wrapper.append(balloonWrapper);
   } else {
-    markerButton.setAttribute('disabled', 'true');
+    markerButton = document.createElement('span');
+    markerButton.setAttribute('aria-label', 'Пункт');
   }
+  markerButton.className = 'marker__button';
+  wrapper.append(markerButton);
+  balloonWrapper && wrapper.append(balloonWrapper);
   pin.types.forEach(function (type) {
     wrapper.setAttribute("data-".concat(type), 'true');
   });
@@ -1082,6 +1086,8 @@ var sliderA11y = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var _a11y_data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_a11y-data.js */ "./src/js/project/sliders/_a11y-data.js");
+
 
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Thumbs, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.A11y]);
@@ -1092,9 +1098,12 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
   var swiperSmall = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderNav, {
     loopedSlides: 4,
     freeMode: true,
+    loop: true,
+    a11y: _a11y_data_js__WEBPACK_IMPORTED_MODULE_2__.sliderA11y,
     navigation: {
       nextEl: wrapperSliderNav.querySelector('.swiper-container__button--prev'),
-      prevEl: wrapperSliderNav.querySelector('.swiper-container__button--next')
+      prevEl: wrapperSliderNav.querySelector('.swiper-container__button--next'),
+      disabledClass: 'swiper-container__button--disabled'
     },
     breakpoints: {
       769: {
@@ -1113,12 +1122,15 @@ if (sliderNav && sliderMain && wrapperSliderNav) {
   new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](sliderMain, {
     spaceBetween: 10,
     loopedSlides: 4,
+    loop: true,
+    a11y: _a11y_data_js__WEBPACK_IMPORTED_MODULE_2__.sliderA11y,
     thumbs: {
       swiper: swiperSmall
     },
     navigation: {
       nextEl: sliderMain.querySelector('.swiper-container__button--prev'),
-      prevEl: sliderMain.querySelector('.swiper-container__button--next')
+      prevEl: sliderMain.querySelector('.swiper-container__button--next'),
+      disabledClass: 'swiper-container__button--disabled'
     }
   });
 }
@@ -1143,17 +1155,19 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 
-swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.a11y]);
+swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_modules__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_2__.A11y]);
 if (document.querySelector('.office-department__swiper')) {
   new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.office-department__swiper', _defineProperty({
     a11y: _a11y_data_js__WEBPACK_IMPORTED_MODULE_0__.sliderA11y,
     spaceBetween: 16,
     slidesPerView: 1,
     slidesPerGroup: 1,
-    navigation: true
+    navigation: true,
+    loop: true
   }, "navigation", {
     nextEl: '.swiper-container__button--next',
-    prevEl: '.swiper-container__button--prev'
+    prevEl: '.swiper-container__button--prev',
+    disabledClass: 'swiper-container__button--disabled'
   }));
 }
 
@@ -1177,6 +1191,7 @@ swiper__WEBPACK_IMPORTED_MODULE_1__["default"].use([swiper_modules__WEBPACK_IMPO
 if (document.querySelector('.partners__swiper')) {
   new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.partners__swiper', {
     a11y: _a11y_data_js__WEBPACK_IMPORTED_MODULE_0__.sliderA11y,
+    loop: true,
     breakpoints: {
       992: {
         spaceBetween: 32,
@@ -1186,8 +1201,9 @@ if (document.querySelector('.partners__swiper')) {
           rows: 2
         },
         navigation: {
-          nextEl: '.partners__button--next',
-          prevEl: '.partners__button--prev'
+          nextEl: '.swiper-container__button--next',
+          prevEl: '.swiper-container__button--prev',
+          disabledClass: 'swiper-container__button--disabled'
         }
       },
       0: {

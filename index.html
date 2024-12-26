@@ -53,12 +53,16 @@
             </div>
             <div class="header__inner">
                 <div class="header__menu menu" id="header-burger-menu" data-menu>
-                    <a class="menu__private button button--fill" href="#">
+                    <div class="menu__profile">
+                        <span class="menu__name">Иванов В. Н.</span>
+                        <button class="menu__logout" type="button">Выйти</button>
+                    </div>
+                    <!-- <a class="menu__private menu__private--mobile button button--fill" href="#">
                         Личный кабинет
                         <svg class="button__icon" aria-hidden>
                             <use xlink:href="img/sprite.svg#user">
                         </svg>
-                    </a>
+                    </a> -->
                     <ul class="menu__items">
                         <li class="menu__item menu__item--mobile">
                             <a class="menu__link" href="#">Услуги</a>
@@ -102,6 +106,9 @@
                         <span class="hotline__descr">Горячая линия</span>
                     </div>
                     <a class="menu__version" href="#">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#glasses">
+                        </svg>
                         Версия для слабовидящих
                     </a>
                     <ul class="header__socials socials">
@@ -327,7 +334,7 @@
         <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
-                <span class="graph-modal__title">Задайте Ваш вопрос</span>
+                <span class="graph-modal__title">Отклик на вакансию</span>
                 <div class="graph-modal__text">
                      <p> В соответствии с Федеральным законом от 02.05.2006 N59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации" </p> 
                 </div>
@@ -748,7 +755,7 @@
     </h2>
 
     <div class="partners__container container">
-        <div class="partners__wrapper">
+        <div class="partners__wrapper swiper-container">
 
             <div class="partners__swiper swiper">
                 <ul class="partners__items swiper-wrapper">
@@ -886,9 +893,9 @@
                     </li>
                 </ul>
             </div>
-            <button class="partners__button partners__button--prev" type="button">
+            <button class="swiper-container__button swiper-container__button--small swiper-container__button--prev" type="button">
             </button>
-            <button class="partners__button partners__button--next" type="button">
+            <button class="swiper-container__button swiper-container__button--small swiper-container__button--next" type="button">
             </button>
         </div>
     </div>

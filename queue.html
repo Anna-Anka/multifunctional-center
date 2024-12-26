@@ -6,17 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вакансия "Специалист по приёму документов" | МФЦ Камчатского края</title>
+    <title>Вакансия | МФЦ Камчатского края</title>
     <meta name="description" content="Проверьте состояние очередей в МФЦ Камчатского края онлайн. Планируйте свой визит и экономьте время.">
     
-    <meta name="keywords" content="состояние очередей МФЦ, онлайн-очередь МФЦ, планирование визита, время ожидания, МФЦ Камчатского края, очередь в МФЦ, онлайн-сервисы МФЦ">
+    <meta name="keywords" content="состояние очередей МФЦ, онлайн-очередь МФЦ, планирование визита, МФЦ Камчатского края, очередь в МФЦ, онлайн-сервисы МФЦ">
     
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="Вакансия "Специалист по приёму документов" | МФЦ Камчатского края">
+    <meta property="og:title" content="Вакансия | МФЦ Камчатского края">
     <meta property="og:description" content="Проверьте состояние очередей в МФЦ Камчатского края онлайн. Планируйте свой визит и экономьте время.">
 
-    <meta name="twitter:title" content="Вакансия "Специалист по приёму документов" | МФЦ Камчатского края">
+    <meta name="twitter:title" content="Вакансия | МФЦ Камчатского края">
     <meta name="twitter:description" content="Проверьте состояние очередей в МФЦ Камчатского края онлайн. Планируйте свой визит и экономьте время.">
 
     <!-- Favicon -->
@@ -53,12 +53,16 @@
             </div>
             <div class="header__inner">
                 <div class="header__menu menu" id="header-burger-menu" data-menu>
-                    <a class="menu__private button button--fill" href="#">
+                    <div class="menu__profile">
+                        <span class="menu__name">Иванов В. Н.</span>
+                        <button class="menu__logout" type="button">Выйти</button>
+                    </div>
+                    <!-- <a class="menu__private menu__private--mobile button button--fill" href="#">
                         Личный кабинет
                         <svg class="button__icon" aria-hidden>
                             <use xlink:href="img/sprite.svg#user">
                         </svg>
-                    </a>
+                    </a> -->
                     <ul class="menu__items">
                         <li class="menu__item menu__item--mobile">
                             <a class="menu__link" href="#">Услуги</a>
@@ -102,6 +106,9 @@
                         <span class="hotline__descr">Горячая линия</span>
                     </div>
                     <a class="menu__version" href="#">
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#glasses">
+                        </svg>
                         Версия для слабовидящих
                     </a>
                     <ul class="header__socials socials">
@@ -327,7 +334,7 @@
         <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
-                <span class="graph-modal__title">Задайте Ваш вопрос</span>
+                <span class="graph-modal__title">Отклик на вакансию</span>
                 <div class="graph-modal__text">
                      <p> В соответствии с Федеральным законом от 02.05.2006 N59-ФЗ "О порядке рассмотрения обращений граждан Российской Федерации" </p> 
                 </div>
@@ -479,9 +486,9 @@
                     </select>
                 </div>
             </div>
-            <button class="queue-page__button button button--fill" type="button">
+            <a class="queue-page__button button button--fill" href="./appointments.html">
                 Записаться на приём
-            </button>
+            </a>
         </form>
         <ul class="queue-page__list">
             <li>
