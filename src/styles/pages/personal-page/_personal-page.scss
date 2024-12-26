@@ -35,5 +35,9 @@
 
 	&__item {
 		@include flex-simple(5px, column);
+
+		a {
+			@include color-effects;
+		}
 	}
 }

@@ -255,6 +255,7 @@ class GraphTabs {
       el.setAttribute('role', 'tab');
       el.setAttribute('tabindex', '-1');
       el.setAttribute('id', `${this.selector}${i + 1}`);
+      el.setAttribute('aria-controls', `${this.selector}${i + 1}`);
       el.classList.remove('tabs__nav-btn--active');
     });
 
@@ -818,19 +819,22 @@ function createPin(pin) {
   var wrapper = document.createElement('div');
   wrapper.className = 'marker';
   wrapper.setAttribute('data-custom-marker', 'true');
-  var markerButton = document.createElement('button');
-  markerButton.className = 'marker__button';
-  wrapper.append(markerButton);
+  var markerButton;
+  var balloonWrapper;
   if (pin.htmlContent) {
+    markerButton = document.createElement('button');
     markerButton.setAttribute('aria-haspopup', 'true');
     (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonNowCloseA11y)(markerButton);
     markerButton.setAttribute('aria-controls', pin.id);
-    var balloonWrapper = document.createElement('div');
+    balloonWrapper = document.createElement('div');
     balloonWrapper.innerHTML = "<div class=\"map-balloon map-balloon--hidden\" role=\"tooltip\" id=\"".concat(pin.id, "\">\n    <div class=\"map-balloon__header\">\n        <span class=\"map-balloon__title\">\n            ").concat(pin.htmlContent.title, "\n        </span>\n        <button class=\"map-balloon__close\" type=\"button\" aria-label=\"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"></button>\n    </div>\n    <div class=\"map-balloon__body\">\n        ").concat(pin.htmlContent.body, "\n    </div>\n    <a class=\"map-balloon__button button button--fill\" href=\"").concat(pin.htmlContent.hrefValue, "\">\n        \u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F\n    </a>\n</div>");
-    wrapper.append(balloonWrapper);
   } else {
-    markerButton.setAttribute('disabled', 'true');
+    markerButton = document.createElement('span');
+    markerButton.setAttribute('aria-label', 'Пункт');
   }
+  markerButton.className = 'marker__button';
+  wrapper.append(markerButton);
+  balloonWrapper && wrapper.append(balloonWrapper);
   pin.types.forEach(function (type) {
     wrapper.setAttribute("data-".concat(type), 'true');
   });

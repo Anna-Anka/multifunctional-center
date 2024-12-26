@@ -2058,14 +2058,24 @@ button.swiper-pagination-bullet {
   opacity: 0;
 }
 
+.rating__hidden:focus-visible ~ .rating__star {
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
+}
+
 .rating__star {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
   display: inline-block;
+  border-radius: 2px;
   width: 24px;
   height: 24px;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
 .rating__star::before,
@@ -2822,6 +2832,7 @@ body {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  display: inline-block;
   width: 40px;
   height: 40px;
   background-image: url("../img/icons/pin.svg");
@@ -2829,6 +2840,10 @@ body {
 
 .marker__button--hidden {
   display: none;
+}
+
+.marker span.marker__button {
+  pointer-events: none;
 }
 
 .page {
@@ -2897,6 +2912,16 @@ body {
   text-align: left;
   text-decoration: none;
   color: var(--color-brown-600);
+  -webkit-transition: color 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.page-private .side-menu__items--links-block .side-menu__link:focus-visible {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .page-private .side-menu__link {
@@ -3043,6 +3068,19 @@ body {
   opacity: 1;
 }
 
+.form__hidden:focus-visible + .form__visible--checkbox {
+  border-color: var(--color-red-500);
+}
+
+.form__hidden:focus-visible + .form__visible--radio {
+  border-color: var(--color-brown-600);
+}
+
+.form__visible {
+  -webkit-transition: border-color 0.3s, background-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
 .form__visible--checkbox {
   background-position: center;
   background-size: contain;
@@ -3057,8 +3095,6 @@ body {
   border: 1px solid var(--color-grey-450);
   border-radius: 4px;
   background-color: transparent;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
   aspect-ratio: 1/1;
 }
 
@@ -3122,6 +3158,8 @@ body {
   gap: 12px;
   position: relative;
   font-size: 13px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 .form__links {
@@ -3136,8 +3174,20 @@ body {
 }
 
 .form__links a {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  margin-right: auto;
   font-size: 11px;
   text-decoration: underline;
+}
+
+.form__links a:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .header {
@@ -3223,7 +3273,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-bottom: 8px;
+  padding: 2px 2px 8px;
   font-size: 11px;
   color: var(--color-grey-600);
 }
@@ -6058,6 +6108,20 @@ body {
   gap: 5px;
 }
 
+.personal-page__item a {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.personal-page__item a:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
+}
+
 .applications-page__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7574,8 +7638,24 @@ body {
     color: var(--color-red-500);
   }
 
+  .page-private .side-menu__items--links-block .side-menu__link:hover {
+    color: var(--color-red-500);
+  }
+
   .form__field:hover {
     border-color: var(--color-red-500);
+  }
+
+  .form__agree:hover {
+    color: var(--color-red-500);
+  }
+
+  .form__agree:hover span {
+    border-color: var(--color-red-500);
+  }
+
+  .form__links a:hover {
+    color: var(--color-red-500);
   }
 
   .breadcrumbs__prev button:hover {
@@ -7682,6 +7762,10 @@ body {
   }
 
   .office-about__info a:hover {
+    color: var(--color-red-500);
+  }
+
+  .personal-page__item a:hover {
     color: var(--color-red-500);
   }
 }

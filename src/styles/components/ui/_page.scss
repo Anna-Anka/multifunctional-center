@@ -65,6 +65,20 @@
 						text-align: left;
 						text-decoration: none;
 						color: var(--color-brown-600);
+						transition:
+							color 0.3s,
+							box-shadow 0.3s;
+
+						&:focus-visible {
+							outline: 0;
+							box-shadow: 0 0 0 2px var(--color-red-500);
+						}
+
+						@media (any-hover: hover) {
+							&:hover {
+								color: var(--color-red-500);
+							}
+						}
 					}
 				}
 			}
