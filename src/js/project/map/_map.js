@@ -9,17 +9,16 @@ function createPin(pin) {
     wrapper.className = 'marker';
     wrapper.setAttribute('data-custom-marker', 'true')
 
-    const markerButton = document.createElement('button')
-    markerButton.className = 'marker__button';
-    
-    wrapper.append(markerButton)
+    let markerButton;
+    let balloonWrapper;
 
     if (pin.htmlContent) {
+        markerButton = document.createElement('button')
         markerButton.setAttribute('aria-haspopup', 'true')
         markerButtonNowCloseA11y(markerButton)
         markerButton.setAttribute('aria-controls', pin.id)
 
-        const balloonWrapper = document.createElement('div')
+        balloonWrapper = document.createElement('div')
         balloonWrapper.innerHTML = `<div class="map-balloon map-balloon--hidden" role="tooltip" id="${pin.id}">
     <div class="map-balloon__header">
         <span class="map-balloon__title">
@@ -34,10 +33,14 @@ function createPin(pin) {
         Записаться
     </a>
 </div>`;
-        wrapper.append(balloonWrapper)
     } else {
-        markerButton.setAttribute('disabled', 'true')
+        markerButton = document.createElement('span')
+        markerButton.setAttribute('aria-label', 'Пункт')
     }
+
+    markerButton.className = 'marker__button';
+    wrapper.append(markerButton)
+    balloonWrapper && wrapper.append(balloonWrapper)
     
     pin.types.forEach((type) => {
         wrapper.setAttribute(`data-${type}`, 'true')

@@ -92,6 +92,7 @@
 	&__button {
 		@include bg-properties(contain);
 
+		display: inline-block;
 		width: 40px;
 		height: 40px;
 		background-image: url('../img/icons/pin.svg');
@@ -99,5 +100,9 @@
 		&--hidden {
 			display: none;
 		}
+	}
+
+	span.marker__button {
+		pointer-events: none;
 	}
 }
