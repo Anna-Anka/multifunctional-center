@@ -11,14 +11,14 @@ export const imagesTask = (done) => {
             }),
             plugins.imageminPngquant({
                 speed: 5,
-                quality: [0.6, 0.8],
+                quality: [0.7, 0.9],
             }),
             plugins.imageminZopfli({
                 more: true,
             }),
             plugins.imageminMozjpeg({
                 progressive: true,
-                quality: 90,
+                quality: 95,
             }),
             plugins.svgo({
                 plugins: [

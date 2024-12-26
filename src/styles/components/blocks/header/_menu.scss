@@ -3,7 +3,7 @@
 		display: flex;
 		align-items: center;
 		color: var(--color-brown-300);
-		gap: 45px;
+		gap: 32px;
 
 		@include mq(lg) {
 			position: fixed;
@@ -39,13 +39,34 @@
 			}
 		}
 
-		&__private {
-			padding: 12px 16px;
+		&__profile {
+			@include flex-alignment(20px, space-between);
+
+			border-bottom: 1px solid var(--color-red-500);
+			padding-bottom: 24px;
 			width: 100%;
+			color: var(--color-red-500);
 
 			@include mq(lg, min) {
 				display: none;
-				padding: 0;
+			}
+		}
+
+		&__private {
+			align-self: flex-start;
+			padding: 8px 25px;
+
+			@include mq(lg) {
+				display: none;
+			}
+
+			&--mobile {
+				display: none;
+
+				@include mq(lg) {
+					display: flex;
+					width: 100%;
+				}
 			}
 		}
 
@@ -97,25 +118,23 @@
 			}
 		}
 
+		&__link {
+			@include color-effects;
+		}
+
 		&__version {
-			position: relative;
-			padding-left: 42px;
+			@include color-effects;
+			@include flex-simple(12px);
+
+			align-items: center;
 
 			@include mq(lg) {
 				order: 1;
 			}
 
-			&::before {
-				@include bg-properties(contain);
-
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 50%;
+			svg {
 				width: 30px;
 				height: 10px;
-				background-image: url('../img/icons/glasses.svg');
-				transform: translateY(-50%);
 			}
 		}
 	}
