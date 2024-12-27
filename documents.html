@@ -20,13 +20,11 @@
     <meta name="twitter:description" content="Доступ к необходимым документам и формам для получения услуг МФЦ Камчатского края. Удобно и быстро!">
 
     <!-- Favicon -->
-    <!-- <link rel="icon" href="favicon.ico" sizes="32x32"> -->
-    <!-- svg иконка 180 * 180 -->
-    <!-- <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">  -->
-    <!--180 * 180-->
-    <!-- если favicon только в png, то подключить favicon-16x16.png favicon-32x32.png (можно в webmanifest) -->
-    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- stlyes, js -->
     <link rel="stylesheet" href="css/style.css">
@@ -53,87 +51,148 @@
             </div>
             <div class="header__inner">
                 <div class="header__menu menu" id="header-burger-menu" data-menu>
-                    <div class="menu__profile">
-                        <span class="menu__name">Иванов В. Н.</span>
-                        <button class="menu__logout" type="button">Выйти</button>
+                    <div class="menu__base">
+                        <div class="menu__user">
+                            <button class="menu__name" type="button" aria-expanded="false" aria-label="Открыть меню профиля" aria-controls="profile-menu">
+                                Иванов В. Н.
+                            </button>
+                            <button class="menu__logout" type="button">Выйти</button>
+                        </div>
+                        <!-- <a class="menu__private menu__private--mobile button button--fill" href="#">
+                            Личный кабинет
+                            <svg class="button__icon" aria-hidden>
+                                <use xlink:href="img/sprite.svg#user">
+                            </svg>
+                        </a> -->
+                        <ul class="menu__items">
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Услуги</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Центра и офисы</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Новости</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Вопросы и ответы</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Полезные сервисы</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Состояние очередей</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">О противодействии коррупции</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Телефонный справочник ведомств</a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="menu__link" href="#">Документы</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#">О центре</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#">Вакансии</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                        <div class="hotline">
+                            <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
+                            <span class="hotline__descr">Горячая линия</span>
+                        </div>
+                        <a class="menu__version bvi-open" href="#">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#glasses">
+                            </svg>
+                            Версия для слабовидящих
+                        </a>
+                        <ul class="header__socials socials">
+                            <li class="socials__item">
+                                <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
+                                    <svg class="socials__icon" aria-hidden>
+                                        <use xlink:href="img/sprite.svg#vk">
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link" href="#" target="_blank" aria-label="Телеграм">
+                                    <svg class="socials__icon" aria-hidden>
+                                        <use xlink:href="img/sprite.svg#telegram">
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link" href="#" target="_blank" aria-label="Одноклассники">
+                                    <svg class="socials__icon" aria-hidden>
+                                        <use xlink:href="img/sprite.svg#classmates">
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- <a class="menu__private menu__private--mobile button button--fill" href="#">
-                        Личный кабинет
-                        <svg class="button__icon" aria-hidden>
-                            <use xlink:href="img/sprite.svg#user">
-                        </svg>
-                    </a> -->
-                    <ul class="menu__items">
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Услуги</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Центра и офисы</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Новости</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Вопросы и ответы</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Полезные сервисы</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Состояние очередей</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">О противодействии коррупции</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Телефонный справочник ведомств</a>
-                        </li>
-                        <li class="menu__item menu__item--mobile">
-                            <a class="menu__link" href="#">Документы</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#">О центре</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#">Вакансии</a>
-                        </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="#">Контакты</a>
-                        </li>
-                    </ul>
-                    <div class="hotline">
-                        <a class="hotline__link" href="tel:+74152302402">8 (4152) 302-402</a>
-                        <span class="hotline__descr">Горячая линия</span>
+
+                    <div class="page-wrapper__menu side-menu profile-menu" id="profile-menu">
+                        <button class="menu__return" aria-controls="profile-menu" type="button" aria-label="Вернуться к стандартному меню">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#arrow-long">
+                            </svg>
+                        </button>
+                        <ul class="side-menu__items">
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="./personal.html">
+                                    Личная информация
+                                </a>
+                            </li>
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="./applications.html">
+                                    История обращений
+                                </a>
+                            </li>
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="./appointments.html">
+                                    Предварительная запись
+                                </a>
+                            </li>
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="./feedback.html">
+                                    Оценка качества
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="side-menu__items side-menu__items--links-block">
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="#">
+                                    Кабинет налогоплательшика
+                                </a>
+                            </li>
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="#" target="_blank">
+                                    Кабинет ЕПГУ
+                                </a>
+                            </li>
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="#" target="_blank">
+                                    Кабинет Россреестра
+                                </a>
+                            </li>
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="#" target="_blank">
+                                    Кабинет ПФР
+                                </a>
+                            </li>
+                            <li class="side-menu__item">
+                                <a class="side-menu__link" href="#" target="_blank">
+                                    Фонд социального страхования
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <a class="menu__version bvi-open" href="#">
-                        <svg aria-hidden>
-                            <use xlink:href="img/sprite.svg#glasses">
-                        </svg>
-                        Версия для слабовидящих
-                    </a>
-                    <ul class="header__socials socials">
-                        <li class="socials__item">
-                            <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
-                                <svg class="socials__icon" aria-hidden>
-                                    <use xlink:href="img/sprite.svg#vk">
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="socials__item">
-                            <a class="socials__link" href="#" target="_blank" aria-label="Телеграм">
-                                <svg class="socials__icon" aria-hidden>
-                                    <use xlink:href="img/sprite.svg#telegram">
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="socials__item">
-                            <a class="socials__link" href="#" target="_blank" aria-label="Одноклассники">
-                                <svg class="socials__icon" aria-hidden>
-                                    <use xlink:href="img/sprite.svg#classmates">
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
                 <div class="header__info">
                     <span class="header__name">
