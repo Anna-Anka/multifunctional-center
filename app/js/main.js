@@ -487,7 +487,6 @@ _project_index_js__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__
 
 
 
-console.log('gulp');
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
 
