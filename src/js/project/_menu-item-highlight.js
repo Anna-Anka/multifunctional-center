@@ -3,6 +3,6 @@
 
     if (mobileItems) {
         const lastItem = mobileItems[mobileItems.length - 1]
-        lastItem.classList.add('menu__item--highlight')
+        lastItem && lastItem.classList.add('menu__item--highlight')
     }
 })();

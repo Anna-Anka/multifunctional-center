@@ -49,39 +49,6 @@
 
 		&__items {
 			@include flex-simple(12px, column);
-
-			&--links-block {
-				.side-menu {
-					&__items {
-						gap: 8px;
-					}
-
-					&__link {
-						@include card(8px 16px, var(--color-grey-10));
-
-						font-family: var(--font-main);
-						font-weight: 700;
-						line-height: 1.2;
-						text-align: left;
-						text-decoration: none;
-						color: var(--color-brown-600);
-						transition:
-							color 0.3s,
-							box-shadow 0.3s;
-
-						&:focus-visible {
-							outline: 0;
-							box-shadow: 0 0 0 2px var(--color-red-500);
-						}
-
-						@media (any-hover: hover) {
-							&:hover {
-								color: var(--color-red-500);
-							}
-						}
-					}
-				}
-			}
 		}
 
 		&__link {

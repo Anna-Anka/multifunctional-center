@@ -576,7 +576,7 @@ __webpack_require__.r(__webpack_exports__);
   var mobileItems = document.querySelectorAll('.header .menu__item--mobile');
   if (mobileItems) {
     var lastItem = mobileItems[mobileItems.length - 1];
-    lastItem.classList.add('menu__item--highlight');
+    lastItem && lastItem.classList.add('menu__item--highlight');
   }
 })();
 
@@ -1184,19 +1184,57 @@ if (document.querySelector('.partners__swiper')) {
 
 /***/ }),
 
-/***/ "./src/js/templates/_burger.js":
-/*!*************************************!*\
-  !*** ./src/js/templates/_burger.js ***!
-  \*************************************/
+/***/ "./src/js/templates/_stepper.js":
+/*!**************************************!*\
+  !*** ./src/js/templates/_stepper.js ***!
+  \**************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/index.js */ "./src/js/utils/index.js");
+(function () {
+  if (document.querySelector('.stepper')) {
+    var stepper = document.querySelector('.stepper');
+    var stepperInput = stepper.querySelector('.stepper__input');
+    var stepperBtnUp = stepper.querySelector('.stepper__btn--up');
+    var stepperBtnDown = stepper.querySelector('.stepper__btn--down');
+    var count = stepperInput.value;
+    stepperInput.addEventListener('change', function (e) {
+      var self = e.currentTarget;
+      if (!self.value) {
+        self.value = 1;
+      }
+      count = stepperInput.value;
+    });
+    stepperBtnUp.addEventListener('click', function (e) {
+      e.preventDefault();
+      count++;
+      stepperInput.value = count;
+    });
+    stepperBtnDown.addEventListener('click', function (e) {
+      e.preventDefault();
+      count--;
+      stepperInput.value = count;
+    });
+  }
+})();
+
+/***/ }),
+
+/***/ "./src/js/templates/burger/_burger.js":
+/*!********************************************!*\
+  !*** ./src/js/templates/burger/_burger.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/index.js */ "./src/js/utils/index.js");
 
 (function () {
   var burgerButton = document.querySelector('[data-burger-button]');
   var menu = document.querySelector('[data-menu]');
   var menuLinks = document.querySelectorAll('[data-menu-link]');
+  var profileButton = document.querySelector('.header .menu__name');
+  var baseMenu = document.querySelector('.header .menu__base');
   var checkClass = function checkClass() {
     if (burgerButton.classList.contains('burger-button--active')) {
       document.addEventListener('keydown', keyHandler);
@@ -1204,6 +1242,13 @@ __webpack_require__.r(__webpack_exports__);
       burgerButton.setAttribute('aria-label', 'закрыть меню');
       burgerButton.focus();
       (0,_utils_index_js__WEBPACK_IMPORTED_MODULE_0__.disableScroll)();
+      if (baseMenu.classList.contains('menu__base--hidden')) {
+        profileButton.setAttribute('aria-label', 'Закрыть меню профиля');
+        profileButton.setAttribute('aria-expanded', 'true');
+      } else {
+        profileButton.setAttribute('aria-label', 'Открыть меню профиля');
+        profileButton.setAttribute('aria-expanded', 'false');
+      }
     } else {
       document.removeEventListener('keydown', keyHandler);
       burgerButton.setAttribute('aria-expanded', 'false');
@@ -1254,38 +1299,33 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/templates/_stepper.js":
-/*!**************************************!*\
-  !*** ./src/js/templates/_stepper.js ***!
-  \**************************************/
+/***/ "./src/js/templates/burger/_menu-profile.js":
+/*!**************************************************!*\
+  !*** ./src/js/templates/burger/_menu-profile.js ***!
+  \**************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 (function () {
-  if (document.querySelector('.stepper')) {
-    var stepper = document.querySelector('.stepper');
-    var stepperInput = stepper.querySelector('.stepper__input');
-    var stepperBtnUp = stepper.querySelector('.stepper__btn--up');
-    var stepperBtnDown = stepper.querySelector('.stepper__btn--down');
-    var count = stepperInput.value;
-    stepperInput.addEventListener('change', function (e) {
-      var self = e.currentTarget;
-      if (!self.value) {
-        self.value = 1;
-      }
-      count = stepperInput.value;
-    });
-    stepperBtnUp.addEventListener('click', function (e) {
-      e.preventDefault();
-      count++;
-      stepperInput.value = count;
-    });
-    stepperBtnDown.addEventListener('click', function (e) {
-      e.preventDefault();
-      count--;
-      stepperInput.value = count;
-    });
+  var profileButton = document.querySelector('.header .menu__name');
+  var buttonCloseProfileMenu = document.querySelector('.header .menu__return');
+  var profileMenu = document.querySelector('.profile-menu');
+  var baseMenu = document.querySelector('.header .menu__base');
+  if (!profileButton || !profileMenu || !baseMenu || !buttonCloseProfileMenu) {
+    return;
   }
+  profileButton.addEventListener('click', function () {
+    baseMenu.classList.add('menu__base--hidden');
+    profileMenu.classList.add('profile-menu--visible');
+    profileButton.setAttribute('aria-expanded', 'true');
+    profileButton.setAttribute('aria-label', 'Закрыть меню профиля');
+  });
+  buttonCloseProfileMenu.addEventListener('click', function () {
+    baseMenu.classList.remove('menu__base--hidden');
+    profileMenu.classList.remove('profile-menu--visible');
+    profileButton.setAttribute('aria-expanded', 'false');
+    profileButton.setAttribute('aria-label', 'Открыть меню профиля');
+  });
 })();
 
 /***/ }),
@@ -1297,8 +1337,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_burger.js */ "./src/js/templates/_burger.js");
-/* harmony import */ var _stepper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_stepper.js */ "./src/js/templates/_stepper.js");
+/* harmony import */ var _burger_burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger/_burger.js */ "./src/js/templates/burger/_burger.js");
+/* harmony import */ var _burger_menu_profile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./burger/_menu-profile.js */ "./src/js/templates/burger/_menu-profile.js");
+/* harmony import */ var _stepper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_stepper.js */ "./src/js/templates/_stepper.js");
+
 
 
 

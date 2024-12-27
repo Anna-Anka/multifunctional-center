@@ -1,17 +1,12 @@
 .header {
 	.menu {
-		display: flex;
-		align-items: center;
 		color: var(--color-brown-300);
-		gap: 32px;
 
 		@include mq(lg) {
 			position: fixed;
 			right: 0;
 			top: 0;
 			display: none;
-			flex-direction: column;
-			align-items: flex-start;
 			overflow: hidden;
 			padding: 90px 24px 36px;
 			width: 100%;
@@ -39,7 +34,23 @@
 			}
 		}
 
-		&__profile {
+		&__base {
+			@include flex-simple(32px);
+
+			align-items: center;
+
+			&--hidden {
+				display: none;
+			}
+
+			@include mq(lg) {
+				flex-direction: column;
+				align-items: flex-start;
+				width: 100%;
+			}
+		}
+
+		&__user {
 			@include flex-alignment(20px, space-between);
 
 			border-bottom: 1px solid var(--color-red-500);
@@ -135,6 +146,63 @@
 			svg {
 				width: 30px;
 				height: 10px;
+			}
+		}
+
+		&__return {
+			width: 20px;
+			height: 20px;
+			transform: rotate(180deg);
+
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.side-menu {
+			@include flex-simple(18px, column);
+
+			position: static;
+			top: unset;
+			flex-basis: auto;
+			width: 100%;
+
+			@include mq(lg, min) {
+				display: none;
+			}
+
+			&__items {
+				@include mq(lg) {
+					@include flex-simple(18px, column);
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 0;
+				}
+
+				&--links-block {
+					.side-menu {
+						&__link {
+							padding: 16px;
+						}
+					}
+				}
+			}
+
+			&__link {
+				padding: 0;
+				font-size: 14px;
+				text-decoration: none;
+				color: var(--color-brown-600);
+			}
+		}
+
+		.profile-menu {
+			display: none;
+
+			&--visible {
+				display: flex;
 			}
 		}
 	}

@@ -1,17 +1,28 @@
-import { disableScroll, enableScroll } from '../utils/index.js';
+import { disableScroll, enableScroll } from '../../utils/index.js';
 
 (function() {
     const burgerButton = document.querySelector('[data-burger-button]');
     const menu = document.querySelector('[data-menu]');
     const menuLinks = document.querySelectorAll('[data-menu-link]');
+    const profileButton = document.querySelector('.header .menu__name')
+    const baseMenu = document.querySelector('.header .menu__base')
 
     const checkClass = () => {
         if (burgerButton.classList.contains('burger-button--active')) {
             document.addEventListener('keydown', keyHandler);
             burgerButton.setAttribute('aria-expanded', 'true');
             burgerButton.setAttribute('aria-label', 'закрыть меню');
+            
             burgerButton.focus();
             disableScroll();
+
+            if (baseMenu.classList.contains('menu__base--hidden')) {
+                profileButton.setAttribute('aria-label', 'Закрыть меню профиля')
+                profileButton.setAttribute('aria-expanded', 'true');
+            } else {
+                profileButton.setAttribute('aria-label', 'Открыть меню профиля')
+                profileButton.setAttribute('aria-expanded', 'false');
+            }
         } else {
             document.removeEventListener('keydown', keyHandler);
             burgerButton.setAttribute('aria-expanded', 'false');
