@@ -10,7 +10,7 @@ function markerButtonNowOpenA11y(marker) {
     marker.setAttribute('aria-label', ariaLabelMarkerButton.nowOpen);
 }
 
-function checkMarkerA11yByWrapperClass(wrapper) {
+export function checkMarkerA11yByWrapperClass(wrapper) {
     const marker = wrapper.querySelector('.marker__button');
     wrapper.classList.contains('marker--hidden') ? markerButtonNowCloseA11y(marker) : markerButtonNowOpenA11y(marker)
 }

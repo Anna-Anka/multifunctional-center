@@ -1,3 +1,6 @@
+import {getArrayPins} from '../_data.js'
+import { checkMarkerA11yByWrapperClass } from './_handlers.js'
+
 function haversineDistance(coord1, coord2) {
     const R = 6371; // Радиус Земли в километрах
     const dLat = (coord2[1] - coord1[1]) * Math.PI / 180; // Разница в широте
@@ -20,7 +23,7 @@ export function getGeolocation() {
             let closestDistance = Infinity;
 
             // Ищем ближайший объект
-            pins.forEach(pin => {
+            getArrayPins(false).forEach(pin => {
                 const distance = haversineDistance(userCoords, pin.coordinates);
                 if (distance < closestDistance) {
                     closestDistance = distance;

@@ -913,6 +913,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getGeolocation: () => (/* binding */ getGeolocation)
 /* harmony export */ });
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_data.js */ "./src/js/project/map/_data.js");
+/* harmony import */ var _handlers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_handlers.js */ "./src/js/project/map/utils/_handlers.js");
+
+
 function haversineDistance(coord1, coord2) {
   var R = 6371; // Радиус Земли в километрах
   var dLat = (coord2[1] - coord1[1]) * Math.PI / 180; // Разница в широте
@@ -930,7 +934,7 @@ function getGeolocation() {
       var closestDistance = Infinity;
 
       // Ищем ближайший объект
-      pins.forEach(function (pin) {
+      (0,_data_js__WEBPACK_IMPORTED_MODULE_0__.getArrayPins)(false).forEach(function (pin) {
         var distance = haversineDistance(userCoords, pin.coordinates);
         if (distance < closestDistance) {
           closestDistance = distance;
@@ -940,12 +944,12 @@ function getGeolocation() {
       var wrappers = document.querySelectorAll('.marker');
       wrappers.forEach(function (wrapper) {
         wrapper.classList.add('marker--hidden');
-        checkMarkerA11yByWrapperClass(wrapper);
+        (0,_handlers_js__WEBPACK_IMPORTED_MODULE_1__.checkMarkerA11yByWrapperClass)(wrapper);
       });
       var balloon = document.getElementById(closestPin.id);
       var wrapper = balloon.closest('.marker');
       wrapper.classList.remove('marker--hidden');
-      checkMarkerA11yByWrapperClass(wrapper);
+      (0,_handlers_js__WEBPACK_IMPORTED_MODULE_1__.checkMarkerA11yByWrapperClass)(wrapper);
     }, function (error) {
       console.error("Ошибка получения местоположения: " + error.message);
     });
@@ -965,6 +969,7 @@ function getGeolocation() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   balloonCloseButtonClickHandler: () => (/* binding */ balloonCloseButtonClickHandler),
+/* harmony export */   checkMarkerA11yByWrapperClass: () => (/* binding */ checkMarkerA11yByWrapperClass),
 /* harmony export */   filterButtonClickHandler: () => (/* binding */ filterButtonClickHandler),
 /* harmony export */   markerButtonClickHandler: () => (/* binding */ markerButtonClickHandler),
 /* harmony export */   markerButtonNowCloseA11y: () => (/* binding */ markerButtonNowCloseA11y)
