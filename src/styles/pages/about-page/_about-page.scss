@@ -24,14 +24,14 @@
 			}
 		}
 
-		h3 {
-			@include title(24px, 12px);
-		}
-
 		@include mq(lg, min) {
 			width: 100%;
 			max-width: 832px;
 		}
+	}
+
+	&__subtitle {
+		@include title(24px, 12px);
 	}
 
 	&__descr {

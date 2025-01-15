@@ -3,7 +3,6 @@
         <h1 class="page__title">
             Елизовское отделение (п. Вулканный)
         </h1>
-        <h2 class="sr-only">Информация об отделение</h2>
         <div class="office-page__row">
             <div class="office-about">
                 <div class="office-about__links">
@@ -57,9 +56,9 @@
                 </a>
             </div>
             <div class="office-department">
-                <h3 class="office-page__subtitle">
+                <span class="office-page__subtitle">
                     Наши отделения
-                </h3>
+                </span>
                 <div class="office-department__swiper swiper swiper-container">
                     <ul class="office-department__items swiper-wrapper">
                         <li class="office-department__item swiper-slide">
@@ -104,33 +103,39 @@
         </div>
         <div class="office-page__info">
             <div class="office-page__schedule">
-                @include('../../components/blocks/_schedule.html')
+                @include('../../components/blocks/_schedule.html', {
+                'titleTag': 'span'
+                })
             </div>
             <div class="office-state office-page__state">
-                <h3 class="office-page__subtitle">
+                <span class="office-page__subtitle">
                     Состояние очередей на текущий момент
-                </h3>
+                </span>
                 <ul class="office-state__items">
                     <li>
                         @include('../../components/cards/_state-card.html', {
+                        'titleTag': 'span',
                         'name': 'Сейчас обслуживается',
                         'value': '234 чел.'
                         })
                     </li>
                     <li>
                         @include('../../components/cards/_state-card.html', {
+                        'titleTag': 'span',
                         'name': 'Ср.время ожидания',
                         'value': '25 мин.'
                         })
                     </li>
                     <li>
                         @include('../../components/cards/_state-card.html', {
+                        'titleTag': 'span',
                         'name': 'Ожидает обслуживания',
                         'value': '934 чел.'
                         })
                     </li>
                     <li>
                         @include('../../components/cards/_state-card.html', {
+                        'titleTag': 'span',
                         'name': 'Ср.время обслуживания',
                         'value': '5 мин.'
                         })

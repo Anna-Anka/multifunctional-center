@@ -1,7 +1,7 @@
 <article class="service-card">
-    <h3 class="service-card__title @titleClass">
+    <@titleTag class="service-card__title @titleClass">
         <a href="./service.html">@title</a>
-    </h3>
+    </@titleTag>
     @if(typeof img !== 'undefined' && img) {
     <picture>
         <source srcset="img/services/@img.avif 1x, img/services/@img@2x.avif 2x" type="image/avif">

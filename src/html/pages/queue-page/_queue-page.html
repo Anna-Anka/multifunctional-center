@@ -1,10 +1,9 @@
 <section class="queue-page page">
     <div class="container">
-        <h2 class="page__title">
+        <h1 class="page__title">
             Состояние очередей
-        </h2>
+        </h1>
         <form class="queue-page__form" action="#">
-            <h3 class="sr-only">Запись</h3>
             <div class="select">
                 <div class="select__choice">
                     <label class="sr-only" for="queue-page-office">
@@ -30,6 +29,7 @@
         <ul class="queue-page__list">
             <li>
                 @include('../../components/cards/_queue-card.html', {
+                'titleTag': 'span',
                 'class': 'window',
                 'title': 'Всего окон',
                 'number': '15'
@@ -37,6 +37,7 @@
             </li>
             <li>
                 @include('../../components/cards/_queue-card.html', {
+                'titleTag': 'span',
                 'class': 'person',
                 'title': 'Рабатает',
                 'number': '9'
@@ -44,6 +45,7 @@
             </li>
             <li>
                 @include('../../components/cards/_queue-card.html', {
+                'titleTag': 'span',
                 'class': 'break',
                 'title': 'Перерыв',
                 'number': '6'
@@ -54,31 +56,37 @@
             <ul class="queue-page__items">
                 <li class="queue-page__item">
                     @include('../../components/cards/_state-card.html', {
+                    'titleTag': 'span',
                     'name': 'Сейчас обслуживается',
                     'value': '234 чел.'
                     })
                 </li>
                 <li class="queue-page__item">
                     @include('../../components/cards/_state-card.html', {
+                    'titleTag': 'span',
                     'name': 'Ср.время ожидания',
                     'value': '25 мин.'
                     })
                 </li>
                 <li class="queue-page__item">
                     @include('../../components/cards/_state-card.html', {
+                    'titleTag': 'span',
                     'name': 'Ожидает обслуживания',
                     'value': '934 чел.'
                     })
                 </li>
                 <li class="queue-page__item">
                     @include('../../components/cards/_state-card.html', {
+                    'titleTag': 'span',
                     'name': 'Ср.время обслуживания',
                     'value': '5 мин.'
                     })
                 </li>
             </ul>
             <div class="queue-page__schedule">
-                @include('../../components/blocks/_schedule.html')
+                @include('../../components/blocks/_schedule.html', {
+                'titleTag': 'span',
+                })
             </div>
         </div>
     </div>

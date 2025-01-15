@@ -8468,14 +8468,14 @@ body {
   margin-bottom: 16px;
 }
 
-.about-page__content h3 {
+.about-page__subtitle {
   margin-bottom: 12px;
   font-family: var(--font-secondary);
   font-weight: 700;
   font-size: 24px;
 }
 
-.about-page__content h3 sup {
+.about-page__subtitle sup {
   font-size: 14px;
   color: var(--color-red-500);
 }
