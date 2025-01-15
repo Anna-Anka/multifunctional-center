@@ -26,6 +26,14 @@
 	}
 
 	.article-content {
+		&:not(:last-child) {
+			margin-bottom: 32px;
+
+			@include mq(md) {
+				margin-bottom: 24px;
+			}
+		}
+
 		line-height: 1.4;
 
 		span ~ ul {
