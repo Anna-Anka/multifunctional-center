@@ -46,10 +46,6 @@
 		}
 	}
 
-	&__subtitle {
-		@include title(24px);
-	}
-
 	&__items {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);

@@ -38,13 +38,13 @@
 				background-image: url('../img/icons/feedback.svg');
 			}
 		}
+	}
 
-		button {
-			@include underline-effects;
+	&__accent {
+		@include underline-effects;
 
-			display: inline-block;
-			color: var(--color-red-500);
-		}
+		display: inline-block;
+		color: var(--color-red-500);
 	}
 
 	&__button {

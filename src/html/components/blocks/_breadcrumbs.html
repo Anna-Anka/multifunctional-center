@@ -2,11 +2,11 @@
     <div class="container">
         <ul class="breadcrumbs__items">
             <li class="breadcrumbs__prev">
-                <button type="button" aria-label="Вернуться назад">
+                <a class="breadcrumbs__back" aria-label="Вернуться назад" href="#">
                     <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#arrow-long">
                     </svg>
-                </button>
+                </a>
             </li>
             @for (var i = 0; i < links.length - 1; i++) { <li class="breadcrumbs__item">
                 <a class="breadcrumbs__link" href="#">`+links[i]+`</a>

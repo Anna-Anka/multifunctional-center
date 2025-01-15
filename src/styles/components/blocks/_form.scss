@@ -194,13 +194,13 @@
 		@include mq(lg, min) {
 			padding-left: 26px;
 		}
+	}
 
-		a {
-			@include color-effects;
+	&__link {
+		@include color-effects;
 
-			margin-right: auto;
-			font-size: 11px;
-			text-decoration: underline;
-		}
+		margin-right: auto;
+		font-size: 11px;
+		text-decoration: underline;
 	}
 }

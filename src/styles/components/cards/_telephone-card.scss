@@ -22,6 +22,8 @@
 	}
 
 	&__phone {
+		@include color-effects;
+
 		white-space: nowrap;
 	}
 }

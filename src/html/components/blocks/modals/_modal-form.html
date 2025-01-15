@@ -1,6 +1,10 @@
 <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="@target" id="@target">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">@title</span>
@@ -53,13 +57,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>

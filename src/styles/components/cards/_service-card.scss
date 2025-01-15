@@ -81,24 +81,24 @@
 			font-size: 16px;
 			line-height: 1.2;
 		}
+	}
 
-		a {
-			&:focus-visible {
-				outline: 0;
-
-				&::before {
-					border-color: var(--color-red-500);
-				}
-			}
+	&__link {
+		&:focus-visible {
+			outline: 0;
 
 			&::before {
-				content: '';
-				position: absolute;
-				inset: 0;
-				z-index: 1;
-				border: 2px solid transparent;
-				transition: border-color 0.3s;
+				border-color: var(--color-red-500);
 			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			border: 2px solid transparent;
+			transition: border-color 0.3s;
 		}
 	}
 
@@ -115,12 +115,15 @@
 	}
 
 	&__img {
-		width: 100%;
-		height: 100%;
+		width: 94px;
+		height: 94px;
 		object-fit: contain;
+		object-position: left bottom;
 
-		@include mq(lg, min) {
-			object-position: left bottom;
+		@include mq(lg) {
+			width: 54px;
+			height: 48px;
+			object-position: center;
 		}
 	}
 

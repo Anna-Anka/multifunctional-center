@@ -7,9 +7,5 @@
 		@include mq(md) {
 			grid-template-columns: 1fr;
 		}
-
-		a {
-			@include color-effects;
-		}
 	}
 }

@@ -15,11 +15,18 @@ new GraphModal();
         })
     }
 
+    // Открыть модальное окно. Первый способ
+    // new GraphModal().open('modal-feedback-success')
+    // в open передаем значение атрибута data-graph-target, нужной модалки
+
+    // Второй способ
+    // Я создала скрытые кнопки, по клику на которые будет открываться соответствующее модальное окно со спасибо (спасибо за отклик, за вопрос и т.д) 
     const feedbackButton = document.querySelector('[data-graph-path="modal-feedback-success"]')
     const vacancyButton = document.querySelector('[data-graph-path="modal-vacancy-success"]')
     const questionButton = document.querySelector('[data-graph-path="modal-question-success"]')
 
-   // feedbackButton?.click() // Открыть модальное окно "спасибо за отзыв"
+    // И в нужный момент мы просто вызываем событие клик на этой кнопке
+    // feedbackButton?.click() // Открыть модальное окно "спасибо за отзыв"
     // vacancyButton?.click() // Открыть модальное окно "спасибо за вопрос"
     // questionButton?.click() // Открыть модальное окно "спасибо за резюме"
 })()

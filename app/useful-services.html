@@ -260,7 +260,11 @@
 <div class="graph-modal">
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-feedback-form" id="modal-feedback-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Оставьте Ваш отзыв о работе наших центров</span>
@@ -308,13 +312,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -325,7 +329,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-question-form" id="modal-question-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Задайте Ваш вопрос</span>
@@ -373,13 +381,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -390,7 +398,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-form" id="modal-vacancy-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Отклик на вакансию</span>
@@ -443,13 +455,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -460,7 +472,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-feedback-success" id="modal-feedback-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#user">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш отзыв отправлен!
@@ -471,7 +487,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-question-success" id="modal-question-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#user">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш вопрос отправлен!
@@ -482,7 +502,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-success" id="modal-vacancy-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#user">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваше резюме отправлено!
@@ -502,11 +526,11 @@
     <div class="container">
         <ul class="breadcrumbs__items">
             <li class="breadcrumbs__prev">
-                <button type="button" aria-label="Вернуться назад">
+                <a class="breadcrumbs__back" aria-label="Вернуться назад" href="#">
                     <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#arrow-long">
                     </svg>
-                </button>
+                </a>
             </li>
              <li class="breadcrumbs__item">
                 <a class="breadcrumbs__link" href="#">Главная</a>
@@ -528,7 +552,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Подача предзаполненного заявления на предоставление услуги через сайт МФЦClass">
-        <a href="./service.html">Подача предзаполненного заявления на предоставление услуги через сайт МФЦ</a>
+        <a class="service-card__link" href="./service.html">Подача предзаполненного заявления на предоставление услуги через сайт МФЦ</a>
     </div>
     
     <picture>
@@ -542,7 +566,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Информация о порядке подачи и рассмотрения обращений граждан в МФЦClass">
-        <a href="./service.html">Информация о порядке подачи и рассмотрения обращений граждан в МФЦ</a>
+        <a class="service-card__link" href="./service.html">Информация о порядке подачи и рассмотрения обращений граждан в МФЦ</a>
     </div>
     
     <picture>
@@ -556,7 +580,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Регистрация на портале госуслуг не выходя из домаClass">
-        <a href="./service.html">Регистрация на портале госуслуг не выходя из дома</a>
+        <a class="service-card__link" href="./service.html">Регистрация на портале госуслуг не выходя из дома</a>
     </div>
     
     <picture>
@@ -570,7 +594,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Условия оплатыClass">
-        <a href="./service.html">Условия оплаты</a>
+        <a class="service-card__link" href="./service.html">Условия оплаты</a>
     </div>
     
     <picture>
@@ -584,7 +608,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Как получить госуслугу в электронном видеClass">
-        <a href="./service.html">Как получить госуслугу в электронном виде</a>
+        <a class="service-card__link" href="./service.html">Как получить госуслугу в электронном виде</a>
     </div>
     
     <picture>
@@ -598,7 +622,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Перечень государственных и муниципальных услуг, доступных для получения в электронном видеClass">
-        <a href="./service.html">Перечень государственных и муниципальных услуг, доступных для получения в электронном виде</a>
+        <a class="service-card__link" href="./service.html">Перечень государственных и муниципальных услуг, доступных для получения в электронном виде</a>
     </div>
     
     <picture>
@@ -612,7 +636,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Полезные электронные сервисы органов, предоставляющих госуслугиClass">
-        <a href="./service.html">Полезные электронные сервисы органов, предоставляющих госуслуги</a>
+        <a class="service-card__link" href="./service.html">Полезные электронные сервисы органов, предоставляющих госуслуги</a>
     </div>
     
     <picture>
@@ -626,7 +650,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Список интернет-ресурсов по профилактике дистанционных преступленийClass">
-        <a href="./service.html">Список интернет-ресурсов по профилактике дистанционных преступлений</a>
+        <a class="service-card__link" href="./service.html">Список интернет-ресурсов по профилактике дистанционных преступлений</a>
     </div>
     
     <picture>
@@ -640,7 +664,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Список интернет-ресурсов по профилактике дистанционных преступленийClass">
-        <a href="./service.html">Список интернет-ресурсов по профилактике дистанционных преступлений</a>
+        <a class="service-card__link" href="./service.html">Список интернет-ресурсов по профилактике дистанционных преступлений</a>
     </div>
     
     <picture>
@@ -654,7 +678,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Электронные услугиClass">
-        <a href="./service.html">Электронные услуги</a>
+        <a class="service-card__link" href="./service.html">Электронные услуги</a>
     </div>
     
     <picture>
@@ -668,7 +692,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Ответственность. Обжалование. Возмещение вреда.Class">
-        <a href="./service.html">Ответственность. Обжалование. Возмещение вреда.</a>
+        <a class="service-card__link" href="./service.html">Ответственность. Обжалование. Возмещение вреда.</a>
     </div>
     
     <picture>
@@ -682,7 +706,7 @@
             <li class="useful-services__item">
                 <article class="service-card">
     <div class="service-card__title Социальные сетиClass">
-        <a href="./service.html">Социальные сети</a>
+        <a class="service-card__link" href="./service.html">Социальные сети</a>
     </div>
     
     <picture>
