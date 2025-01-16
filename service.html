@@ -260,7 +260,11 @@
 <div class="graph-modal">
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-feedback-form" id="modal-feedback-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Оставьте Ваш отзыв о работе наших центров</span>
@@ -308,13 +312,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -325,7 +329,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-question-form" id="modal-question-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Задайте Ваш вопрос</span>
@@ -373,13 +381,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -390,7 +398,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-form" id="modal-vacancy-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Отклик на вакансию</span>
@@ -443,13 +455,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -460,7 +472,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-feedback-success" id="modal-feedback-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш отзыв отправлен!
@@ -471,7 +487,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-question-success" id="modal-question-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш вопрос отправлен!
@@ -482,7 +502,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-success" id="modal-vacancy-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваше резюме отправлено!
@@ -502,11 +526,11 @@
     <div class="container">
         <ul class="breadcrumbs__items">
             <li class="breadcrumbs__prev">
-                <button type="button" aria-label="Вернуться назад">
+                <a class="breadcrumbs__back" aria-label="Вернуться назад" href="#">
                     <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#arrow-long">
                     </svg>
-                </button>
+                </a>
             </li>
              <li class="breadcrumbs__item">
                 <a class="breadcrumbs__link" href="#">Главная</a>
@@ -616,8 +640,7 @@
                     </li>
                 </ul>
             </div>
-            <section class="page-wrapper__content">
-                <h2 class="sr-only">информация об услуге</h2>
+            <div class="page-wrapper__content">
                 <div class="article-content">
                     <h3 id="agency">Ведомство</h3>
                     <p>Ведомство</p>
@@ -640,7 +663,6 @@
                             <li>граждане до 14 лет — 1000 рублей</li>
                             <li>внесение изменений — 500 рублей</li>
                         </ol>
-                    
                     </p>
                     <p>
                         Внесение сведений о детях до 14 лет в паспорт родителя при оформлении загранпаспорта производится бесплатно. В случае отказа в оформлении загранпаспорта государственная пошлина не гасится (при повторном обращении можно приложить ранее оплаченную государственную пошлину).
@@ -674,7 +696,7 @@
                         3 дня на передачу документов между ведомством и МФЦ
                     </p>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
 </div>

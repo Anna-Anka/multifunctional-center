@@ -260,7 +260,11 @@
 <div class="graph-modal">
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-feedback-form" id="modal-feedback-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Оставьте Ваш отзыв о работе наших центров</span>
@@ -308,13 +312,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -325,7 +329,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-question-form" id="modal-question-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Задайте Ваш вопрос</span>
@@ -373,13 +381,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -390,7 +398,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-form" id="modal-vacancy-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Отклик на вакансию</span>
@@ -443,13 +455,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -460,7 +472,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-feedback-success" id="modal-feedback-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш отзыв отправлен!
@@ -471,7 +487,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-question-success" id="modal-question-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш вопрос отправлен!
@@ -482,7 +502,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-success" id="modal-vacancy-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваше резюме отправлено!
@@ -499,17 +523,14 @@
 </div>
 
 <main class="main">
-    <section class="services-block">
+    <div class="services-block">
     <div class="container">
-        <h2 class="sr-only">
-            Популярные услуги
-        </h2>
         <ul class="services-block__items">
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Предварительная запись</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Предварительная запись</a>
+    </div>
     
     <picture>
         <source srcset="img/services/avatars.avif 1x, img/services/avatars@2x.avif 2x" type="image/avif">
@@ -521,9 +542,9 @@
             </li>
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Проверить статус заявления</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Проверить статус заявления</a>
+    </div>
     
     <picture>
         <source srcset="img/services/survey.avif 1x, img/services/survey@2x.avif 2x" type="image/avif">
@@ -535,9 +556,9 @@
             </li>
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Услуги</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Услуги</a>
+    </div>
     
     <picture>
         <source srcset="img/services/manager.avif 1x, img/services/manager@2x.avif 2x" type="image/avif">
@@ -549,9 +570,9 @@
             </li>
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Центры и офисы</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Центры и офисы</a>
+    </div>
     
     <picture>
         <source srcset="img/services/real-estate.avif 1x, img/services/real-estate@2x.avif 2x" type="image/avif">
@@ -563,9 +584,9 @@
             </li>
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Полезные сервисы</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Полезные сервисы</a>
+    </div>
     
     <picture>
         <source srcset="img/services/developer-coding.avif 1x, img/services/developer-coding@2x.avif 2x" type="image/avif">
@@ -577,9 +598,9 @@
             </li>
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Состояние очередей</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Состояние очередей</a>
+    </div>
     
     <picture>
         <source srcset="img/services/colleagues.avif 1x, img/services/colleagues@2x.avif 2x" type="image/avif">
@@ -591,9 +612,9 @@
             </li>
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Документы</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Документы</a>
+    </div>
     
     <picture>
         <source srcset="img/services/books.avif 1x, img/services/books@2x.avif 2x" type="image/avif">
@@ -605,9 +626,9 @@
             </li>
             <li class="services-block__item">
                 <article class="service-card">
-    <h3 class="service-card__title service-card__title--large">
-        <a href="./service.html">Оставить отзыв</a>
-    </h3>
+    <div class="service-card__title service-card__title--large">
+        <a class="service-card__link" href="./service.html">Оставить отзыв</a>
+    </div>
     
     <picture>
         <source srcset="img/services/charts.avif 1x, img/services/charts@2x.avif 2x" type="image/avif">
@@ -619,7 +640,7 @@
             </li>
         </ul>
     </div>
-</section>
+</div>
     <section class="news-block section">
     <div class="container">
         <div class="block-header">
@@ -718,7 +739,7 @@
         <div class="feedback-promo__wrapper">
             <h2 class="feedback-promo__title">
                 Оставьте Ваш
-                <button data-graph-path="modal-vacancy-form" aria-controls="modal-feedback-form" type="button">отзыв</button>
+                <button class="feedback-promo__accent" data-graph-path="modal-vacancy-form" aria-controls="modal-feedback-form" type="button">отзыв</button>
                 о работе наших центров
             </h2>
             <button class="feedback-promo__button button button--fill" data-graph-path="modal-vacancy-form" aria-controls="modal-feedback-form" type="button">
@@ -808,11 +829,7 @@
         <a class="popular-services__link" href="./services.html">Смотреть все</a>
     </div>
 </section>
-    <section class="partners">
-    <h2 class="sr-only">
-        Наши партнеры
-    </h2>
-
+    <div class="partners">
     <div class="partners__container container">
         <div class="partners__wrapper swiper-container">
 
@@ -958,7 +975,7 @@
             </button>
         </div>
     </div>
-</section>
+</div>
 </main>
 
 <footer class="footer">

@@ -260,7 +260,11 @@
 <div class="graph-modal">
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-feedback-form" id="modal-feedback-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Оставьте Ваш отзыв о работе наших центров</span>
@@ -308,13 +312,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -325,7 +329,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-question-form" id="modal-question-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Задайте Ваш вопрос</span>
@@ -373,13 +381,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -390,7 +398,11 @@
 
     <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-form" id="modal-vacancy-form">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <form class="graph-modal__form form">
             <div class="graph-modal__header">
                 <span class="graph-modal__title">Отклик на вакансию</span>
@@ -443,13 +455,13 @@
                     </p>
                 </div>
                 <div class="form__links">
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Политика обработки персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Согласие на обработку персональных данных
                     </a>
-                    <a href="#">
+                    <a class="form__link" href="#">
                         Стандарт работы с обращениями
                     </a>
                 </div>
@@ -460,7 +472,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-feedback-success" id="modal-feedback-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш отзыв отправлен!
@@ -471,7 +487,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-question-success" id="modal-question-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваш вопрос отправлен!
@@ -482,7 +502,11 @@
 
     <div class="graph-modal__container graph-modal__container--success" role="dialog" aria-modal="true" data-graph-target="modal-vacancy-success" id="modal-vacancy-success">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#close">
+            </svg>
+        </button>
         <div class="graph-modal__text">
             <p>
                 Спасибо, Ваше резюме отправлено!
@@ -502,11 +526,11 @@
     <div class="container">
         <ul class="breadcrumbs__items">
             <li class="breadcrumbs__prev">
-                <button type="button" aria-label="Вернуться назад">
+                <a class="breadcrumbs__back" aria-label="Вернуться назад" href="#">
                     <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#arrow-long">
                     </svg>
-                </button>
+                </a>
             </li>
              <li class="breadcrumbs__item">
                 <a class="breadcrumbs__link" href="#">Главная</a>
@@ -527,7 +551,6 @@
         <h1 class="page__title">
             Елизовское отделение (п. Вулканный)
         </h1>
-        <h2 class="sr-only">Информация об отделение</h2>
         <div class="office-page__row">
             <div class="office-about">
                 <div class="office-about__links">
@@ -581,9 +604,9 @@
                 </a>
             </div>
             <div class="office-department">
-                <h3 class="office-page__subtitle">
+                <span class="office-page__subtitle">
                     Наши отделения
-                </h3>
+                </span>
                 <div class="office-department__swiper swiper swiper-container">
                     <ul class="office-department__items swiper-wrapper">
                         <li class="office-department__item swiper-slide">
@@ -629,9 +652,9 @@
         <div class="office-page__info">
             <div class="office-page__schedule">
                 <div class="schedule">
-    <h3 class="schedule__title">
+    <span class="schedule__title">
         График загруженности отделения
-    </h3>
+    </span>
     <ul class="schedule__items">
         <li class="schedule__item">
             <span class="schedule__pilar">
@@ -715,31 +738,31 @@
 </div>
             </div>
             <div class="office-state office-page__state">
-                <h3 class="office-page__subtitle">
+                <span class="office-page__subtitle">
                     Состояние очередей на текущий момент
-                </h3>
+                </span>
                 <ul class="office-state__items">
                     <li>
                         <article class="state-card">
-    <h3 class="state-card__name">Сейчас обслуживается</h3>
+    <span class="state-card__name">Сейчас обслуживается</span>
     <span class="state-card__value">234 чел.</span>
 </article>
                     </li>
                     <li>
                         <article class="state-card">
-    <h3 class="state-card__name">Ср.время ожидания</h3>
+    <span class="state-card__name">Ср.время ожидания</span>
     <span class="state-card__value">25 мин.</span>
 </article>
                     </li>
                     <li>
                         <article class="state-card">
-    <h3 class="state-card__name">Ожидает обслуживания</h3>
+    <span class="state-card__name">Ожидает обслуживания</span>
     <span class="state-card__value">934 чел.</span>
 </article>
                     </li>
                     <li>
                         <article class="state-card">
-    <h3 class="state-card__name">Ср.время обслуживания</h3>
+    <span class="state-card__name">Ср.время обслуживания</span>
     <span class="state-card__value">5 мин.</span>
 </article>
                     </li>

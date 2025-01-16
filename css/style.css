@@ -829,18 +829,28 @@ label {
 }
 
 .graph-modal__close {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   position: absolute;
   right: 24px;
   top: 24px;
-  padding: 0;
   width: 24px;
   height: 24px;
-  background-image: url("../img/icons/close.svg");
-  -webkit-filter: invert(74%) sepia(83%) saturate(1%) hue-rotate(314deg) brightness(95%) contrast(86%);
-  filter: invert(74%) sepia(83%) saturate(1%) hue-rotate(314deg) brightness(95%) contrast(86%);
+  color: var(--color-grey-400);
+}
+
+.graph-modal__close:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
+}
+
+.graph-modal__close svg {
+  width: 100%;
+  height: 100%;
 }
 
 .graph-modal__header {
@@ -5998,7 +6008,7 @@ body {
   gap: 4px;
 }
 
-.form__links a {
+.form__link {
   -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
@@ -6008,7 +6018,7 @@ body {
   text-decoration: underline;
 }
 
-.form__links a:focus-visible {
+.form__link:focus-visible {
   outline: 0;
   border-radius: 2px;
   -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
@@ -6111,7 +6121,7 @@ body {
   aspect-ratio: 1;
 }
 
-.breadcrumbs__prev button {
+.breadcrumbs__back {
   -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
@@ -6119,20 +6129,21 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  height: 100%;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-.breadcrumbs__prev button:focus-visible {
+.breadcrumbs__back:focus-visible {
   outline: 0;
   border-radius: 2px;
   -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
   box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
-.breadcrumbs__prev button,
-.breadcrumbs__prev svg {
+.breadcrumbs__back svg {
   width: 100%;
   height: 100%;
 }
@@ -6152,14 +6163,14 @@ body {
   padding-right: 18px;
 }
 
-.breadcrumbs__item:not(:last-child) a {
+.breadcrumbs__item:not(:last-child) .breadcrumbs__link {
   -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
-.breadcrumbs__item:not(:last-child) a:focus-visible {
+.breadcrumbs__item:not(:last-child) .breadcrumbs__link:focus-visible {
   outline: 0;
   border-radius: 2px;
   -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
@@ -7178,15 +7189,15 @@ body {
   line-height: 1.2;
 }
 
-.service-card__title a:focus-visible {
+.service-card__link:focus-visible {
   outline: 0;
 }
 
-.service-card__title a:focus-visible::before {
+.service-card__link:focus-visible::before {
   border-color: var(--color-red-500);
 }
 
-.service-card__title a::before {
+.service-card__link::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -7206,10 +7217,12 @@ body {
 }
 
 .service-card__img {
-  width: 100%;
-  height: 100%;
+  width: 94px;
+  height: 94px;
   -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: left bottom;
+  object-position: left bottom;
 }
 
 .service-card__bg {
@@ -7352,7 +7365,18 @@ body {
 }
 
 .telephone-card__phone {
+  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   white-space: nowrap;
+}
+
+.telephone-card__phone:focus-visible {
+  outline: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
+  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .search-card {
@@ -7886,7 +7910,7 @@ body {
   color: var(--color-white);
 }
 
-.feedback-promo__title button {
+.feedback-promo__accent {
   text-decoration-line: underline;
   text-decoration-color: transparent;
   -webkit-transition: text-decoration-color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
@@ -7897,7 +7921,7 @@ body {
   color: var(--color-red-500);
 }
 
-.feedback-promo__title button:focus-visible {
+.feedback-promo__accent:focus-visible {
   outline: 0;
   border-radius: 2px;
   -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
@@ -8209,14 +8233,16 @@ body {
   margin-bottom: 16px;
 }
 
-.question-page__question a {
+.question-page__question a,
+.question-page__question button {
   -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
   transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
-.question-page__question a:focus-visible {
+.question-page__question a:focus-visible,
+.question-page__question button:focus-visible {
   outline: 0;
   border-radius: 2px;
   -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
@@ -8274,20 +8300,6 @@ body {
   column-gap: 32px;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-}
-
-.telephone-directory__items a {
-  -webkit-transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
-  transition: color 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
-  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s;
-  transition: color 0.3s, border-radius 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
-}
-
-.telephone-directory__items a:focus-visible {
-  outline: 0;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
-  box-shadow: 0 0 0 2px var(--color-red-500);
 }
 
 .documents-page .tabs__nav-btn {
@@ -8468,14 +8480,14 @@ body {
   margin-bottom: 16px;
 }
 
-.about-page__content h3 {
+.about-page__subtitle {
   margin-bottom: 12px;
   font-family: var(--font-secondary);
   font-weight: 700;
   font-size: 24px;
 }
 
-.about-page__content h3 sup {
+.about-page__subtitle sup {
   font-size: 14px;
   color: var(--color-red-500);
 }
@@ -8488,18 +8500,6 @@ body {
 
 .about-page__descr p:not(:last-child) {
   margin-bottom: 20px;
-}
-
-.about-page__subtitle {
-  margin-bottom: 24px;
-  font-family: var(--font-secondary);
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.about-page__subtitle sup {
-  font-size: 14px;
-  color: var(--color-red-500);
 }
 
 .about-page__items {
@@ -8569,6 +8569,10 @@ body {
 
 .vacancy-page .article-content {
   line-height: 1.4;
+}
+
+.vacancy-page .article-content:not(:last-child) {
+  margin-bottom: 32px;
 }
 
 .vacancy-page .article-content span ~ ul {
@@ -9448,11 +9452,6 @@ body {
     padding-bottom: 44px;
   }
 
-  .service-card__img {
-    -o-object-position: left bottom;
-    object-position: left bottom;
-  }
-
   .news-block__items::before {
     content: "";
     position: absolute;
@@ -9755,6 +9754,13 @@ body {
     -ms-flex-preferred-size: 54px;
     flex-basis: 54px;
     height: 48px;
+  }
+
+  .service-card__img {
+    width: 54px;
+    height: 48px;
+    -o-object-position: center;
+    object-position: center;
   }
 
   .text-card {
@@ -10361,6 +10367,10 @@ body {
     flex-basis: auto;
   }
 
+  .vacancy-page .article-content:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
   .queue-page__form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -10604,6 +10614,10 @@ body {
     color: var(--color-red-500);
   }
 
+  .graph-modal__close:hover {
+    color: var(--color-red-500);
+  }
+
   .button--secondary:hover {
     border-color: transparent;
     -webkit-box-shadow: 0 0 0 2px var(--color-red-500);
@@ -10663,15 +10677,15 @@ body {
     border-color: var(--color-red-500);
   }
 
-  .form__links a:hover {
+  .form__link:hover {
     color: var(--color-red-500);
   }
 
-  .breadcrumbs__prev button:hover {
+  .breadcrumbs__back:hover {
     color: var(--color-red-500);
   }
 
-  .breadcrumbs__item:not(:last-child) a:hover {
+  .breadcrumbs__item:not(:last-child) .breadcrumbs__link:hover {
     color: var(--color-red-500);
   }
 
@@ -10732,6 +10746,10 @@ body {
     color: var(--color-red-500);
   }
 
+  .telephone-card__phone:hover {
+    color: var(--color-red-500);
+  }
+
   .search-card__link:hover {
     text-decoration-color: var(--color-red-500);
   }
@@ -10754,7 +10772,7 @@ body {
     transform: scale(1.02);
   }
 
-  .feedback-promo__title button:hover {
+  .feedback-promo__accent:hover {
     text-decoration-color: var(--color-red-500);
   }
 
@@ -10766,11 +10784,8 @@ body {
     color: var(--color-red-500);
   }
 
-  .question-page__question a:hover {
-    color: var(--color-red-500);
-  }
-
-  .telephone-directory__items a:hover {
+  .question-page__question a:hover,
+  .question-page__question button:hover {
     color: var(--color-red-500);
   }
 
