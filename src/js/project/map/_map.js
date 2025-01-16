@@ -2,14 +2,12 @@ import * as ymaps3 from 'ymaps3';
 import styles from './_styles.json';
 import { getGeolocation } from './utils/_geolocation.js'
 import { markerButtonNowCloseA11y, filterButtonClickHandler, balloonCloseButtonClickHandler, markerButtonClickHandler } from './utils/_handlers.js';
-import data from '../../../assets/advance-pins.json';
+import data from '../../../assets/map-data.json';
 
 const pins = data.advancePins;
 const defaultPins = data.defaultPins;
 const advanceMapSettings = data.advanceMapSettings;
 const baseMapSettings = data.baseMapSettings;
-
-console.log(pins, defaultPins, advanceMapSettings, baseMapSettings);
 
 const getArrayPins = (isBaseMap) => {
     return isBaseMap ? defaultPins : pins
