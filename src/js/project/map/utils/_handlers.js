@@ -1,4 +1,7 @@
-import { ariaLabelMarkerButton } from '../_data.js';
+const ariaLabelMarkerButton = {
+    nowOpen: 'Закрыть дополнительную информацию',
+    nowClose: 'Открыть дополнительную информацию'
+}
 
 export function markerButtonNowCloseA11y(marker) {
     marker.setAttribute('aria-expanded', 'false')

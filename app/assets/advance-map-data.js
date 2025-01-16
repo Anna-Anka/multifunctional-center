@@ -1,11 +1,3 @@
-// work - Сейчас работает,
-// office - Центр оказания услуг,
-// road - Выездное обслуживание
-
-export const getArrayPins = (isBaseMap) => {
-    return isBaseMap ? defaultPins : pins
-}
-
 const defaultPins = [
     {
         coordinates: [37.65, 55.75],

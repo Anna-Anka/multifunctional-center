@@ -13,191 +13,196 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ GraphModal)
 /* harmony export */ });
 class GraphModal {
-  constructor(options) {
-    let defaultOptions = {
-      isOpen: () => {},
-      isClose: () => {},
+    constructor(options) {
+        let defaultOptions = {
+            isOpen: () => { },
+            isClose: () => { },
+        }
+        this.options = Object.assign(defaultOptions, options);
+        this.modal = document.querySelector('.graph-modal');
+        this.speed = 300;
+        this.animation = 'fade';
+        this._reOpen = false;
+        this._nextContainer = false;
+        this.modalContainer = false;
+        this.isOpen = false;
+        this.previousActiveElement = false;
+        this._focusElements = [
+            'a[href]',
+            'input',
+            'select',
+            'textarea',
+            'button',
+            'iframe',
+            '[contenteditable]',
+            '[tabindex]:not([tabindex^="-"])'
+        ];
+        this._fixBlocks = document.querySelectorAll('.fix-block');
+        this.events();
     }
-    this.options = Object.assign(defaultOptions, options);
-    this.modal = document.querySelector('.graph-modal');
-    this.speed = 300;
-    this.animation = 'fade';
-    this._reOpen = false;
-    this._nextContainer = false;
-    this.modalContainer = false;
-    this.isOpen = false;
-    this.previousActiveElement = false;
-    this._focusElements = [
-      'a[href]',
-      'input',
-      'select',
-      'textarea',
-      'button',
-      'iframe',
-      '[contenteditable]',
-      '[tabindex]:not([tabindex^="-"])'
-    ];
-    this._fixBlocks = document.querySelectorAll('.fix-block');
-    this.events();
-  }
 
-  events() {
-    if (this.modal) {
-      document.addEventListener('click', function (e) {
-        const clickedElement = e.target.closest(`[data-graph-path]`);
-        if (clickedElement) {
-          let target = clickedElement.dataset.graphPath;
-          let animation = clickedElement.dataset.graphAnimation;
-          let speed = clickedElement.dataset.graphSpeed;
-          this.animation = animation ? animation : 'fade';
-          this.speed = speed ? parseInt(speed) : 300;
-          this._nextContainer = document.querySelector(`[data-graph-target="${target}"]`);
-          this.open();
-          return;
+    init() {
+        this.modal = document.querySelector('.graph-modal');
+        this.events();
+    }
+
+    events() {
+        if (this.modal) {
+            document.addEventListener('click', function (e) {
+                const clickedElement = e.target.closest(`[data-graph-path]`);
+                if (clickedElement) {
+                    let target = clickedElement.dataset.graphPath;
+                    let animation = clickedElement.dataset.graphAnimation;
+                    let speed = clickedElement.dataset.graphSpeed;
+                    this.animation = animation ? animation : 'fade';
+                    this.speed = speed ? parseInt(speed) : 300;
+                    this._nextContainer = document.querySelector(`[data-graph-target="${target}"]`);
+                    this.open();
+                    return;
+                }
+
+                if (e.target.closest('.js-modal-close')) {
+                    this.close();
+                    return;
+                }
+            }.bind(this));
+
+            window.addEventListener('keydown', function (e) {
+                if (e.keyCode == 27 && this.isOpen) {
+                    this.close();
+                }
+
+                if (e.which == 9 && this.isOpen) {
+                    this.focusCatch(e);
+                    return;
+                }
+            }.bind(this));
+
+            document.addEventListener('click', function (e) {
+                if (e.target.classList.contains('graph-modal') && e.target.classList.contains("is-open")) {
+                    this.close();
+                }
+            }.bind(this));
         }
 
-        if (e.target.closest('.js-modal-close')) {
-          this.close();
-          return;
+    }
+
+    open(selector) {
+        this.previousActiveElement = document.activeElement;
+
+        if (this.isOpen) {
+            this.reOpen = true;
+            this.close();
+            return;
         }
-      }.bind(this));
 
-      window.addEventListener('keydown', function (e) {
-        if (e.keyCode == 27 && this.isOpen) {
-          this.close();
+        this.modalContainer = this._nextContainer;
+
+        if (selector) {
+            this.modalContainer = document.querySelector(`[data-graph-target="${selector}"]`);
         }
 
-        if (e.which == 9 && this.isOpen) {
-          this.focusCatch(e);
-          return;
+        this.modalContainer.scrollTo(0, 0)
+
+        this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
+        this.modal.classList.add('is-open');
+
+        document.body.style.scrollBehavior = 'auto';
+        document.documentElement.style.scrollBehavior = 'auto';
+
+        this.disableScroll();
+
+        this.modalContainer.classList.add('graph-modal-open');
+        this.modalContainer.classList.add(this.animation);
+
+        setTimeout(() => {
+            this.options.isOpen(this);
+            this.modalContainer.classList.add('animate-open');
+            this.isOpen = true;
+            this.focusTrap();
+        }, this.speed);
+    }
+
+    close() {
+        if (this.modalContainer) {
+            this.modalContainer.classList.remove('animate-open');
+            this.modalContainer.classList.remove(this.animation);
+            this.modal.classList.remove('is-open');
+            this.modalContainer.classList.remove('graph-modal-open');
+
+            this.enableScroll();
+
+            document.body.style.scrollBehavior = 'auto';
+            document.documentElement.style.scrollBehavior = 'auto';
+
+            this.options.isClose(this);
+            this.isOpen = false;
+            this.focusTrap();
+
+            if (this.reOpen) {
+                this.reOpen = false;
+                this.open();
+            }
         }
-      }.bind(this));
+    }
 
-      document.addEventListener('click', function (e) {
-        if (e.target.classList.contains('graph-modal') && e.target.classList.contains("is-open")) {
-          this.close();
+    focusCatch(e) {
+        const nodes = this.modalContainer.querySelectorAll(this._focusElements);
+        const nodesArray = Array.prototype.slice.call(nodes);
+        const focusedItemIndex = nodesArray.indexOf(document.activeElement)
+        if (e.shiftKey && focusedItemIndex === 0) {
+            nodesArray[nodesArray.length - 1].focus();
+            e.preventDefault();
         }
-      }.bind(this));
+        if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+            nodesArray[0].focus();
+            e.preventDefault();
+        }
     }
 
-  }
-
-  open(selector) {
-    this.previousActiveElement = document.activeElement;
-
-    if (this.isOpen) {
-      this.reOpen = true;
-      this.close();
-      return;
+    focusTrap() {
+        const nodes = this.modalContainer.querySelectorAll(this._focusElements);
+        if (this.isOpen) {
+            if (nodes.length) nodes[0].focus();
+        } else {
+            this.previousActiveElement.focus();
+        }
     }
 
-    this.modalContainer = this._nextContainer;
-
-    if (selector) {
-      this.modalContainer = document.querySelector(`[data-graph-target="${selector}"]`);
+    disableScroll() {
+        let pagePosition = window.scrollY;
+        this.lockPadding();
+        document.body.classList.add('disable-scroll');
+        document.body.dataset.position = pagePosition;
+        document.body.style.top = -pagePosition + 'px';
     }
-    
-    this.modalContainer.scrollTo(0, 0)
 
-    this.modal.style.setProperty('--transition-time', `${this.speed / 1000}s`);
-    this.modal.classList.add('is-open');
-
-    document.body.style.scrollBehavior = 'auto';
-    document.documentElement.style.scrollBehavior = 'auto';
-
-    this.disableScroll();
-
-    this.modalContainer.classList.add('graph-modal-open');
-    this.modalContainer.classList.add(this.animation);
-
-    setTimeout(() => {
-      this.options.isOpen(this);
-      this.modalContainer.classList.add('animate-open');
-      this.isOpen = true;
-      this.focusTrap();
-    }, this.speed);
-  }
-
-  close() {
-    if (this.modalContainer) {
-      this.modalContainer.classList.remove('animate-open');
-      this.modalContainer.classList.remove(this.animation);
-      this.modal.classList.remove('is-open');
-      this.modalContainer.classList.remove('graph-modal-open');
-
-      this.enableScroll();
-
-      document.body.style.scrollBehavior = 'auto';
-      document.documentElement.style.scrollBehavior = 'auto';
-
-      this.options.isClose(this);
-      this.isOpen = false;
-      this.focusTrap();
-
-      if (this.reOpen) {
-        this.reOpen = false;
-        this.open();
-      }
+    enableScroll() {
+        let pagePosition = parseInt(document.body.dataset.position, 10);
+        this.unlockPadding();
+        document.body.style.top = 'auto';
+        document.body.classList.remove('disable-scroll');
+        window.scrollTo({
+            top: pagePosition,
+            left: 0
+        });
+        document.body.removeAttribute('data-position');
     }
-  }
 
-  focusCatch(e) {
-    const nodes = this.modalContainer.querySelectorAll(this._focusElements);
-    const nodesArray = Array.prototype.slice.call(nodes);
-    const focusedItemIndex = nodesArray.indexOf(document.activeElement)
-    if (e.shiftKey && focusedItemIndex === 0) {
-      nodesArray[nodesArray.length - 1].focus();
-      e.preventDefault();
+    lockPadding() {
+        let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+        this._fixBlocks.forEach((el) => {
+            el.style.paddingRight = paddingOffset;
+        });
+        document.body.style.paddingRight = paddingOffset;
     }
-    if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
-      nodesArray[0].focus();
-      e.preventDefault();
+
+    unlockPadding() {
+        this._fixBlocks.forEach((el) => {
+            el.style.paddingRight = '0px';
+        });
+        document.body.style.paddingRight = '0px';
     }
-  }
-
-  focusTrap() {
-    const nodes = this.modalContainer.querySelectorAll(this._focusElements);
-    if (this.isOpen) {
-      if (nodes.length) nodes[0].focus();
-    } else {
-      this.previousActiveElement.focus();
-    }
-  }
-
-  disableScroll() {
-    let pagePosition = window.scrollY;
-    this.lockPadding();
-    document.body.classList.add('disable-scroll');
-    document.body.dataset.position = pagePosition;
-    document.body.style.top = -pagePosition + 'px';
-  }
-
-  enableScroll() {
-    let pagePosition = parseInt(document.body.dataset.position, 10);
-    this.unlockPadding();
-    document.body.style.top = 'auto';
-    document.body.classList.remove('disable-scroll');
-    window.scrollTo({
-      top: pagePosition,
-      left: 0
-    });
-    document.body.removeAttribute('data-position');
-  }
-
-  lockPadding() {
-    let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-    this._fixBlocks.forEach((el) => {
-      el.style.paddingRight = paddingOffset;
-    });
-    document.body.style.paddingRight = paddingOffset;
-  }
-
-  unlockPadding() {
-    this._fixBlocks.forEach((el) => {
-      el.style.paddingRight = '0px';
-    });
-    document.body.style.paddingRight = '0px';
-  }
 }
 
 
@@ -407,6 +412,10 @@ __webpack_require__.r(__webpack_exports__);
 
 new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
 (function () {
+  setTimeout(function () {
+    var graphModal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    graphModal.init();
+  });
   var buttons = document.querySelectorAll('.btn-thanks [data-graph-path]');
   if (buttons) {
     buttons.forEach(function (button) {
@@ -674,7 +683,6 @@ __webpack_async_result__();
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   advanceMapSettings: () => (/* binding */ advanceMapSettings),
-/* harmony export */   ariaLabelMarkerButton: () => (/* binding */ ariaLabelMarkerButton),
 /* harmony export */   baseMapSettings: () => (/* binding */ baseMapSettings),
 /* harmony export */   getArrayPins: () => (/* binding */ getArrayPins)
 /* harmony export */ });
@@ -754,10 +762,6 @@ var pins = [{
     hrefValue: '#'
   }
 }];
-var ariaLabelMarkerButton = {
-  nowOpen: 'Закрыть дополнительную информацию',
-  nowClose: 'Открыть дополнительную информацию'
-};
 var advanceMapSettings = {
   location: {
     center: [37.65080999999997, 55.758412068983525],
@@ -783,9 +787,8 @@ __webpack_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ymaps3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ymaps3 */ "ymaps3");
 /* harmony import */ var _styles_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_styles.json */ "./src/js/project/map/_styles.json");
-/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_data.js */ "./src/js/project/map/_data.js");
-/* harmony import */ var _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/_geolocation.js */ "./src/js/project/map/utils/_geolocation.js");
-/* harmony import */ var _utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/_handlers.js */ "./src/js/project/map/utils/_handlers.js");
+/* harmony import */ var _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/_geolocation.js */ "./src/js/project/map/utils/_geolocation.js");
+/* harmony import */ var _utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/_handlers.js */ "./src/js/project/map/utils/_handlers.js");
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([ymaps3__WEBPACK_IMPORTED_MODULE_0__]);
 ymaps3__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -796,7 +799,13 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
-
+var pins;
+var defaultPins;
+var baseMapSettings;
+var advanceMapSettings;
+var getArrayPins = function getArrayPins(isBaseMap) {
+  return isBaseMap ? defaultPins : pins;
+};
 function createPin(pin) {
   var wrapper = document.createElement('div');
   wrapper.className = 'marker';
@@ -806,7 +815,7 @@ function createPin(pin) {
   if (pin.htmlContent) {
     markerButton = document.createElement('button');
     markerButton.setAttribute('aria-haspopup', 'true');
-    (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonNowCloseA11y)(markerButton);
+    (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.markerButtonNowCloseA11y)(markerButton);
     markerButton.setAttribute('aria-controls', pin.id);
     balloonWrapper = document.createElement('div');
     balloonWrapper.innerHTML = "<div class=\"map-balloon map-balloon--hidden\" role=\"tooltip\" id=\"".concat(pin.id, "\">\n    <div class=\"map-balloon__header\">\n        <span class=\"map-balloon__title\">\n            ").concat(pin.htmlContent.title, "\n        </span>\n        <button class=\"map-balloon__close\" type=\"button\" aria-label=\"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"></button>\n    </div>\n    <div class=\"map-balloon__body\">\n        ").concat(pin.htmlContent.body, "\n    </div>\n    <a class=\"map-balloon__button button button--fill\" href=\"").concat(pin.htmlContent.hrefValue, "\">\n        \u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F\n    </a>\n</div>");
@@ -823,6 +832,19 @@ function createPin(pin) {
   return wrapper;
 }
 (function () {
+  fetch('../../../assets/advance-pins.json').then(function (response) {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  }).then(function (data) {
+    pins = data.advancePins;
+    defaultPins = data.defaultPins;
+    advanceMapSettings = data.advanceMapSettings;
+    baseMapSettings = data.baseMapSettings;
+  })["catch"](function (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+  });
   var mapElement = document.querySelector('[data-map]');
   if (mapElement) {
     var initMap = /*#__PURE__*/function () {
@@ -845,7 +867,7 @@ function createPin(pin) {
               YMapZoomControl = _yield$ymaps3$import.YMapZoomControl;
               YMapGeolocationControl = _yield$ymaps3$import.YMapGeolocationControl;
               // создание карты
-              map = new YMap(mapElement, isBaseMap ? _data_js__WEBPACK_IMPORTED_MODULE_2__.baseMapSettings : _data_js__WEBPACK_IMPORTED_MODULE_2__.advanceMapSettings);
+              map = new YMap(mapElement, isBaseMap ? baseMapSettings : advanceMapSettings);
               map.addChild(new YMapDefaultFeaturesLayer({}));
               if (!isBaseMap) {
                 controls = new YMapControls({
@@ -856,7 +878,7 @@ function createPin(pin) {
                 controls.addChild(new YMapGeolocationControl({}));
                 map.addChild(controls);
               }
-              (0,_data_js__WEBPACK_IMPORTED_MODULE_2__.getArrayPins)(isBaseMap).forEach(function (pin) {
+              getArrayPins(isBaseMap).forEach(function (pin) {
                 var wrapper = createPin(pin);
 
                 // Настройка маркера
@@ -869,21 +891,21 @@ function createPin(pin) {
               filterButtons = document.querySelectorAll('[data-filter-pins]');
               filterButtons && filterButtons.forEach(function (button) {
                 button.addEventListener('click', function () {
-                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.filterButtonClickHandler)(button);
+                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.filterButtonClickHandler)(button);
                 });
               });
               nearButton = document.querySelector('[data-near]');
-              nearButton && nearButton.addEventListener('click', _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_3__.getGeolocation);
+              nearButton && nearButton.addEventListener('click', _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_2__.getGeolocation);
               allCloseButtons = document.querySelectorAll('.map-balloon__close'); // обрабатываем клик на крестик в баллуне
               allCloseButtons && allCloseButtons.forEach(function (button) {
                 button.addEventListener('click', function () {
-                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.balloonCloseButtonClickHandler)(button);
+                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.balloonCloseButtonClickHandler)(button);
                 });
               });
               allMarkerButtons = document.querySelectorAll('.marker__button'); // обрабатываем клик на маркер, открываем баллун
               allMarkerButtons && allMarkerButtons.forEach(function (button) {
                 button.addEventListener('click', function () {
-                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonClickHandler)(button);
+                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.markerButtonClickHandler)(button);
                 });
               });
 
@@ -982,15 +1004,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   markerButtonClickHandler: () => (/* binding */ markerButtonClickHandler),
 /* harmony export */   markerButtonNowCloseA11y: () => (/* binding */ markerButtonNowCloseA11y)
 /* harmony export */ });
-/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_data.js */ "./src/js/project/map/_data.js");
-
+var ariaLabelMarkerButton = {
+  nowOpen: 'Закрыть дополнительную информацию',
+  nowClose: 'Открыть дополнительную информацию'
+};
 function markerButtonNowCloseA11y(marker) {
   marker.setAttribute('aria-expanded', 'false');
-  marker.setAttribute('aria-label', _data_js__WEBPACK_IMPORTED_MODULE_0__.ariaLabelMarkerButton.nowClose);
+  marker.setAttribute('aria-label', ariaLabelMarkerButton.nowClose);
 }
 function markerButtonNowOpenA11y(marker) {
   marker.setAttribute('aria-expanded', 'true');
-  marker.setAttribute('aria-label', _data_js__WEBPACK_IMPORTED_MODULE_0__.ariaLabelMarkerButton.nowOpen);
+  marker.setAttribute('aria-label', ariaLabelMarkerButton.nowOpen);
 }
 function checkMarkerA11yByWrapperClass(wrapper) {
   var marker = wrapper.querySelector('.marker__button');

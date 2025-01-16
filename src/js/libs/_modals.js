@@ -3,6 +3,10 @@ import GraphModal from 'graph-modal';
 new GraphModal();
 
 (function() {
+    setTimeout(() => {
+        const graphModal = new GraphModal();
+        graphModal.init();
+    })
     const buttons = document.querySelectorAll('.btn-thanks [data-graph-path]')
 
     if (buttons) {
