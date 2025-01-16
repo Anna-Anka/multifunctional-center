@@ -2,11 +2,14 @@ import * as ymaps3 from 'ymaps3';
 import styles from './_styles.json';
 import { getGeolocation } from './utils/_geolocation.js'
 import { markerButtonNowCloseA11y, filterButtonClickHandler, balloonCloseButtonClickHandler, markerButtonClickHandler } from './utils/_handlers.js';
+import data from '../../../assets/advance-pins.json';
 
-let pins;
-let defaultPins;
-let baseMapSettings;
-let advanceMapSettings;
+const pins = data.advancePins;
+const defaultPins = data.defaultPins;
+const advanceMapSettings = data.advanceMapSettings;
+const baseMapSettings = data.baseMapSettings;
+
+console.log(pins, defaultPins, advanceMapSettings, baseMapSettings);
 
 const getArrayPins = (isBaseMap) => {
     return isBaseMap ? defaultPins : pins
@@ -58,23 +61,6 @@ function createPin(pin) {
 }
 
 (function () {
-    fetch('../assets/advance-pins.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            console.log(response.json())
-            return response.json();
-        })
-        .then(data => {
-            pins = data.advancePins
-            defaultPins = data.defaultPins
-            advanceMapSettings = data.advanceMapSettings
-            baseMapSettings = data.baseMapSettings
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
 
     const mapElement = document.querySelector('[data-map]')
 

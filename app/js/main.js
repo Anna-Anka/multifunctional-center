@@ -789,6 +789,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_styles.json */ "./src/js/project/map/_styles.json");
 /* harmony import */ var _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/_geolocation.js */ "./src/js/project/map/utils/_geolocation.js");
 /* harmony import */ var _utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/_handlers.js */ "./src/js/project/map/utils/_handlers.js");
+/* harmony import */ var _assets_advance_pins_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/advance-pins.json */ "./src/assets/advance-pins.json");
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([ymaps3__WEBPACK_IMPORTED_MODULE_0__]);
 ymaps3__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -799,10 +800,12 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
-var pins;
-var defaultPins;
-var baseMapSettings;
-var advanceMapSettings;
+
+var pins = _assets_advance_pins_json__WEBPACK_IMPORTED_MODULE_4__.advancePins;
+var defaultPins = _assets_advance_pins_json__WEBPACK_IMPORTED_MODULE_4__.defaultPins;
+var advanceMapSettings = _assets_advance_pins_json__WEBPACK_IMPORTED_MODULE_4__.advanceMapSettings;
+var baseMapSettings = _assets_advance_pins_json__WEBPACK_IMPORTED_MODULE_4__.baseMapSettings;
+console.log(pins, defaultPins, advanceMapSettings, baseMapSettings);
 var getArrayPins = function getArrayPins(isBaseMap) {
   return isBaseMap ? defaultPins : pins;
 };
@@ -832,20 +835,6 @@ function createPin(pin) {
   return wrapper;
 }
 (function () {
-  fetch('../assets/advance-pins.json').then(function (response) {
-    if (!response.ok) {
-      throw new Error('Network response was not ok ' + response.statusText);
-    }
-    console.log(response.json());
-    return response.json();
-  }).then(function (data) {
-    pins = data.advancePins;
-    defaultPins = data.defaultPins;
-    advanceMapSettings = data.advanceMapSettings;
-    baseMapSettings = data.baseMapSettings;
-  })["catch"](function (error) {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
   var mapElement = document.querySelector('[data-map]');
   if (mapElement) {
     var initMap = /*#__PURE__*/function () {
@@ -17163,6 +17152,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/***/ }),
+
+/***/ "./src/assets/advance-pins.json":
+/*!**************************************!*\
+  !*** ./src/assets/advance-pins.json ***!
+  \**************************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"defaultPins":[{"coordinates":[37.65,55.75],"types":["work","office"],"id":"element-1"}],"advancePins":[{"coordinates":[37.65,55.75],"types":["work","office"],"id":"element-1","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.66,55.76],"types":["road"],"id":"element-2","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.67,55.77],"types":["office"],"id":"element-3","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.66,55.76],"types":["work"],"id":"element-4","htmlContent":{"title":"Выездное обслуживание","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p>","hrefValue":"#"}},{"coordinates":[37.65,55.74],"types":["work"],"id":"element-5","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.63,55.72],"types":["office"],"id":"element-7","htmlContent":{"title":"Выездное обслуживание","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p>","hrefValue":"#"}},{"coordinates":[37.64,55.73],"types":["road"],"id":"element-6","htmlContent":{"title":"Выездное обслуживание","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p>","hrefValue":"#"}}],"advanceMapSettings":{"location":{"center":[37.65080999999997,55.758412068983525],"zoom":12}},"baseMapSettings":{"location":{"center":[37.65080999999997,55.758412068983525],"zoom":12}}}');
 
 /***/ }),
 
