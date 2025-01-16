@@ -832,10 +832,11 @@ function createPin(pin) {
   return wrapper;
 }
 (function () {
-  fetch('../../../assets/advance-pins.json').then(function (response) {
+  fetch('../assets/advance-pins.json').then(function (response) {
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
     }
+    console.log(response.json());
     return response.json();
   }).then(function (data) {
     pins = data.advancePins;
