@@ -801,14 +801,14 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
-var env = 'production';
-fetch(env === 'production' ? 'assets/map-data.json' : "").then(function (response) {
+fetch('assets/map-data.json').then(function (response) {
   if (!response.ok) {
     throw new Error('Сет не в порядке');
   }
   return response.json();
-}).then(function (data) {
-  console.log(data); // Здесь вы можете использовать загруженные данные
+}).then(function (res) {
+  _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__ = res;
+  console.log(res); // Здесь вы можете использовать загруженные данные
 })["catch"](function (error) {
   console.error('Ошибка:', error);
 });

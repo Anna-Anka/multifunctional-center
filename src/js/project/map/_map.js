@@ -5,17 +5,16 @@ import { markerButtonNowCloseA11y, filterButtonClickHandler, balloonCloseButtonC
 
 import data from '../../../assets/map-data.json'
 
-let env = 'production'
-
-fetch(env === 'production' ? 'assets/map-data.json' : "")
+fetch('assets/map-data.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Сет не в порядке');
         }
         return response.json();
     })
-    .then(data => {
-        console.log(data); // Здесь вы можете использовать загруженные данные
+    .then(res => {
+        data = res
+        console.log(res); // Здесь вы можете использовать загруженные данные
     })
     .catch(error => {
         console.error('Ошибка:', error);
