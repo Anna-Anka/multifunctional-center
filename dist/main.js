@@ -800,18 +800,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
+console.log("development");
 
-var env = 'production';
-fetch(env === 'production' ? 'assets/map-data.json' : "").then(function (response) {
-  if (!response.ok) {
-    throw new Error('Сет не в порядке');
-  }
-  return response.json();
-}).then(function (data) {
-  console.log(data); // Здесь вы можете использовать загруженные данные
-})["catch"](function (error) {
-  console.error('Ошибка:', error);
-});
 var pins = _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__.advancePins;
 var defaultPins = _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__.defaultPins;
 var advanceMapSettings = _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__.advanceMapSettings;

@@ -2,7 +2,24 @@ import * as ymaps3 from 'ymaps3';
 import styles from './_styles.json';
 import { getGeolocation } from './utils/_geolocation.js'
 import { markerButtonNowCloseA11y, filterButtonClickHandler, balloonCloseButtonClickHandler, markerButtonClickHandler } from './utils/_handlers.js';
-import data from '../../../assets/map-data.json';
+
+import data from '../../../assets/map-data.json'
+
+let env = 'production'
+
+fetch(env === 'production' ? 'assets/map-data.json' : "")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Сет не в порядке');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data); // Здесь вы можете использовать загруженные данные
+    })
+    .catch(error => {
+        console.error('Ошибка:', error);
+    });
 
 const pins = data.advancePins;
 const defaultPins = data.defaultPins;
