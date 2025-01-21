@@ -2,13 +2,12 @@ import GraphModal from 'graph-modal';
 
 new GraphModal();
 
-(function() {
-    //window.graphModal = GraphModal.init();
+(function () {
 
-    setTimeout(() => {
-        const graphModal = new GraphModal();
-        graphModal.init();
-    })
+    const graphModal = new GraphModal();
+    graphModal.init();
+    window.graphModal = graphModal
+
     const buttons = document.querySelectorAll('.btn-thanks [data-graph-path]')
 
     if (buttons) {

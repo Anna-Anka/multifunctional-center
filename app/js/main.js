@@ -412,12 +412,9 @@ __webpack_require__.r(__webpack_exports__);
 
 new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
 (function () {
-  //window.graphModal = GraphModal.init();
-
-  setTimeout(function () {
-    var graphModal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
-    graphModal.init();
-  });
+  var graphModal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
+  graphModal.init();
+  window.graphModal = graphModal;
   var buttons = document.querySelectorAll('.btn-thanks [data-graph-path]');
   if (buttons) {
     buttons.forEach(function (button) {
