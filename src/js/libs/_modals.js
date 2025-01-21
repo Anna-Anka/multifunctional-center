@@ -3,6 +3,8 @@ import GraphModal from 'graph-modal';
 new GraphModal();
 
 (function() {
+    //window.graphModal = GraphModal.init();
+
     setTimeout(() => {
         const graphModal = new GraphModal();
         graphModal.init();

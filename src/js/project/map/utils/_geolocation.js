@@ -1,4 +1,3 @@
-import {getArrayPins} from '../_data.js'
 import { checkMarkerA11yByWrapperClass } from './_handlers.js'
 
 function haversineDistance(coord1, coord2) {
@@ -14,7 +13,7 @@ function haversineDistance(coord1, coord2) {
     return R * c; // Возвращаем расстояние в километрах
 }
 
-export function getGeolocation() {
+export function getGeolocation(pins) {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
             const userCoords = [position.coords.latitude, position.coords.longitude];
@@ -23,7 +22,7 @@ export function getGeolocation() {
             let closestDistance = Infinity;
 
             // Ищем ближайший объект
-            getArrayPins(false).forEach(pin => {
+            pins.forEach(pin => {
                 const distance = haversineDistance(userCoords, pin.coordinates);
                 if (distance < closestDistance) {
                     closestDistance = distance;

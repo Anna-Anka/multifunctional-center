@@ -412,6 +412,8 @@ __webpack_require__.r(__webpack_exports__);
 
 new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
 (function () {
+  //window.graphModal = GraphModal.init();
+
   setTimeout(function () {
     var graphModal = new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
     graphModal.init();
@@ -674,109 +676,6 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ "./src/js/project/map/_data.js":
-/*!*************************************!*\
-  !*** ./src/js/project/map/_data.js ***!
-  \*************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   advanceMapSettings: () => (/* binding */ advanceMapSettings),
-/* harmony export */   baseMapSettings: () => (/* binding */ baseMapSettings),
-/* harmony export */   getArrayPins: () => (/* binding */ getArrayPins)
-/* harmony export */ });
-// work - Сейчас работает,
-// office - Центр оказания услуг,
-// road - Выездное обслуживание
-
-var getArrayPins = function getArrayPins(isBaseMap) {
-  return isBaseMap ? defaultPins : pins;
-};
-var defaultPins = [{
-  coordinates: [37.65, 55.75],
-  types: ['work', 'office'],
-  id: 'element-1'
-}];
-var pins = [{
-  coordinates: [37.65, 55.75],
-  types: ['work', 'office'],
-  id: 'element-1',
-  htmlContent: {
-    title: 'Выездное обслуживание (Анавгай)',
-    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
-    hrefValue: '#'
-  }
-}, {
-  coordinates: [37.66, 55.76],
-  types: ['road'],
-  id: 'element-2',
-  htmlContent: {
-    title: 'Выездное обслуживание (Анавгай)',
-    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
-    hrefValue: '#'
-  }
-}, {
-  coordinates: [37.67, 55.77],
-  types: ['office'],
-  id: 'element-3',
-  htmlContent: {
-    title: 'Выездное обслуживание (Анавгай)',
-    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
-    hrefValue: '#'
-  }
-}, {
-  coordinates: [37.66, 55.76],
-  types: ['work'],
-  id: 'element-4',
-  htmlContent: {
-    title: 'Выездное обслуживание',
-    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p>",
-    hrefValue: '#'
-  }
-}, {
-  coordinates: [37.65, 55.74],
-  types: ['work'],
-  id: 'element-5',
-  htmlContent: {
-    title: 'Выездное обслуживание (Анавгай)',
-    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p><p>\u041F\u0440\u0438\u0451\u043C \u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u043E\xA0\u0437\u0430\u043F\u0438\u0441\u0438 \u043F\u043E\xA0\u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0443 <a href=\"tel:+74154221031\">8(41542) 21\u20130-31</a> </p>",
-    hrefValue: '#'
-  }
-}, {
-  coordinates: [37.63, 55.72],
-  types: ['office'],
-  id: 'element-7',
-  htmlContent: {
-    title: 'Выездное обслуживание',
-    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p>",
-    hrefValue: '#'
-  }
-}, {
-  coordinates: [37.64, 55.73],
-  types: ['road'],
-  id: 'element-6',
-  htmlContent: {
-    title: 'Выездное обслуживание',
-    body: "<p>\u0426\u0435\u043D\u0442\u0440 \u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0443\u0441\u043B\u0443\u0433 \u0412\u044B\u0435\u0437\u0434\u043D\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435</p><p>2 \u0440\u0430\u0437\u0430 \u0432 \u043C\u0435\u0441\u044F\u0446 (\u043A\u0430\u0436\u0434\u0443\u044E 2-\u044E \u0438 4-\u044E \u0441\u0440\u0435\u0434\u0443 \u043C\u0435\u0441\u044F\u0446\u0430) \u0441 10:00 \u0434\u043E 14:00</p><p>\u0412 \u0437\u0434\u0430\u043D\u0438\u0438 \u0430\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043F\u043E \u0443\u043B. \u041B\u0435\u043D\u0438\u043D\u0441\u043A\u0430\u044F \u0434. 36, 1-\u0439 \u044D\u0442\u0430\u0436, \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438</p>",
-    hrefValue: '#'
-  }
-}];
-var advanceMapSettings = {
-  location: {
-    center: [37.65080999999997, 55.758412068983525],
-    zoom: 12
-  }
-};
-var baseMapSettings = {
-  location: {
-    center: [37.65080999999997, 55.758412068983525],
-    zoom: 12
-  }
-};
-
-/***/ }),
-
 /***/ "./src/js/project/map/_map.js":
 /*!************************************!*\
   !*** ./src/js/project/map/_map.js ***!
@@ -788,8 +687,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ymaps3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ymaps3 */ "ymaps3");
 /* harmony import */ var _styles_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_styles.json */ "./src/js/project/map/_styles.json");
 /* harmony import */ var _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/_geolocation.js */ "./src/js/project/map/utils/_geolocation.js");
-/* harmony import */ var _utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/_handlers.js */ "./src/js/project/map/utils/_handlers.js");
-/* harmony import */ var _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/map-data.json */ "./src/assets/map-data.json");
+/* harmony import */ var _utils_create_pin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/_create-pin.js */ "./src/js/project/map/utils/_create-pin.js");
+/* harmony import */ var _utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/_handlers.js */ "./src/js/project/map/utils/_handlers.js");
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([ymaps3__WEBPACK_IMPORTED_MODULE_0__]);
 ymaps3__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -801,24 +700,185 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
-fetch('assets/map-data.json').then(function (response) {
-  if (!response.ok) {
-    throw new Error('Сет не в порядке');
+function initMap(_x, _x2, _x3, _x4) {
+  return _initMap.apply(this, arguments);
+}
+function _initMap() {
+  _initMap = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(mapElement, isBaseMap, pins, settings) {
+    var YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker, _yield$ymaps3$import, YMapZoomControl, YMapGeolocationControl, map, controls, filterButtons, nearButton, allCloseButtons, allMarkerButtons;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return ymaps3__WEBPACK_IMPORTED_MODULE_0__.ready;
+        case 2:
+          _context2.next = 4;
+          return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"].registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@0.0.2', '@yandex/ymaps3-controls@0.0.1');
+        case 4:
+          YMap = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMap, YMapDefaultSchemeLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultFeaturesLayer, YMapControls = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapControls, YMapMarker = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapMarker;
+          _context2.next = 7;
+          return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"]('@yandex/ymaps3-default-ui-theme');
+        case 7:
+          _yield$ymaps3$import = _context2.sent;
+          YMapZoomControl = _yield$ymaps3$import.YMapZoomControl;
+          YMapGeolocationControl = _yield$ymaps3$import.YMapGeolocationControl;
+          // создание карты
+          map = new YMap(mapElement, settings);
+          map.addChild(new YMapDefaultFeaturesLayer({}));
+          if (!isBaseMap) {
+            controls = new YMapControls({
+              position: 'right'
+            }); //Добавление кнопок + и 
+            controls.addChild(new YMapZoomControl({}));
+            // Добавление кнопки геолокации
+            controls.addChild(new YMapGeolocationControl({}));
+            map.addChild(controls);
+          }
+          pins.forEach(function (pin) {
+            var wrapper = (0,_utils_create_pin_js__WEBPACK_IMPORTED_MODULE_3__.createPin)(pin);
+
+            // Настройка маркера
+            var marker = new YMapMarker({
+              coordinates: pin.coordinates,
+              mapFollowsOnDrag: true
+            }, wrapper);
+            map.addChild(marker);
+          });
+          filterButtons = document.querySelectorAll('[data-filter-pins]');
+          filterButtons && filterButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+              return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.filterButtonClickHandler)(button);
+            });
+          });
+          nearButton = document.querySelector('[data-near]');
+          nearButton && nearButton.addEventListener('click', function () {
+            return (0,_utils_geolocation_js__WEBPACK_IMPORTED_MODULE_2__.getGeolocation)(pins);
+          });
+          allCloseButtons = document.querySelectorAll('.map-balloon__close'); // обрабатываем клик на крестик в баллуне
+          allCloseButtons && allCloseButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+              return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.balloonCloseButtonClickHandler)(button);
+            });
+          });
+          allMarkerButtons = document.querySelectorAll('.marker__button'); // обрабатываем клик на маркер, открываем баллун
+          allMarkerButtons && allMarkerButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+              return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_4__.markerButtonClickHandler)(button);
+            });
+          });
+
+          // подключаем стили
+          map.addChild(new YMapDefaultSchemeLayer({
+            customization: _styles_json__WEBPACK_IMPORTED_MODULE_1__
+          }));
+        case 23:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2);
+  }));
+  return _initMap.apply(this, arguments);
+}
+;
+function getData(_x5) {
+  return _getData.apply(this, arguments);
+}
+function _getData() {
+  _getData = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(url) {
+    var response, data, pins, settings;
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.prev = 0;
+          _context3.next = 3;
+          return fetch(url);
+        case 3:
+          response = _context3.sent;
+          if (response.ok) {
+            _context3.next = 6;
+            break;
+          }
+          throw new Error('Network Error');
+        case 6:
+          _context3.next = 8;
+          return response.json();
+        case 8:
+          data = _context3.sent;
+          pins = data.pins;
+          settings = data.mapSettings;
+          return _context3.abrupt("return", {
+            pins: pins,
+            settings: settings
+          });
+        case 14:
+          _context3.prev = 14;
+          _context3.t0 = _context3["catch"](0);
+          console.error('Ошибка:', _context3.t0);
+          return _context3.abrupt("return", {
+            pins: [],
+            settings: {}
+          });
+        case 18:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3, null, [[0, 14]]);
+  }));
+  return _getData.apply(this, arguments);
+}
+(function () {
+  var mapElement = document.querySelector('[data-map]');
+  if (mapElement) {
+    var isBaseMap = mapElement.getAttribute('data-map') === 'base';
+    var urlFile = mapElement.getAttribute('data-url-file');
+    var init = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var data;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return getData(urlFile);
+            case 3:
+              data = _context.sent;
+              initMap(mapElement, isBaseMap, data.pins, data.settings);
+              _context.next = 10;
+              break;
+            case 7:
+              _context.prev = 7;
+              _context.t0 = _context["catch"](0);
+              console.log('Ошибка:', _context.t0);
+            case 10:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[0, 7]]);
+      }));
+      return function init() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+    init();
   }
-  return response.json();
-}).then(function (res) {
-  _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__ = res;
-  console.log(res); // Здесь вы можете использовать загруженные данные
-})["catch"](function (error) {
-  console.error('Ошибка:', error);
-});
-var pins = _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__.advancePins;
-var defaultPins = _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__.defaultPins;
-var advanceMapSettings = _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__.advanceMapSettings;
-var baseMapSettings = _assets_map_data_json__WEBPACK_IMPORTED_MODULE_4__.baseMapSettings;
-var getArrayPins = function getArrayPins(isBaseMap) {
-  return isBaseMap ? defaultPins : pins;
-};
+})();
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ "./src/js/project/map/utils/_create-pin.js":
+/*!*************************************************!*\
+  !*** ./src/js/project/map/utils/_create-pin.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createPin: () => (/* binding */ createPin)
+/* harmony export */ });
+/* harmony import */ var _handlers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_handlers.js */ "./src/js/project/map/utils/_handlers.js");
+
 function createPin(pin) {
   var wrapper = document.createElement('div');
   wrapper.className = 'marker';
@@ -828,7 +888,7 @@ function createPin(pin) {
   if (pin.htmlContent) {
     markerButton = document.createElement('button');
     markerButton.setAttribute('aria-haspopup', 'true');
-    (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.markerButtonNowCloseA11y)(markerButton);
+    (0,_handlers_js__WEBPACK_IMPORTED_MODULE_0__.markerButtonNowCloseA11y)(markerButton);
     markerButton.setAttribute('aria-controls', pin.id);
     balloonWrapper = document.createElement('div');
     balloonWrapper.innerHTML = "<div class=\"map-balloon map-balloon--hidden\" role=\"tooltip\" id=\"".concat(pin.id, "\">\n    <div class=\"map-balloon__header\">\n        <span class=\"map-balloon__title\">\n            ").concat(pin.htmlContent.title, "\n        </span>\n        <button class=\"map-balloon__close\" type=\"button\" aria-label=\"\u0417\u0430\u043A\u0440\u044B\u0442\u044C\"></button>\n    </div>\n    <div class=\"map-balloon__body\">\n        ").concat(pin.htmlContent.body, "\n    </div>\n    <a class=\"map-balloon__button button button--fill\" href=\"").concat(pin.htmlContent.hrefValue, "\">\n        \u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F\n    </a>\n</div>");
@@ -844,92 +904,6 @@ function createPin(pin) {
   });
   return wrapper;
 }
-(function () {
-  var mapElement = document.querySelector('[data-map]');
-  if (mapElement) {
-    var initMap = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls, YMapMarker, _yield$ymaps3$import, YMapZoomControl, YMapGeolocationControl, map, controls, filterButtons, nearButton, allCloseButtons, allMarkerButtons;
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return ymaps3__WEBPACK_IMPORTED_MODULE_0__.ready;
-            case 2:
-              _context.next = 4;
-              return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"].registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@0.0.2', '@yandex/ymaps3-controls@0.0.1');
-            case 4:
-              YMap = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMap, YMapDefaultSchemeLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapDefaultFeaturesLayer, YMapControls = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapControls, YMapMarker = ymaps3__WEBPACK_IMPORTED_MODULE_0__.YMapMarker;
-              _context.next = 7;
-              return ymaps3__WEBPACK_IMPORTED_MODULE_0__["import"]('@yandex/ymaps3-default-ui-theme');
-            case 7:
-              _yield$ymaps3$import = _context.sent;
-              YMapZoomControl = _yield$ymaps3$import.YMapZoomControl;
-              YMapGeolocationControl = _yield$ymaps3$import.YMapGeolocationControl;
-              // создание карты
-              map = new YMap(mapElement, isBaseMap ? baseMapSettings : advanceMapSettings);
-              map.addChild(new YMapDefaultFeaturesLayer({}));
-              if (!isBaseMap) {
-                controls = new YMapControls({
-                  position: 'right'
-                }); //Добавление кнопок + и 
-                controls.addChild(new YMapZoomControl({}));
-                // Добавление кнопки геолокации
-                controls.addChild(new YMapGeolocationControl({}));
-                map.addChild(controls);
-              }
-              getArrayPins(isBaseMap).forEach(function (pin) {
-                var wrapper = createPin(pin);
-
-                // Настройка маркера
-                var marker = new YMapMarker({
-                  coordinates: pin.coordinates,
-                  mapFollowsOnDrag: true
-                }, wrapper);
-                map.addChild(marker);
-              });
-              filterButtons = document.querySelectorAll('[data-filter-pins]');
-              filterButtons && filterButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.filterButtonClickHandler)(button);
-                });
-              });
-              nearButton = document.querySelector('[data-near]');
-              nearButton && nearButton.addEventListener('click', _utils_geolocation_js__WEBPACK_IMPORTED_MODULE_2__.getGeolocation);
-              allCloseButtons = document.querySelectorAll('.map-balloon__close'); // обрабатываем клик на крестик в баллуне
-              allCloseButtons && allCloseButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.balloonCloseButtonClickHandler)(button);
-                });
-              });
-              allMarkerButtons = document.querySelectorAll('.marker__button'); // обрабатываем клик на маркер, открываем баллун
-              allMarkerButtons && allMarkerButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                  return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.markerButtonClickHandler)(button);
-                });
-              });
-
-              // подключаем стили
-              map.addChild(new YMapDefaultSchemeLayer({
-                customization: _styles_json__WEBPACK_IMPORTED_MODULE_1__
-              }));
-            case 23:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee);
-      }));
-      return function initMap() {
-        return _ref.apply(this, arguments);
-      };
-    }();
-    var isBaseMap = mapElement.getAttribute('data-map') === 'base';
-    ;
-    initMap();
-  }
-})();
-__webpack_async_result__();
-} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -943,9 +917,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getGeolocation: () => (/* binding */ getGeolocation)
 /* harmony export */ });
-/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_data.js */ "./src/js/project/map/_data.js");
-/* harmony import */ var _handlers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_handlers.js */ "./src/js/project/map/utils/_handlers.js");
-
+/* harmony import */ var _handlers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_handlers.js */ "./src/js/project/map/utils/_handlers.js");
 
 function haversineDistance(coord1, coord2) {
   var R = 6371; // Радиус Земли в километрах
@@ -956,7 +928,7 @@ function haversineDistance(coord1, coord2) {
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return R * c; // Возвращаем расстояние в километрах
 }
-function getGeolocation() {
+function getGeolocation(pins) {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(function (position) {
       var userCoords = [position.coords.latitude, position.coords.longitude];
@@ -964,7 +936,7 @@ function getGeolocation() {
       var closestDistance = Infinity;
 
       // Ищем ближайший объект
-      (0,_data_js__WEBPACK_IMPORTED_MODULE_0__.getArrayPins)(false).forEach(function (pin) {
+      pins.forEach(function (pin) {
         var distance = haversineDistance(userCoords, pin.coordinates);
         if (distance < closestDistance) {
           closestDistance = distance;
@@ -974,12 +946,12 @@ function getGeolocation() {
       var wrappers = document.querySelectorAll('.marker');
       wrappers.forEach(function (wrapper) {
         wrapper.classList.add('marker--hidden');
-        (0,_handlers_js__WEBPACK_IMPORTED_MODULE_1__.checkMarkerA11yByWrapperClass)(wrapper);
+        (0,_handlers_js__WEBPACK_IMPORTED_MODULE_0__.checkMarkerA11yByWrapperClass)(wrapper);
       });
       var balloon = document.getElementById(closestPin.id);
       var wrapper = balloon.closest('.marker');
       wrapper.classList.remove('marker--hidden');
-      (0,_handlers_js__WEBPACK_IMPORTED_MODULE_1__.checkMarkerA11yByWrapperClass)(wrapper);
+      (0,_handlers_js__WEBPACK_IMPORTED_MODULE_0__.checkMarkerA11yByWrapperClass)(wrapper);
     }, function (error) {
       console.error("Ошибка получения местоположения: " + error.message);
     });
@@ -17162,16 +17134,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-/***/ }),
-
-/***/ "./src/assets/map-data.json":
-/*!**********************************!*\
-  !*** ./src/assets/map-data.json ***!
-  \**********************************/
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"defaultPins":[{"coordinates":[37.65,55.75],"types":["work","office"],"id":"element-1"}],"advancePins":[{"coordinates":[37.65,55.75],"types":["work","office"],"id":"element-1","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.66,55.76],"types":["road"],"id":"element-2","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.67,55.77],"types":["office"],"id":"element-3","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.66,55.76],"types":["work"],"id":"element-4","htmlContent":{"title":"Выездное обслуживание","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p>","hrefValue":"#"}},{"coordinates":[37.65,55.74],"types":["work"],"id":"element-5","htmlContent":{"title":"Выездное обслуживание (Анавгай)","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p><p>Приём осуществляется по записи по телефону <a href=\\"tel:+74154221031\\">8(41542) 21–0-31</a></p>","hrefValue":"#"}},{"coordinates":[37.63,55.72],"types":["office"],"id":"element-7","htmlContent":{"title":"Выездное обслуживание","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p>","hrefValue":"#"}},{"coordinates":[37.64,55.73],"types":["road"],"id":"element-6","htmlContent":{"title":"Выездное обслуживание","body":"<p>Центр оказания услуг Выездное обслуживание</p><p>2 раза в месяц (каждую 2-ю и 4-ю среду месяца) с 10:00 до 14:00</p><p>В здании администрации по ул. Ленинская д. 36, 1-й этаж, помещение библиотеки</p>","hrefValue":"#"}}],"advanceMapSettings":{"location":{"center":[37.65080999999997,55.758412068983525],"zoom":12}},"baseMapSettings":{"location":{"center":[37.65080999999997,55.758412068983525],"zoom":12}}}');
 
 /***/ }),
 

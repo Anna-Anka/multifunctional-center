@@ -1,12 +1,5 @@
 {
-	"defaultPins": [
-		{
-			"coordinates": [37.65, 55.75],
-			"types": ["work", "office"],
-			"id": "element-1"
-		}
-	],
-	"advancePins": [
+	"pins": [
 		{
 			"coordinates": [37.65, 55.75],
 			"types": ["work", "office"],
@@ -78,13 +71,7 @@
 			}
 		}
 	],
-	"advanceMapSettings": {
-		"location": {
-			"center": [37.65080999999997, 55.758412068983525],
-			"zoom": 12
-		}
-	},
-	"baseMapSettings": {
+	"mapSettings": {
 		"location": {
 			"center": [37.65080999999997, 55.758412068983525],
 			"zoom": 12
