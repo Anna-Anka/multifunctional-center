@@ -657,13 +657,9 @@ label {
   background-image: url("../img/icons/arrow.svg");
   -webkit-filter: invert(46%) sepia(49%) saturate(5737%) hue-rotate(337deg) brightness(94%) contrast(99%);
   filter: invert(46%) sepia(49%) saturate(5737%) hue-rotate(337deg) brightness(94%) contrast(99%);
-  -webkit-transform: rotate(-180deg) translateY(50%);
-  -ms-transform: rotate(-180deg) translateY(50%);
-  transform: rotate(-180deg) translateY(50%);
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .choices[data-type*=select-one].is-open::after {
@@ -5069,12 +5065,6 @@ body {
   width: 100%;
   height: 2px;
   background-color: var(--color-red-500);
-}
-
-.select__choice {
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
 }
 
 .overlay {
