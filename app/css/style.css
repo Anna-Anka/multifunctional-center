@@ -7795,7 +7795,7 @@ body {
 }
 
 .news-block {
-  padding: 64px 0 54px;
+  padding-bottom: 54px;
 }
 
 .news-block__wrapper {
@@ -9833,7 +9833,7 @@ body {
   }
 
   .news-block {
-    padding: 40px 0 50px;
+    padding-bottom: 50px;
   }
 
   .news-block__wrapper {
@@ -10248,7 +10248,7 @@ body {
   }
 
   .news-block {
-    padding: 24px 0 44px;
+    padding-bottom: 44px;
   }
 
   .news-block__wrapper:not(:last-child) {

@@ -1,12 +1,12 @@
 .news-block {
-	padding: 64px 0 54px;
+	padding-bottom: 54px;
 
 	@include mq(lg) {
-		padding: 40px 0 50px;
+		padding-bottom: 50px;
 	}
 
 	@include mq(md) {
-		padding: 24px 0 44px;
+		padding-bottom: 44px;
 	}
 
 	&__wrapper {
