@@ -1,6 +1,9 @@
 .pagination {
 	@include flex-simple(8px);
 
+	overflow-x: auto;
+	padding-bottom: 8px;
+
 	&__item {
 		&--prev,
 		&--next {
