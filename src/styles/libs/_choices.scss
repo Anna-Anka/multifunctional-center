@@ -113,7 +113,7 @@
 			background-image: url('../img/icons/arrow.svg');
 			filter: invert(46%) sepia(49%) saturate(5737%) hue-rotate(337deg)
 				brightness(94%) contrast(99%);
-			transform: translateY(-50%);
+			transform: rotate(-180deg) translateY(50%);
 		}
 	}
 
