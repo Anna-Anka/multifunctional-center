@@ -38,7 +38,7 @@ export function createPin(pin) {
     wrapper.append(markerButton)
     balloonWrapper && wrapper.append(balloonWrapper)
 
-    pin.types.forEach((type) => {
+    pin.types?.forEach((type) => {
         wrapper.setAttribute(`data-${type}`, 'true')
     })
 
