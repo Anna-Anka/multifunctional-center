@@ -1,8 +1,9 @@
-<section class="search-page__wrapper container page">
-    <h1 class="page__title">
-        Результаты поиска по сайту
-    </h1>
-    <!-- <ul class="documents-block">
+<section class="search-page__wrapper page">
+    <div class="container">
+        <h1 class="page__title">
+            Результаты поиска по сайту
+        </h1>
+        <!-- <ul class="documents-block">
         <li class="documents-block__item">
             <a href="#">
                 Распоряжение Правительства Камчатского края от 29 января 2010 г. N 43-РП
@@ -20,21 +21,21 @@
             </a>
         </li>
     </ul> -->
-    <ul>
-        <li>
-            @include('../../components/cards/_search-item-card.html', {
-            'title': 'Водительские права',
-            'items': ['Главная', 'Услуги', 'Транспорт']
-            })
-        </li>
-        <li>
-            @include('../../components/cards/_search-item-card.html', {
-            'title': 'Как получить или заменить водительские права',
-            'items': ['Главная', 'Популярные вопросы', 'Транспорт']
-            })
-        </li>
-    </ul>
-    <!-- <div class="search-page__not">
+        <ul>
+            <li>
+                @include('../../components/cards/_search-item-card.html', {
+                'title': 'Водительские права',
+                'items': ['Главная', 'Услуги', 'Транспорт']
+                })
+            </li>
+            <li>
+                @include('../../components/cards/_search-item-card.html', {
+                'title': 'Как получить или заменить водительские права',
+                'items': ['Главная', 'Популярные вопросы', 'Транспорт']
+                })
+            </li>
+        </ul>
+        <!-- <div class="search-page__not">
         <picture>
             <source srcset="img/search-page/not-found.avif 1x, img/search-page/not-found@2x.avif 2x" type="image/avif">
             <source srcset="img/search-page/not-found.webp 1x, img/search-page/not-found@2x.webp 2x" type="image/webp">
@@ -43,4 +44,5 @@
         <span class="search-page__subtitle">Ничего не найдено</span>
         <span class="search-page__text">Проверьте, нет ли ошибок в запросе</span>
     </div> -->
+    </div>
 </section>

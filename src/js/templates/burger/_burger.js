@@ -17,11 +17,11 @@ import { disableScroll, enableScroll } from '../../utils/index.js';
             disableScroll();
 
             if (baseMenu.classList.contains('menu__base--hidden')) {
-                profileButton.setAttribute('aria-label', 'Закрыть меню профиля')
-                profileButton.setAttribute('aria-expanded', 'true');
+                profileButton?.setAttribute('aria-label', 'Закрыть меню профиля')
+                profileButton?.setAttribute('aria-expanded', 'true');
             } else {
-                profileButton.setAttribute('aria-label', 'Открыть меню профиля')
-                profileButton.setAttribute('aria-expanded', 'false');
+                profileButton?.setAttribute('aria-label', 'Открыть меню профиля')
+                profileButton?.setAttribute('aria-expanded', 'false');
             }
         } else {
             document.removeEventListener('keydown', keyHandler);
