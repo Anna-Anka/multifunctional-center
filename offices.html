@@ -567,28 +567,56 @@
                 </select>
             </div>
         </div>
-        <div class="offices-page__links">
-            <button class="office-link office-link--map" data-filter-pins="office" type="button">
-                Центр оказания услуг
-            </button>
-            <button class="office-link office-link--car" data-filter-pins="road" type="button">
-                Выездное обслуживание
-            </button>
-        </div>
-        <div class="offices-page__buttons">
-            <button class="offices-page__button button button--secondary" data-filter-pins="work" type="button">
-                Сейчас работает
-            </button>
-            <button class="offices-page__button button button--secondary" data-near type="button">
-                Рядом
-            </button>
-        </div>
-        <div class="offices-page__map">
-            <!-- 
-            data-map="advance" — для страницы со всеми офисами 
-            data-map="base" — для страницы с одним офисом
-            -->
-            <div data-map="advance" data-url-file="assets/offices-map-data.json"></div>
+
+        <div class="tabs" data-tabs="offices-page">
+            <ul class="tabs__nav">
+                <li class="tabs__nav-item">
+                    <button class="tabs__nav-btn button button--secondary" type="button">
+                        На карте
+                    </button>
+                </li>
+                <li class="tabs__nav-item">
+                    <button class="tabs__nav-btn button button--secondary" type="button">
+                        Списком
+                    </button>
+                </li>
+            </ul>
+            <div class="tabs__content">
+                <div class="tabs__panel">
+                    <div class="offices-page__links">
+                        <button class="office-link office-link--map" data-filter-pins="office" type="button">
+                            Центр оказания услуг
+                        </button>
+                        <button class="office-link office-link--car" data-filter-pins="road" type="button">
+                            Выездное обслуживание
+                        </button>
+                        <button class="office-link office-link--near" type="button" data-near>
+                            Рядом
+                        </button>
+                    </div>
+
+                    <div class="offices-page__map">
+                        <!-- 
+                            data-map="advance" — для страницы со всеми офисами 
+                            data-map="base" — для страницы с одним офисом
+                        -->
+                        <div data-map="advance" data-url-file="assets/offices-map-data.json"></div>
+                    </div>
+                </div>
+                <div class="tabs__panel">
+                    <ul class="offices-page__list offices-page__list--active">
+                        <li class="offices-page__item">
+                            <a href="#">Быстринское отделение</a>
+                        </li>
+                        <li class="offices-page__item">
+                            <a href="#">Быстринское отделение</a>
+                        </li>
+                        <li class="offices-page__item">
+                            <a href="#">Быстринское отделение</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>
