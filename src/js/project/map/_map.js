@@ -1,11 +1,44 @@
-import * as ymaps3 from 'ymaps3';
+const ymaps3 = window.ymaps3;
+
 import styles from './_styles.json';
 import { getGeolocation } from './utils/_geolocation.js'
 import { createPin } from './utils/_create-pin.js'
 import { filterButtonClickHandler, balloonCloseButtonClickHandler, markerButtonClickHandler } from './utils/_handlers.js';
 
 
+function loadYmaps3(apiKey, lang = 'ru_RU') {
+    return new Promise((resolve, reject) => {
+        if (window.ymaps3) {
+            resolve(window.ymaps3); // уже загружен
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = `https://api-maps.yandex.ru/v3/?apikey=${apiKey}&lang=${lang}`;
+        script.async = true;
+        script.onload = () => {
+            if (window.ymaps3) {
+                resolve(window.ymaps3);
+            } else {
+                reject(new Error('ymaps3 не инициализировался после загрузки скрипта'));
+            }
+        };
+        script.onerror = () => reject(new Error('Не удалось загрузить ymaps3'));
+
+        document.head.appendChild(script);
+    });
+}
+
+
 async function initMap(mapElement, isBaseMap, pins, settings) {
+    const apiKey = document.getElementById('ymaps3-loader')?.dataset?.apiKey;
+
+    if (!apiKey) {
+        throw new Error('API ключ для Yandex Maps не найден. Убедись, что он передан в HTML.');
+    }
+
+    const ymaps3 = await loadYmaps3(apiKey);
+
     await ymaps3.ready;
     await ymaps3.import.registerCdn(
         'https://cdn.jsdelivr.net/npm/{package}',

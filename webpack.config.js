@@ -9,12 +9,6 @@ export default {
         publicPath: '/',
     },
 
-    externalsType: 'script',
-
-    externals: {
-        ymaps3: ['https://api-maps.yandex.ru/v3/?apikey=5e824dbc-8855-473a-8c31-de0cc93c4481&lang=ru_RU', 'ymaps3']
-    },
-
     devtool: 'cheap-source-map',
 
     optimization: {
