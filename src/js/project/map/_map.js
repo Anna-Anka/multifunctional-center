@@ -83,7 +83,7 @@ async function getData(url) {
         const pins = data.pins
         const settings = data.mapSettings
 
-        return {pins, settings}
+        return { pins, settings }
     }
 
     catch (error) {

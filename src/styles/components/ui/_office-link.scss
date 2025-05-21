@@ -6,12 +6,17 @@
 	font-family: var(--font-secondary);
 	font-weight: 700;
 	font-size: 14px;
-	text-decoration: underline;
-	color: var(--color-red-500);
 	transition:
 		box-shadow 0.3s,
 		border-radius 0.3s,
-		opacity 0.3s;
+		opacity 0.3s,
+		color 0.3s;
+
+	&--active {
+		color: var(--color-red-500);
+		filter: invert(39%) sepia(97%) saturate(2430%) hue-rotate(342deg)
+			brightness(98%) contrast(90%);
+	}
 
 	@media (any-hover: hover) {
 		&:hover {
@@ -28,14 +33,21 @@
 		top: 50%;
 		width: 24px;
 		height: 24px;
-		filter: invert(39%) sepia(97%) saturate(2430%) hue-rotate(342deg)
-			brightness(98%) contrast(90%);
+		filter: invert(22%) sepia(20%) saturate(1366%) hue-rotate(333deg)
+			brightness(97%) contrast(87%);
 		transform: translateY(-50%);
+		transition: filter 0.3s;
 	}
 
 	&--car {
 		&::before {
 			background-image: url('../img/icons/car.svg');
+		}
+	}
+
+	&--near {
+		&::before {
+			background-image: url('../img/icons/pin-line.svg');
 		}
 	}
 

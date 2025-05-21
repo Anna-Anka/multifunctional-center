@@ -7,6 +7,26 @@
 		}
 	}
 
+	.tabs {
+		&__nav {
+			@include flex-simple(8px);
+
+			margin-bottom: 32px;
+		}
+
+		&__nav-btn {
+			border-color: var(--color-brown-600);
+			font-weight: 400;
+			color: var(--color-brown-600);
+
+			&--active {
+				border-color: var(--color-red-500);
+				color: var(--color-red-500);
+				background-color: var(--color-red-100);
+			}
+		}
+	}
+
 	&__links {
 		@include flex-simple(16px 24px);
 
@@ -18,26 +38,21 @@
 		}
 	}
 
-	&__buttons {
-		@include flex-simple(8px);
-
-		flex-wrap: wrap;
-		margin-bottom: 32px;
-	}
-
-	&__button {
-		border-color: var(--color-red-500);
-
-		&--active {
-			color: var(--color-red-500);
-			background-color: var(--color-red-100);
-		}
-	}
-
 	&__map {
 		@include map;
 
 		width: 100%;
 		height: 415px;
+	}
+
+	&__item {
+		border-bottom: 1px solid var(--color-grey-350);
+		padding: 16px 0;
+
+		a {
+			@include color-effects;
+
+			font-weight: 700;
+		}
 	}
 }

@@ -26,7 +26,7 @@ export function createPin(pin) {
         ${pin.htmlContent.body}
     </div>
     <a class="map-balloon__button button button--fill" href="${pin.htmlContent.hrefValue}">
-        Записаться
+        Подробнее
     </a>
 </div>`;
     } else {

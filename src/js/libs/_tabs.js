@@ -15,3 +15,7 @@ if (document.querySelector('[data-tabs="documents-page"]')) {
 if (document.querySelector('[data-tabs="appointments-page"]')) {
     new GraphTabs('appointments-page');
 }
+
+if (document.querySelector('[data-tabs="offices-page"]')) {
+    new GraphTabs('offices-page');
+}

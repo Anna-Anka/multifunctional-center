@@ -4,6 +4,11 @@
 		margin-bottom: 24px;
 		padding: 2px 2px 8px;
 		gap: 8px;
+
+		&--column {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 
 	&__nav-btn {
