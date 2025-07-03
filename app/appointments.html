@@ -38,6 +38,9 @@
 <body class="body">
     <div class="wrapper wrapper--@wrapperClass">
 
+<div class="preloader-wrap">
+  <span class="preloader"></span>
+</div>
 <header class="header">
     <div class="header__container">
         <div class="header__wrapper">
@@ -685,7 +688,7 @@
                                     </div>
                                     <div>
                                         <label class="form__label" for="date-of-birth">Дата рождения</label>
-                                        <input class="form__field" id="date-of-birth" name="date-of-birth" type="date">
+                                        <input class="form__field" id="date-of-birth" name="date-of-birth" type="text" readonly data-air-datepicker>
                                     </div>
                                     <div>
                                         <label class="form__label" for="phone">Телефон</label>
@@ -697,7 +700,7 @@
                                     </div>
                                     <div>
                                         <label class="form__label" for="date">Дата</label>
-                                        <input class="form__field" id="date" name="date" type="date">
+                                        <input class="form__field" id="date" name="date" type="text" readonly data-air-datepicker data-days="03.07.2025,05.07.2025,10.07.2025">
                                     </div>
                                     <div>
                                         <label class="form__label" for="time">

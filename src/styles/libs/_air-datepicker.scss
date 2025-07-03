@@ -1,0 +1,22 @@
+[data-air-datepicker] {
+    cursor: pointer;
+}
+
+.air-datepicker { 
+    --adp-accent-color: #ef5238;
+    --adp-cell-background-color-selected:#ef5238;
+    --adp-cell-background-color-selected-hover: #dd3e24;
+}
+
+.air-datepicker-cell {
+    font-weight: 500;
+}
+
+.air-datepicker-cell.-disabled- {
+    pointer-events: none;
+}
+
+.air-datepicker-cell.-focus- {
+    background: transparent;
+    border: 1px solid var(--color-red-800);
+}

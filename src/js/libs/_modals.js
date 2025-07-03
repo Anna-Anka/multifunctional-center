@@ -5,7 +5,7 @@ new GraphModal();
 (function () {
 
     const graphModal = new GraphModal();
-    graphModal.init();
+    // graphModal.init();
     window.graphModal = graphModal
 
     const buttons = document.querySelectorAll('.btn-thanks [data-graph-path]')

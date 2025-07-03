@@ -1,7 +1,7 @@
 import Choices from 'choices.js'
 
-(function () {
-    const selects = document.querySelectorAll('[data-choice]');
+function initChoices(){
+        const selects = document.querySelectorAll('[data-choice]');
 
     if (selects) {
         selects.forEach((select) => {
@@ -14,4 +14,8 @@ import Choices from 'choices.js'
             });
         });
     }
-})();
+}
+
+initChoices();
+
+window.initChoices = initChoices;
