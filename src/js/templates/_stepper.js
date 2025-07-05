@@ -1,36 +1,76 @@
-(function() {
-    if (document.querySelector('.stepper')) {
-        const stepper = document.querySelector('.stepper');
-        const stepperInput = stepper.querySelector('.stepper__input');
-        const stepperBtnUp = stepper.querySelector('.stepper__btn--up');
-        const stepperBtnDown = stepper.querySelector('.stepper__btn--down');
+function counter() {
+  const counters = document.querySelectorAll('.stepper');
 
-        let count = stepperInput.value;
+  counters.forEach((counter) => {
+    const counterMin = parseInt(counter.getAttribute('data-stepper-min'), 10);
+    const counterMax = parseInt(counter.getAttribute('data-stepper-max'), 10);
+    const counterMinus = counter.querySelector('.stepper__btn--down');
+    const counterPlus = counter.querySelector('.stepper__btn--up');
+    const counterInput = counter.querySelector('input');
 
-        stepperInput.addEventListener('change', (e) => {
-            const self = e.currentTarget;
+    counterInput.addEventListener('input', () => {
+      const counterInput = counter.querySelector('input');
+      let counterInputValue = parseInt(`${counterInput.value}`, 10);
 
-            if (!self.value) {
-                self.value = 1;
-            }
+      if (counterInputValue > counterMax) {
+        counterInputValue = counterMax;
+        counterInput.value = counterMax;
+      }
 
-            count = stepperInput.value;
-        });
+      if (counterInputValue === counterMin) {
+        counterMinus.disabled = true;
+      } else {
+        counterMinus.disabled = false;
+      }
 
-        stepperBtnUp.addEventListener('click', (e) => {
-            e.preventDefault();
+      if (counterInputValue === counterMax) {
+        counterPlus.disabled = true;
+      } else {
+        counterPlus.disabled = false;
+      }
+    });
 
-            count++;
+    counterMinus.addEventListener('click', () => {
+      const counterInput = counter.querySelector('input');
+      let counterInputValue = parseInt(`${counterInput.value}`, 10);
 
-            stepperInput.value = count;
-        });
+      counterInput.value = --counterInputValue;
 
-        stepperBtnDown.addEventListener('click', (e) => {
-            e.preventDefault();
+      if (counterInputValue === counterMin) {
+        counterMinus.disabled = true;
+      } else {
+        counterMinus.disabled = false;
+      }
 
-            count--;
+      if (counterInputValue === counterMax) {
+        counterPlus.disabled = true;
+      } else {
+        counterPlus.disabled = false;
+      }
+    });
 
-            stepperInput.value = count;
-        });
-    }
-})()
+    counterPlus.addEventListener('click', () => {
+      const counterInput = counter.querySelector('input');
+      let counterInputValue = parseInt(`${counterInput.value}`, 10);
+
+      counterInput.value = ++counterInputValue;
+
+      if (counterInputValue === counterMin) {
+        counterMinus.disabled = true;
+      } else {
+        counterMinus.disabled = false;
+      }
+
+      if (counterInputValue === counterMax) {
+        counterPlus.disabled = true;
+      } else {
+        counterPlus.disabled = false;
+      }
+    });
+  });
+}
+
+counter();
+
+
+window.counter = counter;
