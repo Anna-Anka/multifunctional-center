@@ -17475,24 +17475,24 @@ var ymaps3 = window.ymaps3;
 
 
 function loadYmaps3(apiKey) {
-  var lang = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ru_RU';
+  var lang = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "ru_RU";
   return new Promise(function (resolve, reject) {
     if (window.ymaps3) {
       resolve(window.ymaps3); // уже загружен
       return;
     }
-    var script = document.createElement('script');
+    var script = document.createElement("script");
     script.src = "https://api-maps.yandex.ru/v3/?apikey=".concat(apiKey, "&lang=").concat(lang);
     script.async = true;
     script.onload = function () {
       if (window.ymaps3) {
         resolve(window.ymaps3);
       } else {
-        reject(new Error('ymaps3 не инициализировался после загрузки скрипта'));
+        reject(new Error("ymaps3 не инициализировался после загрузки скрипта"));
       }
     };
     script.onerror = function () {
-      return reject(new Error('Не удалось загрузить ymaps3'));
+      return reject(new Error("Не удалось загрузить ymaps3"));
     };
     document.head.appendChild(script);
   });
@@ -17507,12 +17507,12 @@ function _initMap() {
     return _regenerator().w(function (_context2) {
       while (1) switch (_context2.n) {
         case 0:
-          apiKey = (_document$getElementB = document.getElementById('ymaps3-loader')) === null || _document$getElementB === void 0 || (_document$getElementB = _document$getElementB.dataset) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.apiKey;
+          apiKey = (_document$getElementB = document.getElementById("ymaps3-loader")) === null || _document$getElementB === void 0 || (_document$getElementB = _document$getElementB.dataset) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.apiKey;
           if (apiKey) {
             _context2.n = 1;
             break;
           }
-          throw new Error('API ключ для Yandex Maps не найден. Убедись, что он передан в HTML.');
+          throw new Error("API ключ для Yandex Maps не найден. Убедись, что он передан в HTML.");
         case 1:
           _context2.n = 2;
           return loadYmaps3(apiKey);
@@ -17522,11 +17522,11 @@ function _initMap() {
           return ymaps3.ready;
         case 3:
           _context2.n = 4;
-          return ymaps3["import"].registerCdn('https://cdn.jsdelivr.net/npm/{package}', '@yandex/ymaps3-default-ui-theme@0.0.2', '@yandex/ymaps3-controls@0.0.1');
+          return ymaps3["import"].registerCdn("https://cdn.jsdelivr.net/npm/{package}", "@yandex/ymaps3-default-ui-theme@0.0.2", "@yandex/ymaps3-controls@0.0.1");
         case 4:
           YMap = ymaps3.YMap, YMapDefaultSchemeLayer = ymaps3.YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer = ymaps3.YMapDefaultFeaturesLayer, YMapControls = ymaps3.YMapControls, YMapMarker = ymaps3.YMapMarker;
           _context2.n = 5;
-          return ymaps3["import"]('@yandex/ymaps3-default-ui-theme');
+          return ymaps3["import"]("@yandex/ymaps3-default-ui-theme");
         case 5:
           _yield$ymaps3$import = _context2.v;
           YMapZoomControl = _yield$ymaps3$import.YMapZoomControl;
@@ -17536,8 +17536,8 @@ function _initMap() {
           map.addChild(new YMapDefaultFeaturesLayer({}));
           if (!isBaseMap) {
             controls = new YMapControls({
-              position: 'right'
-            }); //Добавление кнопок + и 
+              position: "right"
+            }); //Добавление кнопок + и
             controls.addChild(new YMapZoomControl({}));
             // Добавление кнопки геолокации
             controls.addChild(new YMapGeolocationControl({}));
@@ -17553,25 +17553,25 @@ function _initMap() {
             }, wrapper);
             map.addChild(marker);
           });
-          filterButtons = document.querySelectorAll('[data-filter-pins]');
+          filterButtons = document.querySelectorAll("[data-filter-pins]");
           filterButtons && filterButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
+            button.addEventListener("click", function () {
               return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.filterButtonClickHandler)(button);
             });
           });
-          nearButton = document.querySelector('[data-near]');
-          nearButton && nearButton.addEventListener('click', function () {
+          nearButton = document.querySelector("[data-near]");
+          nearButton && nearButton.addEventListener("click", function () {
             return (0,_utils_geolocation_js__WEBPACK_IMPORTED_MODULE_1__.getGeolocation)(pins);
           });
-          allCloseButtons = document.querySelectorAll('.map-balloon__close'); // обрабатываем клик на крестик в баллуне
+          allCloseButtons = document.querySelectorAll(".map-balloon__close"); // обрабатываем клик на крестик в баллуне
           allCloseButtons && allCloseButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
+            button.addEventListener("click", function () {
               return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.balloonCloseButtonClickHandler)(button);
             });
           });
-          allMarkerButtons = document.querySelectorAll('.marker__button'); // обрабатываем клик на маркер, открываем баллун
+          allMarkerButtons = document.querySelectorAll(".marker__button"); // обрабатываем клик на маркер, открываем баллун
           allMarkerButtons && allMarkerButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
+            button.addEventListener("click", function () {
               return (0,_utils_handlers_js__WEBPACK_IMPORTED_MODULE_3__.markerButtonClickHandler)(button);
             });
           });
@@ -17587,7 +17587,6 @@ function _initMap() {
   }));
   return _initMap.apply(this, arguments);
 }
-;
 function getData(_x5) {
   return _getData.apply(this, arguments);
 }
@@ -17606,7 +17605,7 @@ function _getData() {
             _context3.n = 2;
             break;
           }
-          throw new Error('Network Error');
+          throw new Error("Network Error");
         case 2:
           _context3.n = 3;
           return response.json();
@@ -17621,7 +17620,7 @@ function _getData() {
         case 4:
           _context3.p = 4;
           _t2 = _context3.v;
-          console.error('Ошибка:', _t2);
+          console.error("Ошибка:", _t2);
           return _context3.a(2, {
             pins: [],
             settings: {}
@@ -17632,10 +17631,10 @@ function _getData() {
   return _getData.apply(this, arguments);
 }
 (function () {
-  var mapElement = document.querySelector('[data-map]');
+  var mapElement = document.querySelector("[data-map]");
   if (mapElement) {
-    var isBaseMap = mapElement.getAttribute('data-map') === 'base';
-    var urlFile = mapElement.getAttribute('data-url-file');
+    var isBaseMap = mapElement.getAttribute("data-map") === "base";
+    var urlFile = mapElement.getAttribute("data-url-file");
     var init = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
         var data, _t;
@@ -17653,7 +17652,7 @@ function _getData() {
             case 2:
               _context.p = 2;
               _t = _context.v;
-              console.log('Ошибка:', _t);
+              console.log("Ошибка:", _t);
             case 3:
               return _context.a(2);
           }
@@ -17737,43 +17736,64 @@ __webpack_require__.r(__webpack_exports__);
 
 function haversineDistance(coord1, coord2) {
   var R = 6371; // Радиус Земли в километрах
-  var dLat = (coord2[1] - coord1[1]) * Math.PI / 180; // Разница в широте
-  var dLon = (coord2[0] - coord1[0]) * Math.PI / 180; // Разница в долготе
+  var dLat = (coord2[1] - coord1[1]) * Math.PI / 180; // разница широты
+  var dLon = (coord2[0] - coord1[0]) * Math.PI / 180; // разница долготы
 
-  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(coord1[1] * Math.PI / 180) * Math.cos(coord2[1] * Math.PI / 180) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  var a = Math.pow(Math.sin(dLat / 2), 2) + Math.cos(coord1[1] * Math.PI / 180) * Math.cos(coord2[1] * Math.PI / 180) * Math.pow(Math.sin(dLon / 2), 2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c; // Возвращаем расстояние в километрах
+  return R * c; // расстояние в км
 }
 function getGeolocation(pins) {
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      var userCoords = [position.coords.latitude, position.coords.longitude];
-      var closestPin = null;
-      var closestDistance = Infinity;
-
-      // Ищем ближайший объект
-      pins.forEach(function (pin) {
-        var distance = haversineDistance(userCoords, pin.coordinates);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestPin = pin;
-        }
-      });
-      var wrappers = document.querySelectorAll('.marker');
-      wrappers.forEach(function (wrapper) {
-        wrapper.classList.add('marker--hidden');
-        (0,_handlers_js__WEBPACK_IMPORTED_MODULE_0__.checkMarkerA11yByWrapperClass)(wrapper);
-      });
-      var balloon = document.getElementById(closestPin.id);
-      var wrapper = balloon.closest('.marker');
-      wrapper.classList.remove('marker--hidden');
-      (0,_handlers_js__WEBPACK_IMPORTED_MODULE_0__.checkMarkerA11yByWrapperClass)(wrapper);
-    }, function (error) {
-      console.error("Ошибка получения местоположения: " + error.message);
-    });
-  } else {
+  if (!("geolocation" in navigator)) {
     console.log("Геолокация не поддерживается вашим браузером.");
+    return;
   }
+  navigator.geolocation.getCurrentPosition(function (position) {
+    // Для Яндекс.Карт порядок [долгота, широта]
+    var userCoords = [position.coords.longitude, position.coords.latitude];
+    var closestPin = null;
+    var closestDistance = Infinity;
+    pins.forEach(function (pin) {
+      var distance = haversineDistance(userCoords, pin.coordinates);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestPin = pin;
+      }
+    });
+    if (!closestPin) {
+      console.log("Ближайшая точка не найдена.");
+      return;
+    }
+
+    // Скрываем все маркеры
+    var wrappers = document.querySelectorAll(".marker");
+    wrappers.forEach(function (wrapper) {
+      wrapper.classList.add("marker--hidden");
+      (0,_handlers_js__WEBPACK_IMPORTED_MODULE_0__.checkMarkerA11yByWrapperClass)(wrapper);
+    });
+
+    // Показываем ближайший маркер
+    var balloon = document.getElementById(closestPin.id);
+    if (!balloon) {
+      console.warn("\u042D\u043B\u0435\u043C\u0435\u043D\u0442 \u0441 id=\"".concat(closestPin.id, "\" \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D"));
+      return;
+    }
+    var wrapper = balloon.closest(".marker");
+    if (wrapper) {
+      wrapper.classList.remove("marker--hidden");
+      (0,_handlers_js__WEBPACK_IMPORTED_MODULE_0__.checkMarkerA11yByWrapperClass)(wrapper);
+    }
+
+    // Опционально: центрируем карту на ближайшей точке и открываем баллун
+    if (window.ymaps3 && window.mapInstance) {
+      window.mapInstance.setCenter(closestPin.coordinates);
+      balloon.style.display = "block"; // если баллун скрыт
+    }
+  }, function (error) {
+    console.error("Ошибка получения местоположения: " + error.message);
+  }, {
+    enableHighAccuracy: true
+  });
 }
 
 /***/ }),
@@ -17794,61 +17814,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   markerButtonNowCloseA11y: () => (/* binding */ markerButtonNowCloseA11y)
 /* harmony export */ });
 var ariaLabelMarkerButton = {
-  nowOpen: 'Закрыть дополнительную информацию',
-  nowClose: 'Открыть дополнительную информацию'
+  nowOpen: "Закрыть дополнительную информацию",
+  nowClose: "Открыть дополнительную информацию"
 };
 function markerButtonNowCloseA11y(marker) {
-  marker.setAttribute('aria-expanded', 'false');
-  marker.setAttribute('aria-label', ariaLabelMarkerButton.nowClose);
+  marker.setAttribute("aria-expanded", "false");
+  marker.setAttribute("aria-label", ariaLabelMarkerButton.nowClose);
 }
 function markerButtonNowOpenA11y(marker) {
-  marker.setAttribute('aria-expanded', 'true');
-  marker.setAttribute('aria-label', ariaLabelMarkerButton.nowOpen);
+  marker.setAttribute("aria-expanded", "true");
+  marker.setAttribute("aria-label", ariaLabelMarkerButton.nowOpen);
 }
 function checkMarkerA11yByWrapperClass(wrapper) {
-  var marker = wrapper.querySelector('.marker__button');
-  wrapper.classList.contains('marker--hidden') ? markerButtonNowCloseA11y(marker) : markerButtonNowOpenA11y(marker);
+  var marker = wrapper.querySelector(".marker__button");
+  wrapper.classList.contains("marker--hidden") ? markerButtonNowCloseA11y(marker) : markerButtonNowOpenA11y(marker);
 }
 function filterButtonClickHandler(button) {
-  var value = button.getAttribute('data-filter-pins');
-  var wrappers = document.querySelectorAll('.marker');
+  var value = button.getAttribute("data-filter-pins");
+  var wrappers = document.querySelectorAll(".marker");
   wrappers.forEach(function (wrapper) {
-    wrapper.hasAttribute("data-".concat(value)) ? wrapper.classList.remove('marker--hidden') : wrapper.classList.add('marker--hidden');
+    wrapper.hasAttribute("data-".concat(value)) ? wrapper.classList.remove("marker--hidden") : wrapper.classList.add("marker--hidden");
     checkMarkerA11yByWrapperClass(wrapper);
   });
 }
 function balloonCloseButtonClickHandler(button) {
-  var wrapper = button.closest('.marker');
-  var balloon = wrapper.querySelector('.map-balloon');
-  var marker = wrapper.querySelector('.marker__button');
+  var wrapper = button.closest(".marker");
+  var balloon = wrapper.querySelector(".map-balloon");
+  var marker = wrapper.querySelector(".marker__button");
   markerButtonNowCloseA11y(marker);
-  balloon && balloon.classList.add('map-balloon--hidden');
+  balloon && balloon.classList.add("map-balloon--hidden");
 }
 function changeParentZIndex(wrapper) {
-  var balloon = wrapper.querySelector('.map-balloon');
+  var balloon = wrapper.querySelector(".map-balloon");
   var parent = wrapper.parentNode;
   if (!balloon) {
     return;
   }
-  if (balloon.classList.contains('map-balloon--hidden')) {
-    parent.classList.remove('ymaps3x0--marker--active');
+  if (balloon.classList.contains("map-balloon--hidden")) {
+    parent.classList.remove("ymaps3x0--marker--active");
   } else {
-    parent.classList.add('ymaps3x0--marker--active');
+    parent.classList.add("ymaps3x0--marker--active");
   }
 }
 function markerButtonClickHandler(button) {
-  var allBalloons = document.querySelectorAll('.map-balloon');
+  var allBalloons = document.querySelectorAll(".map-balloon");
   allBalloons.forEach(function (balloon) {
-    balloon.classList.add('map-balloon--hidden');
-    var wrapper = balloon.closest('.marker');
-    var marker = wrapper.querySelector('.marker__button');
+    balloon.classList.add("map-balloon--hidden");
+    var wrapper = balloon.closest(".marker");
+    var marker = wrapper.querySelector(".marker__button");
     changeParentZIndex(wrapper);
     markerButtonNowCloseA11y(marker);
   });
-  var parent = button.closest('.marker');
-  var balloon = parent.querySelector('.map-balloon');
+  var parent = button.closest(".marker");
+  var balloon = parent.querySelector(".map-balloon");
   markerButtonNowOpenA11y(button);
-  balloon && balloon.classList.remove('map-balloon--hidden');
+  balloon && balloon.classList.remove("map-balloon--hidden");
   changeParentZIndex(parent);
 }
 
